@@ -1,8 +1,9 @@
+import {darken} from '@material-ui/core';
 import {
-    primaryBlueColor,
+    primaryColor,
     primaryTextColor,
-    primaryWhiteColor,
-    secondaryColor,
+    primaryContrastColor,
+    secondaryContrastColor,
     secondaryTextColor
 } from './colors';
 
@@ -21,25 +22,25 @@ const lightTheme = {
     palette: {
         type: 'light',
         background: {
-            default: primaryWhiteColor
+            default: primaryContrastColor
         },
         text: {
             main: '#000',
             secondary: '#fff'
         },
         primary: {
-            main: primaryBlueColor,
-            secondary: primaryWhiteColor
+            main: primaryColor,
+            secondary: primaryContrastColor
         },
         secondary: {
-            main: primaryBlueColor,
+            main: primaryColor,
             secondary: '#fff'
         },
         accent: {
-            main: secondaryColor
+            main: secondaryContrastColor
         },
         contrast: {
-            main: secondaryColor
+            main: secondaryContrastColor
         },
     },
     overrides: {
@@ -61,35 +62,35 @@ const lightTheme = {
                 marginBottom: 6
             },
             thumb: {
-                color: secondaryTextColor,
+                color: primaryColor,
                 marginTop: 3,
                 width: 20,
                 height: 20
             },
             track: {
-                backgroundColor: primaryBlueColor,
+                backgroundColor: secondaryContrastColor,
                 height: 20,
                 width: 40,
                 borderRadius: '100vh'
             },
             colorSecondary: {
                 '&$checked + $track': {
-                    backgroundColor: primaryBlueColor
+                    backgroundColor: secondaryContrastColor
                 }
             }
         },
         MuiButton: {
             containedPrimary: {
                 color: primaryTextColor,
-                boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                border: '1px solid #3184E7',
+                boxShadow: '0px 4px 4px #000',
+                border: `1px solid ${darken(primaryColor, 0.3)}`,
                 padding: 5,
                 borderRadius: 3
             }
         },
         MuiSvgIcon: {
             root: {
-                color: primaryBlueColor,
+                color: primaryColor,
                 width: 24,
                 height: 24
             }
@@ -109,7 +110,7 @@ const lightTheme = {
             color: secondaryTextColor
         },
         h2: {
-            color: primaryBlueColor
+            color: primaryColor
         }
     }
 };

@@ -1,5 +1,5 @@
 interface Props {
-  children: (JSX.Element | false)[];
+  children: JSX.Element | JSX.Element[];
 }
 
 export { Props };

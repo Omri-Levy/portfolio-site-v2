@@ -1,15 +1,15 @@
-const primaryColor = '#222831';
+const backgroundColor = '#222831';
 const primaryTextColor = '#fff';
 const secondaryTextColor = '#000';
-const primaryBlueColor = '#3e96ff';
-const primaryWhiteColor = '#eee';
-const secondaryColor = '#393e46';
+const primaryColor = '#3e96ff';
+const primaryContrastColor = '#eee';
+const secondaryContrastColor = '#393e46';
 
 export {
-	primaryColor,
+	backgroundColor,
 	primaryTextColor,
 	secondaryTextColor,
-	primaryBlueColor,
-	primaryWhiteColor,
-	secondaryColor,
+	primaryColor,
+	primaryContrastColor,
+	secondaryContrastColor,
 };

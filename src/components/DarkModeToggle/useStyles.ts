@@ -1,9 +1,12 @@
 import {makeStyles} from '../../deps';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    darkModeToggleContainer: {
         display: 'flex',
         alignItems: 'center'
+    },
+    icon: {
+        color: theme.palette.primary.main
     },
 }));
 
