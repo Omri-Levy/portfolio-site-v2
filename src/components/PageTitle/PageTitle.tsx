@@ -1,20 +1,16 @@
 import {Box, Typography} from '@material-ui/core';
-import {makeStyles, React} from '../../deps';
-import styles from './styles';
+import {React} from '../../deps';
 import {Props} from './types';
+import useStyles from './useStyles';
 
 const PageTitle: React.FC<Props> = ({Icon, text}) => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (
-        <Box className={classes.box}>
+        <Box className={classes.pageTitleContainer}>
             <Box className={classes.innerBox}>
                 <Icon className={classes.icon}/>
-                <Typography
-                    className={classes.root}
-                    variant={'h1'}
-                >
+                <Typography className={classes.typography} variant={'h1'}>
                     {text}
                 </Typography>
             </Box>

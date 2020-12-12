@@ -1,22 +1,19 @@
 import {Box, Typography} from '@material-ui/core';
-import {Link} from 'gatsby-theme-material-ui';
-import {makeStyles, React} from '../../../deps';
-import styles from './styles';
+import {AnchorLink} from 'gatsby-plugin-anchor-links';
+import {React} from '../../../deps';
+import useStyles from './useStyles';
 
 const Logo: React.FC = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (
-        <Box className={classes.box}>
-            <Link to={'/Portfolio'} className={classes.link}>
+        <Box className={classes.logoContainer}>
+            <AnchorLink to={'/home#portfolio'} className={classes.link}>
                 <Typography className={classes.title}>
                     Omri Levy
-                    <span className={classes.subtitle}>
-                        Fullstack Dev
-                    </span>
+                    <span className={classes.subtitle}>Fullstack Dev</span>
                 </Typography>
-            </Link>
+            </AnchorLink>
         </Box>
     );
 };

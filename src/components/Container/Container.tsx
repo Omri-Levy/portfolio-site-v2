@@ -1,15 +1,13 @@
 import {Container as MuiContainer} from '@material-ui/core';
 import {React} from '../../deps';
-import {makeStyles} from '../../deps';
-import styles from './styles';
 import {Props} from './types';
+import useStyles from './useStyles';
 
 const Container: React.FC<Props> = ({children}) => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (
-        <MuiContainer className={classes.root}>
+        <MuiContainer className={classes.mainContainer} maxWidth={false}>
             {children}
         </MuiContainer>
     );

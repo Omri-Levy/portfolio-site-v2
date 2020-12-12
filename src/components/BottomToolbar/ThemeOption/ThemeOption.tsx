@@ -1,11 +1,10 @@
 import {IconButton} from '@material-ui/core';
 import {FiberManualRecord} from '@material-ui/icons';
-import {makeStyles, React} from '../../../deps';
-import styles from './styles';
+import {React} from '../../../deps';
 import {Props} from './types';
+import useStyles from './useStyles';
 
 const ThemeOption: React.FC<Props> = ({color}) => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (

@@ -1,6 +1,6 @@
 interface Props {
-    icon: JSX.Element[] | JSX.Element;
-    to: string;
+  Icon: any;
+  to: string;
 }
 
-export {Props};
+export { Props };

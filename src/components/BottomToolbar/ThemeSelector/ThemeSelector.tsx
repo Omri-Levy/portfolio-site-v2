@@ -1,18 +1,17 @@
 import {Box} from '@material-ui/core';
-import {makeStyles, React} from '../../../deps';
+import {React} from '../../../deps';
 import {ThemeOption} from '../ThemeOption';
-import styles from './styles';
+import useStyles from './useStyles';
 
 const ThemeSelector: React.FC = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (
         <Box className={classes.root}>
-            <ThemeOption color={'#FB3EFF'}/>
+            <ThemeOption color={'#fb3eff'}/>
             <ThemeOption/>
-            <ThemeOption color={'#FF3E3E'}/>
-            <ThemeOption color={'#41FF3E'}/>
+            <ThemeOption color={'#ff3e3e'}/>
+            <ThemeOption color={'#41ff3e'}/>
         </Box>
     );
 };

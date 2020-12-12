@@ -1,1 +1,1 @@
-export {default as ContactLink} from './ContactLink';
+export { default as ContactLink } from './ContactLink';

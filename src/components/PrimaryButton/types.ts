@@ -1,6 +1,7 @@
 interface Props {
-    text: string;
-    className: any;
+  text: string;
+  className: any;
+  to?: string;
 }
 
-export {Props};
+export { Props };

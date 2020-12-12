@@ -1,15 +1,14 @@
 import {AppBar, Box} from '@material-ui/core';
-import {makeStyles, React} from '../../deps';
+import {React} from '../../deps';
 import {Logo} from './Logo';
 import {Nav} from './Nav';
-import styles from './styles';
+import useStyles from './useStyles';
 
 const Header: React.FC = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (
-        <AppBar className={classes.root}>
+        <AppBar className={classes.appBar}>
             <Box className={classes.box}>
                 <Logo/>
                 <Nav/>

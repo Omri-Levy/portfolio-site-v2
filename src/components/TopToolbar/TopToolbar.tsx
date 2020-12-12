@@ -1,13 +1,12 @@
 import {Box} from '@material-ui/core';
-import {makeStyles, React} from '../../deps';
+import {React} from '../../deps';
 import {SecondaryButton} from '../SecondaryButton';
 import {ContactLinksContainer} from './ContactLinksContainer';
 // @ts-ignore
 import resume from './resume.pdf';
-import styles from './styles';
+import useStyles from './useStyles';
 
 const TopToolbar = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (

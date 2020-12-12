@@ -1,10 +1,10 @@
 interface Props {
     title: string;
-    text: string;
+    body: string;
     projectGif: string;
-    index: number;
-    liveSite: string;
-    gitRepository: string;
+    liveSiteUrl: string;
+    gitRepositoryUrl: string;
+    options: object;
 }
 
 export {Props};

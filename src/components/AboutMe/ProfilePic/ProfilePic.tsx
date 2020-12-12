@@ -1,20 +1,16 @@
 import {graphql, useStaticQuery} from 'gatsby';
 import Img from 'gatsby-image';
-import {makeStyles, React} from '../../../deps';
-import styles from './styles';
+import {React} from '../../../deps';
+import useStyles from './useStyles';
 
 const ProfilePic = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 	const data = useStaticQuery(graphql`
         query profilePic {
             image: file(relativePath: { eq: "profilePic.png" }) {
                 childImageSharp {
-                    fixed(
-                        width: 124,
-                        height: 124,
-                    ) {
-                        ...GatsbyImageSharpFixed_withWebp
+                    fluid(maxWidth: 180, maxHeight: 180) {
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
@@ -23,7 +19,7 @@ const ProfilePic = () => {
 
     return (
         <Img
-            fixed={data.image.childImageSharp.fixed}
+            fixed={data.image.childImageSharp.fluid}
             alt='Omri Levy'
             className={classes.profilePic}
         />

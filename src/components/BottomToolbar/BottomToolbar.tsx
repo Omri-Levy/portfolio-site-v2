@@ -1,21 +1,23 @@
-import {Box} from '@material-ui/core';
-import {makeStyles, React} from '../../deps';
-import {DarkModeToggle} from './DarkModeToggle';
-import {Language} from './Language';
-import styles from './styles';
+import {Box, useMediaQuery} from '@material-ui/core';
+import {React} from '../../deps';
+import {DarkModeToggle} from '../DarkModeToggle';
+import {Language} from '../Language';
 import {ThemeSelector} from './ThemeSelector';
+import useStyles from './useStyles';
 
 const BottomToolbar = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
+    const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
     return (
-        <Box className={classes.box}>
+        <Box className={classes.bottomToolbarContainer}>
             <ThemeSelector/>
-            <Box className={classes.innerBox}>
-                <Language/>
-                <DarkModeToggle/>
-            </Box>
+            {isMobile && (
+                <Box className={classes.innerBox}>
+                    <Language/>
+                    <DarkModeToggle/>
+                </Box>
+            )}
         </Box>
     );
 };

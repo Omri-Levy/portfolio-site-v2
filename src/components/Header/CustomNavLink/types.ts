@@ -1,6 +1,6 @@
 interface Props {
-    to: string,
-    text: string
+  to: string;
+  text: string;
 }
 
-export {Props};
+export { Props };

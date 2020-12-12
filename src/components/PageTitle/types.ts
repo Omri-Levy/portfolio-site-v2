@@ -1,6 +1,6 @@
 interface Props {
-    Icon: any;
-    text: string;
+  Icon: any;
+  text: string;
 }
 
-export {Props};
+export { Props };

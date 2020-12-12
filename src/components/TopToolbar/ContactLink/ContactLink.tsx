@@ -1,22 +1,20 @@
-import {IconButton} from '@material-ui/core';
-import {Link} from 'gatsby-theme-material-ui';
-import {makeStyles, React} from '../../../deps';
-import styles from './styles';
+import {IconButton} from 'gatsby-theme-material-ui';
+import {React} from '../../../deps';
 import {Props} from './types';
+import useStyles from './useStyles';
 
-const ContactLink: React.FC<Props> = ({icon, to}) => {
-    const useStyles = makeStyles(styles);
+const ContactLink: React.FC<Props> = ({Icon, to}) => {
     const classes = useStyles();
 
     return (
-        <Link to={to}
-              target='_blank'
-              className={classes.link}
+        <IconButton
+            className={classes.button}
+            to={to}
+            // @ts-ignore
+            target={'_blank'}
         >
-            <IconButton className={classes.button}>
-                {icon}
-            </IconButton>
-        </Link>
+            <Icon className={classes.icon}/>
+        </IconButton>
     );
 };
 

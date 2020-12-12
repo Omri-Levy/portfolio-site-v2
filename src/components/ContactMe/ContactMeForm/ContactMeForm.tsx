@@ -1,28 +1,65 @@
 import {yupResolver} from '@hookform/resolvers/yup';
-import {Box, Grid, TextField} from '@material-ui/core';
+import {Box, Grid, TextField, useMediaQuery} from '@material-ui/core';
+import {useTheme} from '@material-ui/styles';
 import {init, send} from 'emailjs-com';
 import {useForm} from 'react-hook-form';
-import {makeStyles, React} from '../../../deps';
+import {React} from '../../../deps';
 import {SecondaryButton} from '../../SecondaryButton';
 import {validationSchema} from '../validationSchema';
-import {
-    inputProps,
-    labelStyle,
-    fullNameProps,
-    emailProps,
-    messageProps
-} from './props';
-import styles from './styles';
 import {Data, FormInputs} from './types';
+import useStyles from './useStyles';
 
 const ContactMeForm: React.FC = () => {
     init('user_VCUWzf1n5yq07YDWAJoZH');
-    const useStyles = makeStyles(styles);
+    const theme = useTheme();
     const classes = useStyles();
     const {register, errors, handleSubmit} = useForm<FormInputs>({
         resolver: yupResolver(validationSchema)
     });
-    inputProps.ref = register as any;
+    const isDesktop = useMediaQuery(() => (
+        theme.breakpoints.up('md')
+    ));
+    const isXS = useMediaQuery(() => (
+        theme.breakpoints.down('xs')
+    ));
+    let backgroundColor;
+
+    if (theme.palette.type === 'dark') {
+        backgroundColor = theme.palette.primary.secondary;
+    } else {
+        backgroundColor = theme.palette.text.secondary;
+    }
+
+    const inputProps = {
+        style: {
+            color: '#fff',
+            backgroundColor: backgroundColor,
+            borderRadius: 5,
+            fontSize: isDesktop ? 13 : 11
+        },
+        ref: register
+    };
+    const labelStyle = {
+        style: {
+            fontSize: isDesktop ? 11 : 13
+        }
+    };
+    const messageProps = {
+        ...inputProps,
+        style: {
+            ...inputProps.style,
+            height: isXS ? 76 : 106
+        },
+        maxLength: 640
+    };
+    const fullNameProps = {
+        ...inputProps,
+        maxLength: 70
+    };
+    const emailProps = {
+        ...inputProps,
+        maxLength: 125
+    };
 
     const onSubmit = async (data: Data) => {
         const templateParams = {
@@ -40,7 +77,7 @@ const ContactMeForm: React.FC = () => {
     };
 
     return (
-        <Box className={classes.box}>
+        <Box className={classes.contactMeFormContainer}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Grid container>
                     <Grid item>
@@ -75,11 +112,8 @@ const ContactMeForm: React.FC = () => {
                         />
                     </Grid>
                 </Grid>
-                <Grid
-                    container item
-                    direction={'column'}
-                    alignItems={'flex-end'}
-                >
+                <Grid container item direction={'column'}
+                      alignItems={'flex-end'}>
                     <Grid item>
                         <TextField
                             name={'message'}

@@ -1,8 +1,4 @@
-import {makeStyles} from '@material-ui/styles';
-import React, {useState} from 'react';
+import { makeStyles } from '@material-ui/styles';
+import React, { useState } from 'react';
 
-export {
-    makeStyles,
-    React,
-    useState
-};
+export { makeStyles, React, useState };

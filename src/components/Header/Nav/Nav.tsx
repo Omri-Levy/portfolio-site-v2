@@ -1,11 +1,9 @@
 import {MenuList, Toolbar} from '@material-ui/core';
-import {makeStyles} from '@material-ui/styles';
 import {React} from '../../../deps';
 import {CustomNavLink} from '../CustomNavLink';
-import styles from './styles';
+import useStyles from './useStyles';
 
 const Nav: React.FC = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (

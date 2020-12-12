@@ -1,18 +1,18 @@
 import {Box, Typography} from '@material-ui/core';
 import {InfoOutlined} from '@material-ui/icons';
-import {makeStyles, React} from '../../deps';
+import {React} from '../../deps';
 import {PageTitle} from '../PageTitle';
 import PageIllustration from './PageIllustration';
 import {ProfilePic} from './ProfilePic';
-import styles from './styles';
+import useStyles from './useStyles';
 
 const AboutMe = () => {
-    const useStyles = makeStyles(styles);
     const classes = useStyles();
 
     return (
-        <Box className={classes.box}
-             id={'about-me'}
+        <section
+            className={classes.aboutMeContainer}
+            id={'about-me'}
         >
             <PageTitle
                 Icon={InfoOutlined}
@@ -31,21 +31,21 @@ const AboutMe = () => {
                         variant={'body1'}
                         className={classes.subtitle}
                     >
-                        Hi! My name is Omri Levy,
-                        I’m 24 year old from Tel-Aviv.
+                        Hi! My name is Omri Levy, I’m 24 year old from
+                        Tel-Aviv.
                     </Typography>
                     <Typography
                         variant={'body1'}
                         className={classes.body}
                     >
-                        I began programming in May of 2019,
-                        ever since I’ve been programming from
-                        the moment I wake up and until I go to bed.
+                        I began programming in May of 2019, ever since I’ve
+                        been programming
+                        from the moment I wake up and until I go to bed.
                     </Typography>
                 </Box>
             </Box>
-            <PageIllustration/>
-        </Box>
+            <PageIllustration classes={classes}/>
+        </section>
     );
 };
 

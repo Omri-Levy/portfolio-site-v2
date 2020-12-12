@@ -1,5 +1,5 @@
 interface Props {
-    children: JSX.Element[] | JSX.Element
+  children: JSX.Element[] | JSX.Element;
 }
 
-export {Props};
+export { Props };
