@@ -29,6 +29,9 @@ const darkTheme = {
 		primary: {
 			main: primaryBlueColor,
 		},
+        secondary: {
+            main: primaryBlueColor,
+        },
 	},
 	overrides: {
 		MuiFilledInput: {
