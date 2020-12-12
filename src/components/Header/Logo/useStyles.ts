@@ -1,4 +1,3 @@
-import {darken} from '@material-ui/core';
 import {makeStyles} from '../../../deps';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     link: {
-        color: '#000',
+        color: theme.palette.text.primary,
         textDecoration: 'none',
         '&:hover': {
             textDecoration: 'none'
         }
     },
     title: {
-        color: '#000',
+        color: theme.palette.text.primary,
         fontSize: 13,
         fontWeight: 700,
         [theme.breakpoints.up('md')]: {
@@ -29,16 +28,14 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     subtitle: {
-        backgroundColor: darken(theme.palette.primary.main, 0.4),
         borderRadius: 15,
         fontSize: 11,
         fontWeight: 500,
         display: 'block',
-        color: '#eee',
-        padding: '0 5px',
+        color: theme.palette.accent.main,
+        padding: 0,
         margin: 0,
-        marginTop: -1,
-        marginLeft: -2,
+        marginTop: -5,
         [theme.breakpoints.up('md')]: {
             fontSize: 14
         }

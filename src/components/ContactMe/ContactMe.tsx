@@ -25,7 +25,9 @@ const ContactMe: React.FC = () => {
             <Box className={classes.outerBox}>
                 <Box className={classes.innerBox1}>
                     <IconButton to={'tel:+972052-6256647'}
-                                className={classes.link}>
+                                style={{backgroundColor: 'transparent'}}
+                                className={classes.link}
+                    >
                         <CallOutlined className={classes.icon}/>
                         <Typography variant={'body1'}
                                     className={classes.typography}>
@@ -35,6 +37,7 @@ const ContactMe: React.FC = () => {
                 </Box>
                 <Box className={classes.innerBox2}>
                     <IconButton
+                        style={{backgroundColor: 'transparent'}}
                         to={'mailto:omri.levy0197@gmail.com'}
                         className={classes.link}
                     >

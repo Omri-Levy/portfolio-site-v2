@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme: DefaultTheme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
+        [theme.breakpoints.up('md')]: {
+            textAlign: 'left'
+        },
         padding: 0,
         margin: 0
     }

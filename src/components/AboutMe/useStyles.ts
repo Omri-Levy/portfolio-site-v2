@@ -43,13 +43,11 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     innerBox: {
-        textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         [theme.breakpoints.up('md')]: {
             alignItems: 'flex-start',
-            textAlign: 'left'
         }
     },
     pageIllustration: {

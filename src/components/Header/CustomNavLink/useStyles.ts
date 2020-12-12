@@ -1,14 +1,11 @@
-import {darken} from '@material-ui/core';
 import {DefaultTheme} from '@material-ui/styles';
 import {makeStyles} from '../../../deps';
 
 const useStyles = makeStyles((theme: DefaultTheme) => ({
     menuItem: {
-        backgroundColor: darken(theme.palette.primary.main, 0.4),
         margin: 0,
         marginRight: 23,
-        borderRadius: 15,
-        padding: '0 5px',
+        padding: 0,
         '&:nth-child(3)': {
             marginRight: 0
         }

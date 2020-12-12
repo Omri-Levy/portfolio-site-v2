@@ -1,7 +1,7 @@
 import {
     primaryBlueColor,
     primaryTextColor,
-    primaryWhiteColor,
+    primaryWhiteColor, secondaryColor,
     secondaryTextColor
 } from './colors';
 
@@ -28,6 +28,9 @@ const lightTheme = {
         },
         primary: {
             main: primaryBlueColor
+        },
+        accent: {
+            main: secondaryColor
         }
     },
     overrides: {

@@ -6,17 +6,17 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: 13,
         [theme.breakpoints.up('md')]: {
             paddingRight: 37
-        }
+        },
     },
     link: {
         padding: 0,
-        margin: 0
+        margin: 0,
     },
     icon: {
         [theme.breakpoints.up('md')]: {
             width: 48,
             height: 48
-        }
+        },
     }
 }));
 

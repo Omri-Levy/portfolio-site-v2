@@ -7,7 +7,10 @@ const Container: React.FC<Props> = ({children}) => {
     const classes = useStyles();
 
     return (
-        <MuiContainer className={classes.mainContainer} maxWidth={false}>
+        <MuiContainer
+            className={classes.mainContainer}
+            maxWidth={false}
+        >
             {children}
         </MuiContainer>
     );

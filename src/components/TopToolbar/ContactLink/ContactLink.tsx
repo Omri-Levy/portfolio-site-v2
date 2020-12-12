@@ -12,6 +12,7 @@ const ContactLink: React.FC<Props> = ({Icon, to}) => {
             to={to}
             // @ts-ignore
             target={'_blank'}
+            style={{backgroundColor: 'transparent'}}
         >
             <Icon className={classes.icon}/>
         </IconButton>
