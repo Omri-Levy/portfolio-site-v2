@@ -13,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     link: {
-        color: theme.palette.text.primary,
+        color: theme.palette.text.main,
         textDecoration: 'none',
         '&:hover': {
             textDecoration: 'none'
         }
     },
     title: {
-        color: theme.palette.text.primary,
+        color: '#000',
         fontSize: 13,
         fontWeight: 700,
         [theme.breakpoints.up('md')]: {

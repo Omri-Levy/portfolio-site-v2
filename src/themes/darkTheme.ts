@@ -1,8 +1,8 @@
 import {
-	primaryBlueColor,
-	primaryColor,
-	primaryTextColor,
-	secondaryColor,
+    primaryBlueColor,
+    primaryColor,
+    primaryTextColor, primaryWhiteColor,
+    secondaryColor
 } from './colors';
 
 const darkTheme = {
@@ -28,13 +28,18 @@ const darkTheme = {
         },
 		primary: {
 			main: primaryBlueColor,
+            secondary: primaryColor
 		},
         secondary: {
             main: primaryBlueColor,
+            secondary: '#fff'
         },
         accent: {
-	        main: secondaryColor
-        }
+	        main: secondaryColor,
+        },
+        contrast: {
+            main: primaryWhiteColor
+        },
 	},
 	overrides: {
 		MuiFilledInput: {

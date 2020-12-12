@@ -1,8 +1,9 @@
+import {fade} from '@material-ui/core';
 import {makeStyles} from '../../../deps';
 
 const useStyles = makeStyles((theme) => ({
     icon: {
-        color: '#eee',
+        color: theme.palette.contrast.main,
         width: 48,
         height: 48
     },
@@ -31,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
         },
         '& .MuiListItem': {
             '&-divider': {
-                borderBottom: '1px solid rgba(238, 238, 238, 0.12)'
+                borderBottom: `1px solid ${fade(
+                    theme.palette.text.primary, 0.12)}`
             },
             '&-gutters': {
                 paddingLeft: 0,
@@ -51,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
                 marginBottom: 0
             },
             '&-primary': {
-                color: '#eee',
+                color: theme.palette.text.primary,
                 fontSize: 12,
                 fontWeight: 400,
                 minWidth: 335,
@@ -117,7 +119,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 12,
         fontWeight: 500,
         padding: 4,
-        textTransform: 'unset',
+        textTransform: 'unset'
     },
     secondaryButton: {
         width: 94,

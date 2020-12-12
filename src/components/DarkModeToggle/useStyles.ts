@@ -5,9 +5,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center'
     },
-    icon: {
-        color: '#eee'
-    }
 }));
 
 export default useStyles;

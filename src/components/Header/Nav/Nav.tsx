@@ -7,7 +7,7 @@ const Nav: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <Toolbar className={classes.root} disableGutters={true}>
+        <Toolbar className={classes.toolbar} disableGutters={true}>
             <MenuList className={classes.menuList}>
                 <CustomNavLink to={'/home#portfolio'} text={'Portfolio'}/>
                 <CustomNavLink to={'/home#about-me'} text={'About Me'}/>

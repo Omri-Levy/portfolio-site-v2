@@ -24,16 +24,10 @@ const ContactMeForm: React.FC = () => {
     ));
     let backgroundColor;
 
-    if (theme.palette.type === 'dark') {
-        backgroundColor = theme.palette.primary.secondary;
-    } else {
-        backgroundColor = theme.palette.text.secondary;
-    }
-
     const inputProps = {
         style: {
-            color: '#fff',
-            backgroundColor: backgroundColor,
+            color: theme.palette.text.main,
+            backgroundColor: theme.palette.accent.primary,
             borderRadius: 5,
             fontSize: isDesktop ? 13 : 11
         },

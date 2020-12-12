@@ -6,8 +6,8 @@ interface Theme {
 }
 
 const theme: Theme = {
-    isDarkMode: false,
-    setIsDarkMode: () => false
+    isDarkMode: true,
+    setIsDarkMode: () => true
 };
 
 const ThemeContext = createContext(theme);

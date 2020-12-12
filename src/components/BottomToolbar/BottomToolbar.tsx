@@ -7,7 +7,9 @@ import useStyles from './useStyles';
 
 const BottomToolbar = () => {
     const classes = useStyles();
-    const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+    const isMobile = useMediaQuery((theme) => (
+        theme.breakpoints.down('sm')
+    ));
 
     return (
         <Box className={classes.bottomToolbarContainer}>

@@ -1,7 +1,8 @@
 import {
     primaryBlueColor,
     primaryTextColor,
-    primaryWhiteColor, secondaryColor,
+    primaryWhiteColor,
+    secondaryColor,
     secondaryTextColor
 } from './colors';
 
@@ -27,11 +28,19 @@ const lightTheme = {
             secondary: '#fff'
         },
         primary: {
-            main: primaryBlueColor
+            main: primaryBlueColor,
+            secondary: primaryWhiteColor
+        },
+        secondary: {
+            main: primaryBlueColor,
+            secondary: '#fff'
         },
         accent: {
             main: secondaryColor
-        }
+        },
+        contrast: {
+            main: secondaryColor
+        },
     },
     overrides: {
         MuiFilledInput: {
@@ -66,7 +75,7 @@ const lightTheme = {
             colorSecondary: {
                 '&$checked + $track': {
                     backgroundColor: primaryBlueColor
-                },
+                }
             }
         },
         MuiButton: {
