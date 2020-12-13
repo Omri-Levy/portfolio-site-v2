@@ -12,10 +12,8 @@ const theme = (isDarkMode: boolean, primaryColor: string) => ({
             values: {
                 xs: 350,
                 sm: 600,
-                ms: 800,
                 md: 1000,
                 lg: 1280,
-                mlg: 1750,
                 xl: 1920
             }
         },

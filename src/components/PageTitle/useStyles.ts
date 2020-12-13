@@ -6,17 +6,17 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 700,
         marginLeft: 8,
         marginBottom: 32,
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('lg')]: {
             fontSize: 56
         }
     },
     pageTitleContainer: {
         display: 'inline-block',
         marginTop: 91,
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('lg')]: {
             marginTop: 180
         },
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             marginTop: 61
         }
     },
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         marginTop: 2,
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('lg')]: {
             marginTop: -6,
             width: 72,
             height: 72

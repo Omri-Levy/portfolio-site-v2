@@ -1,5 +1,5 @@
 import {createMuiTheme, CssBaseline} from '@material-ui/core';
-import {ThemeProvider} from '@material-ui/styles';
+import {ThemeProvider} from '@material-ui/core/styles';
 import React, {useContext} from 'react';
 import ThemeContext from '../../context/ThemeContext/ThemeContext';
 import theme from '../theme';
