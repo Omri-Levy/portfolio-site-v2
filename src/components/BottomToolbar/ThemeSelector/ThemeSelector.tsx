@@ -9,7 +9,7 @@ const ThemeSelector: React.FC = () => {
     return (
         <Box className={classes.root}>
             <ThemeOption color={'#fb3eff'}/>
-            <ThemeOption/>
+            <ThemeOption color={'#3e96ff'}/>
             <ThemeOption color={'#ff3e3e'}/>
             <ThemeOption color={'#41ff3e'}/>
         </Box>

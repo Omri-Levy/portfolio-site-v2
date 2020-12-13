@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItem': {
             '&-divider': {
                 borderBottom: `1px solid ${fade(
-                    theme.palette.text.primary, 0.12)}`
+                    theme.palette.contrast.main, 0.12)}`
             },
             '&-gutters': {
                 paddingLeft: 0,
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
                 marginBottom: 0
             },
             '&-primary': {
-                color: theme.palette.text.primary,
+                color: theme.palette.text.main,
                 fontSize: 12,
                 fontWeight: 400,
                 minWidth: 335,

@@ -1,15 +1,13 @@
 import {createMuiTheme, CssBaseline} from '@material-ui/core';
 import {ThemeProvider} from '@material-ui/styles';
 import React, {useContext} from 'react';
-import lightTheme from '../../themes/lightTheme';
 import ThemeContext from '../../context/ThemeContext/ThemeContext';
-import darkTheme from '../../themes/darkTheme';
+import theme from '../theme';
 
 const ThemeTopLayout: React.FC = ({children}) => {
-    //@ts-ignore
-    const {isDarkMode} = useContext(ThemeContext);
-    const theme: any = isDarkMode ? darkTheme : lightTheme;
-    const selectedTheme = createMuiTheme(theme);
+    const {isDarkMode, primaryColor} = useContext(ThemeContext);
+    const selectedTheme = createMuiTheme(theme(isDarkMode, primaryColor) as
+        any);
 
     return (
         <ThemeProvider theme={selectedTheme}>
@@ -21,4 +19,3 @@ const ThemeTopLayout: React.FC = ({children}) => {
 };
 
 export default ThemeTopLayout;
-

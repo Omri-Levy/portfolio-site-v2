@@ -25,24 +25,26 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItem': {
             '&-divider': {
                 borderBottom: `1px solid ${fade(
-                    theme.palette.text.primary, 0.12)}`
+                    theme.palette.contrast.main, 0.12)}`
             },
             '&-gutters': {
                 paddingLeft: 0,
                 paddingRight: 0
-            },
+            }
         },
         '& .MuiListItemIcon-root': {
             minWidth: 35
         },
-        '& .MuiListItemText-primary': {
-            color: theme.palette.text.main,
-            fontSize: 12,
-            fontWeight: 400,
-            minWidth: 335,
-            maxWidth: 335,
-            [theme.breakpoints.up('md')]: {
-                fontSize: 16
+        '& .MuiListItemText': {
+            '&-primary': {
+                color: theme.palette.text.main,
+                fontSize: 12,
+                fontWeight: 400,
+                minWidth: 335,
+                maxWidth: 335,
+                [theme.breakpoints.up('md')]: {
+                    fontSize: 16
+                }
             }
         }
     },
