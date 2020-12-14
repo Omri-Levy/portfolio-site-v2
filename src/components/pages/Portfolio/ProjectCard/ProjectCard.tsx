@@ -18,12 +18,12 @@ const ProjectCard: React.FC<Props> = (props) => {
                 {documentToReactComponents(props.body, props.options)}
                 <Grid container item className={classes.buttonsContainer}>
                     <PrimaryButton
-                        text={'Live site'}
+                        text={'Live Site'}
                         className={classes.primaryButton}
                         to={props.liveSiteUrl}
                     />
                     <SecondaryButton
-                        text={'Git repository'}
+                        text={'Git Repository'}
                         className={classes.secondaryButton}
                         to={props.gitRepositoryUrl}
                     />

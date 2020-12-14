@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             marginRight: 44,
             fontSize: 18,
-            width: 84,
+            width: 86,
             height: 32,
             padding: '5px 4px'
         }
@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'unset',
         [theme.breakpoints.up('md')]: {
             fontSize: 18,
-            width: 134,
+            width: 140,
             height: 32,
             padding: '5px 4px'
         }

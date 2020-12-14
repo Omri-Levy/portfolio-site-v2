@@ -25,7 +25,9 @@ const MobileProjectCard: React.FC<Props> = (props) => {
                 </Box>
                 <Box className={classes.imageContainer}>
                     <ButtonBack className={classes.carouselBackButton}>
-                        <KeyboardArrowLeftOutlined className={classes.icon}/>
+                        <KeyboardArrowLeftOutlined
+                            className={classes.icon}
+                        />
                     </ButtonBack>
                     <Image
                         src={props.projectGif}
@@ -34,17 +36,18 @@ const MobileProjectCard: React.FC<Props> = (props) => {
                         className={classes.image}
                     />
                     <ButtonNext className={classes.carouselNextButton}>
-                        <KeyboardArrowRightOutlined className={classes.icon}/>
+                        <KeyboardArrowRightOutlined
+                            className={classes.icon}/>
                     </ButtonNext>
                 </Box>
                 <Box className={classes.buttonsContainer}>
                     <PrimaryButton
-                        text={'Live site'}
+                        text={'Live Site'}
                         className={classes.primaryButton}
                         to={props.liveSite}
                     />
                     <SecondaryButton
-                        text={'Git repository'}
+                        text={'Git Repository'}
                         className={classes.secondaryButton}
                         to={props.gitRepository}
                     />

@@ -4,6 +4,7 @@ import {init, send} from 'emailjs-com';
 import {useForm} from 'react-hook-form';
 import {React, useTheme} from '../../../../deps';
 import {SecondaryButton} from '../../../SecondaryButton';
+import {TranslateText} from '../../../TranslateText';
 import {validationSchema} from '../validationSchema';
 import {Data, FormInputs} from './types';
 import useStyles from './useStyles';
@@ -78,7 +79,7 @@ const ContactMeForm: React.FC = () => {
                             autoFocus
                             name={'fullName'}
                             variant={'filled'}
-                            label={'Full Name'}
+                            label={<TranslateText text={'Full Name'}/>}
                             id={'full-name'}
                             className={classes.fullName}
                             FormHelperTextProps={labelStyle}
@@ -93,7 +94,7 @@ const ContactMeForm: React.FC = () => {
                         <TextField
                             name={'email'}
                             variant={'filled'}
-                            label={'Email'}
+                            label={<TranslateText text={'Email'}/>}
                             id={'email'}
                             className={classes.email}
                             FormHelperTextProps={labelStyle}
@@ -111,7 +112,7 @@ const ContactMeForm: React.FC = () => {
                         <TextField
                             name={'message'}
                             variant={'filled'}
-                            label={'Message'}
+                            label={<TranslateText text={'Message'}/>}
                             id={'message'}
                             className={classes.message}
                             FormHelperTextProps={labelStyle}

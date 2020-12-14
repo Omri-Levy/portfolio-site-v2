@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItemText': {
             '&-root': {
                 marginTop: 0,
-                marginBottom: 0
+                marginBottom: 0,
             },
             '&-primary': {
                 color: theme.palette.text.main,
@@ -87,14 +87,16 @@ const useStyles = makeStyles((theme) => ({
         border: 'none',
         position: 'absolute',
         top: 'calc(50% - 24px)',
-        left: 16
+        right: theme.direction === 'rtl' ? 16 : 'unset',
+        left: theme.direction === 'rtl' ? 'unset' : 16
     },
     carouselNextButton: {
         backgroundColor: 'transparent',
         border: 'none',
         position: 'absolute',
         top: 'calc(50% - 24px)',
-        right: 16
+        right: theme.direction === 'rtl' ? 'unset' : 16,
+        left: theme.direction === 'rtl' ? 16 : 'unset'
     },
     imageContainer: {
         position: 'relative',
@@ -124,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'unset'
     },
     secondaryButton: {
-        width: 94,
+        width: 97,
         height: 25,
         fontSize: 12,
         fontWeight: 500,

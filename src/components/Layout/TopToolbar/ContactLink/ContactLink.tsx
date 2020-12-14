@@ -13,6 +13,7 @@ const ContactLink: React.FC<Props> = ({Icon, to}) => {
             // @ts-ignore
             target={'_blank'}
             style={{backgroundColor: 'transparent'}}
+            disableFocusRipple
         >
             <Icon className={classes.icon}/>
         </IconButton>
@@ -20,3 +21,4 @@ const ContactLink: React.FC<Props> = ({Icon, to}) => {
 };
 
 export default ContactLink;
+

@@ -1,4 +1,5 @@
 import {createMuiTheme, darken} from '@material-ui/core';
+import {heIL, enUS} from '@material-ui/core/locale';
 import {DefaultTheme} from '@material-ui/styles';
 import React, {useContext} from 'react';
 import {ThemeContext} from '../../context/ThemeContext';
@@ -135,7 +136,7 @@ const useMakeTheme: () => DefaultTheme = () => {
     };
 
     // @ts-ignore
-    return createMuiTheme(theme);
+    return createMuiTheme(theme, isRTL ? heIL : enUS);
 };
 
 export default useMakeTheme;

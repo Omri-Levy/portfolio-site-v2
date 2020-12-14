@@ -4,7 +4,7 @@ import {ThemeContext} from '../../../context/ThemeContext';
 import {React, useContext, useState} from '../../../deps';
 import useStyles from './useStyles';
 
-const Language: React.FC = () => {
+const LanguageMenu: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const {setIsRTL} = useContext(ThemeContext);
     const handleClick = (event: Event) => {
@@ -46,4 +46,4 @@ const Language: React.FC = () => {
     );
 };
 
-export default Language;
+export default LanguageMenu;

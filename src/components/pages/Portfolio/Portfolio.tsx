@@ -1,5 +1,11 @@
 import {BLOCKS} from '@contentful/rich-text-types';
-import {List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+import {
+    Box,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText
+} from '@material-ui/core';
 import {FiberManualRecord, WorkOutline} from '@material-ui/icons';
 import {graphql, useStaticQuery} from 'gatsby';
 import {React} from '../../../deps';
@@ -17,6 +23,7 @@ const Portfolio: React.FC = () => {
             allContentfulProject {
                 edges {
                     node {
+                        node_locale
                         title
                         body {
                             raw
@@ -33,6 +40,7 @@ const Portfolio: React.FC = () => {
             }
         }
     `);
+
     const options = {
         renderNode: {
             [BLOCKS.UL_LIST]: (node, children) => <List>{children}</List>,
@@ -59,17 +67,24 @@ const Portfolio: React.FC = () => {
             className={classes.portfolioContainer}
             id={'portfolio'}
         >
-            <PageTitle Icon={WorkOutline} text={'Portfolio'}/>
-            {isMobile && !(isIpadProHeight && isIpadProWidth)
-                ? <MobileCarousel
-                    data={data}
-                    options={options}
-                />
-                : <Projects
-                    data={data}
-                    options={options}
-                />
-            }
+            <PageTitle
+                Icon={WorkOutline}
+                text={'Portfolio'}
+            />
+            <Box
+                className={classes.innerBox}
+            >
+                {isMobile && !(isIpadProHeight && isIpadProWidth)
+                    ? <MobileCarousel
+                        data={data}
+                        options={options}
+                    />
+                    : <Projects
+                        data={data}
+                        options={options}
+                    />
+                }
+            </Box>
         </section>
     );
 };
