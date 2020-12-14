@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     subtitle: {
         fontSize: 14,
         fontWeight: 400,
-        width: 189,
+        width: theme.direction === 'rtl' ? 140 : 189,
         marginBottom: 12,
         [theme.breakpoints.up('md')]: {
             fontSize: 18,
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     body: {
         fontSize: 12,
         fontWeight: 400,
-        width: 245,
+        width: theme.direction === 'rtl' ? 215 : 245,
         [theme.breakpoints.up('md')]: {
             fontSize: 16,
             width: 320,
