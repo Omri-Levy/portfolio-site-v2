@@ -6,30 +6,30 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         [theme.breakpoints.down('xs')]: {
-            margin: '0 7px',
+            margin: '0 7px'
         }
     },
     fullName: {
-        width: '95vw',
+        width: 'calc(100vw - 10px)',
         marginBottom: 15,
         [theme.breakpoints.up('lg')]: {
             marginRight: 15,
             width: 395
-        },
+        }
     },
     email: {
-        width: '95vw',
+        width: 'calc(100vw - 10px)',
         marginBottom: 15,
         [theme.breakpoints.up('lg')]: {
             width: 479
-        },
+        }
     },
     message: {
-        width: '95vw',
+        width: 'calc(100vw - 10px)',
         fontSize: 11,
         [theme.breakpoints.up('lg')]: {
             width: 889
-        },
+        }
     },
     button: {
         width: 39,
