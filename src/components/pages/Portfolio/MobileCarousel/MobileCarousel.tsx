@@ -16,7 +16,7 @@ const MobileCarousel: React.FC<Props> = ({data, options}) => {
 
     return (
         <CarouselProvider
-            naturalSlideHeight={150}
+            naturalSlideHeight={165}
             naturalSlideWidth={100}
             totalSlides={3}
             isPlaying={true}

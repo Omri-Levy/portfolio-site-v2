@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 
     return (
         <AppBar className={classes.appBar}>
-            <Box className={classes.box}>
+            <Box className={classes.innerBox}>
                 <Logo/>
                 <Nav/>
             </Box>

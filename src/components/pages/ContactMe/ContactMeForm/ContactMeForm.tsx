@@ -106,8 +106,10 @@ const ContactMeForm: React.FC = () => {
                         />
                     </Grid>
                 </Grid>
-                <Grid container item direction={'column'}
-                      alignItems={'flex-end'}>
+                <Grid
+                    container
+                    item
+                >
                     <Grid item>
                         <TextField
                             name={'message'}
@@ -124,7 +126,12 @@ const ContactMeForm: React.FC = () => {
                             required
                         />
                     </Grid>
-                    <Grid item>
+                    <Grid
+                        container
+                        item
+                        direction={'column'}
+                        alignItems={'flex-end'}
+                    >
                         <SecondaryButton
                             type='submit'
                             text={'Send'}

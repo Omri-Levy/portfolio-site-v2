@@ -1,4 +1,3 @@
-import {DefaultTheme} from '@material-ui/core/styles';
 import {makeStyles} from '../../../deps';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
             padding: '0 37px'
         }
     },
-    box: {
+    innerBox: {
         display: 'flex',
         justifyContent: 'space-between',
-        ['@media (max-width: 350px)']: {
+        ['@media (max-width: 360px)']: {
             justifyContent: 'center'
         },
         margin: 0,

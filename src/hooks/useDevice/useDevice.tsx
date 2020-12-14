@@ -3,8 +3,8 @@ import {MediaQueries} from './types';
 
 const useDevice: MediaQueries = () => {
     const theme = useTheme();
-    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-    const isTablet = useMediaQuery(theme.breakpoints.up('sm'));
+    const isDesktop = useMediaQuery(theme.breakpoints.up('mlg'));
+    const isTablet = useMediaQuery(theme.breakpoints.up('ms'));
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const isIpadProWidth = useMediaQuery('(width: 1024px)');
     const isIpadProHeight = useMediaQuery('(height: 1366px)');

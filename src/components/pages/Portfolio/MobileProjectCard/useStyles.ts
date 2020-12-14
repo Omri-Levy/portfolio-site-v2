@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
                     maxHeight: 'unset'
                 },
                 [theme.breakpoints.down('xs')]: {
-                    minHeight: 230,
-                    maxHeight: 230
+                    minHeight: 235,
+                    maxHeight: 235
                 }
             },
             '&-dense': {
@@ -88,7 +88,11 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 'calc(50% - 24px)',
         right: theme.direction === 'rtl' ? 16 : 'unset',
-        left: theme.direction === 'rtl' ? 'unset' : 16
+        left: theme.direction === 'rtl' ? 'unset' : 16,
+        [theme.breakpoints.down('xs')]: {
+            right: theme.direction === 'rtl' ? 0 : 'unset',
+            left: theme.direction === 'rtl' ? 'unset' : 0,
+        },
     },
     carouselNextButton: {
         backgroundColor: 'transparent',
@@ -96,18 +100,29 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 'calc(50% - 24px)',
         right: theme.direction === 'rtl' ? 'unset' : 16,
-        left: theme.direction === 'rtl' ? 16 : 'unset'
+        left: theme.direction === 'rtl' ? 16 : 'unset',
+        [theme.breakpoints.down('xs')]: {
+            right: theme.direction === 'rtl' ? 'unset' : 0,
+            left: theme.direction === 'rtl' ? 0 : 'unset',
+        },
     },
     imageContainer: {
         position: 'relative',
         margin: 10,
         [theme.breakpoints.down('md')]: {
             margin: 5
-        }
+        },
+        [theme.breakpoints.down('xs')]: {
+            margin: 0,
+        },
     },
     image: {
         paddingLeft: 20,
-        paddingRight: 20
+        paddingRight: 20,
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft: 10,
+            paddingRight: 10
+        }
     },
     buttonsContainer: {
         display: 'flex',
@@ -115,6 +130,9 @@ const useStyles = makeStyles((theme) => ({
         margin: '20px 64px',
         [theme.breakpoints.down('md')]: {
             margin: '10px 64px'
+        },
+        [theme.breakpoints.down('xs')]: {
+            margin: '10px 24px'
         }
     },
     primaryButton: {

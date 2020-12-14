@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         margin: 0,
         marginRight: 36,
         padding: 0,
-        ['@media (max-width: 350px)']: {
+        ['@media (max-width: 360px)']: {
             display: 'none'
         }
     },
