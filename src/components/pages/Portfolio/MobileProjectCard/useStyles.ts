@@ -132,16 +132,12 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     primaryButton: {
-        width: 60,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
         padding: 4,
         textTransform: 'unset'
     },
     secondaryButton: {
-        width: 97,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
         padding: 4,

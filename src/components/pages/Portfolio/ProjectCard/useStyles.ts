@@ -78,32 +78,22 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     primaryButton: {
-        width: 60,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
-        padding: 4,
         textTransform: 'unset',
         [theme.breakpoints.up('md')]: {
             marginRight: 44,
             fontSize: 18,
-            width: 86,
             height: 32,
-            padding: '5px 4px'
         }
     },
     secondaryButton: {
-        width: 94,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
-        padding: 4,
         textTransform: 'unset',
         [theme.breakpoints.up('md')]: {
             fontSize: 18,
-            width: 140,
             height: 32,
-            padding: '5px 4px'
         }
     }
 }));

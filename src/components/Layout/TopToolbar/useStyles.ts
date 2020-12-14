@@ -18,18 +18,13 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     button: {
-        width: 78,
-        height: 24,
         borderRadius: 5,
-        padding: 5,
         fontSize: 11,
         fontWeight: 400,
         textTransform: 'unset',
         [theme.breakpoints.up('lg')]: {
-            width: 117,
-            height: 32,
             fontSize: 18,
-            padding: '5px 4px'
+            height: 32,
         }
     }
 }));
