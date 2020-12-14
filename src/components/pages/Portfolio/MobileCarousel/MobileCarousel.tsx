@@ -26,8 +26,10 @@ const MobileCarousel: React.FC<Props> = ({data, options}) => {
 
                     let correctedIndex = index;
 
-                    if (index > 2) {
-                        correctedIndex = 2;
+                    if (index < 0) {
+                        correctedIndex = 1;
+                    } else if (index > 3) {
+                        correctedIndex = 3;
                     }
 
                     return (
