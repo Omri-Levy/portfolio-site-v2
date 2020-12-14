@@ -104,6 +104,7 @@ const useMakeTheme: () => DefaultTheme = () => {
             MuiButton: {
                 containedPrimary: {
                     color: primaryTextColor,
+                    boxShadow: '0px 2px 4px #000',
                     border: `1px solid ${darken(primaryColor,
                         0.25)}`,
                     padding: 4,
