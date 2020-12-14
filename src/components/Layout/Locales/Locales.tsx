@@ -37,7 +37,10 @@ const Locales: React.FC<Props> = ({children}) => {
         // contact me form input fields
         email: useTranslations('אימייל', 'Email'),
         fullName: useTranslations('שם מלא', 'Full Name'),
-        message: useTranslations('הודעה', 'Message')
+        message: useTranslations('הודעה', 'Message'),
+
+        // contact me form send button
+        send: useTranslations('שלח','Send')
     };
 
     return (

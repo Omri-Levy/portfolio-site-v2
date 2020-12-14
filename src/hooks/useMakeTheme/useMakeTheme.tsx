@@ -55,6 +55,7 @@ const useMakeTheme: () => DefaultTheme = () => {
             MuiCssBaseline: {
                 '@global': {
                     body: {
+                        overflowX: 'hidden',
                         direction: isRTL ? 'rtl' : 'ltr'
                     }
                 }
