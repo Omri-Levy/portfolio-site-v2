@@ -24,6 +24,7 @@
     "gatsby-theme-material-ui": "^1.0.13",
     "gatsby-transformer-sharp": "^2.8.0",
     "gsap": "^3.5.1",
+    "jss-rtl": "^0.3.0",
     "pure-react-carousel": "^1.27.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

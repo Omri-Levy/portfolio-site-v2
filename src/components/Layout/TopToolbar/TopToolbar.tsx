@@ -10,7 +10,7 @@ const TopToolbar = () => {
     const classes = useStyles();
 
     return (
-        <Box className={classes.box}>
+        <Box className={classes.topToolbarContainer}>
             <ContactLinksContainer/>
             <SecondaryButton
                 text={'My Resume'}

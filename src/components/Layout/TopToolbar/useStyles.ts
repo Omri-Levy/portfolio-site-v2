@@ -1,8 +1,7 @@
-import {DefaultTheme} from '@material-ui/core/styles';
 import {makeStyles} from '../../../deps';
 
 const useStyles = makeStyles((theme) => ({
-    box: {
+    topToolbarContainer: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',

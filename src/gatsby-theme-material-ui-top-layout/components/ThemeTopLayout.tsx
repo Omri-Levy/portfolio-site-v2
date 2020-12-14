@@ -1,18 +1,24 @@
-import {createMuiTheme, CssBaseline} from '@material-ui/core';
-import {ThemeProvider} from '@material-ui/core/styles';
-import React, {useContext} from 'react';
-import ThemeContext from '../../context/ThemeContext/ThemeContext';
-import theme from '../theme';
+import {CssBaseline} from '@material-ui/core';
+import {
+    jssPreset,
+    StylesProvider,
+    ThemeProvider
+} from '@material-ui/core/styles';
+import {create} from 'jss';
+import rtl from 'jss-rtl';
+import React from 'react';
+import useMakeTheme from '../../hooks/useMakeTheme/useMakeTheme';
 
 const ThemeTopLayout: React.FC = ({children}) => {
-    const {isDarkMode, primaryColor} = useContext(ThemeContext);
-    const selectedTheme = createMuiTheme(theme(isDarkMode, primaryColor) as
-        any);
+    const selectedTheme = useMakeTheme();
+    const jss = create({plugins: [...jssPreset().plugins, rtl()]});
 
     return (
         <ThemeProvider theme={selectedTheme}>
             <CssBaseline>
-                {children}
+                <StylesProvider jss={jss}>
+                    {children}
+                </StylesProvider>
             </CssBaseline>
         </ThemeProvider>
     );

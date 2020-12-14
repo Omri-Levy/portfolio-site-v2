@@ -1,4 +1,4 @@
-import {Box, useMediaQuery} from '@material-ui/core';
+import {Box} from '@material-ui/core';
 import {React} from '../../deps';
 import useDevice from '../../hooks/useDevice/useDevice';
 import {BottomToolbar} from './BottomToolbar';
@@ -9,7 +9,6 @@ import {Head} from './Head';
 import {Header} from './Header';
 import {Language} from './Language';
 import {TopToolbar} from './TopToolbar';
-import './index.css';
 import {Props} from './types';
 import useStyles from './useStyles';
 

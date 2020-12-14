@@ -1,4 +1,7 @@
-import {darken} from '@material-ui/core';
+import {createMuiTheme, darken} from '@material-ui/core';
+import {DefaultTheme} from '@material-ui/styles';
+import React, {useContext} from 'react';
+import {ThemeContext} from '../../context/ThemeContext';
 import {
     backgroundColor,
     primaryContrastColor,
@@ -7,7 +10,10 @@ import {
     secondaryTextColor
 } from './colors';
 
-const theme = (isDarkMode: boolean, primaryColor: string) => ({
+const useMakeTheme: () => DefaultTheme = () => {
+    const {isDarkMode, primaryColor, isRTL} = useContext(ThemeContext);
+    const theme = {
+        direction: isRTL ? 'rtl' : 'ltr',
         breakpoints: {
             values: {
                 xs: 350,
@@ -19,15 +25,18 @@ const theme = (isDarkMode: boolean, primaryColor: string) => ({
         },
         palette: {
             background: {
-                default: isDarkMode ? backgroundColor : primaryContrastColor
+                default: isDarkMode ? backgroundColor
+                    : primaryContrastColor
             },
             text: {
                 main: isDarkMode ? primaryTextColor : secondaryTextColor,
-                secondary: isDarkMode ? secondaryTextColor : primaryTextColor
+                secondary: isDarkMode ? secondaryTextColor
+                    : primaryTextColor
             },
             primary: {
                 main: primaryColor,
-                secondary: isDarkMode ? backgroundColor : primaryContrastColor
+                secondary: isDarkMode ? backgroundColor
+                    : primaryContrastColor
             },
             secondary: {
                 main: primaryColor,
@@ -42,19 +51,26 @@ const theme = (isDarkMode: boolean, primaryColor: string) => ({
             }
         },
         overrides: {
+            MuiCssBaseline: {
+                '@global': {
+                    body: {
+                        direction: isRTL ? 'rtl' : 'ltr'
+                    }
+                }
+            },
             MuiFilledInput: {
                 root: {
                     backgroundColor: isDarkMode ? secondaryContrastColor :
-                    primaryTextColor,
+                        primaryTextColor,
                     '&$focused': {
-                        backgroundColor: isDarkMode ? secondaryContrastColor :
-                            primaryTextColor
+                        backgroundColor: isDarkMode
+                            ? secondaryContrastColor : primaryTextColor
                     }
                 },
                 underline: {
                     '&:hover': {
-                        backgroundColor: isDarkMode ? secondaryContrastColor :
-                            primaryTextColor
+                        backgroundColor: isDarkMode
+                            ? secondaryContrastColor : primaryTextColor
                     }
                 }
             },
@@ -76,8 +92,8 @@ const theme = (isDarkMode: boolean, primaryColor: string) => ({
                 },
                 colorSecondary: {
                     '&$checked + $track': {
-                        backgroundColor: isDarkMode ? primaryContrastColor :
-                            secondaryContrastColor
+                        backgroundColor: isDarkMode
+                            ? primaryContrastColor : secondaryContrastColor
                     }
                 }
             },
@@ -85,7 +101,7 @@ const theme = (isDarkMode: boolean, primaryColor: string) => ({
                 containedPrimary: {
                     color: primaryTextColor,
                     boxShadow: '0px 4px 4px #000',
-                    border: `1px solid ${darken(primaryColor, 
+                    border: `1px solid ${darken(primaryColor,
                         0.25)}`,
                     padding: 5,
                     borderRadius: 3
@@ -113,10 +129,14 @@ const theme = (isDarkMode: boolean, primaryColor: string) => ({
                 color: isDarkMode ? primaryTextColor : secondaryTextColor
             },
             h2: {
-                color: primaryColor,
+                color: primaryColor
             }
         }
-    }
-);
+    };
 
-export default theme;
+    // @ts-ignore
+    return createMuiTheme(theme);
+};
+
+export default useMakeTheme;
+
