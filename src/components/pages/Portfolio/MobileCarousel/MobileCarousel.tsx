@@ -10,6 +10,9 @@ import {Props} from './types';
 const MobileCarousel: React.FC<Props> = ({data, options}) => {
     const {isRTL} = useContext(ThemeContext);
     const locale = isRTL ? 'he' : 'en-US';
+    const filteredData = data.allContentfulProject.edges.filter((project) => (
+        project.node.node_locale === locale
+    ));
 
     return (
         <CarouselProvider
@@ -19,32 +22,18 @@ const MobileCarousel: React.FC<Props> = ({data, options}) => {
             isPlaying={true}
         >
             <Slider>
-                {data.allContentfulProject.edges.map((project, index) => {
-                    if (project.node.node_locale !== locale) {
-                        return;
-                    }
-
-                    let correctedIndex = index;
-
-                    if (index < 0) {
-                        correctedIndex = 1;
-                    } else if (index > 3) {
-                        correctedIndex = 3;
-                    }
-
-                    return (
-                        <MobileProjectCard
-                            key={v4()}
-                            liveSite={project.node.liveSiteUrl}
-                            gitRepository={project.node.gitRepositoryUrl}
-                            index={correctedIndex}
-                            title={project.node.title}
-                            body={JSON.parse(project.node.body.raw)}
-                            projectGif={project.node.projectGif.file.url}
-                            options={options}
-                        />
-                    );
-                })
+                {filteredData.map((project, index) => (
+                    <MobileProjectCard
+                        key={v4()}
+                        liveSite={project.node.liveSiteUrl}
+                        gitRepository={project.node.gitRepositoryUrl}
+                        index={index}
+                        title={project.node.title}
+                        body={JSON.parse(project.node.body.raw)}
+                        projectGif={project.node.projectGif.file.url}
+                        options={options}
+                    />
+                ))
                 }
             </Slider>
         </CarouselProvider>

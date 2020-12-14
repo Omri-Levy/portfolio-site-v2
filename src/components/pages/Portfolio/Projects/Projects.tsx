@@ -8,26 +8,23 @@ import {Props} from './types';
 const Projects: React.FC<Props> = ({data, options}) => {
     const {isRTL} = useContext(ThemeContext);
     const locale = isRTL ? 'he' : 'en-US';
+    const filteredData = data.allContentfulProject.edges.filter((project) => (
+        project.node.node_locale === locale
+    ));
 
     return (
         <>
-            {data.allContentfulProject.edges.map((project) => {
-                if (project.node.node_locale !== locale) {
-                    return;
-                }
-
-                return (
-                    <ProjectCard
-                        key={v4()}
-                        liveSiteUrl={project.node.liveSiteUrl}
-                        gitRepositoryUrl={project.node.gitRepositoryUrl}
-                        title={project.node.title}
-                        body={JSON.parse(project.node.body.raw)}
-                        options={options}
-                        projectGif={project.node.projectGif.file.url}
-                    />
-                );
-            })}
+            {filteredData.map((project) => (
+                <ProjectCard
+                    key={v4()}
+                    liveSiteUrl={project.node.liveSiteUrl}
+                    gitRepositoryUrl={project.node.gitRepositoryUrl}
+                    title={project.node.title}
+                    body={JSON.parse(project.node.body.raw)}
+                    options={options}
+                    projectGif={project.node.projectGif.file.url}
+                />
+            ))}
         </>
     );
 };
