@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItemText': {
             '&-root': {
                 marginTop: 0,
-                marginBottom: 0,
+                marginBottom: 0
             },
             '&-primary': {
                 color: theme.palette.text.main,
@@ -87,24 +87,20 @@ const useStyles = makeStyles((theme) => ({
         border: 'none',
         position: 'absolute',
         top: 'calc(50% - 24px)',
-        right: theme.direction === 'rtl' ? 16 : 'unset',
-        left: theme.direction === 'rtl' ? 'unset' : 16,
+        left: 16,
         [theme.breakpoints.down('xs')]: {
-            right: theme.direction === 'rtl' ? 0 : 'unset',
-            left: theme.direction === 'rtl' ? 'unset' : 0,
-        },
+            left: 0
+        }
     },
     carouselNextButton: {
         backgroundColor: 'transparent',
         border: 'none',
         position: 'absolute',
         top: 'calc(50% - 24px)',
-        right: theme.direction === 'rtl' ? 'unset' : 16,
-        left: theme.direction === 'rtl' ? 16 : 'unset',
+        right: 16,
         [theme.breakpoints.down('xs')]: {
-            right: theme.direction === 'rtl' ? 'unset' : 0,
-            left: theme.direction === 'rtl' ? 0 : 'unset',
-        },
+            right: 0
+        }
     },
     imageContainer: {
         position: 'relative',
@@ -113,8 +109,8 @@ const useStyles = makeStyles((theme) => ({
             margin: 5
         },
         [theme.breakpoints.down('xs')]: {
-            margin: 0,
-        },
+            margin: 0
+        }
     },
     image: {
         paddingLeft: 20,

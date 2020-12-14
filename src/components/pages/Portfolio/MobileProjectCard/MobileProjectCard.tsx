@@ -5,7 +5,8 @@ import {
     KeyboardArrowRightOutlined
 } from '@material-ui/icons';
 import {ButtonBack, ButtonNext, Image, Slide} from 'pure-react-carousel';
-import {React} from '../../../../deps';
+import {React, useTheme} from '../../../../deps';
+import {RTLOrLTRComponent} from '../../../LeftOrRight';
 import {PrimaryButton} from '../../../PrimaryButton';
 import {SecondaryButton} from '../../../SecondaryButton';
 import {Props} from './types';
@@ -13,10 +14,13 @@ import useStyles from './useStyles';
 
 const MobileProjectCard: React.FC<Props> = (props) => {
     const classes = useStyles();
+    const theme = useTheme();
 
     return (
         <Slide index={props.index}>
-            <Box className={classes.slideInnerBox}>
+            <Box className={classes.slideInnerBox}
+                 dir={theme.direction}
+            >
                 <Box className={classes.innerBox}>
                     <Typography variant={'h2'} className={classes.title}>
                         {props.title}
@@ -25,8 +29,17 @@ const MobileProjectCard: React.FC<Props> = (props) => {
                 </Box>
                 <Box className={classes.imageContainer}>
                     <ButtonBack className={classes.carouselBackButton}>
-                        <KeyboardArrowLeftOutlined
-                            className={classes.icon}
+                        <RTLOrLTRComponent
+                            RTLComponent={(
+                                <KeyboardArrowRightOutlined
+                                    className={classes.icon}
+                                />
+                            )}
+                            LTRComponent={(
+                                <KeyboardArrowLeftOutlined
+                                    className={classes.icon}
+                                />
+                            )}
                         />
                     </ButtonBack>
                     <Image
@@ -36,8 +49,18 @@ const MobileProjectCard: React.FC<Props> = (props) => {
                         className={classes.image}
                     />
                     <ButtonNext className={classes.carouselNextButton}>
-                        <KeyboardArrowRightOutlined
-                            className={classes.icon}/>
+                        <RTLOrLTRComponent
+                            RTLComponent={(
+                                <KeyboardArrowLeftOutlined
+                                    className={classes.icon}
+                                />
+                            )}
+                            LTRComponent={(
+                                <KeyboardArrowRightOutlined
+                                    className={classes.icon}
+                                />
+                            )}
+                        />
                     </ButtonNext>
                 </Box>
                 <Box className={classes.buttonsContainer}>
