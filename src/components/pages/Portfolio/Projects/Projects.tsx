@@ -7,13 +7,13 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 
 const Projects: React.FunctionComponent<ProjectsContainerProps> = (
     {
-        data,
+        allProjects,
         options
     }
 ) => {
     const {isRTL} = useContext(ThemeContext);
     const locale = isRTL ? 'he' : 'en-US';
-    const filteredData = data.allContentfulProject.edges.filter((project) => (
+    const filteredData = allProjects.edges.filter((project) => (
         project.node.node_locale === locale
     ));
 

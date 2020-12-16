@@ -17,30 +17,30 @@ interface ButtonProps {
     type?: string;
 }
 
-interface ProjectsContainerProps {
-    data: {
-        allContentfulProject: {
-            edges: [
-                {
-                    node: {
-                        node_locale: string;
-                        title: string;
-                        subtitle: string;
-                        body: {
-                            raw: string;
-                        };
-                        projectGif: {
-                            file: {
-                                url: string;
-                            }
-                        };
-                        liveSiteUrl: string;
-                        gitRepositoryUrl: string;
+type Data = {
+    edges: [
+        {
+            node: {
+                node_locale: string;
+                title: string;
+                subtitle: string;
+                body: {
+                    raw: string;
+                };
+                projectGif: {
+                    file: {
+                        url: string;
                     }
-                }
-            ]
+                };
+                liveSiteUrl: string;
+                gitRepositoryUrl: string;
+            }
         }
-    };
+    ]
+}
+
+interface ProjectsContainerProps {
+    allProjects: Data;
     options: object;
 }
 
@@ -66,4 +66,5 @@ export {
     ClassNameProps,
     Breakpoint,
     Direction,
+    Data
 };

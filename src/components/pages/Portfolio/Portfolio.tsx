@@ -7,10 +7,10 @@ import {
     ListItemText
 } from '@material-ui/core';
 import {FiberManualRecord, WorkOutline} from '@material-ui/icons';
+import useAllProjects from 'src/components/pages/Portfolio/useAllProjects';
 import {React} from 'src/deps';
 import useDevice from 'src/hooks/useDevice/useDevice';
 import {PageTitle} from '../../PageTitle';
-import allContentfulProject from './allContentfulProject';
 import MobileCarousel from './MobileCarousel/MobileCarousel';
 import {Projects} from './Projects';
 import {Node} from './types';
@@ -19,7 +19,7 @@ import useStyles from './useStyles';
 const Portfolio: React.FunctionComponent = () => {
     const classes = useStyles();
     const {isMobile, isIpadProWidth, isIpadProHeight} = useDevice();
-    const data = allContentfulProject();
+    const {allProjects} = useAllProjects();
 
     const options = {
         renderNode: {
@@ -64,11 +64,11 @@ const Portfolio: React.FunctionComponent = () => {
             >
                 {isMobile && !(isIpadProHeight && isIpadProWidth)
                     ? <MobileCarousel
-                        data={data}
+                        allProjects={allProjects}
                         options={options}
                     />
                     : <Projects
-                        data={data}
+                        allProjects={allProjects}
                         options={options}
                     />
                 }
