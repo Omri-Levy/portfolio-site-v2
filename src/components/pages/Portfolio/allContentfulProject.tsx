@@ -1,7 +1,7 @@
 import {graphql, useStaticQuery} from 'gatsby';
-import {React} from 'src/deps';
+import {HookReturns} from './types';
 
-const allContentfulProject: React.FunctionComponent = () => (
+const allContentfulProject: HookReturns = () => (
 	useStaticQuery(
         graphql`
             query allContentfulProject {

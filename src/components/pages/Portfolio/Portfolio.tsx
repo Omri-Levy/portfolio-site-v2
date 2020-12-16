@@ -13,7 +13,7 @@ import {PageTitle} from '../../PageTitle';
 import allContentfulProject from './allContentfulProject';
 import MobileCarousel from './MobileCarousel/MobileCarousel';
 import {Projects} from './Projects';
-import {Children, Node} from './types';
+import {Node} from './types';
 import useStyles from './useStyles';
 
 const Portfolio: React.FunctionComponent = () => {
@@ -23,15 +23,17 @@ const Portfolio: React.FunctionComponent = () => {
 
     const options = {
         renderNode: {
-            [BLOCKS.UL_LIST]: (node: Node, children: Children) => (
+            [BLOCKS.UL_LIST]: (node: Node, children: React.ReactNode) => (
                 <List>
                     {children}
                 </List>
             ),
-            [BLOCKS.LIST_ITEM]: (node: Node, children: Children) => (
-                <ListItem divider>{children}</ListItem>
+            [BLOCKS.LIST_ITEM]: (node: Node, children: React.ReactNode) => (
+                <ListItem divider>
+                    {children}
+                </ListItem>
             ),
-            [BLOCKS.PARAGRAPH]: (node: Node, children: Children) => {
+            [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => {
                 if (!node.content[0].value) return;
 
                 return (
@@ -39,7 +41,9 @@ const Portfolio: React.FunctionComponent = () => {
                         <ListItemIcon>
                             <FiberManualRecord/>
                         </ListItemIcon>
-                        <ListItemText>{children}</ListItemText>
+                        <ListItemText>
+                            {children}
+                        </ListItemText>
                     </>
                 );
             }
