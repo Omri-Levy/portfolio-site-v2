@@ -3,7 +3,7 @@ import {makeStyles} from 'src/deps';
 const useStyles = makeStyles((theme) => ({
     topToolbarContainer: {
         display: 'flex',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'center',
         width: '100%',
         top: 0,
