@@ -2,14 +2,15 @@ import {Box, IconButton, Menu, MenuItem} from '@material-ui/core';
 import {LanguageOutlined} from '@material-ui/icons';
 import {ThemeContext} from 'src/context/ThemeContext';
 import {React, useContext, useState} from 'src/deps';
-import {AnchorOrButtonEvent} from './types';
+import {AnchorOrButtonEvent, EventCurrentTarget} from './types';
 import useStyles from './useStyles';
 
 const LanguageMenu: React.FunctionComponent = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = useState<EventCurrentTarget | null>(
+        null);
     const {setIsRTL} = useContext(ThemeContext);
     const handleClick = (event: AnchorOrButtonEvent) => {
-        setAnchorEl(event.currentTarget as any);
+        setAnchorEl(event.currentTarget);
     };
     const handleClose = () => setAnchorEl(null);
     const classes = useStyles();
