@@ -1,4 +1,5 @@
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     logoContainer: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#000',
         fontSize: 13,
         fontWeight: 700,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 16
         }
     },
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         padding: 0,
         margin: 0,
         marginTop: -5,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 14
         }
     }

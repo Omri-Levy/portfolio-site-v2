@@ -1,4 +1,5 @@
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     mainContainer: {
@@ -8,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             textAlign: 'left',
         },
         padding: 0,

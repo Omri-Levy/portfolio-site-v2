@@ -1,4 +1,5 @@
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     topToolbarContainer: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'fixed',
         padding: '0 20px',
         height: 59,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             top: 118
         }
     },
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 11,
         fontWeight: 400,
         textTransform: 'unset',
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             fontSize: 18,
             height: 32
         }

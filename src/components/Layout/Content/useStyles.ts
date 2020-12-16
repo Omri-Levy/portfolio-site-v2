@@ -1,8 +1,9 @@
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     content: {
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             width: 1000,
             display: 'flex',
             flexDirection: 'column',

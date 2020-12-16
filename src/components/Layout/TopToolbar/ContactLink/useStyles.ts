@@ -1,22 +1,23 @@
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     button: {
         padding: 0,
         paddingRight: 13,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             paddingRight: 37
-        },
+        }
     },
     link: {
         padding: 0,
-        margin: 0,
+        margin: 0
     },
     icon: {
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             width: 48,
             height: 48
-        },
+        }
     }
 }));
 

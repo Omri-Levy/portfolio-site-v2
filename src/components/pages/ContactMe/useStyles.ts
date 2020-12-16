@@ -4,7 +4,7 @@ import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 const useStyles = makeStyles((theme) => ({
     contactMeContainer: {
         height: '100vh',
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             width: '90%'
         },
         '& h1': {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             alignItems: 'flex-start',
             flexDirection: 'row'
         }

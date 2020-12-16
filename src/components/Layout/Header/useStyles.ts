@@ -1,4 +1,5 @@
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -9,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
         margin: 0,
         height: 59,
         padding: '0 19px',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             top: 0,
             padding: '0 37px'
         }

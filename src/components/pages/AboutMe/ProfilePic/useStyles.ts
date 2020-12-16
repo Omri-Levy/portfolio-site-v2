@@ -1,4 +1,5 @@
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     profilePic: {
@@ -7,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 13,
         width: 124,
         height: 124,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             width: 180,
             height: 180,
             float: 'right',

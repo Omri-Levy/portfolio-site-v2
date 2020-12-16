@@ -1,5 +1,6 @@
 import {fade} from '@material-ui/core';
 import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -9,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
     },
     projectCardContainer: {
         marginBottom: 53,
-        [theme.breakpoints.up('md')]: {
+
+        [getCustomBreakpoints('md', theme, 'up')]: {
             marginBottom: 30
         }
     },
@@ -42,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
                 fontWeight: 400,
                 minWidth: 335,
                 maxWidth: 335,
-                [theme.breakpoints.up('md')]: {
+                [getCustomBreakpoints('md', theme, 'up')
+                    ]: {
                     fontSize: 16
                 }
             }
@@ -52,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 16,
         fontWeight: 500,
         marginBottom: 26,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 24
         }
     },
@@ -62,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     image: {
         paddingLeft: 20,
         paddingRight: 20,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             width: 500,
             height: 240,
             marginLeft: 130
@@ -72,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         margin: '20px 64px',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             margin: '24px 0',
             justifyContent: 'flex-start'
         }
@@ -81,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 12,
         fontWeight: 500,
         textTransform: 'unset',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             marginRight: 44,
             fontSize: 18,
             height: 32,
@@ -91,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 12,
         fontWeight: 500,
         textTransform: 'unset',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 18,
             height: 32,
         }
