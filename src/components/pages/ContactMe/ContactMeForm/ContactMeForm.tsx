@@ -1,5 +1,5 @@
 import {yupResolver} from '@hookform/resolvers/yup';
-import {Box, Grid, TextField, useMediaQuery} from '@material-ui/core';
+import {Box, Grid, TextField} from '@material-ui/core';
 import {init, send} from 'emailjs-com';
 import {useForm} from 'react-hook-form';
 import {React, useTheme} from 'src/deps';
@@ -22,7 +22,7 @@ const ContactMeForm: React.FunctionComponent = () => {
     const inputProps = {
         style: {
             color: theme.palette.text.primary,
-            backgroundColor: theme.palette.accent.primary,
+            backgroundColor: theme.palette.primary.accent,
             borderRadius: 5,
             fontSize: isDesktop ? 13 : 11
         },

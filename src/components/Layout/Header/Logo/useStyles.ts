@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 11,
         fontWeight: 500,
         display: 'block',
-        color: theme.palette.accent.primary,
+        color: theme.palette.primary.accent,
         padding: 0,
         margin: 0,
         marginTop: -5,

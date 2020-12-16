@@ -41,14 +41,13 @@ const useMakeTheme: () => DefaultTheme = () => {
             primary: {
                 main: primaryColor,
                 secondary: isDarkMode ? backgroundColor
-                    : primaryContrastColor
+                    : primaryContrastColor,
+                accent: isDarkMode ? secondaryContrastColor
+                    : primaryTextColor
             },
             secondary: {
                 main: primaryColor,
                 secondary: '#fff'
-            },
-            accent: {
-                primary: secondaryContrastColor
             },
             contrast: {
                 primary: isDarkMode ? primaryContrastColor :
@@ -69,14 +68,14 @@ const useMakeTheme: () => DefaultTheme = () => {
                     backgroundColor: isDarkMode ? secondaryContrastColor :
                         primaryTextColor,
                     '&$focused': {
-                        backgroundColor: isDarkMode
-                            ? secondaryContrastColor : primaryTextColor
+                        backgroundColor: isDarkMode ? secondaryContrastColor :
+                            primaryTextColor
                     }
                 },
                 underline: {
                     '&:hover': {
-                        backgroundColor: isDarkMode
-                            ? secondaryContrastColor : primaryTextColor
+                        backgroundColor: isDarkMode ? secondaryContrastColor :
+                            primaryTextColor
                     }
                 }
             },
