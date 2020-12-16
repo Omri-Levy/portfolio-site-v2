@@ -39,19 +39,46 @@ type Data = {
     ]
 }
 
+type DataResponse = {
+    allProjects: {
+        edges: [
+            {
+                node: {
+                    node_locale: string;
+                    title: string;
+                    subtitle: string;
+                    body: {
+                        raw: string;
+                    };
+                    projectGif: {
+                        file: {
+                            url: string;
+                        }
+                    };
+                    liveSiteUrl: string;
+                    gitRepositoryUrl: string;
+                }
+            }
+        ]
+    }
+}
+
 interface ProjectsContainerProps {
     allProjects: Data;
     options: object;
 }
 
 interface ProjectProps {
-    index: number;
     title: string;
     body: Document;
     projectGif: string;
     liveSiteUrl: string;
     gitRepositoryUrl: string;
     options: object;
+}
+
+interface MobileProjectProps extends ProjectProps {
+    index: number;
 }
 
 type Breakpoint = 'xs' | 'sm' | 'ms' | 'md' | 'mlg' | 'lg' | 'xl'
@@ -66,5 +93,7 @@ export {
     ClassNameProps,
     Breakpoint,
     Direction,
-    Data
+    Data,
+    DataResponse,
+    MobileProjectProps
 };

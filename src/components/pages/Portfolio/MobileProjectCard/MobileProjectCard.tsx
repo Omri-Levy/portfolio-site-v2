@@ -9,10 +9,12 @@ import {PrimaryButton} from 'src/components/PrimaryButton';
 import {SecondaryButton} from 'src/components/SecondaryButton';
 import {React, useTheme} from 'src/deps';
 import {useRTLOrLTRComponent} from 'src/hooks/useRTLOrLTRComponent';
-import {ProjectProps} from 'src/utils/types';
+import {MobileProjectProps} from 'src/utils/types';
 import useStyles from './useStyles';
 
-const MobileProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
+const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
+    props
+) => {
     const classes = useStyles();
     const theme = useTheme();
     const backButton = useRTLOrLTRComponent(

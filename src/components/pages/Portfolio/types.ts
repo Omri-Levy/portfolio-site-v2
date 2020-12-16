@@ -1,7 +1,7 @@
-import {Data} from 'src/utils/types';
+import {DataResponse} from 'src/utils/types';
 
 type Node = { content: { value: any; }[]; };
-type HookReturns = () => Data;
+type HookReturns = () => DataResponse;
 
 export {
     Node,
