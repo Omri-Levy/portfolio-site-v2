@@ -7,47 +7,31 @@ import {
     ListItemText
 } from '@material-ui/core';
 import {FiberManualRecord, WorkOutline} from '@material-ui/icons';
-import {graphql, useStaticQuery} from 'gatsby';
-import {React} from '../../../deps';
-import useDevice from '../../../hooks/useDevice/useDevice';
+import {React} from 'src/deps';
+import useDevice from 'src/hooks/useDevice/useDevice';
 import {PageTitle} from '../../PageTitle';
+import allContentfulProject from './allContentfulProject';
 import MobileCarousel from './MobileCarousel/MobileCarousel';
 import {Projects} from './Projects';
+import {Children, Node} from './types';
 import useStyles from './useStyles';
 
-const Portfolio: React.FC = () => {
+const Portfolio: React.FunctionComponent = () => {
     const classes = useStyles();
     const {isMobile, isIpadProWidth, isIpadProHeight} = useDevice();
-	const data = useStaticQuery(graphql`
-        query {
-            allContentfulProject {
-                edges {
-                    node {
-                        node_locale
-                        title
-                        body {
-                            raw
-                        }
-                        projectGif {
-                            file {
-                                url
-                            }
-                        }
-                        liveSiteUrl
-                        gitRepositoryUrl
-                    }
-                }
-            }
-        }
-    `);
+    const data = allContentfulProject();
 
     const options = {
         renderNode: {
-            [BLOCKS.UL_LIST]: (node, children) => <List>{children}</List>,
-            [BLOCKS.LIST_ITEM]: (node, children) => (
+            [BLOCKS.UL_LIST]: (node: Node, children: Children) => (
+                <List>
+                    {children}
+                </List>
+            ),
+            [BLOCKS.LIST_ITEM]: (node: Node, children: Children) => (
                 <ListItem divider>{children}</ListItem>
             ),
-            [BLOCKS.PARAGRAPH]: (node, children) => {
+            [BLOCKS.PARAGRAPH]: (node: Node, children: Children) => {
                 if (!node.content[0].value) return;
 
                 return (

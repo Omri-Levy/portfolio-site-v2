@@ -1,19 +1,19 @@
 import {Button} from 'gatsby-theme-material-ui';
-import {React} from '../../deps';
+import {React} from 'src/deps';
+import {ButtonProps} from 'src/utils/types';
 import {TranslateText} from '../TranslateText';
-import {Props} from './types';
 
-const PrimaryButton: React.FC<Props> = ({text, className, to}) => {
+const PrimaryButton: React.FunctionComponent<ButtonProps> = (props) => {
     return (
         <Button
-            to={to ?? undefined}
+            to={props.to ?? undefined}
             //@ts-ignore
-            target={to ?? '_blank'}
+            target={props.to ?? '_blank'}
             variant={'contained'}
             color={'primary'}
-            className={className}
+            {...props}
         >
-            <TranslateText text={text}/>
+            <TranslateText text={props.text}/>
         </Button>
     );
 };

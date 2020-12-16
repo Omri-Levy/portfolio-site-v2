@@ -1,10 +1,10 @@
 import {Box, Typography} from '@material-ui/core';
 import {AnchorLink} from 'gatsby-plugin-anchor-links';
-import {React} from '../../../../deps';
-import {TranslateText} from '../../../TranslateText';
+import {React} from 'src/deps';
+import {TranslateText} from 'src/components/TranslateText';
 import useStyles from './useStyles';
 
-const Logo: React.FC = () => {
+const Logo: React.FunctionComponent = () => {
     const classes = useStyles();
 
     return (

@@ -1,16 +1,21 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     bottomToolbarContainer: {
-        width: '100vw',
+        width: '100%',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         position: 'fixed',
         height: 59,
         bottom: 59,
         left: 0,
-        [theme.breakpoints.up('md')]: {
+        right: 0,
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            justifyContent: 'center'
+        },
+        [getCustomBreakpoints('md', theme, 'up')]: {
             bottom: 0
         }
     },

@@ -1,10 +1,10 @@
 import {IntlProvider} from 'react-intl';
-import {ThemeContext} from '../../../context/ThemeContext';
-import {React, useContext} from '../../../deps';
-import {useTranslations} from '../../../hooks/useTranslations';
-import {Props} from './types';
+import {ThemeContext} from 'src/context/ThemeContext';
+import {React, useContext} from 'src/deps';
+import {useTranslations} from 'src/hooks/useTranslations';
+import {ChildrenProps} from 'src/utils/types';
 
-const Locales: React.FC<Props> = ({children}) => {
+const Locales: React.FunctionComponent<ChildrenProps> = ({children}) => {
     const {isRTL} = useContext(ThemeContext);
     const messages = {
         // page titles and links
@@ -40,7 +40,7 @@ const Locales: React.FC<Props> = ({children}) => {
         message: useTranslations('הודעה', 'Message'),
 
         // contact me form send button
-        send: useTranslations('שלח','Send')
+        send: useTranslations('שלח', 'Send')
     };
 
     return (

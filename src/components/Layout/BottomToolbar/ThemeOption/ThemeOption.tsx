@@ -1,15 +1,16 @@
 import {IconButton} from '@material-ui/core';
 import {FiberManualRecord} from '@material-ui/icons';
 import {useContext} from 'react';
-import {ThemeContext} from '../../../../context/ThemeContext';
-import {React} from '../../../../deps';
+import {React} from 'src/deps';
+import {ThemeContext} from 'src/context/ThemeContext';
 import {Props} from './types';
 import useStyles from './useStyles';
 
-const ThemeOption: React.FC<Props> = ({color}) => {
+
+const ThemeOption: React.FunctionComponent<Props> = ({color}) => {
     const classes = useStyles();
     const {setPrimaryColor} = useContext(ThemeContext);
-    const handleClick = () => setPrimaryColor(color!);
+    const handleClick = () => setPrimaryColor(color);
 
     return (
         <IconButton

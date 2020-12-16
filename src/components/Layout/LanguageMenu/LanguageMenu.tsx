@@ -1,10 +1,10 @@
 import {Box, IconButton, Menu, MenuItem} from '@material-ui/core';
 import {LanguageOutlined} from '@material-ui/icons';
-import {ThemeContext} from '../../../context/ThemeContext';
-import {React, useContext, useState} from '../../../deps';
+import {ThemeContext} from 'src/context/ThemeContext';
+import {React, useContext, useState} from 'src/deps';
 import useStyles from './useStyles';
 
-const LanguageMenu: React.FC = () => {
+const LanguageMenu: React.FunctionComponent = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const {setIsRTL} = useContext(ThemeContext);
     const handleClick = (event: Event) => {
@@ -18,7 +18,7 @@ const LanguageMenu: React.FC = () => {
     };
 
     return (
-        <Box className={classes.languageContainer}>
+        <Box>
             <IconButton onClick={(event) => handleClick(event as any)}>
                 <LanguageOutlined/>
             </IconButton>

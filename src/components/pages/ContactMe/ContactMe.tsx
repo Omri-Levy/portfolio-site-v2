@@ -5,12 +5,12 @@ import {
     PermContactCalendarOutlined
 } from '@material-ui/icons';
 import {IconButton} from 'gatsby-theme-material-ui';
-import {React} from '../../../deps';
+import {React} from 'src/deps';
 import {PageTitle} from '../../PageTitle';
 import {ContactMeForm} from './ContactMeForm';
 import useStyles from './useStyles';
 
-const ContactMe: React.FC = () => {
+const ContactMe: React.FunctionComponent = () => {
     const classes = useStyles();
 
     return (

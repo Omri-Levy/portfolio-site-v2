@@ -1,20 +1,19 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from 'src/deps';
 
 const useStyles = makeStyles((theme) => ({
     topToolbarContainer: {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         alignItems: 'center',
-        width: 'calc(100vw - 40px)',
+        width: '100%',
         top: 0,
         left: 0,
+        right: 0,
         position: 'fixed',
-        margin: '0 20px',
+        padding: '0 20px',
         height: 59,
         [theme.breakpoints.up('lg')]: {
-            top: 108,
-            margin: '0 37px',
-            width: 'calc(100vw - 74px)'
+            top: 118
         }
     },
     button: {
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'unset',
         [theme.breakpoints.up('lg')]: {
             fontSize: 18,
-            height: 32,
+            height: 32
         }
     }
 }));

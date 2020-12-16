@@ -1,9 +1,10 @@
 import {fade} from '@material-ui/core';
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     icon: {
-        color: theme.palette.contrast.main,
+        color: theme.palette.contrast.primary,
         width: 48,
         height: 48
     },
@@ -19,11 +20,13 @@ const useStyles = makeStyles((theme) => ({
                 padding: 0,
                 minHeight: 200,
                 maxHeight: 200,
-                [theme.breakpoints.up('lg')]: {
+                [getCustomBreakpoints('lg', theme, 'up')
+                    ]: {
                     minHeight: 'unset',
                     maxHeight: 'unset'
                 },
-                [theme.breakpoints.down('xs')]: {
+                [getCustomBreakpoints('xs', theme, 'down'
+                )]: {
                     minHeight: 235,
                     maxHeight: 235
                 }
@@ -35,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItem': {
             '&-divider': {
                 borderBottom: `1px solid ${fade(
-                    theme.palette.contrast.main, 0.12)}`
+                    theme.palette.contrast.primary, 0.12)}`
             },
             '&-gutters': {
                 paddingLeft: 0,
@@ -55,15 +58,17 @@ const useStyles = makeStyles((theme) => ({
                 marginBottom: 0
             },
             '&-primary': {
-                color: theme.palette.text.main,
+                color: theme.palette.text.primary,
                 fontSize: 12,
                 fontWeight: 400,
                 minWidth: 335,
                 maxWidth: 335,
-                [theme.breakpoints.up('lg')]: {
+                [getCustomBreakpoints('lg', theme, 'up')
+                    ]: {
                     fontSize: 16
                 },
-                [theme.breakpoints.down('md')]: {
+                [getCustomBreakpoints('md', theme, 'down'
+                )]: {
                     minWidth: '85vw',
                     maxWidth: '85vw'
                 }
@@ -88,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 'calc(50% - 24px)',
         left: 16,
-        [theme.breakpoints.down('xs')]: {
+        [getCustomBreakpoints('xs', theme, 'down')]: {
             left: 0
         }
     },
@@ -98,24 +103,24 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 'calc(50% - 24px)',
         right: 16,
-        [theme.breakpoints.down('xs')]: {
+        [getCustomBreakpoints('xs', theme, 'down')]: {
             right: 0
         }
     },
     imageContainer: {
         position: 'relative',
         margin: 10,
-        [theme.breakpoints.down('md')]: {
+        [getCustomBreakpoints('md', theme, 'down')]: {
             margin: 5
         },
-        [theme.breakpoints.down('xs')]: {
+        [getCustomBreakpoints('xs', theme, 'down')]: {
             margin: 0
         }
     },
     image: {
         paddingLeft: 20,
         paddingRight: 20,
-        [theme.breakpoints.down('xs')]: {
+        [getCustomBreakpoints('xs', theme, 'down')]: {
             paddingLeft: 10,
             paddingRight: 10
         }
@@ -124,10 +129,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         margin: '20px 64px',
-        [theme.breakpoints.down('md')]: {
+        [getCustomBreakpoints('md', theme, 'down')]: {
             margin: '10px 64px'
         },
-        [theme.breakpoints.down('xs')]: {
+        [getCustomBreakpoints('xs', theme, 'down')]: {
             margin: '10px 24px'
         }
     },

@@ -1,11 +1,16 @@
 import React from 'react';
+import {ThemeContext} from 'src/context/ThemeContext';
+import {useContext} from 'src/deps';
+import {ProjectsContainerProps} from 'src/utils/types';
 import {v4} from 'uuid';
-import {ThemeContext} from '../../../../context/ThemeContext';
-import {useContext} from '../../../../deps';
 import ProjectCard from '../ProjectCard/ProjectCard';
-import {Props} from './types';
 
-const Projects: React.FC<Props> = ({data, options}) => {
+const Projects: React.FunctionComponent<ProjectsContainerProps> = (
+    {
+        data,
+        options
+    }
+) => {
     const {isRTL} = useContext(ThemeContext);
     const locale = isRTL ? 'he' : 'en-US';
     const filteredData = data.allContentfulProject.edges.filter((project) => (

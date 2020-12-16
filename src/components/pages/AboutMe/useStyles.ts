@@ -1,4 +1,4 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from 'src/deps';
 
 const useStyles = makeStyles((theme) => ({
     aboutMeContainer: {

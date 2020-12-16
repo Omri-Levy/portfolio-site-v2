@@ -1,5 +1,5 @@
 interface Props {
-    classes: any;
+    classes: string;
 }
 
 export {Props};

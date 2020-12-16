@@ -1,4 +1,5 @@
-import {makeStyles} from '../../deps';
+import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     typography: {
@@ -6,17 +7,17 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 700,
         marginLeft: 8,
         marginBottom: 32,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             fontSize: 56
         }
     },
     pageTitleContainer: {
         display: 'inline-block',
         marginTop: 91,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             marginTop: 180
         },
-        [theme.breakpoints.down('sm')]: {
+        [getCustomBreakpoints('sm', theme, 'down')]: {
             marginTop: 61
         }
     },
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         marginTop: 2,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             marginTop: -6,
             width: 72,
             height: 72

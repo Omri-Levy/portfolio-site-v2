@@ -1,7 +1,8 @@
 import {createMuiTheme, darken} from '@material-ui/core';
-import {heIL, enUS} from '@material-ui/core/locale';
+import {enUS, heIL} from '@material-ui/core/locale';
 import {DefaultTheme} from '@material-ui/styles';
-import React, {useContext} from 'react';
+import {useContext} from 'src/deps';
+import themeFavicon from 'src/utils/themeFavicon';
 import {ThemeContext} from '../../context/ThemeContext';
 import {
     backgroundColor,
@@ -13,6 +14,7 @@ import {
 
 const useMakeTheme: () => DefaultTheme = () => {
     const {isDarkMode, primaryColor, isRTL} = useContext(ThemeContext);
+    themeFavicon(primaryColor);
     const theme = {
         direction: isRTL ? 'rtl' : 'ltr',
         breakpoints: {
@@ -32,7 +34,7 @@ const useMakeTheme: () => DefaultTheme = () => {
                     : primaryContrastColor
             },
             text: {
-                main: isDarkMode ? primaryTextColor : secondaryTextColor,
+                primary: isDarkMode ? primaryTextColor : secondaryTextColor,
                 secondary: isDarkMode ? secondaryTextColor
                     : primaryTextColor
             },
@@ -46,10 +48,10 @@ const useMakeTheme: () => DefaultTheme = () => {
                 secondary: '#fff'
             },
             accent: {
-                main: secondaryContrastColor
+                primary: secondaryContrastColor
             },
             contrast: {
-                main: isDarkMode ? primaryContrastColor :
+                primary: isDarkMode ? primaryContrastColor :
                     secondaryContrastColor
             }
         },

@@ -4,7 +4,7 @@ import {ContactMe} from '../components/pages/ContactMe';
 import {Layout} from '../components/Layout';
 import {Portfolio} from '../components/pages/Portfolio';
 
-const Home: React.FC = () => (
+const Home: React.FunctionComponent = () => (
     <Layout>
         <Portfolio/>
         <AboutMe/>

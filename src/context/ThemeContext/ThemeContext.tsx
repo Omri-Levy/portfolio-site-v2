@@ -1,11 +1,13 @@
 import React, {createContext} from 'react';
-import {primaryColor} from '../../hooks/useMakeTheme/colors';
+import {primaryColor} from 'src/hooks/useMakeTheme/colors';
+
+type PrimaryColor = '#fb3eff' | '#3e96ff' | '#ff3e3e' | '#41ff3e';
 
 interface Theme {
     isDarkMode: boolean;
     setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>,
-    primaryColor: string,
-    setPrimaryColor: React.Dispatch<React.SetStateAction<string>>,
+    primaryColor: PrimaryColor,
+    setPrimaryColor: React.Dispatch<React.SetStateAction<PrimaryColor>>,
     isRTL: boolean,
     setIsRTL: React.Dispatch<React.SetStateAction<boolean>>,
 }

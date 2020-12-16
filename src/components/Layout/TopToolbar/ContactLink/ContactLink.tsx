@@ -1,9 +1,9 @@
 import {IconButton} from 'gatsby-theme-material-ui';
-import {React} from '../../../../deps';
+import {React} from 'src/deps';
 import {Props} from './types';
 import useStyles from './useStyles';
 
-const ContactLink: React.FC<Props> = ({Icon, to}) => {
+const ContactLink: React.FunctionComponent<Props> = ({Icon, to}) => {
     const classes = useStyles();
 
     return (

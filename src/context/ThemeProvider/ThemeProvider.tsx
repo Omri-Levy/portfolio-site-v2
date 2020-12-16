@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import {ChildrenProps} from 'src/utils/types';
 import {ThemeContext} from '../ThemeContext';
-import {Props} from './types';
 
-const ThemeProvider: React.FC<Props> = ({children}) => {
+const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
+                                                                   children
+                                                               }) => {
     const [isDarkMode, setIsDarkMode] = useState(true);
     const [primaryColor, setPrimaryColor] = useState('#3e96ff');
     const [isRTL, setIsRTL] = useState(false);

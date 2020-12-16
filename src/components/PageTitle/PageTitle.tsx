@@ -1,10 +1,10 @@
 import {Box, Typography} from '@material-ui/core';
-import {React} from '../../deps';
+import {React} from 'src/deps';
 import {TranslateText} from '../TranslateText';
 import {Props} from './types';
 import useStyles from './useStyles';
 
-const PageTitle: React.FC<Props> = ({Icon, text}) => {
+const PageTitle: React.FunctionComponent<Props> = ({Icon, text}) => {
     const classes = useStyles();
 
     return (

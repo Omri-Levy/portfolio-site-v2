@@ -1,5 +1,5 @@
 interface Props {
-  classes: any;
+  classes: Record<"mobileIllustrationContainer" | "mainScene", string>;
 }
 
 export { Props };

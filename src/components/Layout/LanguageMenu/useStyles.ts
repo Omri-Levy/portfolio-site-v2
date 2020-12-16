@@ -1,4 +1,4 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from 'src/deps';
 
 const useStyles = makeStyles((theme) => ({
     menuList: {
@@ -9,10 +9,10 @@ const useStyles = makeStyles((theme) => ({
             color: theme.palette.secondary.secondary,
         },
         backgroundColor: theme.palette.primary.secondary,
-        borderTop: `1px solid ${theme.palette.text.main}`,
-        borderBottom: `1px solid ${theme.palette.text.main}`,
+        borderTop: `1px solid ${theme.palette.text.primary}`,
+        borderBottom: `1px solid ${theme.palette.text.primary}`,
         '&:nth-child(1)': {
-            borderTop: `1px solid ${theme.palette.text.main}`,
+            borderTop: `1px solid ${theme.palette.text.primary}`,
             borderBottom: 'none'
         },
     }

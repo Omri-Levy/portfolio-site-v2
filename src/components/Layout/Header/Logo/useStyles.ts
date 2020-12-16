@@ -1,4 +1,4 @@
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from 'src/deps';
 
 const useStyles = makeStyles((theme) => ({
     logoContainer: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     link: {
-        color: theme.palette.text.main,
+        color: theme.palette.text.primary,
         textDecoration: 'none',
         '&:hover': {
             textDecoration: 'none'
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 11,
         fontWeight: 500,
         display: 'block',
-        color: theme.palette.accent.main,
+        color: theme.palette.accent.primary,
         padding: 0,
         margin: 0,
         marginTop: -5,

@@ -1,6 +1,6 @@
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from 'src/deps';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         margin: 0,
         padding: 0

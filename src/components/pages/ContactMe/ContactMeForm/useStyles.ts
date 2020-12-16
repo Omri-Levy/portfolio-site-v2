@@ -1,18 +1,19 @@
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     contactMeFormContainer: {
         margin: 20,
         display: 'flex',
         justifyContent: 'center',
-        [theme.breakpoints.down('xs')]: {
+        [getCustomBreakpoints('xs', theme, 'down')]: {
             margin: '0 7px'
         }
     },
     fullName: {
         width: 'calc(100vw - 10px)',
         marginBottom: 15,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             marginRight: 15,
             width: 395
         }
@@ -20,14 +21,14 @@ const useStyles = makeStyles((theme) => ({
     email: {
         width: 'calc(100vw - 10px)',
         marginBottom: 15,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             width: 479
         }
     },
     message: {
         width: 'calc(100vw - 10px)',
         fontSize: 11,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             width: 889
         }
     },
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 400,
         textTransform: 'unset',
         marginTop: 10,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             marginRight: 0,
             width: 72,
             height: 39,

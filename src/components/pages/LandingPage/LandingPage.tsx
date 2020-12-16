@@ -1,12 +1,12 @@
-import {React} from '../../../deps';
-import useDevice from '../../../hooks/useDevice/useDevice';
+import {React} from 'src/deps';
+import useDevice from 'src/hooks/useDevice/useDevice';
 import {Container} from '../../Layout/Container';
-import DesktopIllustration from './DesktopIllustration/DesktopIllustration';
-import MobileIllustration from './MobileIllustration/MobileIllustration';
-import TabletIllustration from './TabletIllustration/TabletIllustration';
+import {DesktopIllustration} from './DesktopIllustration';
+import {MobileIllustration} from './MobileIllustration';
+import {TabletIllustration} from './TabletIllustration';
 import useStyles from './useStyles';
 
-const LandingPage: React.FC = () => {
+const LandingPage: React.FunctionComponent = () => {
     const classes = useStyles();
     const {
         isMobile,
@@ -36,3 +36,5 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage;
+
+

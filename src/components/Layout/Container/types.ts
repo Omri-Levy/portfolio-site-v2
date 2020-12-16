@@ -1,5 +1,7 @@
+import {React} from 'src/deps';
+
 interface Props {
-  children: JSX.Element | JSX.Element[];
+    children: React.ReactElement | React.ReactElement[];
 }
 
-export { Props };
+export {Props};

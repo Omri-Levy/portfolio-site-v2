@@ -1,11 +1,18 @@
-import {React, useMediaQuery, useTheme} from '../../deps';
+import {useMediaQuery} from 'src/deps';
+import {useBreakpoints} from 'src/hooks/useBreakpoints';
 import {MediaQueries} from './types';
 
 const useDevice: MediaQueries = () => {
-    const theme = useTheme();
-    const isDesktop = useMediaQuery(theme.breakpoints.up('mlg'));
-    const isTablet = useMediaQuery(theme.breakpoints.up('ms'));
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const desktopMedia = useBreakpoints('mlg', 'up');
+    const tabletMedia = useBreakpoints('ms', 'up');
+    const mobileMedia = useBreakpoints('sm', 'down');
+    const XSMedia = useBreakpoints('xs', 'down');
+
+    const isDesktop = useMediaQuery(desktopMedia);
+    const isTablet = useMediaQuery(tabletMedia);
+    const isMobile = useMediaQuery(mobileMedia);
+    const isXS = useMediaQuery(XSMedia);
+
     const isIpadProWidth = useMediaQuery('(width: 1024px)');
     const isIpadProHeight = useMediaQuery('(height: 1366px)');
 
@@ -13,6 +20,7 @@ const useDevice: MediaQueries = () => {
         isDesktop,
         isTablet,
         isMobile,
+        isXS,
         isIpadProWidth,
         isIpadProHeight
     };

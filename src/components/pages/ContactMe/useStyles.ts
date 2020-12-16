@@ -1,4 +1,5 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from 'src/deps';
+import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     contactMeContainer: {
@@ -7,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
             width: '90%'
         },
         '& h1': {
-            [theme.breakpoints.down('md')]: {
+            [getCustomBreakpoints('md', theme, 'down')
+                ]: {
                 marginBottom: 18
             }
         }
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         marginBottom: 28,
-        [theme.breakpoints.down('md')]: {
+        [getCustomBreakpoints('md', theme, 'down')]: {
             marginBottom: 18
         },
         marginRight: 70
@@ -35,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         marginBottom: 28,
-        [theme.breakpoints.down('md')]: {
+        [getCustomBreakpoints('md', theme, 'down')]: {
             marginBottom: 18
         }
     },
@@ -44,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 400,
         marginLeft: 10,
         marginTop: 3,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             fontSize: 16,
             marginLeft: 37
         }
@@ -53,12 +55,12 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         padding: 0,
         margin: 0,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             marginLeft: 5
         }
     },
     icon: {
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             width: 48,
             height: 48
         }

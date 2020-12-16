@@ -1,5 +1,5 @@
 import {ThemeContext} from '../../context/ThemeContext';
-import {React, useContext} from '../../deps';
+import {React, useContext} from 'src/deps';
 import {Translation} from './types';
 
 const useTranslations: Translation = (he, en) => {

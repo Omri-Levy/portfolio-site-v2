@@ -1,6 +1,6 @@
 import {graphql, useStaticQuery} from 'gatsby';
 import Img from 'gatsby-image';
-import {React} from '../../../../deps';
+import {React} from 'src/deps';
 import useStyles from './useStyles';
 
 const ProfilePic = () => {
@@ -19,7 +19,7 @@ const ProfilePic = () => {
 
     return (
         <Img
-            fixed={data.image.childImageSharp.fluid}
+            fluid={data.image.childImageSharp.fluid}
             alt='Omri Levy'
             className={classes.profilePic}
         />

@@ -1,13 +1,13 @@
 import {MenuList, Toolbar} from '@material-ui/core';
-import {React} from '../../../../deps';
+import {React} from 'src/deps';
 import {CustomNavLink} from '../CustomNavLink';
 import useStyles from './useStyles';
 
-const Nav: React.FC = () => {
+const Nav: React.FunctionComponent = () => {
     const classes = useStyles();
 
     return (
-        <Toolbar className={classes.toolbar} disableGutters={true}>
+        <Toolbar disableGutters={true}>
             <MenuList className={classes.menuList}>
                 <CustomNavLink to={'/home#portfolio'} text={'Portfolio'}/>
                 <CustomNavLink to={'/home#about-me'} text={'About Me'}/>

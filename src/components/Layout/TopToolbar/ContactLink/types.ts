@@ -1,5 +1,7 @@
+import {React} from 'src/deps';
+
 interface Props {
-  Icon: any;
+  Icon: React.FunctionComponent<{className: string}>;
   to: string;
 }
 

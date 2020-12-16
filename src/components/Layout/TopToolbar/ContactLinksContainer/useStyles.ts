@@ -1,5 +1,4 @@
-import {DefaultTheme} from '@material-ui/core/styles';
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from 'src/deps';
 
 const useStyles = makeStyles((theme) => ({
     box: {

@@ -5,13 +5,29 @@ import {
     ThemeProvider
 } from '@material-ui/core/styles';
 import {create} from 'jss';
+import extend from 'jss-plugin-extend';
 import rtl from 'jss-rtl';
 import React from 'react';
-import useMakeTheme from '../../hooks/useMakeTheme/useMakeTheme';
+import useMakeTheme from 'src/hooks/useMakeTheme/useMakeTheme';
 
-const ThemeTopLayout: React.FC = ({children}) => {
+declare module '@material-ui/core/styles/createBreakpoints' {
+    interface BreakpointOverrides {
+        xs: true;
+        sm: true;
+        ms: true;
+        md: true;
+        lg: true;
+        mlg: true;
+        xl: true;
+    }
+}
+
+const ThemeTopLayout: React.FunctionComponent = ({children}) => {
+
     const selectedTheme = useMakeTheme();
-    const jss = create({plugins: [...jssPreset().plugins, rtl()]});
+    const jss = create({
+        plugins: [...jssPreset().plugins, rtl(), extend()]
+    });
 
     return (
         <ThemeProvider theme={selectedTheme}>
