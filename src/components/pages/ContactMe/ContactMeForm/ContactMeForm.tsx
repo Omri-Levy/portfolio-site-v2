@@ -2,9 +2,10 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {Box, Grid, TextField} from '@material-ui/core';
 import {init, send} from 'emailjs-com';
 import {useForm} from 'react-hook-form';
-import {React, useTheme} from 'src/deps';
 import {SecondaryButton} from 'src/components/SecondaryButton';
 import {TranslateText} from 'src/components/TranslateText';
+import {ThemeContext} from 'src/context/ThemeContext';
+import {React, useContext, useTheme} from 'src/deps';
 import useDevice from 'src/hooks/useDevice/useDevice';
 import {validationSchema} from '../validationSchema';
 import {Data, FormInputs} from './types';
@@ -13,6 +14,7 @@ import useStyles from './useStyles';
 const ContactMeForm: React.FunctionComponent = () => {
     init('user_VCUWzf1n5yq07YDWAJoZH');
     const theme = useTheme();
+    const {isDarkMode} = useContext(ThemeContext);
     const classes = useStyles();
     const {register, errors, handleSubmit} = useForm<FormInputs>({
         resolver: yupResolver(validationSchema)
@@ -22,7 +24,8 @@ const ContactMeForm: React.FunctionComponent = () => {
     const inputProps = {
         style: {
             color: theme.palette.text.primary,
-            backgroundColor: theme.palette.primary.accent,
+            backgroundColor: isDarkMode ? theme.palette.primary.accent :
+                theme.palette.text.secondary,
             borderRadius: 5,
             fontSize: isDesktop ? 13 : 11
         },

@@ -42,8 +42,7 @@ const useMakeTheme: () => DefaultTheme = () => {
                 main: primaryColor,
                 secondary: isDarkMode ? backgroundColor
                     : primaryContrastColor,
-                accent: isDarkMode ? secondaryContrastColor
-                    : primaryTextColor
+                accent: secondaryContrastColor
             },
             secondary: {
                 main: primaryColor,
