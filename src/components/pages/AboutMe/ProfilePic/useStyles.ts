@@ -3,6 +3,7 @@ import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     profilePic: {
+        margin: '0 auto',
         borderRadius: '100vh',
         backgroundColor: theme.palette.primary.main,
         marginBottom: 13,
