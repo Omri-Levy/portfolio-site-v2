@@ -2,24 +2,25 @@ import {Box, IconButton, Menu, MenuItem} from '@material-ui/core';
 import {LanguageOutlined} from '@material-ui/icons';
 import {ThemeContext} from 'src/context/ThemeContext';
 import {React, useContext, useState} from 'src/deps';
+import {AnchorOrButtonEvent} from './types';
 import useStyles from './useStyles';
 
 const LanguageMenu: React.FunctionComponent = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const {setIsRTL} = useContext(ThemeContext);
-    const handleClick = (event: Event) => {
+    const handleClick = (event: AnchorOrButtonEvent) => {
         setAnchorEl(event.currentTarget as any);
     };
     const handleClose = () => setAnchorEl(null);
     const classes = useStyles();
-    const handleIsRTL = (isRTL: boolean) => {
+    const handleIsRTL = (isRTL: boolean) => () => {
         setIsRTL(isRTL);
         setAnchorEl(null);
     };
 
     return (
         <Box>
-            <IconButton onClick={(event) => handleClick(event as any)}>
+            <IconButton onClick={handleClick}>
                 <LanguageOutlined/>
             </IconButton>
             <Menu
@@ -31,13 +32,13 @@ const LanguageMenu: React.FunctionComponent = () => {
             >
                 <MenuItem
                     className={classes.menuItem}
-                    onClick={() => handleIsRTL(false)}
+                    onClick={handleIsRTL(false)}
                 >
                     EN
                 </MenuItem>
                 <MenuItem
                     className={classes.menuItem}
-                    onClick={() => handleIsRTL(true)}
+                    onClick={handleIsRTL(true)}
                 >
                     HE
                 </MenuItem>

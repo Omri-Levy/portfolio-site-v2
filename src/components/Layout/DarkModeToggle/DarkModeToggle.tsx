@@ -8,6 +8,7 @@ import useStyles from './useStyles';
 const DarkModeToggle: React.FunctionComponent = () => {
     const {isDarkMode, setIsDarkMode} = useContext(ThemeContext);
     const classes = useStyles();
+    const handleChange = () => setIsDarkMode((prevState) => !prevState);
 
     return (
         <Box className={classes.darkModeToggleContainer}>
@@ -17,9 +18,7 @@ const DarkModeToggle: React.FunctionComponent = () => {
                 <WbSunnyOutlined className={classes.icon}/>
             )}
             <Switch
-                onChange={() => setIsDarkMode((prevState) => (
-                    !prevState
-                ))}
+                onChange={handleChange}
                 checked={isDarkMode}
             />
         </Box>
