@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build/dist",
+    "types": ["cypress", "@testing-library/cypress"],
     "module": "esnext",
     "target": "es5",
     "lib": [
@@ -24,6 +25,10 @@
     "noUnusedLocals": true,
     "skipLibCheck": true
   },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+  ],
   "exclude": [
     "node_modules",
     "build",

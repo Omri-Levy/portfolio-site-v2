@@ -1,6 +1,6 @@
 import {Button} from 'gatsby-theme-material-ui';
-import {React} from 'src/deps';
-import {ButtonProps} from 'src/utils/types';
+import React from 'react';
+import {ButtonProps} from '../../utils/types';
 import {TranslateText} from '../TranslateText';
 
 const SecondaryButton: React.FunctionComponent<ButtonProps> = (props) => {

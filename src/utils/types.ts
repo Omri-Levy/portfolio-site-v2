@@ -1,5 +1,5 @@
 import {Document} from '@contentful/rich-text-types';
-import {React} from 'src/deps';
+import React from 'react';
 
 interface ChildrenProps {
     children: React.ReactNode;

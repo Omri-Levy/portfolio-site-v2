@@ -11,7 +11,6 @@ module.exports = {
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-anchor-links',
-		'gatsby-plugin-root-import',
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {

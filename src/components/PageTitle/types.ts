@@ -1,4 +1,4 @@
-import {React} from 'src/deps';
+import React from 'react';
 
 interface Props {
   Icon: React.FunctionComponent;

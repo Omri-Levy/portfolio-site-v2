@@ -19,7 +19,7 @@ fs.writeFile(
 // create material ui/jss styling file
 fs.writeFile(
 	'./useStyles.ts',
-	`import {makeStyles} from 'src/deps';
+	`import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -38,32 +38,32 @@ export default useStyles;`,
 
 // create tests file
 fs.writeFile(`./${fileName}.test.tsx`, '',
-			 (err) => {
-				 if (err) {
-					 console.log(err);
-					 console.log(`error at ${fileName}.test.ts`);
-				 }
+	(err) => {
+		if (err) {
+			console.log(err);
+			console.log(`error at ${fileName}.test.ts`);
+		}
 
-				 console.log(`created ${fileName}.test.ts`);
-			 },
+		console.log(`created ${fileName}.test.ts`);
+	},
 );
 
 // create types file
 fs.writeFile('./types.ts', '',
-			 (err) => {
-				 if (err) {
-					 console.log(err);
-					 console.log('error at types.ts');
-				 }
+	(err) => {
+		if (err) {
+			console.log(err);
+			console.log('error at types.ts');
+		}
 
-				 console.log('created types.ts');
-			 },
+		console.log('created types.ts');
+	},
 );
 
 // create component file
 fs.writeFile(
 	`./${fileName}.tsx`,
-	`import {React} from 'src/deps';
+	`import React from 'react';
 import useStyles from './useStyles';
 
 const ${fileName}: React.FunctionComponent = () => {

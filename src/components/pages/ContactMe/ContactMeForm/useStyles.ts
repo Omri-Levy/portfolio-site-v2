@@ -1,5 +1,5 @@
-import {makeStyles} from 'src/deps';
-import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     contactMeFormContainer: {
@@ -11,27 +11,30 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     fullName: {
-        width: 'calc(100vw - 10px)',
-        marginBottom: 15,
-        [getCustomBreakpoints('lg', theme, 'up')]: {
-            marginRight: 15,
-            width: 395
-        }
-    },
+		width: '100vw',
+		padding: '0 10px',
+		marginBottom: 15,
+		[getCustomBreakpoints('lg', theme, 'up')]: {
+			marginRight: 15,
+			width: 395,
+		},
+	},
     email: {
-        width: 'calc(100vw - 10px)',
-        marginBottom: 15,
-        [getCustomBreakpoints('lg', theme, 'up')]: {
-            width: 479
-        }
-    },
+		width: '100vw',
+		padding: '0 10px',
+		marginBottom: 15,
+		[getCustomBreakpoints('lg', theme, 'up')]: {
+			width: 479,
+		},
+	},
     message: {
-        width: 'calc(100vw - 10px)',
-        fontSize: 11,
-        [getCustomBreakpoints('lg', theme, 'up')]: {
-            width: 889
-        }
-    },
+		width: '100vw',
+		padding: '0 10px',
+		fontSize: 11,
+		[getCustomBreakpoints('lg', theme, 'up')]: {
+			width: 889,
+		},
+	},
     button: {
         width: 39,
         height: 23,

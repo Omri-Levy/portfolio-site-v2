@@ -1,4 +1,4 @@
-import {React} from 'src/deps';
+import React from 'react';
 
 type AnchorOrButtonEvent = (
     React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>

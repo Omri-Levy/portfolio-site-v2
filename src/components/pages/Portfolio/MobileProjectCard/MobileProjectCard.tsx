@@ -2,23 +2,24 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {Box, Typography} from '@material-ui/core';
 import {
     KeyboardArrowLeftOutlined,
-    KeyboardArrowRightOutlined
+    KeyboardArrowRightOutlined,
 } from '@material-ui/icons';
 import {ButtonBack, ButtonNext, Image, Slide} from 'pure-react-carousel';
-import {PrimaryButton} from 'src/components/PrimaryButton';
-import {SecondaryButton} from 'src/components/SecondaryButton';
-import {React, useTheme} from 'src/deps';
-import {useRTLOrLTRComponent} from 'src/hooks/useRTLOrLTRComponent';
-import {MobileProjectProps} from 'src/utils/types';
+import {PrimaryButton} from '../../../PrimaryButton';
+import {SecondaryButton} from '../../../SecondaryButton';
+import React from 'react';
+import {useRTLOrLTRComponent} from '../../../../hooks/useRTLOrLTRComponent';
+import {MobileProjectProps} from '../../../../utils/types';
 import useStyles from './useStyles';
+import {useTheme} from '@material-ui/core/styles';
 
 const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
-    props
+	props,
 ) => {
-    const classes = useStyles();
-    const theme = useTheme();
-    const backButton = useRTLOrLTRComponent(
-        <KeyboardArrowRightOutlined
+	const classes = useStyles();
+	const theme = useTheme();
+	const backButton = useRTLOrLTRComponent(
+		<KeyboardArrowRightOutlined
             className={classes.icon}
         />,
         <KeyboardArrowLeftOutlined

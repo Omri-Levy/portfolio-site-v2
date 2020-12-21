@@ -1,4 +1,4 @@
-import {makeStyles} from 'src/deps';
+import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     menuList: {
@@ -6,9 +6,9 @@ const useStyles = makeStyles((theme) => ({
     },
     menuItem: {
         '&:hover': {
-            color: theme.palette.secondary.secondary,
+            color: theme.palette.secondary,
         },
-        backgroundColor: theme.palette.primary.secondary,
+        backgroundColor: theme.palette.primary.dark,
         borderTop: `1px solid ${theme.palette.text.primary}`,
         borderBottom: `1px solid ${theme.palette.text.primary}`,
         '&:nth-child(1)': {

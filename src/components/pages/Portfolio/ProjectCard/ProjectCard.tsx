@@ -1,9 +1,9 @@
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {Grid, Typography} from '@material-ui/core';
-import {PrimaryButton} from 'src/components/PrimaryButton';
-import {SecondaryButton} from 'src/components/SecondaryButton';
-import {React} from 'src/deps';
-import {ProjectProps} from 'src/utils/types';
+import {PrimaryButton} from '../../../PrimaryButton';
+import {SecondaryButton} from '../../../SecondaryButton';
+import React from 'react';
+import {ProjectProps} from '../../../../utils/types';
 import useStyles from './useStyles';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {

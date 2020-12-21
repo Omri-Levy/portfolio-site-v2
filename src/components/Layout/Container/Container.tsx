@@ -1,5 +1,5 @@
 import {Container as MuiContainer} from '@material-ui/core';
-import {React} from 'src/deps';
+import React from 'react';
 import useStyles from './useStyles';
 import {Props} from './types';
 

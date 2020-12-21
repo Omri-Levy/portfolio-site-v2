@@ -1,5 +1,5 @@
-import {makeStyles} from 'src/deps';
-import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     logoContainer: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 11,
         fontWeight: 500,
         display: 'block',
-        color: theme.palette.primary.accent,
+        color: theme.palette.primary.dark,
         padding: 0,
         margin: 0,
         marginTop: -5,

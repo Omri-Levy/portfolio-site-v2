@@ -1,5 +1,5 @@
 import {IconButton} from 'gatsby-theme-material-ui';
-import {React} from 'src/deps';
+import React from 'react';
 import {Props} from './types';
 import useStyles from './useStyles';
 

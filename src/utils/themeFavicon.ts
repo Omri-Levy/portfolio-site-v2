@@ -1,4 +1,4 @@
-import useAllFavicons from 'src/utils/useAllFavicons';
+import useAllFavicons from '../utils/useAllFavicons';
 
 const themeFavicon = (primaryColor: string) => {
     const oldFavicon = document.querySelector('link[rel~=\'icon\']');
@@ -23,7 +23,10 @@ const themeFavicon = (primaryColor: string) => {
         icon.node.fluid.src.includes(slicedHex)
     ))[0].node.fluid.src;
 
-    oldFavicon!['href'] = newFavicon;
+    if (oldFavicon) {
+        oldFavicon!['href'] = newFavicon;
+    }
+
     appleLinks.forEach((appLink) => appLink['href'] = newFavicon);
 };
 

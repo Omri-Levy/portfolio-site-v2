@@ -1,5 +1,5 @@
 import {Box, Typography} from '@material-ui/core';
-import {React} from 'src/deps';
+import React from 'react';
 import {TranslateText} from '../TranslateText';
 import {Props} from './types';
 import useStyles from './useStyles';

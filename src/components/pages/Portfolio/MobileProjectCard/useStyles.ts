@@ -1,10 +1,10 @@
 import {fade} from '@material-ui/core';
-import {makeStyles} from 'src/deps';
-import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     icon: {
-        color: theme.palette.contrast.primary,
+        color: theme.palette.primary.contrastText,
         width: 48,
         height: 48
     },
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItem': {
             '&-divider': {
                 borderBottom: `1px solid ${fade(
-                    theme.palette.contrast.primary, 0.12)}`
+                    theme.palette.primary.contrastText, 0.12)}`
             },
             '&-gutters': {
                 paddingLeft: 0,

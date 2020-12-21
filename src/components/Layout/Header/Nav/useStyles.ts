@@ -1,4 +1,4 @@
-import {makeStyles} from 'src/deps';
+import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     menuList: {

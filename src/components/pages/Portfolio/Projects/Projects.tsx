@@ -1,7 +1,6 @@
-import React from 'react';
-import {ThemeContext} from 'src/context/ThemeContext';
-import {useContext} from 'src/deps';
-import {ProjectsContainerProps} from 'src/utils/types';
+import React, {useContext} from 'react';
+import {ThemeContext} from '../../../../context/ThemeContext';
+import {ProjectsContainerProps} from '../../../../utils/types';
 import {v4} from 'uuid';
 import ProjectCard from '../ProjectCard/ProjectCard';
 

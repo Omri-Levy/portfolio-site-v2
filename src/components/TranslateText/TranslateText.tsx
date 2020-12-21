@@ -1,5 +1,5 @@
 import {FormattedMessage} from 'react-intl';
-import {React} from 'src/deps';
+import React from 'react';
 import {Props} from './types';
 import {camelCase} from 'lodash';
 

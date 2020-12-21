@@ -1,5 +1,5 @@
 import {MenuList, Toolbar} from '@material-ui/core';
-import {React} from 'src/deps';
+import React from 'react';
 import {CustomNavLink} from '../CustomNavLink';
 import useStyles from './useStyles';
 

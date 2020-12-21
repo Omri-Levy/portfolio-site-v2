@@ -1,5 +1,5 @@
-import {React} from 'src/deps';
-import {ChildrenProps} from 'src/utils/types';
+import React from 'react';
+import {ChildrenProps} from '../../utils/types';
 import {BottomToolbar} from './BottomToolbar';
 import {Container} from './Container';
 import {Content} from './Content';

@@ -1,6 +1,6 @@
 import {Box} from '@material-ui/core';
-import {React} from 'src/deps';
-import {ChildrenProps} from 'src/utils/types';
+import React from 'react';
+import {ChildrenProps} from '../../../utils/types';
 import useStyles from './useStyles';
 
 const Content: React.FunctionComponent<ChildrenProps> = ({children}) => {

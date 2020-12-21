@@ -1,7 +1,7 @@
 import {MenuItem} from '@material-ui/core';
 import {AnchorLink} from 'gatsby-plugin-anchor-links';
-import {React} from 'src/deps';
-import {TranslateText} from 'src/components/TranslateText';
+import React from 'react';
+import {TranslateText} from '../../../TranslateText';
 import {Props} from './types';
 import useStyles from './useStyles';
 

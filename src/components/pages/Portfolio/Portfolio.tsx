@@ -1,30 +1,30 @@
 import {BLOCKS} from '@contentful/rich-text-types';
 import {
-    Box,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText
+	Box,
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
 } from '@material-ui/core';
 import {FiberManualRecord, WorkOutline} from '@material-ui/icons';
-import useAllProjects from 'src/components/pages/Portfolio/useAllProjects';
-import {React} from 'src/deps';
-import useDevice from 'src/hooks/useDevice/useDevice';
+import React from 'react';
 import {PageTitle} from '../../PageTitle';
 import MobileCarousel from './MobileCarousel/MobileCarousel';
 import {Projects} from './Projects';
 import {Node} from './types';
 import useStyles from './useStyles';
+import useAllProjects from './useAllProjects';
+import useDevice from '../../../hooks/useDevice/useDevice';
 
 const Portfolio: React.FunctionComponent = () => {
-    const classes = useStyles();
-    const {isMobile, isIpadProWidth, isIpadProHeight} = useDevice();
-    const {allProjects} = useAllProjects();
+	const classes = useStyles();
+	const {isMobile, isIpadPro} = useDevice();
+	const {allProjects} = useAllProjects();
 
-    const options = {
-        renderNode: {
-            [BLOCKS.UL_LIST]: (node: Node, children: React.ReactNode) => (
-                <List>
+	const options = {
+		renderNode: {
+			[BLOCKS.UL_LIST]: (node: Node, children: React.ReactNode) => (
+				<List>
                     {children}
                 </List>
             ),
@@ -62,16 +62,16 @@ const Portfolio: React.FunctionComponent = () => {
             <Box
                 className={classes.innerBox}
             >
-                {isMobile && !(isIpadProHeight && isIpadProWidth)
-                    ? <MobileCarousel
-                        allProjects={allProjects}
-                        options={options}
-                    />
-                    : <Projects
-                        allProjects={allProjects}
-                        options={options}
-                    />
-                }
+				{isMobile && !isIpadPro
+					? <MobileCarousel
+						allProjects={allProjects}
+						options={options}
+					/>
+					: <Projects
+						allProjects={allProjects}
+						options={options}
+					/>
+				}
             </Box>
         </section>
     );

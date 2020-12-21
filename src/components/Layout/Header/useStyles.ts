@@ -1,5 +1,5 @@
-import {makeStyles} from 'src/deps';
-import getCustomBreakpoints from 'src/utils/getCustomBreakpoints';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {

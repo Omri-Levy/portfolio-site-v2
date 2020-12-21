@@ -1,6 +1,6 @@
 import {SvgIcon} from '@material-ui/core';
 import React from 'react';
-import {ClassNameProps} from 'src/utils/types';
+import {ClassNameProps} from '../../../../utils/types';
 
 const LinkedinBrand: React.FunctionComponent<ClassNameProps> = ({className}
 ) => (

@@ -1,16 +1,16 @@
 import {createMuiTheme, darken} from '@material-ui/core';
 import {enUS, heIL} from '@material-ui/core/locale';
 import {DefaultTheme} from '@material-ui/styles';
-import {useContext} from 'src/deps';
-import themeFavicon from 'src/utils/themeFavicon';
+import themeFavicon from '../../utils/themeFavicon';
 import {ThemeContext} from '../../context/ThemeContext';
 import {
     backgroundColor,
     primaryContrastColor,
     primaryTextColor,
     secondaryContrastColor,
-    secondaryTextColor
+    secondaryTextColor,
 } from './colors';
+import {useContext} from 'react';
 
 const useMakeTheme: () => DefaultTheme = () => {
     const {isDarkMode, primaryColor, isRTL} = useContext(ThemeContext);
@@ -39,19 +39,17 @@ const useMakeTheme: () => DefaultTheme = () => {
                     : primaryTextColor
             },
             primary: {
-                main: primaryColor,
-                secondary: isDarkMode ? backgroundColor
-                    : primaryContrastColor,
-                accent: secondaryContrastColor
-            },
+				main: primaryColor,
+				secondary: isDarkMode ? backgroundColor
+					: primaryContrastColor,
+				dark: secondaryContrastColor,
+				contrastText: isDarkMode ? primaryContrastColor :
+					secondaryContrastColor,
+			},
             secondary: {
                 main: primaryColor,
                 secondary: '#fff'
             },
-            contrast: {
-                primary: isDarkMode ? primaryContrastColor :
-                    secondaryContrastColor
-            }
         },
         overrides: {
             MuiCssBaseline: {

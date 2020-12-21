@@ -1,5 +1,5 @@
 import {AppBar, Box} from '@material-ui/core';
-import {React} from 'src/deps';
+import React from 'react';
 import {Logo} from './Logo';
 import {Nav} from './Nav';
 import useStyles from './useStyles';

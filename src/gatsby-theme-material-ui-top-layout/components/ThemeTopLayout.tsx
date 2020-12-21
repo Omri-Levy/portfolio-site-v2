@@ -2,13 +2,13 @@ import {CssBaseline} from '@material-ui/core';
 import {
     jssPreset,
     StylesProvider,
-    ThemeProvider
+    ThemeProvider,
 } from '@material-ui/core/styles';
 import {create} from 'jss';
 import extend from 'jss-plugin-extend';
 import rtl from 'jss-rtl';
 import React from 'react';
-import useMakeTheme from 'src/hooks/useMakeTheme/useMakeTheme';
+import useMakeTheme from '../../hooks/useMakeTheme/useMakeTheme';
 
 declare module '@material-ui/core/styles/createBreakpoints' {
     interface BreakpointOverrides {

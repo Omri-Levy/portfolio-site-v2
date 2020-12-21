@@ -1,22 +1,22 @@
 import {Box} from '@material-ui/core';
-import {ConfigsGroup} from 'src/components/Layout/ConfigsGroup';
-import {React} from 'src/deps';
-import useDevice from 'src/hooks/useDevice/useDevice';
+import {ConfigsGroup} from '../../Layout/ConfigsGroup';
+import React from 'react';
+import useDevice from '../../../hooks/useDevice/useDevice';
 import useStyles from './useStyles';
 
 const BottomToolbar = () => {
-    const classes = useStyles();
-    const {isMobile} = useDevice();
+	const classes = useStyles();
+	const {isDesktop, isIpadPro} = useDevice();
 
-    if (!isMobile) {
-        return null;
-    }
+	if (isDesktop || isIpadPro) {
+		return null;
+	}
 
-    return (
-        <Box className={classes.bottomToolbarContainer}>
-            <ConfigsGroup/>
-        </Box>
-    );
+	return (
+		<Box className={classes.bottomToolbarContainer}>
+			<ConfigsGroup/>
+		</Box>
+	);
 };
 
 export default BottomToolbar;

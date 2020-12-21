@@ -2,10 +2,10 @@ import {Box, Typography} from '@material-ui/core';
 import {
     AlternateEmailOutlined,
     CallOutlined,
-    PermContactCalendarOutlined
+    PermContactCalendarOutlined,
 } from '@material-ui/icons';
 import {IconButton} from 'gatsby-theme-material-ui';
-import {React} from 'src/deps';
+import React from 'react';
 import {PageTitle} from '../../PageTitle';
 import {ContactMeForm} from './ContactMeForm';
 import useStyles from './useStyles';

@@ -1,6 +1,6 @@
 import Img from 'gatsby-image';
 import useProfilePic from './useProfilePic';
-import {React} from 'src/deps';
+import React from 'react';
 import useStyles from './useStyles';
 
 const ProfilePic = () => {
