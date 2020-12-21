@@ -1,9 +1,9 @@
 import {IconButton} from 'gatsby-theme-material-ui';
-import {React} from '../../../../deps';
+import React from 'react';
 import {Props} from './types';
 import useStyles from './useStyles';
 
-const ContactLink: React.FC<Props> = ({Icon, to}) => {
+const ContactLink: React.FunctionComponent<Props> = ({Icon, to}) => {
     const classes = useStyles();
 
     return (
@@ -13,6 +13,7 @@ const ContactLink: React.FC<Props> = ({Icon, to}) => {
             // @ts-ignore
             target={'_blank'}
             style={{backgroundColor: 'transparent'}}
+            disableFocusRipple
         >
             <Icon className={classes.icon}/>
         </IconButton>
@@ -20,3 +21,4 @@ const ContactLink: React.FC<Props> = ({Icon, to}) => {
 };
 
 export default ContactLink;
+

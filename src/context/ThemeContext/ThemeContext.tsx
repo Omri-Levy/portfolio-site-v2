@@ -1,18 +1,14 @@
-import React, {createContext} from 'react';
-import {primaryColor} from '../../gatsby-theme-material-ui-top-layout/colors';
-
-interface Theme {
-    isDarkMode: boolean;
-    setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>,
-    primaryColor: string,
-    setPrimaryColor: React.Dispatch<React.SetStateAction<string>>,
-}
+import {primaryColor} from '../../hooks/useMakeTheme/colors';
+import {Theme} from './types';
+import {createContext} from 'react';
 
 const theme: Theme = {
     isDarkMode: true,
     setIsDarkMode: () => true,
-    primaryColor: primaryColor,
-    setPrimaryColor: () => primaryColor
+    primaryColor,
+    setPrimaryColor: () => primaryColor,
+    isRTL: false,
+    setIsRTL: () => false,
 };
 
 const ThemeContext = createContext(theme);

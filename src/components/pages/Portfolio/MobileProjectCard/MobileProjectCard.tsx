@@ -2,21 +2,42 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {Box, Typography} from '@material-ui/core';
 import {
     KeyboardArrowLeftOutlined,
-    KeyboardArrowRightOutlined
+    KeyboardArrowRightOutlined,
 } from '@material-ui/icons';
 import {ButtonBack, ButtonNext, Image, Slide} from 'pure-react-carousel';
-import {React} from '../../../../deps';
 import {PrimaryButton} from '../../../PrimaryButton';
 import {SecondaryButton} from '../../../SecondaryButton';
-import {Props} from './types';
+import React from 'react';
+import {useRTLOrLTRComponent} from '../../../../hooks/useRTLOrLTRComponent';
+import {MobileProjectProps} from '../../../../utils/types';
 import useStyles from './useStyles';
+import {useTheme} from '@material-ui/core/styles';
 
-const MobileProjectCard: React.FC<Props> = (props) => {
-    const classes = useStyles();
+const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
+	props,
+) => {
+	const classes = useStyles();
+	const theme = useTheme();
+	const backButton = useRTLOrLTRComponent(
+		<KeyboardArrowRightOutlined
+            className={classes.icon}
+        />,
+        <KeyboardArrowLeftOutlined
+            className={classes.icon}
+        />
+    );
+    const nextButton = useRTLOrLTRComponent(
+        <KeyboardArrowLeftOutlined
+            className={classes.icon}
+        />,
+        <KeyboardArrowRightOutlined
+            className={classes.icon}
+        />
+    );
 
     return (
         <Slide index={props.index}>
-            <Box className={classes.slideInnerBox}>
+            <Box dir={theme.direction}>
                 <Box className={classes.innerBox}>
                     <Typography variant={'h2'} className={classes.title}>
                         {props.title}
@@ -25,7 +46,7 @@ const MobileProjectCard: React.FC<Props> = (props) => {
                 </Box>
                 <Box className={classes.imageContainer}>
                     <ButtonBack className={classes.carouselBackButton}>
-                        <KeyboardArrowLeftOutlined className={classes.icon}/>
+                        {backButton}
                     </ButtonBack>
                     <Image
                         src={props.projectGif}
@@ -34,19 +55,19 @@ const MobileProjectCard: React.FC<Props> = (props) => {
                         className={classes.image}
                     />
                     <ButtonNext className={classes.carouselNextButton}>
-                        <KeyboardArrowRightOutlined className={classes.icon}/>
+                        {nextButton}
                     </ButtonNext>
                 </Box>
                 <Box className={classes.buttonsContainer}>
                     <PrimaryButton
-                        text={'Live site'}
+                        text={'Live Site'}
                         className={classes.primaryButton}
-                        to={props.liveSite}
+                        to={props.liveSiteUrl}
                     />
                     <SecondaryButton
-                        text={'Git repository'}
+                        text={'Git Repository'}
                         className={classes.secondaryButton}
-                        to={props.gitRepository}
+                        to={props.gitRepositoryUrl}
                     />
                 </Box>
             </Box>

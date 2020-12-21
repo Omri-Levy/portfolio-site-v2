@@ -1,5 +1,5 @@
-import {DefaultTheme} from '@material-ui/core/styles';
-import {makeStyles} from '../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -10,15 +10,15 @@ const useStyles = makeStyles((theme) => ({
         margin: 0,
         height: 59,
         padding: '0 19px',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             top: 0,
             padding: '0 37px'
         }
     },
-    box: {
+    innerBox: {
         display: 'flex',
         justifyContent: 'space-between',
-        ['@media (max-width: 350px)']: {
+        ['@media (max-width: 360px)']: {
             justifyContent: 'center'
         },
         margin: 0,

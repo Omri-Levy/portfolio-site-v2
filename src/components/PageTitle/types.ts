@@ -1,5 +1,7 @@
+import React from 'react';
+
 interface Props {
-  Icon: any;
+  Icon: React.FunctionComponent;
   text: string;
 }
 

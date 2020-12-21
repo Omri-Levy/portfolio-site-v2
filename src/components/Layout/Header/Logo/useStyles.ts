@@ -1,4 +1,5 @@
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     logoContainer: {
@@ -8,12 +9,12 @@ const useStyles = makeStyles((theme) => ({
         margin: 0,
         marginRight: 36,
         padding: 0,
-        ['@media (max-width: 350px)']: {
+        ['@media (max-width: 360px)']: {
             display: 'none'
         }
     },
     link: {
-        color: theme.palette.text.main,
+        color: theme.palette.text.primary,
         textDecoration: 'none',
         '&:hover': {
             textDecoration: 'none'
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#000',
         fontSize: 13,
         fontWeight: 700,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 16
         }
     },
@@ -32,11 +33,11 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 11,
         fontWeight: 500,
         display: 'block',
-        color: theme.palette.accent.main,
+        color: theme.palette.primary.dark,
         padding: 0,
         margin: 0,
         marginTop: -5,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 14
         }
     }

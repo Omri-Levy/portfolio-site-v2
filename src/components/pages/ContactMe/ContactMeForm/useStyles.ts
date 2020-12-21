@@ -1,55 +1,49 @@
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     contactMeFormContainer: {
         margin: 20,
         display: 'flex',
         justifyContent: 'center',
-        [theme.breakpoints.down('md')]: {
-            margin: '0 20px'
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            margin: '0 7px'
         }
     },
     fullName: {
-        width: 110,
-        marginRight: 15,
-        marginBottom: 15,
-        [theme.breakpoints.up('lg')]: {
-            width: 395
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '95vw',
-            marginRight: 0
-        }
-    },
+		width: '100vw',
+		padding: '0 10px',
+		marginBottom: 15,
+		[getCustomBreakpoints('lg', theme, 'up')]: {
+			marginRight: 15,
+			width: 395,
+		},
+	},
     email: {
-        width: 193,
-        marginBottom: 15,
-        [theme.breakpoints.up('lg')]: {
-            width: 479
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '95vw'
-        }
-    },
+		width: '100vw',
+		padding: '0 10px',
+		marginBottom: 15,
+		[getCustomBreakpoints('lg', theme, 'up')]: {
+			width: 479,
+		},
+	},
     message: {
-        width: 318,
-        fontSize: 11,
-        [theme.breakpoints.up('lg')]: {
-            width: 889
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '95vw'
-        }
-    },
+		width: '100vw',
+		padding: '0 10px',
+		fontSize: 11,
+		[getCustomBreakpoints('lg', theme, 'up')]: {
+			width: 889,
+		},
+	},
     button: {
         width: 39,
         height: 23,
         fontSize: 11,
         fontWeight: 400,
         textTransform: 'unset',
-        marginLeft: 'auto',
         marginTop: 10,
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
+            marginRight: 0,
             width: 72,
             height: 39,
             fontSize: 24

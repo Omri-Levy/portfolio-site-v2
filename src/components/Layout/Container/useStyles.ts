@@ -1,4 +1,5 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     mainContainer: {
@@ -8,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        [theme.breakpoints.up('lg')]: {
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             textAlign: 'left',
         },
         padding: 0,

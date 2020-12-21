@@ -1,5 +1,5 @@
 import {Box} from '@material-ui/core';
-import {React} from '../../../../deps';
+import React from 'react';
 import GithubBrand from '../GithubBrand/GithubBrand';
 import {LinkedinBrand} from '../LinkedinBrand';
 import {ContactLink} from '../ContactLink';

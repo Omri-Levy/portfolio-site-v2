@@ -1,6 +1,6 @@
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         margin: 0,
         padding: 0

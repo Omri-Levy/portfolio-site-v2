@@ -1,8 +1,9 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     content: {
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             width: 1000,
             display: 'flex',
             flexDirection: 'column',

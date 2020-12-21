@@ -1,9 +1,10 @@
 import {fade} from '@material-ui/core';
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     icon: {
-        color: theme.palette.contrast.main,
+        color: theme.palette.primary.contrastText,
         width: 48,
         height: 48
     },
@@ -19,13 +20,15 @@ const useStyles = makeStyles((theme) => ({
                 padding: 0,
                 minHeight: 200,
                 maxHeight: 200,
-                [theme.breakpoints.up('lg')]: {
+                [getCustomBreakpoints('lg', theme, 'up')
+                    ]: {
                     minHeight: 'unset',
                     maxHeight: 'unset'
                 },
-                [theme.breakpoints.down('xs')]: {
-                    minHeight: 230,
-                    maxHeight: 230
+                [getCustomBreakpoints('xs', theme, 'down'
+                )]: {
+                    minHeight: 235,
+                    maxHeight: 235
                 }
             },
             '&-dense': {
@@ -35,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItem': {
             '&-divider': {
                 borderBottom: `1px solid ${fade(
-                    theme.palette.contrast.main, 0.12)}`
+                    theme.palette.primary.contrastText, 0.12)}`
             },
             '&-gutters': {
                 paddingLeft: 0,
@@ -55,15 +58,17 @@ const useStyles = makeStyles((theme) => ({
                 marginBottom: 0
             },
             '&-primary': {
-                color: theme.palette.text.main,
+                color: theme.palette.text.primary,
                 fontSize: 12,
                 fontWeight: 400,
                 minWidth: 335,
                 maxWidth: 335,
-                [theme.breakpoints.up('lg')]: {
+                [getCustomBreakpoints('lg', theme, 'up')
+                    ]: {
                     fontSize: 16
                 },
-                [theme.breakpoints.down('md')]: {
+                [getCustomBreakpoints('md', theme, 'down'
+                )]: {
                     minWidth: '85vw',
                     maxWidth: '85vw'
                 }
@@ -87,45 +92,57 @@ const useStyles = makeStyles((theme) => ({
         border: 'none',
         position: 'absolute',
         top: 'calc(50% - 24px)',
-        left: 16
+        left: 16,
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            left: 0
+        }
     },
     carouselNextButton: {
         backgroundColor: 'transparent',
         border: 'none',
         position: 'absolute',
         top: 'calc(50% - 24px)',
-        right: 16
+        right: 16,
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            right: 0
+        }
     },
     imageContainer: {
         position: 'relative',
         margin: 10,
-        [theme.breakpoints.down('md')]: {
+        [getCustomBreakpoints('md', theme, 'down')]: {
             margin: 5
+        },
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            margin: 0
         }
     },
     image: {
         paddingLeft: 20,
-        paddingRight: 20
+        paddingRight: 20,
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            paddingLeft: 10,
+            paddingRight: 10
+        }
     },
     buttonsContainer: {
         display: 'flex',
         justifyContent: 'space-between',
         margin: '20px 64px',
-        [theme.breakpoints.down('md')]: {
+        [getCustomBreakpoints('md', theme, 'down')]: {
             margin: '10px 64px'
+        },
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            margin: '10px 24px'
         }
     },
     primaryButton: {
-        width: 60,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
         padding: 4,
         textTransform: 'unset'
     },
     secondaryButton: {
-        width: 94,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
         padding: 4,

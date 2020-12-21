@@ -1,26 +1,21 @@
-import { Button } from 'gatsby-theme-material-ui';
-import { React } from '../../deps';
-import { Props } from './types';
+import {Button} from 'gatsby-theme-material-ui';
+import React from 'react';
+import {ButtonProps} from '../../utils/types';
+import {TranslateText} from '../TranslateText';
 
-const SecondaryButton: React.FC<Props> = ({
-  text,
-  className,
-  to,
-  ...props
-}) => {
-  return (
-    <Button
-      to={to ?? undefined}
-      //@ts-ignore
-      target={to ?? '_blank'}
-      variant={'outlined'}
-      color={'primary'}
-      className={className}
-      {...props}
-    >
-      {text}
-    </Button>
-  );
+const SecondaryButton: React.FunctionComponent<ButtonProps> = (props) => {
+    return (
+        <Button
+            to={props.to ?? undefined}
+            //@ts-ignore
+            target={props.to ?? '_blank'}
+            variant={'outlined'}
+            color={'primary'}
+            {...props}
+        >
+            <TranslateText text={props.text}/>
+        </Button>
+    );
 };
 
 export default SecondaryButton;

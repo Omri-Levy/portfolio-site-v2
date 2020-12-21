@@ -1,22 +1,24 @@
-import {makeStyles} from '../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     bottomToolbarContainer: {
-        width: '100vw',
+        width: '100%',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         position: 'fixed',
         height: 59,
         bottom: 59,
         left: 0,
-        [theme.breakpoints.up('md')]: {
+        right: 0,
+        [getCustomBreakpoints('xs', theme, 'down')]: {
+            justifyContent: 'center'
+        },
+        [getCustomBreakpoints('md', theme, 'up')]: {
             bottom: 0
         }
     },
-    innerBox: {
-        display: 'flex'
-    }
 }));
 
 export default useStyles;

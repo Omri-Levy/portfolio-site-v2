@@ -1,26 +1,22 @@
 import {Box} from '@material-ui/core';
-import {React} from '../../../deps';
+import {ConfigsGroup} from '../../Layout/ConfigsGroup';
+import React from 'react';
 import useDevice from '../../../hooks/useDevice/useDevice';
-import {DarkModeToggle} from '../DarkModeToggle';
-import {Language} from '../Language';
-import {ThemeSelector} from './ThemeSelector';
 import useStyles from './useStyles';
 
 const BottomToolbar = () => {
-    const classes = useStyles();
-    const {isMobile} = useDevice();
+	const classes = useStyles();
+	const {isDesktop, isIpadPro} = useDevice();
 
-    return (
-        <Box className={classes.bottomToolbarContainer}>
-            <ThemeSelector/>
-            {isMobile && (
-                <Box className={classes.innerBox}>
-                    <Language/>
-                    <DarkModeToggle/>
-                </Box>
-            )}
-        </Box>
-    );
+	if (isDesktop || isIpadPro) {
+		return null;
+	}
+
+	return (
+		<Box className={classes.bottomToolbarContainer}>
+			<ConfigsGroup/>
+		</Box>
+	);
 };
 
 export default BottomToolbar;

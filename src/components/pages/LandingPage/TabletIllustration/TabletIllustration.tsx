@@ -1,9 +1,9 @@
 import {darken} from '@material-ui/core';
 import {Link} from 'gatsby-theme-material-ui';
 import React from 'react';
-import {useTheme} from '../../../../deps';
+import {useTheme} from '@material-ui/core/styles';
 
-const TabletIllustration: React.FC = () => {
+const TabletIllustration: React.FunctionComponent = () => {
     const theme = useTheme();
 
     return (
@@ -926,7 +926,10 @@ const TabletIllustration: React.FC = () => {
           d="M769.514 58.0248H763.602C764.146 58.0248 764.684 57.9443 765.186 57.7878C765.689 57.6314 766.145 57.4021 766.529 57.113C766.914 56.8239 767.218 56.4808 767.426 56.1031C767.635 55.7254 767.742 55.3206 767.742 54.9118C767.742 54.503 767.635 54.0982 767.426 53.7205C767.218 53.3428 766.914 52.9996 766.529 52.7106C766.145 52.4215 765.689 52.1922 765.186 52.0358C764.684 51.8793 764.146 51.7988 763.602 51.7988H715.729C715.186 51.7988 714.647 51.8793 714.145 52.0358C713.643 52.1922 713.187 52.4215 712.802 52.7106C712.418 52.9996 712.113 53.3428 711.905 53.7205C711.697 54.0982 711.59 54.503 711.59 54.9118C711.59 55.3206 711.697 55.7254 711.905 56.1031C712.113 56.4808 712.418 56.8239 712.802 57.113C713.187 57.4021 713.643 57.6314 714.145 57.7878C714.647 57.9443 715.186 58.0248 715.729 58.0248H721.609C720.511 58.0248 719.458 58.3527 718.682 58.9365C717.906 59.5203 717.47 60.3122 717.47 61.1378C717.47 61.9634 717.906 62.7552 718.682 63.339C719.458 63.9228 720.511 64.2507 721.609 64.2507H713.363C712.265 64.2507 711.212 64.5787 710.436 65.1625C709.66 65.7463 709.224 66.5381 709.224 67.3637C709.224 68.1894 709.66 68.9812 710.436 69.5649C711.212 70.1487 712.265 70.4767 713.363 70.4767H761.236C762.334 70.4767 763.387 70.1487 764.163 69.5649C764.939 68.9812 765.375 68.1894 765.375 67.3637C765.375 66.5381 764.939 65.7463 764.163 65.1625C763.387 64.5787 762.334 64.2507 761.236 64.2507H769.514C770.612 64.2507 771.665 63.9228 772.441 63.339C773.217 62.7552 773.654 61.9634 773.654 61.1378C773.654 60.3122 773.217 59.5203 772.441 58.9365C771.665 58.3527 770.612 58.0248 769.514 58.0248Z"
           fill="#EEEEEE"
         />
-        <Link to={'/home'}>
+        <Link
+            id={'dive-in-anchor'}
+            to={'/home'}
+        >
           <g filter="url(#filter46_d)">
             <rect
               x="311"
@@ -960,9 +963,9 @@ const TabletIllustration: React.FC = () => {
         width="246.656"
         height="278"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -993,9 +996,9 @@ const TabletIllustration: React.FC = () => {
         width="36.0771"
         height="38"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1026,9 +1029,9 @@ const TabletIllustration: React.FC = () => {
         width="36.077"
         height="38"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1059,9 +1062,9 @@ const TabletIllustration: React.FC = () => {
         width="29.0579"
         height="30.5"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1092,9 +1095,9 @@ const TabletIllustration: React.FC = () => {
         width="68.8337"
         height="78.0001"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1125,9 +1128,9 @@ const TabletIllustration: React.FC = () => {
         width="282.79"
         height="262.921"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1158,9 +1161,9 @@ const TabletIllustration: React.FC = () => {
         width="22.9435"
         height="441.981"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1191,9 +1194,9 @@ const TabletIllustration: React.FC = () => {
         width="14.023"
         height="182.902"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1224,9 +1227,9 @@ const TabletIllustration: React.FC = () => {
         width="319.919"
         height="340.424"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1257,9 +1260,9 @@ const TabletIllustration: React.FC = () => {
         width="267.179"
         height="284.189"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1290,9 +1293,9 @@ const TabletIllustration: React.FC = () => {
         width="267.108"
         height="196.703"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1323,9 +1326,9 @@ const TabletIllustration: React.FC = () => {
         width="221.903"
         height="183.05"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1356,9 +1359,9 @@ const TabletIllustration: React.FC = () => {
         width="267.185"
         height="169.971"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1389,9 +1392,9 @@ const TabletIllustration: React.FC = () => {
         width="72.0948"
         height="63.6133"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1422,9 +1425,9 @@ const TabletIllustration: React.FC = () => {
         width="74.3245"
         height="69.6476"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1455,9 +1458,9 @@ const TabletIllustration: React.FC = () => {
         width="290.042"
         height="224.304"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1488,9 +1491,9 @@ const TabletIllustration: React.FC = () => {
         width="368.366"
         height="392.007"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1521,9 +1524,9 @@ const TabletIllustration: React.FC = () => {
         width="307.434"
         height="327.046"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1554,9 +1557,9 @@ const TabletIllustration: React.FC = () => {
         width="307.353"
         height="225.985"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1587,9 +1590,9 @@ const TabletIllustration: React.FC = () => {
         width="255.126"
         height="210.213"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1620,9 +1623,9 @@ const TabletIllustration: React.FC = () => {
         width="307.442"
         height="195.105"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1653,9 +1656,9 @@ const TabletIllustration: React.FC = () => {
         width="333.849"
         height="257.869"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1686,9 +1689,9 @@ const TabletIllustration: React.FC = () => {
         width="315.642"
         height="233.063"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1719,9 +1722,9 @@ const TabletIllustration: React.FC = () => {
         width="84.9566"
         height="95.1814"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1752,9 +1755,9 @@ const TabletIllustration: React.FC = () => {
         width="64.6284"
         height="72.1524"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1785,9 +1788,9 @@ const TabletIllustration: React.FC = () => {
         width="24.0885"
         height="26.2852"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1818,9 +1821,9 @@ const TabletIllustration: React.FC = () => {
         width="24.0884"
         height="26.2852"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1851,9 +1854,9 @@ const TabletIllustration: React.FC = () => {
         width="17.653"
         height="18.9712"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1884,9 +1887,9 @@ const TabletIllustration: React.FC = () => {
         width="17.6531"
         height="18.9712"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1917,9 +1920,9 @@ const TabletIllustration: React.FC = () => {
         width="17.6531"
         height="18.9711"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1950,9 +1953,9 @@ const TabletIllustration: React.FC = () => {
         width="16.0195"
         height="17.1147"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1983,9 +1986,9 @@ const TabletIllustration: React.FC = () => {
         width="16.0196"
         height="17.1146"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2016,9 +2019,9 @@ const TabletIllustration: React.FC = () => {
         width="16.0196"
         height="17.1138"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2049,9 +2052,9 @@ const TabletIllustration: React.FC = () => {
         width="16.0188"
         height="17.1146"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2082,9 +2085,9 @@ const TabletIllustration: React.FC = () => {
         width="72.3538"
         height="93.6388"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2115,9 +2118,9 @@ const TabletIllustration: React.FC = () => {
         width="72.3537"
         height="93.6389"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2148,9 +2151,9 @@ const TabletIllustration: React.FC = () => {
         width="141.506"
         height="165.627"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2181,9 +2184,9 @@ const TabletIllustration: React.FC = () => {
         width="118.932"
         height="138.962"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2214,9 +2217,9 @@ const TabletIllustration: React.FC = () => {
         width="118.902"
         height="97.4784"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2247,9 +2250,9 @@ const TabletIllustration: React.FC = () => {
         width="99.5535"
         height="91.0043"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2280,9 +2283,9 @@ const TabletIllustration: React.FC = () => {
         width="118.935"
         height="84.8029"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2313,9 +2316,9 @@ const TabletIllustration: React.FC = () => {
         width="35.4334"
         height="34.3704"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2346,9 +2349,9 @@ const TabletIllustration: React.FC = () => {
         width="36.3877"
         height="37.2318"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2379,9 +2382,9 @@ const TabletIllustration: React.FC = () => {
         width="122.892"
         height="96.6077"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2412,9 +2415,9 @@ const TabletIllustration: React.FC = () => {
         width="68.1377"
         height="79.1246"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2445,9 +2448,9 @@ const TabletIllustration: React.FC = () => {
         width="57.9694"
         height="67.0927"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -2478,9 +2481,9 @@ const TabletIllustration: React.FC = () => {
         width="132"
         height="43"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

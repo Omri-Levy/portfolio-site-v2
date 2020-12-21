@@ -2,15 +2,15 @@ import {Box, Typography} from '@material-ui/core';
 import {
     AlternateEmailOutlined,
     CallOutlined,
-    PermContactCalendarOutlined
+    PermContactCalendarOutlined,
 } from '@material-ui/icons';
 import {IconButton} from 'gatsby-theme-material-ui';
-import {React} from '../../../deps';
+import React from 'react';
 import {PageTitle} from '../../PageTitle';
 import {ContactMeForm} from './ContactMeForm';
 import useStyles from './useStyles';
 
-const ContactMe: React.FC = () => {
+const ContactMe: React.FunctionComponent = () => {
     const classes = useStyles();
 
     return (
@@ -26,6 +26,7 @@ const ContactMe: React.FC = () => {
                 <Box className={classes.innerBox1}>
                     <IconButton to={'tel:+972052-6256647'}
                                 style={{backgroundColor: 'transparent'}}
+                                disableFocusRipple
                                 className={classes.link}
                     >
                         <CallOutlined className={classes.icon}/>
@@ -38,6 +39,7 @@ const ContactMe: React.FC = () => {
                 <Box className={classes.innerBox2}>
                     <IconButton
                         style={{backgroundColor: 'transparent'}}
+                        disableFocusRipple
                         to={'mailto:omri.levy0197@gmail.com'}
                         className={classes.link}
                     >

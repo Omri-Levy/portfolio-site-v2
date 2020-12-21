@@ -1,9 +1,9 @@
-import {DefaultTheme} from '@material-ui/core/styles';
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     box: {
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             marginBottom: 15
         }
     }

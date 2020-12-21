@@ -1,15 +1,19 @@
 import {Container as MuiContainer} from '@material-ui/core';
-import {React} from '../../../deps';
-import {Props} from './types';
+import React from 'react';
 import useStyles from './useStyles';
+import {Props} from './types';
 
-const Container: React.FC<Props> = ({children}) => {
+const Container: React.FunctionComponent<Props> = ({
+                                                       children,
+                                                       ...props
+                                                   }) => {
     const classes = useStyles();
 
     return (
         <MuiContainer
             className={classes.mainContainer}
             maxWidth={false}
+            {...props}
         >
             {children}
         </MuiContainer>

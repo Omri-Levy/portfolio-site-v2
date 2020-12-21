@@ -1,15 +1,17 @@
 import {fade} from '@material-ui/core';
-import {makeStyles} from '../../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
     icon: {
-        color: theme.palette.contrast.main,
+        color: theme.palette.primary.contrastText,
         width: 48,
         height: 48
     },
     projectCardContainer: {
         marginBottom: 53,
-        [theme.breakpoints.up('md')]: {
+
+        [getCustomBreakpoints('md', theme, 'up')]: {
             marginBottom: 30
         }
     },
@@ -25,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiListItem': {
             '&-divider': {
                 borderBottom: `1px solid ${fade(
-                    theme.palette.contrast.main, 0.12)}`
+                    theme.palette.primary.contrastText, 0.12)}`
             },
             '&-gutters': {
                 paddingLeft: 0,
@@ -37,12 +39,13 @@ const useStyles = makeStyles((theme) => ({
         },
         '& .MuiListItemText': {
             '&-primary': {
-                color: theme.palette.text.main,
+                color: theme.palette.text.primary,
                 fontSize: 12,
                 fontWeight: 400,
                 minWidth: 335,
                 maxWidth: 335,
-                [theme.breakpoints.up('md')]: {
+                [getCustomBreakpoints('md', theme, 'up')
+                    ]: {
                     fontSize: 16
                 }
             }
@@ -52,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 16,
         fontWeight: 500,
         marginBottom: 26,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 24
         }
     },
@@ -62,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     image: {
         paddingLeft: 20,
         paddingRight: 20,
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             width: 500,
             height: 240,
             marginLeft: 130
@@ -72,38 +75,28 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         margin: '20px 64px',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             margin: '24px 0',
             justifyContent: 'flex-start'
         }
     },
     primaryButton: {
-        width: 60,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
-        padding: 4,
         textTransform: 'unset',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             marginRight: 44,
             fontSize: 18,
-            width: 84,
             height: 32,
-            padding: '5px 4px'
         }
     },
     secondaryButton: {
-        width: 94,
-        height: 25,
         fontSize: 12,
         fontWeight: 500,
-        padding: 4,
         textTransform: 'unset',
-        [theme.breakpoints.up('md')]: {
+        [getCustomBreakpoints('md', theme, 'up')]: {
             fontSize: 18,
-            width: 134,
             height: 32,
-            padding: '5px 4px'
         }
     }
 }));

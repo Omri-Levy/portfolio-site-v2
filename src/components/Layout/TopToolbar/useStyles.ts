@@ -1,36 +1,30 @@
-import {DefaultTheme} from '@material-ui/core/styles';
-import {makeStyles} from '../../../deps';
+import {makeStyles} from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
-    box: {
+    topToolbarContainer: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: 'calc(100vw - 40px)',
+        width: '100%',
         top: 0,
         left: 0,
+        right: 0,
         position: 'fixed',
-        margin: '0 20px',
+        padding: '0 20px',
         height: 59,
-        [theme.breakpoints.up('lg')]: {
-            top: 108,
-            margin: '0 37px',
-            width: 'calc(100vw - 74px)'
-        }
+		[getCustomBreakpoints('md', theme, 'up')]: {
+			top: 118,
+		},
     },
     button: {
-        width: 78,
-        height: 24,
         borderRadius: 5,
-        padding: 5,
         fontSize: 11,
         fontWeight: 400,
         textTransform: 'unset',
-        [theme.breakpoints.up('lg')]: {
-            width: 117,
-            height: 32,
+        [getCustomBreakpoints('lg', theme, 'up')]: {
             fontSize: 18,
-            padding: '5px 4px'
+            height: 32
         }
     }
 }));
