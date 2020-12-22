@@ -55,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "lint-staged"
+      "post-commit": "lint-staged"
     }
   },
   "devDependencies": {
