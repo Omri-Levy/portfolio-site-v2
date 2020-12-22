@@ -10,17 +10,17 @@ const LandingPage: React.FunctionComponent = () => {
 
   let content;
 
-  // if (isMobile || isIpadPro) {
-  // 	content = <MobileIllustration/>;
-  // } else if (isDesktop) {
-  // 	content = <DesktopIllustration/>;
-  // } else if (isTablet) {
-  // 	content = <TabletIllustration/>;
-  // } else {
-  // 	content = <TabletIllustration/>;
-  // }
+  if (isMobile || isIpadPro) {
+    content = <MobileIllustration />;
+  } else if (isDesktop) {
+    content = <DesktopIllustration />;
+  } else if (isTablet) {
+    content = <TabletIllustration />;
+  } else {
+    content = <TabletIllustration />;
+  }
 
-  return <Container>{/*{content}*/}</Container>;
+  return <Container>{content}</Container>;
 };
 
 export default LandingPage;
