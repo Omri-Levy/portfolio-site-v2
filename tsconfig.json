@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build/dist",
-    "types": ["cypress", "@testing-library/cypress"],
+    "types": [
+      "@testing-library/cypress",
+      "@testing-library/jest-dom",
+      "@testing-library/react"
+    ],
     "module": "esnext",
     "target": "es5",
     "lib": [
@@ -16,7 +20,7 @@
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
-	"allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
@@ -27,7 +31,7 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
