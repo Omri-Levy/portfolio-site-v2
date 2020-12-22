@@ -1,8 +1,7 @@
-import {HookReturns} from './types';
-import {useTheme} from '@material-ui/core/styles';
+import { HookReturns } from './types';
+import { useTheme } from '@material-ui/core/styles';
 
 const useBreakpoints: HookReturns = (breakpoint, direction, theme?) => {
-
 	// if no theme was passed in, use the useTheme material-ui hook
 	const setTheme = theme ?? useTheme();
 	// get the custom breakpoints i.e "sm" or "lg"
@@ -11,7 +10,7 @@ const useBreakpoints: HookReturns = (breakpoint, direction, theme?) => {
 	const media = setTheme!.breakpoints[direction];
 
 	// returns theme.breakpoints.down(value) or theme.breakpoints.up(value)
-    return media(value);
+	return media(value);
 };
 
 export default useBreakpoints;

@@ -1,15 +1,5 @@
 import React from 'react';
-import {ThemeProvider} from '../../context/ThemeProvider';
-import ThemeTopLayout from './ThemeTopLayout';
+import TopLayout from './TopLayout';
 
-const TopLayout = ({children}) => {
-	return (
-		<ThemeProvider>
-			<ThemeTopLayout>
-				{children}
-			</ThemeTopLayout>
-		</ThemeProvider>
-	);
-};
-
-export default TopLayout;
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default ({ children }) => <TopLayout children={children} />;

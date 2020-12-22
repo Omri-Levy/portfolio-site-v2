@@ -1,5 +1,5 @@
 describe('app', () => {
-	it('works ', () => {
+	it('works', () => {
 		cy.visit('/').wait(0.1).get('a').click();
 	});
 });

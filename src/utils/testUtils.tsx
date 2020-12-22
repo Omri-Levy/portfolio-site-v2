@@ -1,19 +1,17 @@
-import React from "react";
-import { render as rtlRender } from "@testing-library/react";
-import { Locales } from "../components/Layout/Locales";
+import { render } from '@testing-library/react';
+import React from 'react';
+import { Locales } from '../components/Layout/Locales';
+import { ChildrenProps, Options, UI } from './types';
 
-const renderWithLocales = (
-  ui: React.ReactElement,
-  { locale = "pt", ...renderOptions } = {}
-) => {
-  const Wrapper = ({ children }: { children: React.ReactNode }) => {
-    return <Locales>{children}</Locales>;
-  };
-  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
+const Provider = ({ children }: ChildrenProps) => {
+	return <Locales>{children}</Locales>;
 };
 
+const renderWithLocales = (ui: UI, options?: Options) =>
+	render(ui, { wrapper: Provider, ...options });
+
 // re-export everything
-export * from "@testing-library/react";
+export * from '@testing-library/react';
 
 // override render method
 export { renderWithLocales };

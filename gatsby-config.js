@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
 				background_color: '#222831',
 				theme_color: '#3e96ff',
 				display: 'standalone',
-				icon: 'static/favicon.png'
+				icon: 'static/favicon.png',
 			},
 		},
 		{

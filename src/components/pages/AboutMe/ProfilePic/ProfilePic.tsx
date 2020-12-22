@@ -4,16 +4,16 @@ import React from 'react';
 import useStyles from './useStyles';
 
 const ProfilePic = () => {
-    const classes = useStyles();
-    const {image} = useProfilePic();
+	const classes = useStyles();
+	const { image } = useProfilePic();
 
-    return (
-        <Img
-            fluid={image.childImageSharp.fluid}
-            alt='Omri Levy'
-            className={classes.profilePic}
-        />
-    );
+	return (
+		<Img
+			fluid={image.childImageSharp.fluid}
+			alt='Omri Levy'
+			className={classes.profilePic}
+		/>
+	);
 };
 
 export default ProfilePic;

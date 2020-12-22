@@ -11,5 +11,5 @@ export {
 	secondaryTextColor,
 	primaryContrastColor,
 	secondaryContrastColor,
-    primaryColor,
+	primaryColor,
 };

@@ -1,9 +1,6 @@
-import {DataResponse} from '../../../utils/types';
+import { DataResponse } from '../../../utils/types';
 
-type Node = { content: { value: any; }[]; };
+type Node = { content: { value: any }[] };
 type HookReturns = () => DataResponse;
 
-export {
-    Node,
-    HookReturns
-};
+export { Node, HookReturns };

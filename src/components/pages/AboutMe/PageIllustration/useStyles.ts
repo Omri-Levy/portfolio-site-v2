@@ -1,5 +1,5 @@
-import {makeStyles} from '@material-ui/core/styles';
-import getCustomBreakpoints from "../../../../utils/getCustomBreakpoints";
+import { makeStyles } from '@material-ui/core/styles';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	pageIllustrationContainer: {
@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		[getCustomBreakpoints('md', theme, 'up')]: {
 			display: 'flex',
 			width: '100%',
-		}
+		},
 	},
 	pageIllustration: {
 		fill: 'none',
@@ -23,12 +23,12 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[getCustomBreakpoints('lg', theme, 'up')]: {
 			maxWidth: 695,
-			marginBottom: 125
+			marginBottom: 125,
 		},
 		['@media(max-height: 800px)']: {
-			display: 'none'
-		}
-	}
+			display: 'none',
+		},
+	},
 }));
 
 export default useStyles;

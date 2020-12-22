@@ -1,7 +1,7 @@
-import {Box, Typography} from '@material-ui/core';
-import {AnchorLink} from 'gatsby-plugin-anchor-links';
+import { Box, Typography } from '@material-ui/core';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
-import {TranslateText} from '../../../TranslateText';
+import { TranslateText } from '../../../TranslateText';
 import useStyles from './useStyles';
 
 const Logo: React.FunctionComponent = () => {
@@ -11,14 +11,14 @@ const Logo: React.FunctionComponent = () => {
 		<Box className={classes.logoContainer}>
 			<AnchorLink to={'/home#portfolio'} className={classes.link}>
 				<Typography className={classes.title}>
-					<TranslateText text={'Omri Levy'}/>
-                    <span className={classes.subtitle}>
-                          <TranslateText text={'Fullstack Dev'}/>
-                    </span>
-                </Typography>
-            </AnchorLink>
-        </Box>
-    );
+					<TranslateText text={'Omri Levy'} />
+					<span className={classes.subtitle}>
+						<TranslateText text={'Fullstack Dev'} />
+					</span>
+				</Typography>
+			</AnchorLink>
+		</Box>
+	);
 };
 
 export default Logo;

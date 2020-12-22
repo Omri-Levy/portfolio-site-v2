@@ -1,6 +1,6 @@
 interface Props {
-    data: object;
-    options: object;
+	data: object;
+	options: object;
 }
 
-export {Props};
+export { Props };

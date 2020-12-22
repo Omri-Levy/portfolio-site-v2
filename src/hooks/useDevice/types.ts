@@ -4,6 +4,6 @@ type MediaQueries = () => {
 	isMobile: boolean;
 	isXS: boolean;
 	isIpadPro: boolean;
-}
+};
 
-export {MediaQueries};
+export { MediaQueries };

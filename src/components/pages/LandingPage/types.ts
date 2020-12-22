@@ -1,5 +1,3 @@
-interface Props {
-
-}
+interface Props {}
 
 export { Props };

@@ -1,3 +1,3 @@
 type Theme = () => object;
 
-export {Theme}
+export { Theme };

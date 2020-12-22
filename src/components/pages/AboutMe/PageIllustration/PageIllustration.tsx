@@ -1,17 +1,14 @@
 import React from 'react';
-import useStyles from "./useStyles";
-import {Grid} from "@material-ui/core";
-import {useTheme} from '@material-ui/core/styles';
+import useStyles from './useStyles';
+import { Grid } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 
 const PageIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();
 	const classes = useStyles();
 
 	return (
-		<Grid
-			item
-			className={classes.pageIllustrationContainer}
-		>
+		<Grid item className={classes.pageIllustrationContainer}>
 			<svg
 				className={classes.pageIllustration}
 				viewBox='0 0 692 510'
@@ -212,7 +209,7 @@ const PageIllustration: React.FunctionComponent = () => {
 					d='M555.838 510C555.838 510 555.375 500.305 545.888 501.432L555.838 510Z'
 					fill='#393E46'
 				/>
-				<path d='M685 508.062H24V509.551H685V508.062Z' fill='#393E46'/>
+				<path d='M685 508.062H24V509.551H685V508.062Z' fill='#393E46' />
 				<g filter='url(#filter5_d)'>
 					<path
 						d='M203.326 237.84C265.263 237.84 315.474 193.328 315.474 138.42C315.474 83.5118 265.263 39 203.326 39C141.388 39 91.178 83.5118 91.178 138.42C91.178 193.328 141.388 237.84 203.326 237.84Z'
@@ -264,8 +261,9 @@ const PageIllustration: React.FunctionComponent = () => {
 						fill='black'
 					/>
 				</g>
-				<path d='M605.5 321H605.684L609 514H602L605.5 321Z'
-					  fill={theme.palette.primary.contrastText}
+				<path
+					d='M605.5 321H605.684L609 514H602L605.5 321Z'
+					fill={theme.palette.primary.contrastText}
 				/>
 				<g filter='url(#filter11_d)'>
 					<path
@@ -446,14 +444,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -479,14 +477,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -512,14 +510,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -545,14 +543,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -578,14 +576,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -611,14 +609,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -644,14 +642,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -677,14 +675,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -710,14 +708,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -743,14 +741,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -776,14 +774,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -809,14 +807,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -842,14 +840,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -875,14 +873,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -908,14 +906,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -941,14 +939,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -974,14 +972,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1007,14 +1005,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1040,14 +1038,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1073,14 +1071,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1106,14 +1104,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1139,14 +1137,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1172,14 +1170,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1205,14 +1203,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1238,14 +1236,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1271,14 +1269,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1304,14 +1302,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1337,14 +1335,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
@@ -1370,14 +1368,14 @@ const PageIllustration: React.FunctionComponent = () => {
 						filterUnits='userSpaceOnUse'
 						colorInterpolationFilters='sRGB'
 					>
-						<feFlood floodOpacity='0' result='BackgroundImageFix'/>
+						<feFlood floodOpacity='0' result='BackgroundImageFix' />
 						<feColorMatrix
 							in='SourceAlpha'
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
 						/>
-						<feOffset dy='4'/>
-						<feGaussianBlur stdDeviation='2'/>
+						<feOffset dy='4' />
+						<feGaussianBlur stdDeviation='2' />
 						<feColorMatrix
 							type='matrix'
 							values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'

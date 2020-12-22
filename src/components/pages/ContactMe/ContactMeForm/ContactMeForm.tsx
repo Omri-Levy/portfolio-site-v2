@@ -1,32 +1,33 @@
-import {yupResolver} from '@hookform/resolvers/yup';
-import {Box, Grid, TextField} from '@material-ui/core';
-import {init, send} from 'emailjs-com';
-import {useForm} from 'react-hook-form';
-import {SecondaryButton} from '../../../SecondaryButton';
-import {TranslateText} from '../../../TranslateText';
-import {ThemeContext} from '../../../../context/ThemeContext';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Box, Grid, TextField } from '@material-ui/core';
+import { init, send } from 'emailjs-com';
+import { useForm } from 'react-hook-form';
+import { SecondaryButton } from '../../../SecondaryButton';
+import { TranslateText } from '../../../TranslateText';
+import { ThemeContext } from '../../../../context/ThemeContext';
 import useDevice from '../../../../hooks/useDevice/useDevice';
-import {validationSchema} from '../validationSchema';
-import {Data, FormInputs} from './types';
+import { validationSchema } from '../validationSchema';
+import { Data, FormInputs } from './types';
 import useStyles from './useStyles';
-import React, {useContext} from 'react';
-import {useTheme} from '@material-ui/core/styles';
+import React, { useContext } from 'react';
+import { useTheme } from '@material-ui/core/styles';
 
 const ContactMeForm: React.FunctionComponent = () => {
 	init('user_VCUWzf1n5yq07YDWAJoZH');
 	const theme = useTheme();
-	const {isDarkMode} = useContext(ThemeContext);
+	const { isDarkMode } = useContext(ThemeContext);
 	const classes = useStyles();
-	const {register, errors, handleSubmit} = useForm<FormInputs>({
+	const { register, errors, handleSubmit } = useForm<FormInputs>({
 		resolver: yupResolver(validationSchema),
 	});
-	const {isDesktop, isXS} = useDevice();
+	const { isDesktop, isXS } = useDevice();
 
 	const inputProps = {
 		style: {
 			color: theme.palette.text.primary,
-			backgroundColor: isDarkMode ? theme.palette.primary.dark :
-				theme.palette.text.secondary,
+			backgroundColor: isDarkMode
+				? theme.palette.primary.dark
+				: theme.palette.text.secondary,
 			borderRadius: 5,
 			fontSize: isDesktop ? 13 : 11,
 		},
@@ -78,7 +79,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 							autoFocus
 							name={'fullName'}
 							variant={'filled'}
-							label={<TranslateText text={'Full Name'}/>}
+							label={<TranslateText text={'Full Name'} />}
 							id={'full-name'}
 							className={classes.fullName}
 							FormHelperTextProps={labelStyle}
@@ -93,7 +94,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 						<TextField
 							name={'email'}
 							variant={'filled'}
-							label={<TranslateText text={'Email'}/>}
+							label={<TranslateText text={'Email'} />}
 							id={'email'}
 							className={classes.email}
 							FormHelperTextProps={labelStyle}
@@ -105,15 +106,12 @@ const ContactMeForm: React.FunctionComponent = () => {
 						/>
 					</Grid>
 				</Grid>
-				<Grid
-					container
-					item
-				>
+				<Grid container item>
 					<Grid item>
 						<TextField
 							name={'message'}
 							variant={'filled'}
-							label={<TranslateText text={'Message'}/>}
+							label={<TranslateText text={'Message'} />}
 							id={'message'}
 							className={classes.message}
 							FormHelperTextProps={labelStyle}
@@ -125,12 +123,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 							required
 						/>
 					</Grid>
-					<Grid
-						container
-						item
-						direction={'column'}
-						alignItems={'flex-end'}
-					>
+					<Grid container item direction={'column'} alignItems={'flex-end'}>
 						<SecondaryButton
 							type='submit'
 							text={'Send'}

@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 const fileName = path.basename(path.dirname(__filename));
 
 // create entry point
@@ -37,28 +37,24 @@ export default useStyles;`,
 );
 
 // create tests file
-fs.writeFile(`./${fileName}.test.tsx`, '',
-	(err) => {
-		if (err) {
-			console.log(err);
-			console.log(`error at ${fileName}.test.ts`);
-		}
+fs.writeFile(`./${fileName}.test.tsx`, '', (err) => {
+	if (err) {
+		console.log(err);
+		console.log(`error at ${fileName}.test.ts`);
+	}
 
-		console.log(`created ${fileName}.test.ts`);
-	},
-);
+	console.log(`created ${fileName}.test.ts`);
+});
 
 // create types file
-fs.writeFile('./types.ts', '',
-	(err) => {
-		if (err) {
-			console.log(err);
-			console.log('error at types.ts');
-		}
+fs.writeFile('./types.ts', '', (err) => {
+	if (err) {
+		console.log(err);
+		console.log('error at types.ts');
+	}
 
-		console.log('created types.ts');
-	},
-);
+	console.log('created types.ts');
+});
 
 // create component file
 fs.writeFile(
@@ -87,4 +83,3 @@ export default ${fileName};
 		console.log(`created ${fileName}.tsx`);
 	},
 );
-
