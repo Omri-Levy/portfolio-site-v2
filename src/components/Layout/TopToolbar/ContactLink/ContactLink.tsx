@@ -1,7 +1,8 @@
-import { IconButton } from 'gatsby-theme-material-ui';
+import { IconButton } from '@material-ui/core';
 import React from 'react';
 import { Props } from './types';
 import useStyles from './useStyles';
+import { Link } from 'gatsby';
 
 const ContactLink: React.FunctionComponent<Props> = ({ Icon, to }) => {
 	const classes = useStyles();
@@ -9,13 +10,12 @@ const ContactLink: React.FunctionComponent<Props> = ({ Icon, to }) => {
 	return (
 		<IconButton
 			className={classes.button}
-			to={to}
-			// @ts-ignore
-			target={'_blank'}
 			style={{ backgroundColor: 'transparent' }}
 			disableFocusRipple
 		>
-			<Icon className={classes.icon} />
+			<Link to={to} target={'_blank'}>
+				<Icon className={classes.icon} />
+			</Link>
 		</IconButton>
 	);
 };

@@ -8,6 +8,20 @@ describe('ConfigsGroup', () => {
 	});
 
 	it('contains theme selector', () => {
-		expect('');
+		const { getByTestId } = renderWithLocales(<ConfigsGroup />);
+
+		expect(getByTestId('theme-selector')).toBeInTheDocument();
+	});
+
+	it('contains dark mode toggle', () => {
+		const { getByTestId } = renderWithLocales(<ConfigsGroup />);
+
+		expect(getByTestId('dark-mode-toggle')).toBeInTheDocument();
+	});
+
+	it('contains language menu', () => {
+		const { getByTestId } = renderWithLocales(<ConfigsGroup />);
+
+		expect(getByTestId('language-menu')).toBeInTheDocument();
 	});
 });

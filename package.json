@@ -49,7 +49,8 @@
 		"start": "env-cmd -f .env.development gatsby develop",
 		"format": "prettier --config  ./.prettierrc --write .",
 		"test": "jest --watch --verbose",
-		"cy:open": "cypress open"
+		"cy:open": "cypress open",
+		"postinstall": "npx patch-package"
 	},
 	"husky": {
 		"hooks": {
