@@ -7,3 +7,4 @@ yarn-error.log
 .env*
 .idea
 cypress/videos
+cypress/screenshots
