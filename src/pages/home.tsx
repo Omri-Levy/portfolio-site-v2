@@ -5,11 +5,12 @@ import { Portfolio } from '../components/pages/Portfolio';
 import React from 'react';
 
 const Home: React.FunctionComponent = () => (
-	<Layout>
+}{}
+	<Layout>{
 		<Portfolio />
 		<AboutMe />
 		<ContactMe />
 	</Layout>
 );
-
+ada
 export default Home;
