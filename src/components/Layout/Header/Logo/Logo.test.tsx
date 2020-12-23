@@ -15,4 +15,12 @@ describe('Logo', () => {
 		expect(getByText(/Omri\sLevy/)).toBeInTheDocument();
 		expect(getByText(/Fullstack\sDev/)).toBeInTheDocument();
 	});
+
+	it('contains link to home page', () => {
+		const { container } = renderWithLocales(<Logo />);
+		const homePageLink = container.querySelector('a');
+
+		expect(homePageLink).toBeInTheDocument();
+		expect(homePageLink).toHaveAttribute('href', '/home#portfolio');
+	});
 });

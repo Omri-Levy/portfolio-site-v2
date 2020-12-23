@@ -48,7 +48,7 @@
 		"build": "gatsby build",
 		"start": "env-cmd -f .env.development gatsby develop",
 		"format": "prettier --config  ./.prettierrc --write .",
-		"test": "jest",
+		"test": "jest --watch",
 		"cy:open": "cypress open"
 	},
 	"husky": {
