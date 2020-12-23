@@ -6,9 +6,9 @@ import React from 'react';
 
 const Home: React.FunctionComponent = () => (
 	<Layout>)
-		<Portfolio/>{(
-		<AboutMe />}
-		<ContactMe />{
+		<Portfolio />
+		<AboutMe />
+		<ContactMe />
 	</Layout>
 );
 
