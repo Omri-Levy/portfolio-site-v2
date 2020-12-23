@@ -19,7 +19,7 @@ const LanguageMenu: React.FunctionComponent = () => {
 	};
 
 	return (
-		<Box>
+		<Box data-testid={'language-menu'}>
 			<IconButton onClick={handleClick}>
 				<LanguageOutlined />
 			</IconButton>

@@ -3,12 +3,12 @@ import React from 'react';
 import { Locales } from '../components/Layout/Locales';
 import { ChildrenProps, Options, UI } from './types';
 
-const Provider = ({ children }: ChildrenProps) => {
+const provider = ({ children }: ChildrenProps) => {
 	return <Locales>{children}</Locales>;
 };
 
 const renderWithLocales = (ui: UI, options?: Options) =>
-	render(ui, { wrapper: Provider, ...options });
+	render(ui, { wrapper: provider, ...options });
 
 // re-export everything
 export * from '@testing-library/react';

@@ -7,7 +7,10 @@ const ThemeSelector: React.FunctionComponent = () => {
 	const classes = useStyles();
 
 	return (
-		<Box className={classes.themeSelectorContainer}>
+		<Box
+			className={classes.themeSelectorContainer}
+			data-testid={'theme-selector'}
+		>
 			<ThemeOption color={'#fb3eff'} />
 			<ThemeOption color={'#3e96ff'} />
 			<ThemeOption color={'#ff3e3e'} />
