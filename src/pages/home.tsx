@@ -9,7 +9,7 @@ const Home: React.FunctionComponent = () => (
 		<Portfolio />
 		<AboutMe />
 		<ContactMe />
-	</Layout>
+	</Layout> //
 );
 
 export default Home;
