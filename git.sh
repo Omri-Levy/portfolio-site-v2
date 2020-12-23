@@ -1,4 +1,4 @@
 echo enter commit message:
 read -r MSG
-git commit -m "$MSG"
+git commit -a -m "$MSG"
 

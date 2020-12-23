@@ -3,9 +3,9 @@
 		"baseUrl": ".",
 		"outDir": "build/dist",
 		"types": [
-			"@testing-library/cypress",
 			"@testing-library/jest-dom",
 			"@testing-library/react",
+			"jest",
 			"node"
 		],
 		"module": "esnext",
@@ -27,13 +27,5 @@
 		"skipLibCheck": true
 	},
 	"include": ["**/*.ts", "**/*.tsx"],
-	"exclude": [
-		"node_modules",
-		"build",
-		"scripts",
-		"acceptance-tests",
-		"webpack",
-		"jest",
-		"src/setupTests.ts"
-	]
+	"exclude": ["node_modules", "build", "scripts", "webpack"]
 }
