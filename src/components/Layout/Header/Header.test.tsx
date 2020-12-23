@@ -5,7 +5,5 @@ import Header from './Header';
 describe('Header', () => {
 	it('renders', () => {
 		renderWithLocales(<Header />);
-
-		// screen.debug();
 	});
 });

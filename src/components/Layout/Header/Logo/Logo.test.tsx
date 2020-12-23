@@ -5,8 +5,6 @@ import Logo from './Logo';
 describe('Logo', () => {
 	it('renders', () => {
 		renderWithLocales(<Logo />);
-
-		// screen.debug();
 	});
 
 	it('contains "Omri Levy Fullstack Dev"', () => {

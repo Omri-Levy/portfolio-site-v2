@@ -1,14 +1,12 @@
 import React from 'react';
 import CustomNavLink from './CustomNavLink';
-import { renderWithLocales, screen } from '../../../../utils/testUtils';
+import { renderWithLocales } from '../../../../utils/testUtils';
 
 describe('CustomNavLink', () => {
 	it('renders', () => {
 		renderWithLocales(
 			<CustomNavLink text={'Portfolio'} to={'/home#portfolio'} />,
 		);
-
-		// screen.debug();
 	});
 
 	it('contains "Portfolio" in text', () => {
@@ -20,13 +18,12 @@ describe('CustomNavLink', () => {
 	});
 
 	it('contains "/home#portfolio" in href', () => {
-		renderWithLocales(
+		const { container } = renderWithLocales(
 			<CustomNavLink text={'Portfolio'} to={'/home#portfolio'} />,
 		);
+		const link = container.querySelector('a');
 
-		expect(screen.getByText(/Portfolio/).closest('a')).toHaveAttribute(
-			'href',
-			'/home#portfolio',
-		);
+		expect(link).toBeInTheDocument();
+		expect(link).toHaveAttribute('href', '/home#portfolio');
 	});
 });

@@ -6,8 +6,6 @@ import { expect } from '@jest/globals';
 describe('Nav', () => {
 	it('renders', () => {
 		renderWithLocales(<Nav />);
-
-		// screen.debug();
 	});
 
 	it('contains three links', () => {
