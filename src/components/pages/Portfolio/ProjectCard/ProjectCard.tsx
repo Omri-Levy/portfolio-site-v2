@@ -1,10 +1,9 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Grid, Typography } from '@material-ui/core';
-import { PrimaryButton } from '../../../PrimaryButton';
-import { SecondaryButton } from '../../../SecondaryButton';
 import React from 'react';
 import { ProjectProps } from '../../../../utils/types';
 import useStyles from './useStyles';
+import { ButtonLink } from '../../../ButtonLink';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const classes = useStyles();
@@ -16,15 +15,15 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 					{props.title}
 				</Typography>
 				{documentToReactComponents(props.body, props.options)}
-				<Grid container item className={classes.buttonsContainer}>
-					<PrimaryButton
+				<Grid item className={classes.buttonsContainer}>
+					<ButtonLink
+						variant={'primary'}
 						text={'Live Site'}
-						className={classes.primaryButton}
 						to={props.liveSiteUrl}
 					/>
-					<SecondaryButton
+					<ButtonLink
+						variant={'secondary'}
 						text={'Git Repository'}
-						className={classes.secondaryButton}
 						to={props.gitRepositoryUrl}
 					/>
 				</Grid>

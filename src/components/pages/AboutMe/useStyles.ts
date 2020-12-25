@@ -4,9 +4,7 @@ import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 const useStyles = makeStyles((theme) => ({
 	aboutMeContainer: {
 		height: '100vh',
-		[getCustomBreakpoints('md', theme, 'up')]: {
-			width: '90%',
-		},
+		width: '100%',
 	},
 	title: {
 		fontSize: 16,

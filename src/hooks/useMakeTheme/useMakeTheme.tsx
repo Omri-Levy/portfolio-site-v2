@@ -12,10 +12,10 @@ import {
 } from './colors';
 import { useContext } from 'react';
 
-const useMakeTheme: () => DefaultTheme = () => {
+const useMakeTheme = (): DefaultTheme => {
 	const { isDarkMode, primaryColor, isRTL } = useContext(ThemeContext);
 	themeFavicon(primaryColor);
-	const theme = {
+	const theme: DefaultTheme = {
 		direction: isRTL ? 'rtl' : 'ltr',
 		breakpoints: {
 			values: {
@@ -133,7 +133,6 @@ const useMakeTheme: () => DefaultTheme = () => {
 		},
 	};
 
-	// @ts-ignore
 	return createMuiTheme(theme, isRTL ? heIL : enUS);
 };
 

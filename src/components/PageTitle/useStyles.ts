@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	pageTitleContainer: {
 		display: 'inline-block',
+		marginLeft: -5,
 		marginTop: 91,
 		[getCustomBreakpoints('lg', theme, 'up')]: {
 			marginTop: 180,

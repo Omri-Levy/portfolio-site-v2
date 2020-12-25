@@ -5,13 +5,12 @@ import {
 	KeyboardArrowRightOutlined,
 } from '@material-ui/icons';
 import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
-import { PrimaryButton } from '../../../PrimaryButton';
-import { SecondaryButton } from '../../../SecondaryButton';
 import React from 'react';
 import { useRTLOrLTRComponent } from '../../../../hooks/useRTLOrLTRComponent';
 import { MobileProjectProps } from '../../../../utils/types';
 import useStyles from './useStyles';
 import { useTheme } from '@material-ui/core/styles';
+import { ButtonLink } from '../../../ButtonLink';
 
 const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 	props,
@@ -51,14 +50,14 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 					</ButtonNext>
 				</Box>
 				<Box className={classes.buttonsContainer}>
-					<PrimaryButton
+					<ButtonLink
+						variant={'primary'}
 						text={'Live Site'}
-						className={classes.primaryButton}
 						to={props.liveSiteUrl}
 					/>
-					<SecondaryButton
+					<ButtonLink
+						variant={'secondary'}
 						text={'Git Repository'}
-						className={classes.secondaryButton}
 						to={props.gitRepositoryUrl}
 					/>
 				</Box>

@@ -76,28 +76,10 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'space-between',
 		margin: '20px 64px',
+		width: '100%',
 		[getCustomBreakpoints('md', theme, 'up')]: {
-			margin: '24px 0',
-			justifyContent: 'flex-start',
-		},
-	},
-	primaryButton: {
-		fontSize: 12,
-		fontWeight: 500,
-		textTransform: 'unset',
-		[getCustomBreakpoints('md', theme, 'up')]: {
-			marginRight: 44,
-			fontSize: 18,
-			height: 32,
-		},
-	},
-	secondaryButton: {
-		fontSize: 12,
-		fontWeight: 500,
-		textTransform: 'unset',
-		[getCustomBreakpoints('md', theme, 'up')]: {
-			fontSize: 18,
-			height: 32,
+			margin: '20px 0',
+			width: 245,
 		},
 	},
 }));

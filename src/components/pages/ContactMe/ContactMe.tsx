@@ -1,14 +1,14 @@
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import {
 	AlternateEmailOutlined,
 	CallOutlined,
 	PermContactCalendarOutlined,
 } from '@material-ui/icons';
-import { IconButton } from 'gatsby-theme-material-ui';
 import React from 'react';
 import { PageTitle } from '../../PageTitle';
 import { ContactMeForm } from './ContactMeForm';
 import useStyles from './useStyles';
+import { IconTextLink } from './IconTextLink';
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();
@@ -18,35 +18,21 @@ const ContactMe: React.FunctionComponent = () => {
 			<PageTitle Icon={PermContactCalendarOutlined} text={'Contact Me'} />
 			<Box className={classes.outerBox}>
 				<Box className={classes.innerBox1}>
-					<IconButton
+					<IconTextLink
 						to={'tel:+972052-6256647'}
-						style={{ backgroundColor: 'transparent' }}
-						disableFocusRipple
-						className={classes.link}
-					>
-						<CallOutlined className={classes.icon} />
-						<Typography variant={'body1'} className={classes.typography}>
-							052-6256647
-						</Typography>
-					</IconButton>
+						Icon={CallOutlined}
+						text={'052-6256647'}
+					/>
 				</Box>
 				<Box className={classes.innerBox2}>
-					<IconButton
-						style={{ backgroundColor: 'transparent' }}
-						disableFocusRipple
+					<IconTextLink
 						to={'mailto:omri.levy0197@gmail.com'}
-						className={classes.link}
-					>
-						<AlternateEmailOutlined className={classes.icon} />
-						<Typography variant={'body1'} className={classes.typography}>
-							omri.levy0197@gmail.com
-						</Typography>
-					</IconButton>
+						Icon={AlternateEmailOutlined}
+						text={'omri.levy0197@gmail.com'}
+					/>
 				</Box>
 			</Box>
-			<Box>
-				<ContactMeForm />
-			</Box>
+			<ContactMeForm />
 		</section>
 	);
 };

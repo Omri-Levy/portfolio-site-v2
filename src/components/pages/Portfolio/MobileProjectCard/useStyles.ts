@@ -134,18 +134,6 @@ const useStyles = makeStyles((theme) => ({
 			margin: '10px 24px',
 		},
 	},
-	primaryButton: {
-		fontSize: 12,
-		fontWeight: 500,
-		padding: 4,
-		textTransform: 'unset',
-	},
-	secondaryButton: {
-		fontSize: 12,
-		fontWeight: 500,
-		padding: 4,
-		textTransform: 'unset',
-	},
 }));
 
 export default useStyles;

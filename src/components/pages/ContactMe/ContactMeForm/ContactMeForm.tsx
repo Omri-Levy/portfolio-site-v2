@@ -2,7 +2,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Grid, TextField } from '@material-ui/core';
 import { init, send } from 'emailjs-com';
 import { useForm } from 'react-hook-form';
-import { SecondaryButton } from '../../../SecondaryButton';
 import { TranslateText } from '../../../TranslateText';
 import { ThemeContext } from '../../../../context/ThemeContext';
 import useDevice from '../../../../hooks/useDevice/useDevice';
@@ -11,6 +10,7 @@ import { Data, FormInputs } from './types';
 import useStyles from './useStyles';
 import React, { useContext } from 'react';
 import { useTheme } from '@material-ui/core/styles';
+import { ButtonLink } from '../../../ButtonLink';
 
 const ContactMeForm: React.FunctionComponent = () => {
 	init('user_VCUWzf1n5yq07YDWAJoZH');
@@ -72,9 +72,9 @@ const ContactMeForm: React.FunctionComponent = () => {
 
 	return (
 		<Box className={classes.contactMeFormContainer}>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<Grid container>
-					<Grid item>
+			<form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+				<Grid container className={classes.formGridContainer}>
+					<Grid item className={classes.fullNameGridItem}>
 						<TextField
 							autoFocus
 							name={'fullName'}
@@ -90,7 +90,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 							required
 						/>
 					</Grid>
-					<Grid item>
+					<Grid item className={classes.emailGridItem}>
 						<TextField
 							name={'email'}
 							variant={'filled'}
@@ -107,7 +107,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 					</Grid>
 				</Grid>
 				<Grid container item>
-					<Grid item>
+					<Grid item className={classes.messageGridItem}>
 						<TextField
 							name={'message'}
 							variant={'filled'}
@@ -123,12 +123,14 @@ const ContactMeForm: React.FunctionComponent = () => {
 							required
 						/>
 					</Grid>
-					<Grid container item direction={'column'} alignItems={'flex-end'}>
-						<SecondaryButton
-							type='submit'
-							text={'Send'}
-							className={classes.button}
-						/>
+					<Grid
+						className={classes.sendButtonContainer}
+						container
+						item
+						direction={'column'}
+						alignItems={'flex-end'}
+					>
+						<ButtonLink variant={'secondary'} type='submit' text={'Send'} />
 					</Grid>
 				</Grid>
 			</form>

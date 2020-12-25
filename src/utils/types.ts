@@ -19,8 +19,8 @@ interface ClassNameProps {
 }
 
 interface ButtonProps {
+	variant: 'primary' | 'secondary';
 	text: string;
-	className: string;
 	to?: string;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	type?: string;
@@ -72,9 +72,11 @@ type DataResponse = {
 	};
 };
 
+type ProjectOptions = Record<never, never>;
+
 interface ProjectsContainerProps {
 	allProjects: Data;
-	options: object;
+	options: ProjectOptions;
 }
 
 interface ProjectProps {
@@ -83,7 +85,7 @@ interface ProjectProps {
 	projectGif: string;
 	liveSiteUrl: string;
 	gitRepositoryUrl: string;
-	options: object;
+	options: ProjectOptions;
 }
 
 interface MobileProjectProps extends ProjectProps {
@@ -98,6 +100,7 @@ export {
 	ChildrenProps,
 	ButtonProps,
 	ProjectsContainerProps,
+	ProjectOptions,
 	ProjectProps,
 	ClassNameProps,
 	Breakpoint,

@@ -13,18 +13,9 @@ const useStyles = makeStyles((theme) => ({
 		position: 'fixed',
 		padding: '0 20px',
 		height: 59,
+		zIndex: 2,
 		[getCustomBreakpoints('md', theme, 'up')]: {
 			top: 118,
-		},
-	},
-	button: {
-		borderRadius: 5,
-		fontSize: 11,
-		fontWeight: 400,
-		textTransform: 'unset',
-		[getCustomBreakpoints('lg', theme, 'up')]: {
-			fontSize: 18,
-			height: 32,
 		},
 	},
 }));

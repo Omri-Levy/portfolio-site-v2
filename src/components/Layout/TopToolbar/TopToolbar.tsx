@@ -2,11 +2,11 @@ import { Box } from '@material-ui/core';
 import { ConfigsGroup } from '../ConfigsGroup';
 import React from 'react';
 import useDevice from '../../../hooks/useDevice/useDevice';
-import { SecondaryButton } from '../../SecondaryButton';
 import { ContactLinksContainer } from './ContactLinksContainer';
 // @ts-ignore
 import resume from './resume.pdf';
 import useStyles from './useStyles';
+import { ButtonLink } from '../../ButtonLink';
 
 const TopToolbar = () => {
 	const classes = useStyles();
@@ -17,9 +17,9 @@ const TopToolbar = () => {
 			{(isDesktop || isIpadPro) && <ConfigsGroup />}
 			<Box className={classes.topToolbarContainer}>
 				<ContactLinksContainer />
-				<SecondaryButton
+				<ButtonLink
+					variant={'secondary'}
 					text={'My Resume'}
-					className={classes.button}
 					onClick={() => window.open(resume)}
 				/>
 			</Box>
