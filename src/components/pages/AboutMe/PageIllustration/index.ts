@@ -1,1 +1,1 @@
-export { default as PageIllustration } from './PageIllustration';
+export { default as PageIllustration } from "./PageIllustration";

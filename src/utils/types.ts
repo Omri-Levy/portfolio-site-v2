@@ -1,12 +1,13 @@
-import { Document } from '@contentful/rich-text-types';
-import React from 'react';
-import { RenderOptions } from '@testing-library/react';
+import { Document } from "@contentful/rich-text-types";
+import React from "react";
+import { RenderOptions } from "@testing-library/react";
 
 type UI = JSX.Element;
 type Options =
 	| Pick<
-			RenderOptions<typeof import('@testing-library/dom/types/queries')>,
-			'container' | 'baseElement' | 'hydrate' | 'wrapper'
+			//eslint-disable-next-line
+			RenderOptions<typeof import("@testing-library/dom/types/queries")>,
+			`container` | `baseElement` | `hydrate` | `wrapper`
 	  >
 	| undefined;
 
@@ -19,11 +20,12 @@ interface ClassNameProps {
 }
 
 interface ButtonProps {
-	variant: 'primary' | 'secondary';
+	variant: `primary` | `secondary`;
 	text: string;
 	to?: string;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	type?: string;
+	additionalClass?: string;
 }
 
 type Data = {
@@ -92,9 +94,33 @@ interface MobileProjectProps extends ProjectProps {
 	index: number;
 }
 
-type Breakpoint = 'xs' | 'sm' | 'ms' | 'md' | 'mlg' | 'lg' | 'xl';
+type Breakpoint = `xs` | `sm` | `ms` | `md` | `mlg` | `lg` | `xl`;
 
-type Direction = 'up' | 'down';
+type Direction = `up` | `down`;
+
+type Key = string | number | symbol;
+
+interface Icons<T> {
+	icons: {
+		edges: [
+			{
+				node: {
+					fluid: {
+						src: Record<Key, T>;
+					};
+				};
+			},
+		];
+	};
+}
+
+interface Icon {
+	node: {
+		fluid: {
+			src: string;
+		};
+	};
+}
 
 export {
 	ChildrenProps,
@@ -110,4 +136,6 @@ export {
 	MobileProjectProps,
 	UI,
 	Options,
+	Icons,
+	Icon,
 };

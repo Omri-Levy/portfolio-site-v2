@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../../context/ThemeContext';
-import { ProjectsContainerProps } from '../../../../utils/types';
-import { v4 } from 'uuid';
-import ProjectCard from '../ProjectCard/ProjectCard';
+import React, { useContext } from "react";
+import { ThemeContext } from "~/context/ThemeContext";
+import { ProjectsContainerProps } from "~/utils/types";
+import { v4 } from "uuid";
+import ProjectCard from "../ProjectCard/ProjectCard";
 
 const Projects: React.FunctionComponent<ProjectsContainerProps> = ({
 	allProjects,
 	options,
 }) => {
 	const { isRTL } = useContext(ThemeContext);
-	const locale = isRTL ? 'he' : 'en-US';
+	const locale = isRTL ? `he` : `en-US`;
 	const filteredData = allProjects.edges.filter(
 		(project) => project.node.node_locale === locale,
 	);

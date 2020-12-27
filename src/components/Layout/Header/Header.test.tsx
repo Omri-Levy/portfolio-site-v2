@@ -1,9 +1,9 @@
-import React from 'react';
-import { renderWithLocales } from '../../../utils/testUtils';
-import Header from './Header';
+import React from "react";
+import { renderWithProviders } from "~/utils/testUtils";
+import Header from "./Header";
 
-describe('Header', () => {
-	it('renders', () => {
-		renderWithLocales(<Header />);
+describe(`Header`, () => {
+	it(`renders`, () => {
+		renderWithProviders(<Header />);
 	});
 });

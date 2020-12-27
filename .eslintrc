@@ -2,6 +2,10 @@
 	"root": true,
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint", "jest"],
+	"rules": {
+		"quotes": ["error", "backtick"],
+		"prefer-template": "error"
+	},
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",

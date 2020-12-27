@@ -1,20 +1,20 @@
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS } from "@contentful/rich-text-types";
 import {
 	Box,
 	List,
 	ListItem,
 	ListItemIcon,
 	ListItemText,
-} from '@material-ui/core';
-import { FiberManualRecord, WorkOutline } from '@material-ui/icons';
-import React from 'react';
-import { PageTitle } from '../../PageTitle';
-import MobileCarousel from './MobileCarousel/MobileCarousel';
-import { Projects } from './Projects';
-import { Node } from './types';
-import useStyles from './useStyles';
-import useAllProjects from './useAllProjects';
-import useDevice from '../../../hooks/useDevice/useDevice';
+} from "@material-ui/core";
+import { FiberManualRecord, WorkOutline } from "@material-ui/icons";
+import React from "react";
+import { PageTitle } from "~/components/PageTitle";
+import MobileCarousel from "./MobileCarousel/MobileCarousel";
+import { Projects } from "./Projects";
+import { Node } from "./types";
+import useStyles from "./useStyles";
+import useAllProjects from "./useAllProjects";
+import useDevice from "~/hooks/useDevice/useDevice";
 
 const Portfolio: React.FunctionComponent = () => {
 	const classes = useStyles();
@@ -45,8 +45,8 @@ const Portfolio: React.FunctionComponent = () => {
 	};
 
 	return (
-		<section className={classes.portfolioContainer} id={'portfolio'}>
-			<PageTitle Icon={WorkOutline} text={'Portfolio'} />
+		<section className={classes.portfolioContainer} id={`portfolio`}>
+			<PageTitle Icon={WorkOutline} text={`Portfolio`} />
 			<Box className={classes.innerBox}>
 				{isMobile && !isIpadPro ? (
 					<MobileCarousel allProjects={allProjects} options={options} />

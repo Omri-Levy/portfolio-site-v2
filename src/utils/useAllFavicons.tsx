@@ -1,6 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from "gatsby";
+import { Icons } from "./types";
 
-const useAllFavicons = () =>
+const useAllFavicons = (): Icons =>
 	useStaticQuery(graphql`
 		query getFavicon {
 			icons: allImageSharp {
@@ -13,6 +14,6 @@ const useAllFavicons = () =>
 				}
 			}
 		}
-	`);
+	`) || {};
 
 export default useAllFavicons;

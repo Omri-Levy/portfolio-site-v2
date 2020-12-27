@@ -1,24 +1,23 @@
-import React from 'react';
-import { renderWithLocales } from '../../../../utils/testUtils';
-import Logo from './Logo';
+import React from "react";
+import { renderWithProviders, screen } from "~/utils/testUtils";
+import Logo from "./Logo";
 
-describe('Logo', () => {
-	it('renders', () => {
-		renderWithLocales(<Logo />);
+describe(`Logo`, () => {
+	it(`renders`, () => {
+		renderWithProviders(<Logo />);
 	});
 
-	it('contains "Omri Levy Fullstack Dev"', () => {
-		const { getByText } = renderWithLocales(<Logo />);
+	it(`contains 'Omri Levy Fullstack Dev'`, () => {
+		renderWithProviders(<Logo />);
 
-		expect(getByText(/Omri\sLevy/)).toBeInTheDocument();
-		expect(getByText(/Fullstack\sDev/)).toBeInTheDocument();
+		screen.getByRole(`link`, { name: /omri levy fullstack dev/i });
 	});
 
-	it('contains link to home page', () => {
-		const { container } = renderWithLocales(<Logo />);
-		const homePageLink = container.querySelector('a');
+	it(`contains link to home page`, () => {
+		renderWithProviders(<Logo />);
+		const homePageLink = screen.getByRole(`link`);
 
 		expect(homePageLink).toBeInTheDocument();
-		expect(homePageLink).toHaveAttribute('href', '/home#portfolio');
+		expect(homePageLink).toHaveAttribute(`href`, `/home#portfolio`);
 	});
 });

@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import { HookReturns } from './types';
+import { graphql, useStaticQuery } from "gatsby";
+import { HookReturns } from "./types";
 
 const useAllProjects: HookReturns = () =>
 	useStaticQuery(graphql`

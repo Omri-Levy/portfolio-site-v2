@@ -1,22 +1,22 @@
-import { createMuiTheme, darken } from '@material-ui/core';
-import { enUS, heIL } from '@material-ui/core/locale';
-import { DefaultTheme } from '@material-ui/styles';
-import themeFavicon from '../../utils/themeFavicon';
-import { ThemeContext } from '../../context/ThemeContext';
+import { createMuiTheme, darken } from "@material-ui/core";
+import { enUS, heIL } from "@material-ui/core/locale";
+import { DefaultTheme } from "@material-ui/styles";
+import themeFavicon from "~/utils/themeFavicon";
+import { ThemeContext } from "~/context/ThemeContext";
 import {
 	backgroundColor,
 	primaryContrastColor,
 	primaryTextColor,
 	secondaryContrastColor,
 	secondaryTextColor,
-} from './colors';
-import { useContext } from 'react';
+} from "./colors";
+import { useContext } from "react";
 
 const useMakeTheme = (): DefaultTheme => {
 	const { isDarkMode, primaryColor, isRTL } = useContext(ThemeContext);
 	themeFavicon(primaryColor);
 	const theme: DefaultTheme = {
-		direction: isRTL ? 'rtl' : 'ltr',
+		direction: isRTL ? `rtl` : `ltr`,
 		breakpoints: {
 			values: {
 				xs: 350,
@@ -46,15 +46,15 @@ const useMakeTheme = (): DefaultTheme => {
 			},
 			secondary: {
 				main: primaryColor,
-				secondary: '#fff',
+				secondary: `#fff`,
 			},
 		},
 		overrides: {
 			MuiCssBaseline: {
-				'@global': {
+				"@global": {
 					body: {
-						overflowX: 'hidden',
-						direction: isRTL ? 'rtl' : 'ltr',
+						overflowX: `hidden`,
+						direction: isRTL ? `rtl` : `ltr`,
 					},
 				},
 			},
@@ -63,14 +63,14 @@ const useMakeTheme = (): DefaultTheme => {
 					backgroundColor: isDarkMode
 						? secondaryContrastColor
 						: primaryTextColor,
-					'&$focused': {
+					"&$focused": {
 						backgroundColor: isDarkMode
 							? secondaryContrastColor
 							: primaryTextColor,
 					},
 				},
 				underline: {
-					'&:hover': {
+					"&:hover": {
 						backgroundColor: isDarkMode
 							? secondaryContrastColor
 							: primaryTextColor,
@@ -91,10 +91,10 @@ const useMakeTheme = (): DefaultTheme => {
 					backgroundColor: secondaryContrastColor,
 					height: 20,
 					width: 40,
-					borderRadius: '100vh',
+					borderRadius: `100vh`,
 				},
 				colorSecondary: {
-					'&$checked + $track': {
+					"&$checked + $track": {
 						backgroundColor: isDarkMode
 							? primaryContrastColor
 							: secondaryContrastColor,
@@ -104,7 +104,7 @@ const useMakeTheme = (): DefaultTheme => {
 			MuiButton: {
 				containedPrimary: {
 					color: primaryTextColor,
-					boxShadow: '0px 2px 4px #000',
+					boxShadow: `0px 2px 4px #000`,
 					border: `1px solid ${darken(primaryColor, 0.25)}`,
 					padding: 4,
 					borderRadius: 3,
@@ -119,9 +119,9 @@ const useMakeTheme = (): DefaultTheme => {
 			},
 		},
 		typography: {
-			fontFamily: ['Montserrat', 'sans-serif'].join(','),
+			fontFamily: [`Montserrat`, `sans-serif`].join(`,`),
 			body1: {
-				fontFamily: ['Open Sans', 'sans-serif'].join(','),
+				fontFamily: [`Open Sans`, `sans-serif`].join(`,`),
 				color: isDarkMode ? primaryTextColor : secondaryTextColor,
 			},
 			h1: {

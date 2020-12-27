@@ -1,8 +1,8 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	portfolioContainer: {
-		width: '100%',
+		width: `100%`,
 	},
 	innerBox: {},
 }));

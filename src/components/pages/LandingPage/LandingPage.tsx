@@ -1,9 +1,9 @@
-import React from 'react';
-import useDevice from '../../../hooks/useDevice/useDevice';
-import { Container } from '../../Layout/Container';
-import { DesktopIllustration } from './DesktopIllustration';
-import { MobileIllustration } from './MobileIllustration';
-import { TabletIllustration } from './TabletIllustration';
+import React from "react";
+import useDevice from "~/hooks/useDevice/useDevice";
+import { Container } from "~/components/Layout/Container";
+import { DesktopIllustration } from "./DesktopIllustration";
+import { MobileIllustration } from "./MobileIllustration";
+import { TabletIllustration } from "./TabletIllustration";
 
 const LandingPage: React.FunctionComponent = () => {
 	const { isMobile, isDesktop, isTablet, isIpadPro } = useDevice();

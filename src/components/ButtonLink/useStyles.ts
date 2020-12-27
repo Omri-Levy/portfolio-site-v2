@@ -1,14 +1,14 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	button: {
-		textTransform: 'capitalize',
+		textTransform: `capitalize`,
 	},
 	link: {
-		textDecoration: 'none',
-		color: 'inherit',
-		'&:visited': {
-			color: 'inherit',
+		textDecoration: `none`,
+		color: `inherit`,
+		"&:visited": {
+			color: `inherit`,
 		},
 	},
 }));

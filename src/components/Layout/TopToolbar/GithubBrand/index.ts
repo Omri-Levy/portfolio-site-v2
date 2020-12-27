@@ -1,1 +1,1 @@
-export { default as GitHubBrand } from './GithubBrand';
+export { default as GitHubBrand } from "./GithubBrand";

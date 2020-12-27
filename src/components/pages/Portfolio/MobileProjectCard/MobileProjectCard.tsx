@@ -1,16 +1,16 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Box, Typography } from '@material-ui/core';
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Box, Typography } from "@material-ui/core";
 import {
 	KeyboardArrowLeftOutlined,
 	KeyboardArrowRightOutlined,
-} from '@material-ui/icons';
-import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
-import React from 'react';
-import { useRTLOrLTRComponent } from '../../../../hooks/useRTLOrLTRComponent';
-import { MobileProjectProps } from '../../../../utils/types';
-import useStyles from './useStyles';
-import { useTheme } from '@material-ui/core/styles';
-import { ButtonLink } from '../../../ButtonLink';
+} from "@material-ui/icons";
+import { ButtonBack, ButtonNext, Image, Slide } from "pure-react-carousel";
+import React from "react";
+import { useRTLOrLTRComponent } from "~/hooks/useRTLOrLTRComponent";
+import { MobileProjectProps } from "~/utils/types";
+import useStyles from "./useStyles";
+import { useTheme } from "@material-ui/core/styles";
+import { ButtonLink } from "~/components/ButtonLink";
 
 const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 	props,
@@ -30,7 +30,7 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 		<Slide index={props.index}>
 			<Box dir={theme.direction}>
 				<Box className={classes.innerBox}>
-					<Typography variant={'h2'} className={classes.title}>
+					<Typography variant={`h2`} className={classes.title}>
 						{props.title}
 					</Typography>
 					{documentToReactComponents(props.body, props.options)}
@@ -51,13 +51,13 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 				</Box>
 				<Box className={classes.buttonsContainer}>
 					<ButtonLink
-						variant={'primary'}
-						text={'Live Site'}
+						variant={`primary`}
+						text={`Live Site`}
 						to={props.liveSiteUrl}
 					/>
 					<ButtonLink
-						variant={'secondary'}
-						text={'Git Repository'}
+						variant={`secondary`}
+						text={`Git Repository`}
 						to={props.gitRepositoryUrl}
 					/>
 				</Box>

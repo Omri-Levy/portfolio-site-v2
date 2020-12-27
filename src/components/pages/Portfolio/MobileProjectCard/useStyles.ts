@@ -1,6 +1,6 @@
-import { fade } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
+import { fade } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
 
 const useStyles = makeStyles((theme) => ({
 	icon: {
@@ -9,66 +9,66 @@ const useStyles = makeStyles((theme) => ({
 		height: 48,
 	},
 	innerBox: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		'& h2': {
+		display: `flex`,
+		flexDirection: `column`,
+		alignItems: `center`,
+		"& h2": {
 			marginBottom: 5,
 		},
-		'& .MuiList': {
-			'&-padding': {
+		"& .MuiList": {
+			"&-padding": {
 				padding: 0,
 				minHeight: 200,
 				maxHeight: 200,
-				[getCustomBreakpoints('lg', theme, 'up')]: {
-					minHeight: 'unset',
-					maxHeight: 'unset',
+				[getCustomBreakpoints(`lg`, theme, `up`)]: {
+					minHeight: `unset`,
+					maxHeight: `unset`,
 				},
-				[getCustomBreakpoints('xs', theme, 'down')]: {
+				[getCustomBreakpoints(`xs`, theme, `down`)]: {
 					minHeight: 235,
 					maxHeight: 235,
 				},
 			},
-			'&-dense': {
+			"&-dense": {
 				padding: 0,
 			},
 		},
-		'& .MuiListItem': {
-			'&-divider': {
+		"& .MuiListItem": {
+			"&-divider": {
 				borderBottom: `1px solid ${fade(
 					theme.palette.primary.contrastText,
 					0.12,
 				)}`,
 			},
-			'&-gutters': {
+			"&-gutters": {
 				paddingLeft: 0,
 				paddingRight: 0,
 			},
 		},
-		'& .MuiListItemIcon-root': {
+		"& .MuiListItemIcon-root": {
 			minWidth: 25,
-			'& .MuiSvgIcon-root': {
+			"& .MuiSvgIcon-root": {
 				width: 17,
 				height: 17,
 			},
 		},
-		'& .MuiListItemText': {
-			'&-root': {
+		"& .MuiListItemText": {
+			"&-root": {
 				marginTop: 0,
 				marginBottom: 0,
 			},
-			'&-primary': {
+			"&-primary": {
 				color: theme.palette.text.primary,
 				fontSize: 12,
 				fontWeight: 400,
 				minWidth: 335,
 				maxWidth: 335,
-				[getCustomBreakpoints('lg', theme, 'up')]: {
+				[getCustomBreakpoints(`lg`, theme, `up`)]: {
 					fontSize: 16,
 				},
-				[getCustomBreakpoints('md', theme, 'down')]: {
-					minWidth: '85vw',
-					maxWidth: '85vw',
+				[getCustomBreakpoints(`md`, theme, `down`)]: {
+					minWidth: `85vw`,
+					maxWidth: `85vw`,
 				},
 			},
 		},
@@ -86,52 +86,52 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: 231,
 	},
 	carouselBackButton: {
-		backgroundColor: 'transparent',
-		border: 'none',
-		position: 'absolute',
-		top: 'calc(50% - 24px)',
+		backgroundColor: `transparent`,
+		border: `none`,
+		position: `absolute`,
+		top: `calc(50% - 24px)`,
 		left: 16,
-		[getCustomBreakpoints('xs', theme, 'down')]: {
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			left: 0,
 		},
 	},
 	carouselNextButton: {
-		backgroundColor: 'transparent',
-		border: 'none',
-		position: 'absolute',
-		top: 'calc(50% - 24px)',
+		backgroundColor: `transparent`,
+		border: `none`,
+		position: `absolute`,
+		top: `calc(50% - 24px)`,
 		right: 16,
-		[getCustomBreakpoints('xs', theme, 'down')]: {
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			right: 0,
 		},
 	},
 	imageContainer: {
-		position: 'relative',
+		position: `relative`,
 		margin: 10,
-		[getCustomBreakpoints('md', theme, 'down')]: {
+		[getCustomBreakpoints(`md`, theme, `down`)]: {
 			margin: 5,
 		},
-		[getCustomBreakpoints('xs', theme, 'down')]: {
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			margin: 0,
 		},
 	},
 	image: {
 		paddingLeft: 20,
 		paddingRight: 20,
-		[getCustomBreakpoints('xs', theme, 'down')]: {
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			paddingLeft: 10,
 			paddingRight: 10,
 		},
 	},
 	buttonsContainer: {
-		display: 'flex',
-		justifyContent: 'space-between',
-		margin: '20px 64px',
-		[getCustomBreakpoints('md', theme, 'down')]: {
-			margin: '10px 64px',
+		display: `flex`,
+		justifyContent: `space-between`,
+		margin: `20px 64px`,
+		[getCustomBreakpoints(`md`, theme, `down`)]: {
+			margin: `10px 64px`,
 		},
-		[getCustomBreakpoints('xs', theme, 'down')]: {
-			margin: '10px 24px',
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
+			margin: `10px 24px`,
 		},
 	},
 }));

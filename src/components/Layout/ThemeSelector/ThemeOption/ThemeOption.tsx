@@ -1,9 +1,9 @@
-import { IconButton } from '@material-ui/core';
-import { FiberManualRecord } from '@material-ui/icons';
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../../context/ThemeContext';
-import { Props } from './types';
-import useStyles from './useStyles';
+import { IconButton } from "@material-ui/core";
+import { FiberManualRecord } from "@material-ui/icons";
+import React, { useContext } from "react";
+import { ThemeContext } from "~/context/ThemeContext";
+import { Props } from "./types";
+import useStyles from "./useStyles";
 
 const ThemeOption: React.FunctionComponent<Props> = ({ color }) => {
 	const classes = useStyles();

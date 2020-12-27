@@ -1,19 +1,19 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Box, Grid, TextField } from '@material-ui/core';
-import { init, send } from 'emailjs-com';
-import { useForm } from 'react-hook-form';
-import { TranslateText } from '../../../TranslateText';
-import { ThemeContext } from '../../../../context/ThemeContext';
-import useDevice from '../../../../hooks/useDevice/useDevice';
-import { validationSchema } from '../validationSchema';
-import { Data, FormInputs } from './types';
-import useStyles from './useStyles';
-import React, { useContext } from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import { ButtonLink } from '../../../ButtonLink';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Box, Grid, TextField } from "@material-ui/core";
+import { init, send } from "emailjs-com";
+import { useForm } from "react-hook-form";
+import { TranslateText } from "~/components/TranslateText";
+import { ThemeContext } from "~/context/ThemeContext";
+import useDevice from "~/hooks/useDevice/useDevice";
+import { validationSchema } from "../validationSchema";
+import { Data, FormInputs } from "./types";
+import useStyles from "./useStyles";
+import React, { useContext } from "react";
+import { useTheme } from "@material-ui/core/styles";
+import { ButtonLink } from "~/components/ButtonLink";
 
 const ContactMeForm: React.FunctionComponent = () => {
-	init('user_VCUWzf1n5yq07YDWAJoZH');
+	init(`user_VCUWzf1n5yq07YDWAJoZH`);
 	const theme = useTheme();
 	const { isDarkMode } = useContext(ThemeContext);
 	const classes = useStyles();
@@ -62,8 +62,8 @@ const ContactMeForm: React.FunctionComponent = () => {
 			message: data.message,
 		};
 		const email = await send(
-			'service_vv503ou',
-			'template_40335ln',
+			`service_vv503ou`,
+			`template_40335ln`,
 			templateParams,
 		);
 
@@ -77,10 +77,10 @@ const ContactMeForm: React.FunctionComponent = () => {
 					<Grid item className={classes.fullNameGridItem}>
 						<TextField
 							autoFocus
-							name={'fullName'}
-							variant={'filled'}
-							label={<TranslateText text={'Full Name'} />}
-							id={'full-name'}
+							name={`fullName`}
+							variant={`filled`}
+							label={<TranslateText text={`Full Name`} />}
+							id={`full-name`}
 							className={classes.fullName}
 							FormHelperTextProps={labelStyle}
 							InputLabelProps={labelStyle}
@@ -92,10 +92,10 @@ const ContactMeForm: React.FunctionComponent = () => {
 					</Grid>
 					<Grid item className={classes.emailGridItem}>
 						<TextField
-							name={'email'}
-							variant={'filled'}
-							label={<TranslateText text={'Email'} />}
-							id={'email'}
+							name={`email`}
+							variant={`filled`}
+							label={<TranslateText text={`Email`} />}
+							id={`email`}
 							className={classes.email}
 							FormHelperTextProps={labelStyle}
 							InputLabelProps={labelStyle}
@@ -109,10 +109,10 @@ const ContactMeForm: React.FunctionComponent = () => {
 				<Grid container item>
 					<Grid item className={classes.messageGridItem}>
 						<TextField
-							name={'message'}
-							variant={'filled'}
-							label={<TranslateText text={'Message'} />}
-							id={'message'}
+							name={`message`}
+							variant={`filled`}
+							label={<TranslateText text={`Message`} />}
+							id={`message`}
 							className={classes.message}
 							FormHelperTextProps={labelStyle}
 							InputLabelProps={labelStyle}
@@ -127,10 +127,10 @@ const ContactMeForm: React.FunctionComponent = () => {
 						className={classes.sendButtonContainer}
 						container
 						item
-						direction={'column'}
-						alignItems={'flex-end'}
+						direction={`column`}
+						alignItems={`flex-end`}
 					>
-						<ButtonLink variant={'secondary'} type='submit' text={'Send'} />
+						<ButtonLink variant={`secondary`} type={`submit`} text={`Send`} />
 					</Grid>
 				</Grid>
 			</form>

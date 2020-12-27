@@ -1,1 +1,1 @@
-export { default as LinkedinBrand } from './LinkedinBrand';
+export { default as LinkedinBrand } from "./LinkedinBrand";

@@ -1,16 +1,18 @@
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline } from "@material-ui/core";
 import {
 	jssPreset,
 	StylesProvider,
 	ThemeProvider,
-} from '@material-ui/core/styles';
-import { create } from 'jss';
-import extend from 'jss-plugin-extend';
-import rtl from 'jss-rtl';
-import React from 'react';
-import useMakeTheme from '../../hooks/useMakeTheme/useMakeTheme';
+} from "@material-ui/core/styles";
+import { create } from "jss";
+import extend from "jss-plugin-extend";
+import rtl from "jss-rtl";
+import React from "react";
+import useMakeTheme from "~/hooks/useMakeTheme/useMakeTheme";
+import { Locales } from "~/components/Layout/Locales";
 
-declare module '@material-ui/core/styles/createBreakpoints' {
+//eslint-disable-next-line
+declare module "@material-ui/core/styles/createBreakpoints" {
 	interface BreakpointOverrides {
 		xs: true;
 		sm: true;
@@ -31,7 +33,9 @@ const ThemeTopLayout: React.FunctionComponent = ({ children }) => {
 	return (
 		<ThemeProvider theme={selectedTheme}>
 			<CssBaseline>
-				<StylesProvider jss={jss}>{children}</StylesProvider>
+				<StylesProvider jss={jss}>
+					<Locales>{children}</Locales>
+				</StylesProvider>
 			</CssBaseline>
 		</ThemeProvider>
 	);

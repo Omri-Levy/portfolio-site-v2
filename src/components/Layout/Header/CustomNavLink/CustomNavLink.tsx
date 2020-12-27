@@ -1,9 +1,9 @@
-import { MenuItem } from '@material-ui/core';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import React from 'react';
-import { TranslateText } from '../../../TranslateText';
-import { Props } from './types';
-import useStyles from './useStyles';
+import { MenuItem } from "@material-ui/core";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import React from "react";
+import { TranslateText } from "~/components/TranslateText";
+import { Props } from "./types";
+import useStyles from "./useStyles";
 
 const CustomNavLink: React.FunctionComponent<Props> = ({ to, text }) => {
 	const classes = useStyles();

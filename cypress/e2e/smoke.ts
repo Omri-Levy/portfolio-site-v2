@@ -1,5 +1,6 @@
-describe('app', () => {
-	it('works', () => {
-		cy.visit('/').wait(0.1).get('a').click();
+describe(`app`, () => {
+	it(`works`, () => {
+		cy.visit(`/`);
+		cy.findByRole(`link`, { name: /dive in/i }).click();
 	});
 });

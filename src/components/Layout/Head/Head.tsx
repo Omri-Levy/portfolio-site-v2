@@ -1,8 +1,8 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { Helmet } from "react-helmet";
 
 const Head: React.FunctionComponent = () => (
-	<Helmet title='Omri Levy - Portfolio Site' />
+	<Helmet title={`Omri Levy - Portfolio Site`} />
 );
 
 export default Head;

@@ -1,6 +1,6 @@
-import { primaryColor } from '../../hooks/useMakeTheme/colors';
-import { Theme } from './types';
-import { createContext } from 'react';
+import { primaryColor } from "~/hooks/useMakeTheme/colors";
+import { Theme } from "./types";
+import { createContext } from "react";
 
 const theme: Theme = {
 	isDarkMode: true,

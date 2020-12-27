@@ -1,7 +1,5 @@
-import React from 'react';
-
 interface Props {
-	children: React.ReactNode;
+	children: Record<never, never>;
 }
 
 export { Props };

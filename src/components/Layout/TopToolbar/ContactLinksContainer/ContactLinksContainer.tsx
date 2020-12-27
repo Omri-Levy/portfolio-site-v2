@@ -1,9 +1,9 @@
-import { Box } from '@material-ui/core';
-import React from 'react';
-import GithubBrand from '../GithubBrand/GithubBrand';
-import { LinkedinBrand } from '../LinkedinBrand';
-import { ContactLink } from '../ContactLink';
-import useStyles from './useStyles';
+import { Box } from "@material-ui/core";
+import React from "react";
+import GithubBrand from "../GithubBrand/GithubBrand";
+import { LinkedinBrand } from "../LinkedinBrand";
+import { ContactLink } from "../ContactLink";
+import useStyles from "./useStyles";
 
 const ContactLinksContainer = () => {
 	const classes = useStyles();
@@ -12,9 +12,9 @@ const ContactLinksContainer = () => {
 		<Box className={classes.box}>
 			<ContactLink
 				Icon={LinkedinBrand}
-				to={'https://www.linkedin.com/in/omri-levy-798b901b1/'}
+				to={`https://www.linkedin.c~/omri-levy-798b901b1/`}
 			/>
-			<ContactLink Icon={GithubBrand} to={'https://github.com/Omri-Levy'} />
+			<ContactLink Icon={GithubBrand} to={`https://github.com/Omri-Levy`} />
 		</Box>
 	);
 };

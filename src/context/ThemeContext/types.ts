@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-type PrimaryColor = '#fb3eff' | '#3e96ff' | '#ff3e3e' | '#41ff3e' | string;
+type PrimaryColor = `#fb3eff` | `#3e96ff` | `#ff3e3e` | `#41ff3e` | string;
 
 interface Theme {
 	isDarkMode: boolean;

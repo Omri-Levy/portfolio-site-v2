@@ -1,1 +1,1 @@
-export { default as LanguageMenu } from './LanguageMenu';
+export { default as LanguageMenu } from "./LanguageMenu";

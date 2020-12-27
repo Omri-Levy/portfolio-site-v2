@@ -1,17 +1,17 @@
-import React from 'react';
-import { renderWithLocales } from '../../../../utils/testUtils';
-import Nav from './Nav';
-import { expect } from '@jest/globals';
+import React from "react";
+import { renderWithProviders, screen } from "~/utils/testUtils";
+import Nav from "./Nav";
+import { expect } from "@jest/globals";
 
-describe('Nav', () => {
-	it('renders', () => {
-		renderWithLocales(<Nav />);
+describe(`Nav`, () => {
+	it(`renders`, () => {
+		renderWithProviders(<Nav />);
 	});
 
-	it('contains three links', () => {
-		const { container } = renderWithLocales(<Nav />);
+	it(`contains three links`, () => {
+		renderWithProviders(<Nav />);
 
-		const links = container.querySelectorAll('a');
+		const links = screen.getAllByRole(`link`);
 
 		expect(links).toHaveLength(3);
 	});

@@ -1,8 +1,8 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	menuList: {
-		display: 'flex',
+		display: `flex`,
 		margin: 0,
 		padding: 0,
 	},

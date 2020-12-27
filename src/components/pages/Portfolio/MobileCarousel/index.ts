@@ -1,1 +1,1 @@
-export { default as MobileCarousel } from './MobileCarousel';
+export { default as MobileCarousel } from "./MobileCarousel";

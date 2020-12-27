@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
 	root: {
@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
 		padding: 0,
 	},
 	option: {
-		color: '#3e96ff',
+		color: `#3e96ff`,
 	},
 }));
 

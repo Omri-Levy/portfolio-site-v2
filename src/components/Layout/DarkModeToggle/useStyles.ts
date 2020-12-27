@@ -1,9 +1,9 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	darkModeToggleContainer: {
-		display: 'flex',
-		alignItems: 'center',
+		display: `flex`,
+		alignItems: `center`,
 		marginLeft: 15,
 	},
 	icon: {

@@ -1,7 +1,7 @@
-import Img from 'gatsby-image';
-import useProfilePic from './useProfilePic';
-import React from 'react';
-import useStyles from './useStyles';
+import Img from "gatsby-image";
+import useProfilePic from "./useProfilePic";
+import React from "react";
+import useStyles from "./useStyles";
 
 const ProfilePic = () => {
 	const classes = useStyles();
@@ -10,7 +10,7 @@ const ProfilePic = () => {
 	return (
 		<Img
 			fluid={image.childImageSharp.fluid}
-			alt='Omri Levy'
+			alt={`Omri Levy`}
 			className={classes.profilePic}
 		/>
 	);

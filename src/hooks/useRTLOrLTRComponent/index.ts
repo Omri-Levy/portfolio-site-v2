@@ -1,1 +1,1 @@
-export { default as useRTLOrLTRComponent } from './useRTLOrLTRComponent';
+export { default as useRTLOrLTRComponent } from "./useRTLOrLTRComponent";

@@ -1,6 +1,6 @@
-import { ThemeContext } from '../../context/ThemeContext';
-import { HookReturns } from './types';
-import { useContext } from 'react';
+import { ThemeContext } from "~/context/ThemeContext";
+import { HookReturns } from "./types";
+import { useContext } from "react";
 
 const UseRTLOrLTRComponent: HookReturns = (RTLComponent, LTRComponent) => {
 	const { isRTL } = useContext(ThemeContext);

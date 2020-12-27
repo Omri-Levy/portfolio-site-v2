@@ -1,23 +1,24 @@
-import { Button } from '@material-ui/core';
-import { Link } from 'gatsby';
-import React from 'react';
-import { ButtonProps } from '../../utils/types';
-import { TranslateText } from '../TranslateText';
-import useStyles from './useStyles';
+import { Button } from "@material-ui/core";
+import React from "react";
+import { ButtonProps } from "~/utils/types";
+import { TranslateText } from "../TranslateText";
+import useStyles from "./useStyles";
+import clsx from "clsx";
 
 const ButtonLink: React.FunctionComponent<ButtonProps> = (props) => {
 	const classes = useStyles();
+	const classNames = clsx([classes.button, props.additionalClass]);
 
 	return (
 		<Button
-			variant={props.variant === 'primary' ? 'contained' : 'outlined'}
+			variant={props.variant === `primary` ? `contained` : `outlined`}
 			color={props.variant}
-			className={classes.button}
+			className={classNames}
 		>
 			{props.to ? (
-				<Link to={props.to} target={'_blank'} className={classes.link}>
+				<a href={props.to} target={`_blank`} className={classes.link}>
 					<TranslateText text={props.text} />
-				</Link>
+				</a>
 			) : (
 				<TranslateText text={props.text} />
 			)}

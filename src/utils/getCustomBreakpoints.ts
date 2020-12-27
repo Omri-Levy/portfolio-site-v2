@@ -1,5 +1,5 @@
-import { Theme } from '@material-ui/core';
-import { Breakpoint, Direction } from './types';
+import { Theme } from "@material-ui/core";
+import { Breakpoint, Direction } from "./types";
 
 const getCustomBreakpoints = (
 	breakpoint: Breakpoint,
