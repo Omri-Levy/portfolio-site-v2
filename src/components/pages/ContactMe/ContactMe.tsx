@@ -5,17 +5,20 @@ import {
 	PermContactCalendarOutlined,
 } from "@material-ui/icons";
 import React from "react";
-import { PageTitle } from "~/components/PageTitle";
 import { ContactMeForm } from "./ContactMeForm";
 import useStyles from "./useStyles";
 import { IconTextLink } from "../../IconTextLink";
+import { PageContainer } from "~/components/Layout/PageContainer";
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();
 
 	return (
-		<section className={classes.contactMeContainer} id={`contact-me`}>
-			<PageTitle Icon={PermContactCalendarOutlined} text={`Contact Me`} />
+		<PageContainer
+			id={`contact-me`}
+			Icon={PermContactCalendarOutlined}
+			text={`Contact Me`}
+		>
 			<Box className={classes.outerBox}>
 				<Box className={classes.innerBox1}>
 					<IconTextLink
@@ -33,7 +36,7 @@ const ContactMe: React.FunctionComponent = () => {
 				</Box>
 			</Box>
 			<ContactMeForm />
-		</section>
+		</PageContainer>
 	);
 };
 

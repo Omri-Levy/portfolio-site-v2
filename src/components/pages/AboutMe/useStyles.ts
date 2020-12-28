@@ -2,10 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
 
 const useStyles = makeStyles((theme) => ({
-	aboutMeContainer: {
-		height: `100vh`,
-		width: `100%`,
-	},
 	title: {
 		fontSize: 16,
 		fontWeight: 500,

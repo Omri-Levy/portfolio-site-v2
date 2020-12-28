@@ -1,18 +1,17 @@
 import { Grid, Typography } from "@material-ui/core";
 import { InfoOutlined } from "@material-ui/icons";
 import React from "react";
-import { PageTitle } from "~/components/PageTitle";
 import { TranslateText } from "~/components/TranslateText";
 import { ProfilePic } from "./ProfilePic";
 import useStyles from "./useStyles";
 import { PageIllustration } from "./PageIllustration";
+import { PageContainer } from "~/components/Layout/PageContainer";
 
 const AboutMe = () => {
 	const classes = useStyles();
 
 	return (
-		<section className={classes.aboutMeContainer} id={`about-me`}>
-			<PageTitle Icon={InfoOutlined} text={`About Me`} />
+		<PageContainer id={`about-me`} Icon={InfoOutlined} text={`About Me`}>
 			<Grid container className={classes.outerBox}>
 				<Grid item>
 					<ProfilePic />
@@ -30,7 +29,7 @@ const AboutMe = () => {
 				</Grid>
 				<PageIllustration />
 			</Grid>
-		</section>
+		</PageContainer>
 	);
 };
 

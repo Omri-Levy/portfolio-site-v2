@@ -8,13 +8,13 @@ import {
 } from "@material-ui/core";
 import { FiberManualRecord, WorkOutline } from "@material-ui/icons";
 import React from "react";
-import { PageTitle } from "~/components/PageTitle";
 import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import { Projects } from "./Projects";
 import { Node } from "./types";
 import useStyles from "./useStyles";
 import useAllProjects from "./useAllProjects";
 import useDevice from "~/hooks/useDevice/useDevice";
+import { PageContainer } from "~/components/Layout/PageContainer";
 
 const Portfolio: React.FunctionComponent = () => {
 	const classes = useStyles();
@@ -45,8 +45,7 @@ const Portfolio: React.FunctionComponent = () => {
 	};
 
 	return (
-		<section className={classes.portfolioContainer} id={`portfolio`}>
-			<PageTitle Icon={WorkOutline} text={`Portfolio`} />
+		<PageContainer id={`portfolio`} Icon={WorkOutline} text={`Portfolio`}>
 			<Box className={classes.innerBox}>
 				{isMobile && !isIpadPro ? (
 					<MobileCarousel allProjects={allProjects} options={options} />
@@ -54,7 +53,7 @@ const Portfolio: React.FunctionComponent = () => {
 					<Projects allProjects={allProjects} options={options} />
 				)}
 			</Box>
-		</section>
+		</PageContainer>
 	);
 };
 
