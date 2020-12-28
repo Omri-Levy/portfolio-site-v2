@@ -11,7 +11,11 @@ const ThemeOption: React.FunctionComponent<Props> = ({ color }) => {
 	const handleClick = () => setPrimaryColor(color);
 
 	return (
-		<IconButton className={classes.root} onClick={handleClick}>
+		<IconButton
+			className={classes.root}
+			onClick={handleClick}
+			role={`theme-option`}
+		>
 			<FiberManualRecord style={{ color }} />
 		</IconButton>
 	);
