@@ -1,27 +1,27 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { renderWithProviders, screen } from "~/utils/testUtils";
 import ConfigsGroup from "./ConfigsGroup";
 
 describe(`ConfigsGroup`, () => {
 	it(`renders`, () => {
-		render(<ConfigsGroup />);
+		renderWithProviders(<ConfigsGroup />);
 	});
 
 	it(`contains theme selector`, () => {
-		const { getByTestId } = render(<ConfigsGroup />);
+		renderWithProviders(<ConfigsGroup />);
 
-		expect(getByTestId(`theme-selector`)).toBeInTheDocument();
+		expect(screen.getByRole(`theme-selector`)).toBeInTheDocument();
 	});
 
 	it(`contains dark mode toggle`, () => {
-		const { getByTestId } = render(<ConfigsGroup />);
+		renderWithProviders(<ConfigsGroup />);
 
-		expect(getByTestId(`dark-mode-toggle`)).toBeInTheDocument();
+		expect(screen.getByRole(`dark-mode-toggle`)).toBeInTheDocument();
 	});
 
 	it(`contains language menu`, () => {
-		const { getByTestId } = render(<ConfigsGroup />);
+		renderWithProviders(<ConfigsGroup />);
 
-		expect(getByTestId(`language-menu`)).toBeInTheDocument();
+		expect(screen.getByRole(`language-menu`)).toBeInTheDocument();
 	});
 });

@@ -10,14 +10,19 @@ const DarkModeToggle: React.FunctionComponent = () => {
 	const handleChange = () => setIsDarkMode((prevState: boolean) => !prevState);
 
 	return (
-		<Box
-			className={classes.darkModeToggleContainer}
-			data-testid={`dark-mode-toggle`}
-		>
+		<Box className={classes.darkModeToggleContainer} role={`dark-mode-toggle`}>
 			{isDarkMode ? (
-				<Brightness2Outlined className={classes.icon} />
+				<Brightness2Outlined
+					className={classes.icon}
+					role={`moon-icon`}
+					aria-hidden={false}
+				/>
 			) : (
-				<WbSunnyOutlined className={classes.icon} />
+				<WbSunnyOutlined
+					className={classes.icon}
+					role={`sun-icon`}
+					aria-hidden={false}
+				/>
 			)}
 			<Switch onChange={handleChange} checked={isDarkMode} />
 		</Box>
