@@ -8,7 +8,7 @@ import React from "react";
 import { PageTitle } from "~/components/PageTitle";
 import { ContactMeForm } from "./ContactMeForm";
 import useStyles from "./useStyles";
-import { IconTextLink } from "./IconTextLink";
+import { IconTextLink } from "../../IconTextLink";
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();

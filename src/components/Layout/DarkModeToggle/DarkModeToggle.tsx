@@ -7,7 +7,7 @@ import useStyles from "./useStyles";
 const DarkModeToggle: React.FunctionComponent = () => {
 	const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 	const classes = useStyles();
-	const handleChange = () => setIsDarkMode((prevState) => !prevState);
+	const handleChange = () => setIsDarkMode((prevState: boolean) => !prevState);
 
 	return (
 		<Box
