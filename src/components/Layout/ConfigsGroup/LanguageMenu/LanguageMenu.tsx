@@ -1,9 +1,9 @@
-import { Box, IconButton, Menu, MenuItem } from "@material-ui/core";
-import { LanguageOutlined } from "@material-ui/icons";
-import { ThemeContext } from "~/context/ThemeContext";
-import { AnchorOrButtonEvent, EventCurrentTarget } from "./types";
-import useStyles from "./useStyles";
-import React, { useContext, useState } from "react";
+import { Box, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { LanguageOutlined } from '@material-ui/icons';
+import { ThemeContext } from '~/context/ThemeContext';
+import { AnchorOrButtonEvent, EventCurrentTarget } from './types';
+import useStyles from './useStyles';
+import React, { useContext, useState } from 'react';
 
 const LanguageMenu: React.FunctionComponent = () => {
 	const [anchorEl, setAnchorEl] = useState<EventCurrentTarget | null>(null);

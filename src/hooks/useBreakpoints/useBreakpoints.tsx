@@ -1,5 +1,5 @@
-import { HookReturns } from "./types";
-import { useTheme } from "@material-ui/core/styles";
+import { HookReturns } from './types';
+import { useTheme } from '@material-ui/core/styles';
 
 const useBreakpoints: HookReturns = (breakpoint, direction, theme?) => {
 	// if no theme was passed in, use the useTheme material-ui hook

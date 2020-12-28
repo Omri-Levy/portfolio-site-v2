@@ -1,1 +1,1 @@
-export { default as MobileIllustration } from "./MobileIllustration";
+export { default as MobileIllustration } from './MobileIllustration';

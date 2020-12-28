@@ -1,5 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
-import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
+import { makeStyles } from '@material-ui/core/styles';
+import getCustomBreakpoints from '~/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	logoContainer: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 	link: {
 		color: theme.palette.text.primary,
 		textDecoration: `none`,
-		"&:hover": {
+		'&:hover': {
 			textDecoration: `none`,
 		},
 	},

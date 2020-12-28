@@ -1,8 +1,8 @@
-import { Box, Typography } from "@material-ui/core";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
-import React from "react";
-import { TranslateText } from "~/components/TranslateText";
-import useStyles from "./useStyles";
+import { Box, Typography } from '@material-ui/core';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import React from 'react';
+import { TranslateText } from '~/components/TranslateText';
+import useStyles from './useStyles';
 
 const Logo: React.FunctionComponent = () => {
 	const classes = useStyles();

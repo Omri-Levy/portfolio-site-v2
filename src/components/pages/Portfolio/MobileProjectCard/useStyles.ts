@@ -1,6 +1,6 @@
-import { fade } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
+import { fade } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import getCustomBreakpoints from '~/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	arrowIcon: {
@@ -12,11 +12,11 @@ const useStyles = makeStyles((theme) => ({
 		display: `flex`,
 		flexDirection: `column`,
 		alignItems: `center`,
-		"& h2": {
+		'& h2': {
 			marginBottom: 5,
 		},
-		"& .MuiList": {
-			"&-padding": {
+		'& .MuiList': {
+			'&-padding': {
 				padding: 0,
 				minHeight: 200,
 				maxHeight: 200,
@@ -30,35 +30,35 @@ const useStyles = makeStyles((theme) => ({
 					maxHeight: 235,
 				},
 			},
-			"&-dense": {
+			'&-dense': {
 				padding: 0,
 			},
 		},
-		"& .MuiListItem": {
-			"&-divider": {
+		'& .MuiListItem': {
+			'&-divider': {
 				borderBottom: `1px solid ${fade(
 					theme.palette.primary.contrastText,
 					0.12,
 				)}`,
 			},
-			"&-gutters": {
+			'&-gutters': {
 				paddingLeft: 0,
 				paddingRight: 0,
 			},
 		},
-		"& .MuiListItemIcon-root": {
+		'& .MuiListItemIcon-root': {
 			minWidth: 25,
-			"& .MuiSvgIcon-root": {
+			'& .MuiSvgIcon-root': {
 				width: 17,
 				height: 17,
 			},
 		},
-		"& .MuiListItemText": {
-			"&-root": {
+		'& .MuiListItemText': {
+			'&-root': {
 				marginTop: 0,
 				marginBottom: 0,
 			},
-			"&-primary": {
+			'&-primary': {
 				color: theme.palette.text.primary,
 				fontSize: 12,
 				fontWeight: 400,

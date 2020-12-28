@@ -1,5 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
-import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
+import { makeStyles } from '@material-ui/core/styles';
+import getCustomBreakpoints from '~/utils/getCustomBreakpoints';
 
 const sharedProps = {
 	width: `100%`,
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			margin: `0 7px`,
 		},
-		"& label": {
+		'& label': {
 			marginLeft: 10,
 		},
 	},

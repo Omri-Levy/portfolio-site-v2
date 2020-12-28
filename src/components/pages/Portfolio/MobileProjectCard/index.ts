@@ -1,1 +1,1 @@
-export { default as MobileProjectCard } from "./MobileProjectCard";
+export { default as MobileProjectCard } from './MobileProjectCard';

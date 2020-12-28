@@ -1,6 +1,6 @@
-import useAllFavicons from "../utils/useAllFavicons";
-import { Icon } from "./types";
-import { PrimaryColor } from "~/context/ThemeContext/types";
+import useAllFavicons from '../utils/useAllFavicons';
+import { Icon } from './types';
+import { PrimaryColor } from '~/context/ThemeContext/types';
 
 const themeFavicon = (primaryColor: PrimaryColor): void => {
 	const oldFavicon = document.querySelector(`link[rel~='icon']`);

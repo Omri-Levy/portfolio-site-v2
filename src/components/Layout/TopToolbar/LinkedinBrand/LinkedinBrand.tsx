@@ -1,6 +1,6 @@
-import { SvgIcon } from "@material-ui/core";
-import React from "react";
-import { ClassNameProps } from "~/utils/types";
+import { SvgIcon } from '@material-ui/core';
+import React from 'react';
+import { ClassNameProps } from '~/utils/types';
 
 const LinkedinBrand: React.FunctionComponent<ClassNameProps> = ({
 	className,

@@ -1,16 +1,16 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Box, Typography } from "@material-ui/core";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Box, Typography } from '@material-ui/core';
 import {
 	KeyboardArrowLeftOutlined,
 	KeyboardArrowRightOutlined,
-} from "@material-ui/icons";
-import { ButtonBack, ButtonNext, Image, Slide } from "pure-react-carousel";
-import React from "react";
-import { useRTLOrLTRComponent } from "~/hooks/useRTLOrLTRComponent";
-import { MobileProjectProps } from "~/utils/types";
-import useStyles from "./useStyles";
-import { useTheme } from "@material-ui/core/styles";
-import { ButtonLink } from "~/components/ButtonLink";
+} from '@material-ui/icons';
+import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
+import React from 'react';
+import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
+import { MobileProjectProps } from '~/utils/types';
+import useStyles from './useStyles';
+import { useTheme } from '@material-ui/core/styles';
+import { ButtonLink } from '~/components/ButtonLink';
 
 const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 	props,

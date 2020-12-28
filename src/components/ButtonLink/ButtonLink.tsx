@@ -1,9 +1,9 @@
-import { Button } from "@material-ui/core";
-import React from "react";
-import { ButtonProps } from "~/utils/types";
-import { TranslateText } from "../TranslateText";
-import useStyles from "./useStyles";
-import clsx from "clsx";
+import { Button } from '@material-ui/core';
+import React from 'react';
+import { ButtonProps } from '~/utils/types';
+import { TranslateText } from '../TranslateText';
+import useStyles from './useStyles';
+import clsx from 'clsx';
 
 const ButtonLink: React.FunctionComponent<ButtonProps> = (props) => {
 	const classes = useStyles();

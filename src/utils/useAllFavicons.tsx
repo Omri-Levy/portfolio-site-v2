@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery } from "gatsby";
-import { Icons } from "./types";
+import { graphql, useStaticQuery } from 'gatsby';
+import { Icons } from './types';
 
 const useAllFavicons = (): Icons =>
 	useStaticQuery(graphql`

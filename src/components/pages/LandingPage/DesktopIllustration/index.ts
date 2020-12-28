@@ -1,1 +1,1 @@
-export { default as DesktopIllustration } from "./DesktopIllustration";
+export { default as DesktopIllustration } from './DesktopIllustration';

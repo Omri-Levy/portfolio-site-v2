@@ -1,5 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
-import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
+import { makeStyles } from '@material-ui/core/styles';
+import getCustomBreakpoints from '~/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	outerBox: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			marginBottom: 0,
-			"& .MuiIconButton-root": {
+			'& .MuiIconButton-root': {
 				padding: 0,
 			},
 		},
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			marginBottom: 0,
-			"& .MuiIconButton-root": {
+			'& .MuiIconButton-root': {
 				padding: 10,
 			},
 		},

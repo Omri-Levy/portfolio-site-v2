@@ -1,16 +1,16 @@
-import { createMuiTheme, darken } from "@material-ui/core";
-import { enUS, heIL } from "@material-ui/core/locale";
-import { DefaultTheme } from "@material-ui/styles";
-import themeFavicon from "~/utils/themeFavicon";
-import { ThemeContext } from "~/context/ThemeContext";
+import { createMuiTheme, darken } from '@material-ui/core';
+import { enUS, heIL } from '@material-ui/core/locale';
+import { DefaultTheme } from '@material-ui/styles';
+import themeFavicon from '~/utils/themeFavicon';
+import { ThemeContext } from '~/context/ThemeContext';
 import {
 	backgroundColor,
 	primaryContrastColor,
 	primaryTextColor,
 	secondaryContrastColor,
 	secondaryTextColor,
-} from "./colors";
-import { useContext } from "react";
+} from './colors';
+import { useContext } from 'react';
 
 const useMakeTheme = (): DefaultTheme => {
 	const { isDarkMode, primaryColor, isRTL } = useContext(ThemeContext);
@@ -51,7 +51,7 @@ const useMakeTheme = (): DefaultTheme => {
 		},
 		overrides: {
 			MuiCssBaseline: {
-				"@global": {
+				'@global': {
 					body: {
 						overflowX: `hidden`,
 						direction: isRTL ? `rtl` : `ltr`,
@@ -67,14 +67,14 @@ const useMakeTheme = (): DefaultTheme => {
 					backgroundColor: isDarkMode
 						? secondaryContrastColor
 						: primaryTextColor,
-					"&$focused": {
+					'&$focused': {
 						backgroundColor: isDarkMode
 							? secondaryContrastColor
 							: primaryTextColor,
 					},
 				},
 				underline: {
-					"&:hover": {
+					'&:hover': {
 						backgroundColor: isDarkMode
 							? secondaryContrastColor
 							: primaryTextColor,
@@ -98,7 +98,7 @@ const useMakeTheme = (): DefaultTheme => {
 					borderRadius: `100vh`,
 				},
 				colorSecondary: {
-					"&$checked + $track": {
+					'&$checked + $track': {
 						backgroundColor: isDarkMode
 							? primaryContrastColor
 							: secondaryContrastColor,

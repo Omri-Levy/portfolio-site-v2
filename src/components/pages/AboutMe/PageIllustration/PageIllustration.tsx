@@ -1,7 +1,7 @@
-import React from "react";
-import useStyles from "./useStyles";
-import { Grid } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
+import React from 'react';
+import useStyles from './useStyles';
+import { Grid } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 
 const PageIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();

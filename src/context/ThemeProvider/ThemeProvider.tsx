@@ -1,7 +1,7 @@
-import { ChildrenProps } from "~/utils/types";
-import { ThemeContext } from "../ThemeContext";
-import { primaryColor as initialColor } from "~/hooks/useMakeTheme/colors";
-import React, { useState } from "react";
+import { ChildrenProps } from '~/utils/types';
+import { ThemeContext } from '../ThemeContext';
+import { primaryColor as initialColor } from '~/hooks/useMakeTheme/colors';
+import React, { useState } from 'react';
 
 const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 	children,

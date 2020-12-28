@@ -1,6 +1,6 @@
-import { fade } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
+import { fade } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import getCustomBreakpoints from '~/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	icon: {
@@ -19,28 +19,28 @@ const useStyles = makeStyles((theme) => ({
 		display: `flex`,
 		flexDirection: `column`,
 		alignItems: `flex-start`,
-		"& .MuiList": {
-			"&-dense": {
+		'& .MuiList': {
+			'&-dense': {
 				padding: 0,
 			},
 		},
-		"& .MuiListItem": {
-			"&-divider": {
+		'& .MuiListItem': {
+			'&-divider': {
 				borderBottom: `1px solid ${fade(
 					theme.palette.primary.contrastText,
 					0.12,
 				)}`,
 			},
-			"&-gutters": {
+			'&-gutters': {
 				paddingLeft: 0,
 				paddingRight: 0,
 			},
 		},
-		"& .MuiListItemIcon-root": {
+		'& .MuiListItemIcon-root': {
 			minWidth: 35,
 		},
-		"& .MuiListItemText": {
-			"&-primary": {
+		'& .MuiListItemText': {
+			'&-primary': {
 				color: theme.palette.text.primary,
 				fontSize: 12,
 				fontWeight: 400,

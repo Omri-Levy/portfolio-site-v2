@@ -1,8 +1,8 @@
-import { Box } from "@material-ui/core";
-import { ConfigsGroup } from "../ConfigsGroup";
-import React from "react";
-import useDevice from "~/hooks/useDevice/useDevice";
-import useStyles from "./useStyles";
+import { Box } from '@material-ui/core';
+import { ConfigsGroup } from '../ConfigsGroup';
+import React from 'react';
+import useDevice from '~/hooks/useDevice/useDevice';
+import useStyles from './useStyles';
 
 const BottomToolbar = () => {
 	const classes = useStyles();

@@ -1,16 +1,16 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Box, Grid, TextField } from "@material-ui/core";
-import { init, send } from "emailjs-com";
-import { useForm } from "react-hook-form";
-import { TranslateText } from "~/components/TranslateText";
-import { ThemeContext } from "~/context/ThemeContext";
-import useDevice from "~/hooks/useDevice/useDevice";
-import { validationSchema } from "../validationSchema";
-import { Data, FormInputs } from "./types";
-import useStyles from "./useStyles";
-import React, { useContext } from "react";
-import { useTheme } from "@material-ui/core/styles";
-import { ButtonLink } from "~/components/ButtonLink";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Box, Grid, TextField } from '@material-ui/core';
+import { init, send } from 'emailjs-com';
+import { useForm } from 'react-hook-form';
+import { TranslateText } from '~/components/TranslateText';
+import { ThemeContext } from '~/context/ThemeContext';
+import useDevice from '~/hooks/useDevice/useDevice';
+import { validationSchema } from '../validationSchema';
+import { Data, FormInputs } from './types';
+import useStyles from './useStyles';
+import React, { useContext } from 'react';
+import { useTheme } from '@material-ui/core/styles';
+import { ButtonLink } from '~/components/ButtonLink';
 
 const ContactMeForm: React.FunctionComponent = () => {
 	init(`user_VCUWzf1n5yq07YDWAJoZH`);

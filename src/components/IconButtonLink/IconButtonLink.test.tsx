@@ -1,9 +1,15 @@
-import React from "react";
-import { renderWithProviders, screen } from "~/utils/testUtils";
-import IconButtonLink from "./IconButtonLink";
-import { Email } from "@material-ui/icons";
+import React from 'react';
+import { renderWithProviders, screen } from '~/utils/testUtils';
+import IconButtonLink from './IconButtonLink';
+import { Email } from '@material-ui/icons';
 
 describe(`IconButtonLink`, () => {
+	beforeEach(() => {
+		renderWithProviders(
+			<IconButtonLink Icon={Email} to={`https://www.google.com`} />,
+		);
+	});
+
 	it(`renders`, () => {
 		renderWithProviders(
 			<IconButtonLink Icon={Email} to={`https://www.google.com`} />,
@@ -11,18 +17,12 @@ describe(`IconButtonLink`, () => {
 	});
 
 	it(`contains icon`, () => {
-		renderWithProviders(
-			<IconButtonLink Icon={Email} to={`https://www.google.com`} />,
-		);
 		const icon = screen.getByRole(`icon`);
 
 		expect(icon).toBeInTheDocument();
 	});
 
 	it(`contains link`, () => {
-		renderWithProviders(
-			<IconButtonLink Icon={Email} to={`https://www.google.com`} />,
-		);
 		const link = screen.getByRole(`link`);
 
 		expect(link).toBeInTheDocument();

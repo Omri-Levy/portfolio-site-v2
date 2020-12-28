@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 	button: {
@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
 	link: {
 		textDecoration: `none`,
 		color: `inherit`,
-		"&:visited": {
+		'&:visited': {
 			color: `inherit`,
 		},
 	},

@@ -1,14 +1,14 @@
-import { Box } from "@material-ui/core";
+import { Box } from '@material-ui/core';
 import {
 	AlternateEmailOutlined,
 	CallOutlined,
 	PermContactCalendarOutlined,
-} from "@material-ui/icons";
-import React from "react";
-import { ContactMeForm } from "./ContactMeForm";
-import useStyles from "./useStyles";
-import { IconTextLink } from "../../IconTextLink";
-import { PageContainer } from "~/components/Layout/PageContainer";
+} from '@material-ui/icons';
+import React from 'react';
+import { ContactMeForm } from './ContactMeForm';
+import useStyles from './useStyles';
+import { IconTextLink } from '../../IconTextLink';
+import { PageContainer } from '~/components/Layout/PageContainer';
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();

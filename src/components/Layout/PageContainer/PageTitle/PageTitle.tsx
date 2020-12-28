@@ -1,8 +1,8 @@
-import { Box, Typography } from "@material-ui/core";
-import React from "react";
-import { TranslateText } from "../../../TranslateText";
-import { Props } from "./types";
-import useStyles from "./useStyles";
+import { Box, Typography } from '@material-ui/core';
+import React from 'react';
+import { TranslateText } from '../../../TranslateText';
+import { Props } from './types';
+import useStyles from './useStyles';
 
 const PageTitle: React.FunctionComponent<Props> = ({ Icon, text }) => {
 	const classes = useStyles();

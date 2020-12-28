@@ -1,6 +1,6 @@
-import { useBreakpoints } from "~/hooks/useBreakpoints";
-import { MediaQueries } from "./types";
-import { useMediaQuery } from "@material-ui/core";
+import { useBreakpoints } from '~/hooks/useBreakpoints';
+import { MediaQueries } from './types';
+import { useMediaQuery } from '@material-ui/core';
 
 const useDevice: MediaQueries = () => {
 	const desktopMedia = useBreakpoints(`mlg`, `up`);

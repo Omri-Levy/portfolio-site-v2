@@ -1,7 +1,7 @@
-import { MenuList, Toolbar } from "@material-ui/core";
-import React from "react";
-import { CustomNavLink } from "../CustomNavLink";
-import useStyles from "./useStyles";
+import { MenuList, Toolbar } from '@material-ui/core';
+import React from 'react';
+import { CustomNavLink } from '../CustomNavLink';
+import useStyles from './useStyles';
 
 const Nav: React.FunctionComponent = () => {
 	const classes = useStyles();

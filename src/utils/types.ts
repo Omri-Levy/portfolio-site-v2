@@ -1,12 +1,12 @@
-import { Document } from "@contentful/rich-text-types";
-import React from "react";
-import { RenderOptions } from "@testing-library/react";
+import { Document } from '@contentful/rich-text-types';
+import React from 'react';
+import { RenderOptions } from '@testing-library/react';
 
 type UI = JSX.Element;
 type Options =
 	| Pick<
 			//eslint-disable-next-line
-			RenderOptions<typeof import("@testing-library/dom/types/queries")>,
+			RenderOptions<typeof import('@testing-library/dom/types/queries')>,
 			`container` | `baseElement` | `hydrate` | `wrapper`
 	  >
 	| undefined;

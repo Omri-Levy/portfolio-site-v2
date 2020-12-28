@@ -1,8 +1,8 @@
-import { Box } from "@material-ui/core";
-import React from "react";
-import GithubBrand from "../GithubBrand/GithubBrand";
-import { LinkedinBrand } from "../LinkedinBrand";
-import { IconButtonLink } from "../../../IconButtonLink";
+import { Box } from '@material-ui/core';
+import React from 'react';
+import GithubBrand from '../GithubBrand/GithubBrand';
+import { LinkedinBrand } from '../LinkedinBrand';
+import { IconButtonLink } from '../../../IconButtonLink';
 
 const ContactLinksContainer: React.FunctionComponent = () => (
 	<Box>

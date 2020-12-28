@@ -1,12 +1,12 @@
-import { Box } from "@material-ui/core";
-import { ConfigsGroup } from "../ConfigsGroup";
-import React from "react";
-import useDevice from "~/hooks/useDevice/useDevice";
-import { ContactLinksContainer } from "./ContactLinksContainer";
+import { Box } from '@material-ui/core';
+import { ConfigsGroup } from '../ConfigsGroup';
+import React from 'react';
+import useDevice from '~/hooks/useDevice/useDevice';
+import { ContactLinksContainer } from './ContactLinksContainer';
 // @ts-ignore
-import resume from "./resume.pdf";
-import useStyles from "./useStyles";
-import { ButtonLink } from "~/components/ButtonLink";
+import resume from './resume.pdf';
+import useStyles from './useStyles';
+import { ButtonLink } from '~/components/ButtonLink';
 
 const TopToolbar = () => {
 	const classes = useStyles();

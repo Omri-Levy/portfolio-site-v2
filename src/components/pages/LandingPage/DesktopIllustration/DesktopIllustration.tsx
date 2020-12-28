@@ -1,7 +1,7 @@
-import { Link } from "gatsby";
-import React from "react";
-import { useTheme } from "@material-ui/core/styles";
-import { darken } from "@material-ui/core";
+import { Link } from 'gatsby';
+import React from 'react';
+import { useTheme } from '@material-ui/core/styles';
+import { darken } from '@material-ui/core';
 
 const DesktopIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();

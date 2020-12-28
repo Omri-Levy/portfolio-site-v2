@@ -1,11 +1,11 @@
-import { Grid, Typography } from "@material-ui/core";
-import { InfoOutlined } from "@material-ui/icons";
-import React from "react";
-import { TranslateText } from "~/components/TranslateText";
-import { ProfilePic } from "./ProfilePic";
-import useStyles from "./useStyles";
-import { PageIllustration } from "./PageIllustration";
-import { PageContainer } from "~/components/Layout/PageContainer";
+import { Grid, Typography } from '@material-ui/core';
+import { InfoOutlined } from '@material-ui/icons';
+import React from 'react';
+import { TranslateText } from '~/components/TranslateText';
+import { ProfilePic } from './ProfilePic';
+import useStyles from './useStyles';
+import { PageIllustration } from './PageIllustration';
+import { PageContainer } from '~/components/Layout/PageContainer';
 
 const AboutMe = () => {
 	const classes = useStyles();

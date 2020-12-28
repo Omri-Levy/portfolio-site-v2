@@ -1,9 +1,9 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Grid, Typography } from "@material-ui/core";
-import React from "react";
-import { ProjectProps } from "~/utils/types";
-import useStyles from "./useStyles";
-import { ButtonLink } from "~/components/ButtonLink";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Grid, Typography } from '@material-ui/core';
+import React from 'react';
+import { ProjectProps } from '~/utils/types';
+import useStyles from './useStyles';
+import { ButtonLink } from '~/components/ButtonLink';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const classes = useStyles();

@@ -1,7 +1,7 @@
-import { IconButton } from "@material-ui/core";
-import React from "react";
-import { Props } from "./types";
-import useStyles from "./useStyles";
+import { IconButton } from '@material-ui/core';
+import React from 'react';
+import { Props } from './types';
+import useStyles from './useStyles';
 
 const IconButtonLink: React.FunctionComponent<Props> = ({ Icon, to }) => {
 	const classes = useStyles();
