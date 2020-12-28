@@ -1,7 +1,7 @@
 import { Box, Typography } from '@material-ui/core';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
-import { TranslateText } from '~/components/TranslateText';
+import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 import useStyles from './useStyles';
 
 const Logo: React.FunctionComponent = () => {

@@ -1,7 +1,7 @@
 import { Grid, Typography } from '@material-ui/core';
 import { InfoOutlined } from '@material-ui/icons';
 import React from 'react';
-import { TranslateText } from '~/components/TranslateText';
+import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 import { ProfilePic } from './ProfilePic';
 import useStyles from './useStyles';
 import { PageIllustration } from './PageIllustration';

@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Grid, TextField } from '@material-ui/core';
 import { init, send } from 'emailjs-com';
 import { useForm } from 'react-hook-form';
-import { TranslateText } from '~/components/TranslateText';
+import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 import { ThemeContext } from '~/context/ThemeContext';
 import useDevice from '~/hooks/useDevice/useDevice';
 import { validationSchema } from '../validationSchema';

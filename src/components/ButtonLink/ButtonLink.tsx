@@ -1,7 +1,7 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
 import { ButtonProps } from '~/utils/types';
-import { TranslateText } from '../TranslateText';
+import { TranslateText } from '../Layout/Locales/TranslateText';
 import useStyles from './useStyles';
 import clsx from 'clsx';
 
