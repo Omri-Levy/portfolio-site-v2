@@ -4,12 +4,14 @@ import { useMediaQuery } from "@material-ui/core";
 
 const useDevice: MediaQueries = () => {
 	const desktopMedia = useBreakpoints(`mlg`, `up`);
-	const tabletMedia = useBreakpoints(`ms`, `up`);
+	const tabletUpMedia = useBreakpoints(`ms`, `up`);
+	const tabletDownMedia = useBreakpoints(`md`, `down`);
 	const mobileMedia = useBreakpoints(`sm`, `down`);
 	const XSMedia = useBreakpoints(`xs`, `down`);
 
 	const isDesktop = useMediaQuery(desktopMedia);
-	const isTablet = useMediaQuery(tabletMedia);
+	const isTabletUp = useMediaQuery(tabletUpMedia);
+	const isTabletDown = useMediaQuery(tabletDownMedia);
 	const isMobile = useMediaQuery(mobileMedia);
 	const isXS = useMediaQuery(XSMedia);
 
@@ -19,7 +21,8 @@ const useDevice: MediaQueries = () => {
 
 	return {
 		isDesktop,
-		isTablet,
+		isTabletUp,
+		isTabletDown,
 		isMobile,
 		isXS,
 		isIpadPro,

@@ -56,6 +56,10 @@ const useMakeTheme = (): DefaultTheme => {
 						overflowX: `hidden`,
 						direction: isRTL ? `rtl` : `ltr`,
 					},
+					img: {
+						width: `100%`,
+						display: `block`,
+					},
 				},
 			},
 			MuiFilledInput: {

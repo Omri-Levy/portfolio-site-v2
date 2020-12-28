@@ -18,12 +18,12 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 	const classes = useStyles();
 	const theme = useTheme();
 	const backButton = useRTLOrLTRComponent(
-		<KeyboardArrowRightOutlined className={classes.icon} />,
-		<KeyboardArrowLeftOutlined className={classes.icon} />,
+		<KeyboardArrowRightOutlined className={classes.arrowIcon} />,
+		<KeyboardArrowLeftOutlined className={classes.arrowIcon} />,
 	);
 	const nextButton = useRTLOrLTRComponent(
-		<KeyboardArrowLeftOutlined className={classes.icon} />,
-		<KeyboardArrowRightOutlined className={classes.icon} />,
+		<KeyboardArrowLeftOutlined className={classes.arrowIcon} />,
+		<KeyboardArrowRightOutlined className={classes.arrowIcon} />,
 	);
 
 	return (
@@ -43,7 +43,6 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 						src={props.projectGif}
 						alt={props.projectGif}
 						hasMasterSpinner={false}
-						className={classes.image}
 					/>
 					<ButtonNext className={classes.carouselNextButton}>
 						{nextButton}

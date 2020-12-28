@@ -1,6 +1,7 @@
 type MediaQueries = () => {
 	isDesktop: boolean;
-	isTablet: boolean;
+	isTabletUp: boolean;
+	isTabletDown: boolean;
 	isMobile: boolean;
 	isXS: boolean;
 	isIpadPro: boolean;

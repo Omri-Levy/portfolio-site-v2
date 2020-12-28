@@ -8,7 +8,7 @@ const sharedProps = {
 
 const useStyles = makeStyles((theme) => ({
 	contactMeFormContainer: {
-		margin: 10,
+		margin: `10px 0`,
 		display: `flex`,
 		justifyContent: `center`,
 		width: `min(100% - 10px, 1000px)`,
@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
 		[getCustomBreakpoints(`lg`, theme, `up`)]: {
 			paddingRight: 10,
 		},
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
+			marginBottom: 5,
+		},
 	},
 	emailGridItem: {
 		width: `100%`,
@@ -46,12 +49,18 @@ const useStyles = makeStyles((theme) => ({
 	},
 	email: {
 		...sharedProps,
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
+			marginBottom: 5,
+		},
 	},
 	messageGridItem: {
 		width: `100%`,
 	},
 	message: {
 		...sharedProps,
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
+			marginBottom: 5,
+		},
 	},
 	sendButtonContainer: {},
 }));

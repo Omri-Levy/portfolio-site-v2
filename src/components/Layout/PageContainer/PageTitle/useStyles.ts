@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
 		[getCustomBreakpoints(`sm`, theme, `down`)]: {
 			marginTop: 61,
 		},
+		[`@media (max-width: 1280px) and (min-width: 1000px)`]: {
+			marginTop: 180,
+		},
 	},
 	innerBox: {
 		display: `flex`,

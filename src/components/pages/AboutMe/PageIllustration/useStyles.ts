@@ -5,9 +5,10 @@ const useStyles = makeStyles((theme) => ({
 	pageIllustrationContainer: {
 		display: `flex`,
 		flexDirection: `column`,
+		height: `min(35vh, 300px)`,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
-			display: `flex`,
 			width: `100%`,
+			height: `unset`,
 		},
 	},
 	pageIllustration: {

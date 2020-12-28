@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import getCustomBreakpoints from "~/utils/getCustomBreakpoints";
 
 const useStyles = makeStyles((theme) => ({
-	icon: {
+	arrowIcon: {
 		color: theme.palette.primary.contrastText,
 		width: 48,
 		height: 48,
@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 				padding: 0,
 				minHeight: 200,
 				maxHeight: 200,
+				maxWidth: 600,
 				[getCustomBreakpoints(`lg`, theme, `up`)]: {
 					minHeight: `unset`,
 					maxHeight: `unset`,
@@ -90,38 +91,19 @@ const useStyles = makeStyles((theme) => ({
 		border: `none`,
 		position: `absolute`,
 		top: `calc(50% - 24px)`,
-		left: 16,
-		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			left: 0,
-		},
+		left: 0,
 	},
 	carouselNextButton: {
 		backgroundColor: `transparent`,
 		border: `none`,
 		position: `absolute`,
 		top: `calc(50% - 24px)`,
-		right: 16,
-		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			right: 0,
-		},
+		right: 0,
 	},
 	imageContainer: {
 		position: `relative`,
-		margin: 10,
-		[getCustomBreakpoints(`md`, theme, `down`)]: {
-			margin: 5,
-		},
-		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			margin: 0,
-		},
-	},
-	image: {
-		paddingLeft: 20,
-		paddingRight: 20,
-		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			paddingLeft: 10,
-			paddingRight: 10,
-		},
+		marginInline: `auto`,
+		width: `min(100%, 600px)`,
 	},
 	buttonsContainer: {
 		display: `flex`,
@@ -132,6 +114,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			margin: `10px 24px`,
+		},
+		[`@media (max-width:1000px) and (min-width:770px)`]: {
+			margin: `10px 177px`,
 		},
 	},
 }));

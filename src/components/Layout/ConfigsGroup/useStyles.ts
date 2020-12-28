@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
 			top: 59,
 			left: 0,
 		},
+		[`@media (max-width: 280px)`]: {
+			padding: `0 10px`,
+		},
 	},
 }));
 

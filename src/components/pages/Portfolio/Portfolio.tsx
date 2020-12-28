@@ -18,7 +18,7 @@ import { PageContainer } from "~/components/Layout/PageContainer";
 
 const Portfolio: React.FunctionComponent = () => {
 	const classes = useStyles();
-	const { isMobile, isIpadPro } = useDevice();
+	const { isTabletDown, isIpadPro } = useDevice();
 	const { allProjects } = useAllProjects();
 
 	const options = {
@@ -45,9 +45,14 @@ const Portfolio: React.FunctionComponent = () => {
 	};
 
 	return (
-		<PageContainer id={`portfolio`} Icon={WorkOutline} text={`Portfolio`}>
-			<Box className={classes.innerBox}>
-				{isMobile && !isIpadPro ? (
+		<PageContainer
+			id={`portfolio`}
+			Icon={WorkOutline}
+			text={`Portfolio`}
+			className={classes.portfolioContainer}
+		>
+			<Box>
+				{isTabletDown && !isIpadPro ? (
 					<MobileCarousel allProjects={allProjects} options={options} />
 				) : (
 					<Projects allProjects={allProjects} options={options} />
