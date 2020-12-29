@@ -3,17 +3,20 @@ import { renderWithProviders, screen } from '~/utils/testUtils';
 import LanguageMenu from './LanguageMenu';
 
 describe(`LanguageMenu`, () => {
-	beforeEach(() => renderWithProviders(<LanguageMenu />));
+	beforeEach(() => {
+		renderWithProviders(<LanguageMenu />);
+		screen.getByRole(`button`).click();
+	});
 
 	it(`renders`, () => {
 		renderWithProviders(<LanguageMenu />);
 	});
 
 	it(`contains hebrew`, () => {
-		expect(screen.getByText(/he/i)).toBeInTheDocument();
+		expect(screen.getByRole(`menuitem`, { name: /he/i })).toBeInTheDocument();
 	});
 
 	it(`contains english`, () => {
-		expect(screen.getByText(/en/i)).toBeInTheDocument();
+		expect(screen.getByRole(`menuitem`, { name: /en/i })).toBeInTheDocument();
 	});
 });

@@ -20,7 +20,7 @@ const LanguageMenu: React.FunctionComponent = () => {
 
 	return (
 		<Box role={`language-menu`}>
-			<IconButton onClick={handleClick}>
+			<IconButton onClick={handleClick} role={`button`}>
 				<LanguageOutlined />
 			</IconButton>
 			<Menu
