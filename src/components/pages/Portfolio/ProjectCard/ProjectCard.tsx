@@ -7,6 +7,7 @@ import { ButtonLink } from '~/components/ButtonLink';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const classes = useStyles();
+	const projectsNotEmpty = Object.keys(props.body).length > 0;
 
 	return (
 		<Grid container className={classes.projectCardContainer}>
@@ -14,7 +15,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 				<Typography variant={`h2`} className={classes.title}>
 					{props.title}
 				</Typography>
-				{documentToReactComponents(props.body, props.options)}
+				{projectsNotEmpty &&
+					documentToReactComponents(props.body, props.options)}
 				<Grid item className={classes.buttonsContainer}>
 					<ButtonLink
 						variant={`primary`}

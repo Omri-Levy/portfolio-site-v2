@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders } from '~/utils/testUtils/testUtils';
 import PageTitle from './PageTitle';
 import { Email } from '@material-ui/icons';
 

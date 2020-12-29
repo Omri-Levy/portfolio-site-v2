@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { HookReturns } from './types';
 
-const useProfilePic = () =>
+const useProfilePic = (): HookReturns =>
 	useStaticQuery(graphql`
 		query profilePic {
 			image: file(relativePath: { eq: "profilePic.png" }) {
@@ -11,6 +12,6 @@ const useProfilePic = () =>
 				}
 			}
 		}
-	`);
+	`) || {};
 
 export default useProfilePic;

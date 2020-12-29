@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonLink from './ButtonLink';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
 
 describe(`ButtonLink`, () => {
 	beforeEach(() => {

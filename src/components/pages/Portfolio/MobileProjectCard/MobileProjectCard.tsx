@@ -25,6 +25,7 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 		<KeyboardArrowLeftOutlined className={classes.arrowIcon} />,
 		<KeyboardArrowRightOutlined className={classes.arrowIcon} />,
 	);
+	const projectsNotEmpty = Object.keys(props.body).length > 0;
 
 	return (
 		<Slide index={props.index}>
@@ -33,7 +34,8 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 					<Typography variant={`h2`} className={classes.title}>
 						{props.title}
 					</Typography>
-					{documentToReactComponents(props.body, props.options)}
+					{projectsNotEmpty &&
+						documentToReactComponents(props.body, props.options)}
 				</Box>
 				<Box className={classes.imageContainer}>
 					<ButtonBack className={classes.carouselBackButton}>

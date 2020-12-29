@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChildrenProps } from '~/utils/types';
-import { BottomToolbar } from './BottomToolbar';
+import { BottomToolbar } from './ConfigToolbar';
 import { Container } from './Container';
 import { Content } from './Content';
 import { Head } from './Head';

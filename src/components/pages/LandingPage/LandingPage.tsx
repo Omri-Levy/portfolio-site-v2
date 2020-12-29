@@ -6,7 +6,7 @@ import { MobileIllustration } from './MobileIllustration';
 import { TabletIllustration } from './TabletIllustration';
 
 const LandingPage: React.FunctionComponent = () => {
-	const { isMobile, isDesktop, isTablet, isIpadPro } = useDevice();
+	const { isMobile, isDesktop, isTabletUp, isIpadPro } = useDevice();
 
 	let content;
 
@@ -14,7 +14,7 @@ const LandingPage: React.FunctionComponent = () => {
 		content = <MobileIllustration />;
 	} else if (isDesktop) {
 		content = <DesktopIllustration />;
-	} else if (isTablet) {
+	} else if (isTabletUp) {
 		content = <TabletIllustration />;
 	} else {
 		content = <TabletIllustration />;

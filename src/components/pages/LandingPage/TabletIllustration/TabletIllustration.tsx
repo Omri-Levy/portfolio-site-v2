@@ -1,5 +1,5 @@
 import { darken } from '@material-ui/core';
-import { Link } from 'gatsby-theme-material-ui';
+import { Link } from 'gatsby';
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
 

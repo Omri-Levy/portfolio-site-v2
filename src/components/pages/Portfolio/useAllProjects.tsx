@@ -23,6 +23,6 @@ const useAllProjects: HookReturns = () =>
 				}
 			}
 		}
-	`);
+	`) || {};
 
 export default useAllProjects;

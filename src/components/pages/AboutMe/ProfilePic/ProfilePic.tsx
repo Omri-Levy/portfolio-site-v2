@@ -3,13 +3,13 @@ import useProfilePic from './useProfilePic';
 import React from 'react';
 import useStyles from './useStyles';
 
-const ProfilePic = () => {
+const ProfilePic: React.FunctionComponent = () => {
 	const classes = useStyles();
 	const { image } = useProfilePic();
 
 	return (
 		<Img
-			fluid={image.childImageSharp.fluid}
+			fluid={image?.childImageSharp.fluid}
 			alt={`Omri Levy`}
 			className={classes.profilePic}
 		/>

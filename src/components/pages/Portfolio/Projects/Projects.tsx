@@ -10,13 +10,13 @@ const Projects: React.FunctionComponent<ProjectsContainerProps> = ({
 }) => {
 	const { isRTL } = useContext(ThemeContext);
 	const locale = isRTL ? `he` : `en-US`;
-	const filteredData = allProjects.edges.filter(
+	const filteredData = allProjects?.edges.filter(
 		(project) => project.node.node_locale === locale,
 	);
 
 	return (
 		<>
-			{filteredData.map((project) => (
+			{filteredData?.map((project) => (
 				<ProjectCard
 					key={v4()}
 					liveSiteUrl={project.node.liveSiteUrl}

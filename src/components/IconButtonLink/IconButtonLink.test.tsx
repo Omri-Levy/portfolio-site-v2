@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
 import IconButtonLink from './IconButtonLink';
 import { Email } from '@material-ui/icons';
 

@@ -14,7 +14,7 @@ const MobileCarousel: React.FunctionComponent<ProjectsContainerProps> = ({
 	const classes = useStyles();
 	const { isRTL } = useContext(ThemeContext);
 	const locale = isRTL ? `he` : `en-US`;
-	const filteredData = allProjects.edges.filter(
+	const filteredData = allProjects?.edges.filter(
 		(project) => project.node.node_locale === locale,
 	);
 
@@ -27,7 +27,7 @@ const MobileCarousel: React.FunctionComponent<ProjectsContainerProps> = ({
 			className={classes.carouselProvider}
 		>
 			<Slider>
-				{filteredData.map((project, index) => (
+				{filteredData?.map((project, index) => (
 					<MobileProjectCard
 						key={v4()}
 						liveSiteUrl={project.node.liveSiteUrl}
