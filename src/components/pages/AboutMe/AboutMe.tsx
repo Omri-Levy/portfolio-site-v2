@@ -7,7 +7,7 @@ import useStyles from './useStyles';
 import { PageIllustration } from './PageIllustration';
 import { PageContainer } from '~/components/Layout/PageContainer';
 
-const AboutMe = () => {
+const AboutMe: React.FunctionComponent = () => {
 	const classes = useStyles();
 
 	return (

@@ -3,17 +3,16 @@ import React from 'react';
 import { ExternalLinksContainer } from './ExternalLinksContainer';
 import useStyles from './useStyles';
 import { ButtonLink } from '~/components/ButtonLink';
-import { useResume } from '~/hooks/useResume';
+import resume from './resume.pdf';
 
 const TopToolbar: React.FunctionComponent = () => {
 	const classes = useStyles();
-	const { resume } = useResume();
 	const handleClick = () => {
 		if (!resume) {
 			return;
 		}
 
-		window.open(resume.publicURL);
+		window.open(resume);
 	};
 
 	return (

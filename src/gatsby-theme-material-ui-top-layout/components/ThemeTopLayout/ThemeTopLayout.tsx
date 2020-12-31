@@ -12,19 +12,6 @@ import useMakeTheme from '~/hooks/useMakeTheme/useMakeTheme';
 import { Locales } from '~/components/Layout/Locales';
 import { Head } from '~/gatsby-theme-material-ui-top-layout/components/Head';
 
-//eslint-disable-next-line
-declare module '@material-ui/core/styles/createBreakpoints' {
-	interface BreakpointOverrides {
-		xs: true;
-		sm: true;
-		ms: true;
-		md: true;
-		lg: true;
-		mlg: true;
-		xl: true;
-	}
-}
-
 const ThemeTopLayout: React.FunctionComponent = ({ children }) => {
 	const selectedTheme = useMakeTheme();
 	const jss = create({
