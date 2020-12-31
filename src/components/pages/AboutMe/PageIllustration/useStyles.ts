@@ -3,12 +3,16 @@ import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoi
 
 const useStyles = makeStyles((theme) => ({
 	pageIllustrationContainer: {
+		margin: 0,
 		display: `flex`,
 		flexDirection: `column`,
 		height: `min(35vh, 300px)`,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			width: `100%`,
 			height: `unset`,
+		},
+		[getCustomBreakpoints(`lg`, theme, `up`)]: {
+			marginTop: -25,
 		},
 	},
 	pageIllustration: {
@@ -24,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[getCustomBreakpoints(`lg`, theme, `up`)]: {
 			maxWidth: 695,
-			marginBottom: 125,
 		},
 		[`@media(max-height: 800px)`]: {
 			display: `none`,
