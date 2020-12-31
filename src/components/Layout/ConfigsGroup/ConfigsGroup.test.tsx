@@ -10,14 +10,18 @@ describe(`ConfigsGroup`, () => {
 	});
 
 	it(`contains theme selector`, () => {
-		expect(screen.getByRole(`theme-selector`)).toBeInTheDocument();
+		expect(screen.getByRole(`group`)).toBeInTheDocument();
 	});
 
 	it(`contains dark mode toggle`, () => {
-		expect(screen.getByRole(`dark-mode-toggle`)).toBeInTheDocument();
+		expect(
+			screen.getByRole(`checkbox`, { name: `dark-mode-toggle` }),
+		).toBeInTheDocument();
 	});
 
 	it(`contains language menu`, () => {
-		expect(screen.getByRole(`language-menu`)).toBeInTheDocument();
+		expect(
+			screen.getByRole(`button`, { name: `language-menu` }),
+		).toBeInTheDocument();
 	});
 });

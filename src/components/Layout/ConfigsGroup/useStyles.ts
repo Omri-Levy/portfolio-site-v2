@@ -7,10 +7,11 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: `center`,
 		height: 59,
 		padding: `0 20px`,
+		position: `fixed`,
+		left: 0,
+		bottom: 0,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
-			position: `fixed`,
-			top: 59,
-			left: 0,
+			top: 79,
 		},
 		[`@media (max-width: 280px)`]: {
 			padding: `0 10px`,

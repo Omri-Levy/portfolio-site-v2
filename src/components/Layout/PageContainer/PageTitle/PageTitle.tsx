@@ -1,4 +1,4 @@
-import { Box, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import React from 'react';
 import { TranslateText } from '../../Locales/TranslateText';
 import { Props } from './types';
@@ -8,14 +8,12 @@ const PageTitle: React.FunctionComponent<Props> = ({ Icon, text }) => {
 	const classes = useStyles();
 
 	return (
-		<Box className={classes.pageTitleContainer}>
-			<Box className={classes.innerBox}>
-				<Icon className={classes.icon} />
-				<Typography className={classes.typography} variant={`h1`}>
-					<TranslateText text={text} />
-				</Typography>
-			</Box>
-		</Box>
+		<header className={classes.pageTitleContainer}>
+			<Icon className={classes.icon} />
+			<Typography className={classes.typography} variant={`h2`}>
+				<TranslateText text={text} />
+			</Typography>
+		</header>
 	);
 };
 

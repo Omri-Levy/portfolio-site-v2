@@ -5,16 +5,16 @@ import { ThemeContext } from '~/context/ThemeContext';
 import { Props } from './types';
 import useStyles from './useStyles';
 
-const ThemeOption: React.FunctionComponent<Props> = ({ color }) => {
+const ThemeOption: React.FunctionComponent<Props> = ({ color, alt }) => {
 	const classes = useStyles();
 	const { setPrimaryColor } = useContext(ThemeContext);
 	const handleClick = () => setPrimaryColor(color);
 
 	return (
 		<IconButton
-			className={classes.root}
+			aria-label={`theme-option-${alt}`}
+			className={classes.iconButton}
 			onClick={handleClick}
-			role={`theme-option`}
 		>
 			<FiberManualRecord style={{ color }} />
 		</IconButton>

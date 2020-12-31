@@ -1,4 +1,4 @@
-import { AppBar, Box } from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
 import React from 'react';
 import { Logo } from './Logo';
 import { Nav } from './Nav';
@@ -9,10 +9,8 @@ const Header: React.FunctionComponent = () => {
 
 	return (
 		<AppBar className={classes.appBar}>
-			<Box className={classes.innerBox}>
-				<Logo />
-				<Nav />
-			</Box>
+			<Logo />
+			<Nav />
 		</AppBar>
 	);
 };

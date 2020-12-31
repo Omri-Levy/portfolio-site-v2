@@ -14,7 +14,7 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 
 		// nav logo
 		omriLevy: useTranslations(`עומרי לוי`, `Omri Levy`),
-		fullstackDev: useTranslations(`מפתח פולסטאק`, `Fullstack Dev`),
+		portfolioSite: useTranslations(`אתר תיק עבודות`, `Portfolio Site`),
 
 		// resume button
 		myResume: useTranslations(`קורות חיים`, `My Resume`),

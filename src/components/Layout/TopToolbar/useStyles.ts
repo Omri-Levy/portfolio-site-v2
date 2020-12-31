@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 		height: 59,
 		zIndex: 2,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
-			top: 118,
+			top: 138,
 		},
 	},
 }));

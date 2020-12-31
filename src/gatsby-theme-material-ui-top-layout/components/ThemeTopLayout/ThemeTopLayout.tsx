@@ -10,6 +10,7 @@ import rtl from 'jss-rtl';
 import React from 'react';
 import useMakeTheme from '~/hooks/useMakeTheme/useMakeTheme';
 import { Locales } from '~/components/Layout/Locales';
+import { Head } from '~/gatsby-theme-material-ui-top-layout/components/Head';
 
 //eslint-disable-next-line
 declare module '@material-ui/core/styles/createBreakpoints' {
@@ -34,7 +35,10 @@ const ThemeTopLayout: React.FunctionComponent = ({ children }) => {
 		<ThemeProvider theme={selectedTheme}>
 			<CssBaseline>
 				<StylesProvider jss={jss}>
-					<Locales>{children}</Locales>
+					<Locales>
+						<Head />
+						{children}
+					</Locales>
 				</StylesProvider>
 			</CssBaseline>
 		</ThemeProvider>

@@ -46,7 +46,11 @@ const useMakeTheme = (): DefaultTheme => {
 			},
 			secondary: {
 				main: primaryColor,
-				secondary: `#fff`,
+				light: primaryTextColor,
+				dark: secondaryTextColor,
+				contrastText: isDarkMode
+					? secondaryContrastColor
+					: primaryContrastColor,
 			},
 		},
 		overrides: {

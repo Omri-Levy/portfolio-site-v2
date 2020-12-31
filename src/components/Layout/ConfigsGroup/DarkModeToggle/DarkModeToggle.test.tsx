@@ -10,7 +10,7 @@ describe(`DarkModeToggle`, () => {
 	});
 
 	it(`contains an icon`, () => {
-		const darkModeIcon = screen.getByRole(`moon-icon`);
+		const darkModeIcon = screen.getByRole(`icon`, { name: `moon-icon` });
 
 		expect(darkModeIcon).toBeInTheDocument();
 	});

@@ -1,20 +1,24 @@
 import React from 'react';
 import { ChildrenProps } from '~/utils/types';
-import { BottomToolbar } from './ConfigToolbar';
 import { Container } from './Container';
 import { Content } from './Content';
-import { Head } from './Head';
+import { Head } from '../../gatsby-theme-material-ui-top-layout/components/Head';
 import { Header } from './Header';
 import { TopToolbar } from './TopToolbar';
+import { ConfigsGroup } from '~/components/Layout/ConfigsGroup';
+import useDevice from '~/hooks/useDevice/useDevice';
 
 const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
+	const { isDesktop, isIpadPro } = useDevice();
+
 	return (
 		<Container>
 			<Head />
 			<Header />
+			{(isDesktop || isIpadPro) && <ConfigsGroup />}
 			<TopToolbar />
 			<Content>{children}</Content>
-			<BottomToolbar />
+			{isDesktop || isIpadPro || <ConfigsGroup />}
 		</Container>
 	);
 };

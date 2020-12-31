@@ -3,12 +3,12 @@ import React from 'react';
 import { ChildrenProps, Options, UI } from '../types';
 import ThemeTopLayout from '../../gatsby-theme-material-ui-top-layout/components/ThemeTopLayout/ThemeTopLayout';
 
-const AllProviders: React.FunctionComponent<ChildrenProps> = ({ children }) => {
+const Providers: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 	return <ThemeTopLayout>{children}</ThemeTopLayout>;
 };
 
 const renderWithProviders = (ui: UI, options?: Options): RenderResult =>
-	render(ui, { wrapper: AllProviders, ...options });
+	render(ui, { wrapper: Providers, ...options });
 
 // re-export everything
 export * from '@testing-library/react';

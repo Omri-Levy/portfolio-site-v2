@@ -1,23 +1,31 @@
 import React from 'react';
 import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import IconButtonLink from './IconButtonLink';
+import IconLink from './IconLink';
 import { Email } from '@material-ui/icons';
 
-describe(`IconButtonLink`, () => {
+describe(`IconLink`, () => {
 	beforeEach(() => {
 		renderWithProviders(
-			<IconButtonLink Icon={Email} to={`https://www.google.com`} />,
+			<IconLink
+				Icon={Email}
+				to={`https://www.google.com`}
+				alt={`email-icon`}
+			/>,
 		);
 	});
 
 	it(`renders`, () => {
 		renderWithProviders(
-			<IconButtonLink Icon={Email} to={`https://www.google.com`} />,
+			<IconLink
+				Icon={Email}
+				to={`https://www.google.com`}
+				alt={`email-icon`}
+			/>,
 		);
 	});
 
 	it(`contains icon`, () => {
-		const icon = screen.getByRole(`icon`);
+		const icon = screen.getByRole(`link`, { name: `email-icon` });
 
 		expect(icon).toBeInTheDocument();
 	});

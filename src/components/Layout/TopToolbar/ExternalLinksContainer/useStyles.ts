@@ -1,8 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
-	themeSelectorContainer: {
+const useStyles = makeStyles((theme) => ({
+	menuList: {
 		display: `flex`,
+	},
+	menuItem: {
+		margin: 0,
+		padding: 0,
 	},
 }));
 

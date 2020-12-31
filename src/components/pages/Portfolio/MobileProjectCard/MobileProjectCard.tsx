@@ -43,7 +43,7 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 					</ButtonBack>
 					<Image
 						src={props.projectGif}
-						alt={props.projectGif}
+						alt={`${props.title}-project-gif`}
 						hasMasterSpinner={false}
 					/>
 					<ButtonNext className={classes.carouselNextButton}>

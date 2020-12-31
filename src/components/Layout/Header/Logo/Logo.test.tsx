@@ -9,8 +9,8 @@ describe(`Logo`, () => {
 		renderWithProviders(<Logo />);
 	});
 
-	it(`contains 'Omri Levy Fullstack Dev'`, () => {
-		screen.getByRole(`link`, { name: /omri levy fullstack dev/i });
+	it(`contains 'Omri Levy Portfolio Site'`, () => {
+		screen.getByRole(`link`, { name: /omri levy portfolio site/i });
 	});
 
 	it(`contains link to home page`, () => {

@@ -3,6 +3,7 @@ import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoi
 
 const useStyles = makeStyles((theme) => ({
 	typography: {
+		color: theme.palette.text.primary,
 		fontSize: 24,
 		fontWeight: 700,
 		marginLeft: 8,
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	pageTitleContainer: {
-		display: `inline-block`,
+		display: `inline-flex`,
 		marginLeft: -5,
 		marginTop: 91,
 		[getCustomBreakpoints(`lg`, theme, `up`)]: {
@@ -24,9 +25,6 @@ const useStyles = makeStyles((theme) => ({
 		[`@media (max-width: 1280px) and (min-width: 1000px)`]: {
 			marginTop: 180,
 		},
-	},
-	innerBox: {
-		display: `flex`,
 	},
 	icon: {
 		marginTop: 2,

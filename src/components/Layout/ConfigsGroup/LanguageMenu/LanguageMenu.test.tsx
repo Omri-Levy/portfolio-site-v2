@@ -13,10 +13,14 @@ describe(`LanguageMenu`, () => {
 	});
 
 	it(`contains hebrew`, () => {
-		expect(screen.getByRole(`menuitem`, { name: /he/i })).toBeInTheDocument();
+		expect(
+			screen.getByRole(`menuitem`, { name: /hebrew/i }),
+		).toBeInTheDocument();
 	});
 
 	it(`contains english`, () => {
-		expect(screen.getByRole(`menuitem`, { name: /en/i })).toBeInTheDocument();
+		expect(
+			screen.getByRole(`menuitem`, { name: /english/i }),
+		).toBeInTheDocument();
 	});
 });

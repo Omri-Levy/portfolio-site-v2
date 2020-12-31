@@ -1,18 +1,14 @@
 import React from 'react';
-import CustomNavLink from './CustomNavLink';
+import NavLink from './NavLink';
 import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
 
-describe(`CustomNavLink`, () => {
+describe(`NavLink`, () => {
 	beforeEach(() => {
-		renderWithProviders(
-			<CustomNavLink text={`Portfolio`} to={`/home#portfolio`} />,
-		);
+		renderWithProviders(<NavLink text={`Portfolio`} to={`/home#portfolio`} />);
 	});
 
 	it(`renders`, () => {
-		renderWithProviders(
-			<CustomNavLink text={`Portfolio`} to={`/home#portfolio`} />,
-		);
+		renderWithProviders(<NavLink text={`Portfolio`} to={`/home#portfolio`} />);
 	});
 
 	it(`contains 'Portfolio' in text`, () => {

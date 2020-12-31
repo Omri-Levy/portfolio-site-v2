@@ -33,7 +33,7 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 			<Grid item className={classes.imageContainer}>
 				<img
 					src={props.projectGif}
-					alt={props.projectGif}
+					alt={`${props.title}-project-gif`}
 					className={classes.image}
 				/>
 			</Grid>
