@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: `0 20px`,
 		position: `fixed`,
 		left: 0,
-		bottom: 0,
+		bottom: 79,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			top: 79,
 		},

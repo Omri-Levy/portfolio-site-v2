@@ -3,10 +3,12 @@ import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoi
 
 const useStyles = makeStyles((theme) => ({
 	link: {
-		padding: 0,
-		paddingRight: 13,
-		[getCustomBreakpoints(`md`, theme, `up`)]: {
-			paddingRight: 37,
+		display: `flex`,
+		alignItems: `flex-end`,
+		textDecoration: `none`,
+		color: theme.palette.text.primary,
+		'&:visited': {
+			color: `inherit`,
 		},
 	},
 	icon: {

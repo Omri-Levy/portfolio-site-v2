@@ -17,13 +17,13 @@ const useStyles = makeStyles((theme) => ({
 		marginLeft: -5,
 		marginTop: 91,
 		[getCustomBreakpoints(`lg`, theme, `up`)]: {
-			marginTop: 180,
+			marginTop: 220,
+		},
+		[`@media (max-width: 1280px) and (min-width: 1000px)`]: {
+			marginTop: `calc(59px * 3 + 20px)`,
 		},
 		[getCustomBreakpoints(`sm`, theme, `down`)]: {
 			marginTop: 61,
-		},
-		[`@media (max-width: 1280px) and (min-width: 1000px)`]: {
-			marginTop: 180,
 		},
 	},
 	icon: {

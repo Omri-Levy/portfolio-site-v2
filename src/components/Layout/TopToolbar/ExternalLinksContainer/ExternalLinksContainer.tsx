@@ -9,11 +9,15 @@ const ExternalLinksContainer: React.FunctionComponent = () => {
 	const classes = useStyles();
 
 	return (
-		<ButtonGroup className={classes.menuList} aria-label={`external-links`}>
+		<ButtonGroup
+			className={classes.externalLinksGroup}
+			aria-label={`external-links`}
+		>
 			<IconLink
 				Icon={LinkedinBrand}
 				to={`https://www.linkedin.com/in/omri-levy-798b901b1/`}
 				alt={`linkedin`}
+				mr={20}
 			/>
 			<IconLink
 				Icon={GithubBrand}

@@ -17,6 +17,16 @@ const useStyles = makeStyles((theme) => ({
 		},
 		'& label': {
 			marginLeft: 10,
+			fontSize: 13,
+			[getCustomBreakpoints(`md`, theme, `up`)]: {
+				fontSize: 11,
+			},
+		},
+		'& .MuiFilledInput-underline': {
+			backgroundColor: theme.palette.secondary.contrastText,
+			'&:hover:before': {
+				borderBottom: `2px solid ${theme.palette.primary.main}`,
+			},
 		},
 	},
 	formGridContainer: {

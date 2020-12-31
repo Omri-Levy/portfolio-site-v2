@@ -2,44 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
-	outerBox: {
+	contactLinksContainer: {
 		display: `flex`,
 		flexDirection: `column`,
 		justifyContent: `flex-start`,
 		alignItems: `center`,
+		marginBottom: 20,
 		[getCustomBreakpoints(`lg`, theme, `up`)]: {
-			marginLeft: -10,
 			alignItems: `flex-start`,
 			flexDirection: `row`,
-		},
-	},
-	phoneBox: {
-		display: `flex`,
-		alignItems: `center`,
-		marginBottom: 28,
-		[getCustomBreakpoints(`md`, theme, `down`)]: {
-			marginBottom: 18,
-		},
-		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			marginBottom: 0,
-			'& .MuiIconButton-root': {
-				padding: 0,
-			},
-		},
-		marginRight: 70,
-	},
-	emailBox: {
-		display: `flex`,
-		alignItems: `center`,
-		marginBottom: 28,
-		[getCustomBreakpoints(`md`, theme, `down`)]: {
-			marginBottom: 18,
-		},
-		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			marginBottom: 0,
-			'& .MuiIconButton-root': {
-				padding: 10,
-			},
 		},
 	},
 }));

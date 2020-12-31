@@ -3,55 +3,29 @@ import { Box, Grid, TextField } from '@material-ui/core';
 import { init, send } from 'emailjs-com';
 import { useForm } from 'react-hook-form';
 import { TranslateText } from '~/components/Layout/Locales/TranslateText';
-import { ThemeContext } from '~/context/ThemeContext';
-import useDevice from '~/hooks/useDevice/useDevice';
 import { validationSchema } from '../validationSchema';
 import { Data, FormInputs } from './types';
 import useStyles from './useStyles';
-import React, { useContext } from 'react';
-import { useTheme } from '@material-ui/core/styles';
+import React from 'react';
 import { ButtonLink } from '~/components/ButtonLink';
 
 const ContactMeForm: React.FunctionComponent = () => {
 	init(`user_VCUWzf1n5yq07YDWAJoZH`);
-	const theme = useTheme();
-	const { isDarkMode } = useContext(ThemeContext);
 	const classes = useStyles();
 	const { register, errors, handleSubmit } = useForm<FormInputs>({
 		resolver: yupResolver(validationSchema),
 	});
-	const { isDesktop, isXS } = useDevice();
 
-	const inputProps = {
-		style: {
-			color: theme.palette.text.primary,
-			backgroundColor: isDarkMode
-				? theme.palette.primary.dark
-				: theme.palette.text.secondary,
-			borderRadius: 5,
-			fontSize: isDesktop ? 13 : 11,
-		},
-		ref: register,
-	};
-	const labelStyle = {
-		style: {
-			fontSize: isDesktop ? 11 : 13,
-		},
-	};
 	const messageProps = {
-		...inputProps,
-		style: {
-			...inputProps.style,
-			height: isXS ? 76 : 106,
-		},
+		ref: register,
 		maxLength: 640,
 	};
 	const fullNameProps = {
-		...inputProps,
+		ref: register,
 		maxLength: 70,
 	};
 	const emailProps = {
-		...inputProps,
+		ref: register,
 		maxLength: 125,
 	};
 
@@ -82,8 +56,6 @@ const ContactMeForm: React.FunctionComponent = () => {
 							label={<TranslateText text={`Full Name`} />}
 							id={`full-name`}
 							className={classes.fullName}
-							FormHelperTextProps={labelStyle}
-							InputLabelProps={labelStyle}
 							inputProps={fullNameProps}
 							error={!!errors.fullName}
 							helperText={errors.fullName?.message}
@@ -97,8 +69,6 @@ const ContactMeForm: React.FunctionComponent = () => {
 							label={<TranslateText text={`Email`} />}
 							id={`email`}
 							className={classes.email}
-							FormHelperTextProps={labelStyle}
-							InputLabelProps={labelStyle}
 							inputProps={emailProps}
 							error={!!errors.email}
 							helperText={errors.email?.message}
@@ -114,8 +84,6 @@ const ContactMeForm: React.FunctionComponent = () => {
 							label={<TranslateText text={`Message`} />}
 							id={`message`}
 							className={classes.message}
-							FormHelperTextProps={labelStyle}
-							InputLabelProps={labelStyle}
 							inputProps={messageProps}
 							error={!!errors.message}
 							helperText={errors.message?.message}

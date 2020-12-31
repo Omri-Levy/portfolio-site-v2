@@ -66,25 +66,6 @@ const useMakeTheme = (): DefaultTheme => {
 					},
 				},
 			},
-			MuiFilledInput: {
-				root: {
-					backgroundColor: isDarkMode
-						? secondaryContrastColor
-						: primaryTextColor,
-					'&$focused': {
-						backgroundColor: isDarkMode
-							? secondaryContrastColor
-							: primaryTextColor,
-					},
-				},
-				underline: {
-					'&:hover': {
-						backgroundColor: isDarkMode
-							? secondaryContrastColor
-							: primaryTextColor,
-					},
-				},
-			},
 			MuiSwitch: {
 				root: {
 					marginBottom: 6,

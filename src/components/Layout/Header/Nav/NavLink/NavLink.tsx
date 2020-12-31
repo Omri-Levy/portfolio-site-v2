@@ -8,11 +8,24 @@ import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 const NavLink: React.FunctionComponent<Props> = (props) => {
 	const { to, Icon, text } = props;
 	const classes = useStyles();
+	const handleClick = () => props.setIsActiveLink(text);
 
 	return (
-		<AnchorLink to={to} className={classes.link}>
-			<ListItem className={classes.listItem}>
-				{Icon && <Icon className={classes.icon} />}
+		<AnchorLink
+			to={to}
+			onAnchorLinkClick={handleClick}
+			className={
+				props.isActiveLink === text ? classes.activeLink : classes.link
+			}
+		>
+			<ListItem className={classes.listItem} disableGutters={true}>
+				{Icon && (
+					<Icon
+						className={
+							props.isActiveLink === text ? classes.activeIcon : classes.icon
+						}
+					/>
+				)}
 				<TranslateText text={text} />
 			</ListItem>
 		</AnchorLink>
