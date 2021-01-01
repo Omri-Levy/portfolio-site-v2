@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
 import React from 'react';
 import MockComponent from '~/hooks/useDevice/MockComponent';
+import { renderWithProviders, screen } from '~/utils/testUtils';
 
 describe(`useDevice`, () => {
 	it(`isDesktop returns false`, () => {
-		render(<MockComponent />);
+		renderWithProviders(<MockComponent />);
 
 		expect(screen.getByText(/false/i)).toBeInTheDocument();
 	});

@@ -15,11 +15,11 @@ const generateThemeFavicon = (primaryColor: PrimaryColor): void => {
 	const { edges } = icons;
 
 	// get the last characters of the primary color hex due to the cached
-	// file name.
+	// file name
 	const slicedHex = primaryColor.slice(primaryColor.length - 4, -1);
 
 	// filter the array of favicons and leave in only the favicon with the file
-	// name matching the passed in primary color hex code.
+	// name matching the passed in primary color hex code
 	const faviconFilter = (icon: Icon) => icon.node.fluid.src.includes(slicedHex);
 
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
