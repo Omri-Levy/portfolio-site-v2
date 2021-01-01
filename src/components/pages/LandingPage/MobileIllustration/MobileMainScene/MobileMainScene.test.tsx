@@ -1,5 +1,11 @@
+import React from 'react';
+import { renderWithProviders } from '~/utils/testUtils';
+import MobileMainScene from './MobileMainScene';
+
 describe(`MobileMainScene`, () => {
-	it(`MobileMainScene temp`, () => {
-		expect(true).toBeTruthy();
+	it(`renders`, () => {
+		const { container } = renderWithProviders(<MobileMainScene />);
+
+		expect(container.querySelector(`svg`)).toBeInTheDocument();
 	});
 });

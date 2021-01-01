@@ -1,5 +1,5 @@
-describe(`useBreakPoints`, () => {
-	it(`useBreakPoints temp`, () => {
+describe(`useBreakpoints`, () => {
+	it(`useBreakpoints temp`, () => {
 		expect(true).toBeTruthy();
 	});
 });
