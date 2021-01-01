@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
-import { darken } from '@material-ui/core';
+import { primaryBorderColor } from '~/hooks/useMakeTheme/colors';
 
 const DesktopIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();
@@ -953,7 +953,7 @@ const DesktopIllustration: React.FunctionComponent = () => {
 								width={`123`}
 								height={`34`}
 								rx={`2.5`}
-								stroke={darken(theme.palette.primary.main, 0.25)}
+								stroke={primaryBorderColor}
 							/>
 						</g>
 					</Link>

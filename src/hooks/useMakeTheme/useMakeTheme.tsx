@@ -1,10 +1,11 @@
-import { createMuiTheme, darken } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core';
 import { enUS, heIL } from '@material-ui/core/locale';
 import { DefaultTheme } from '@material-ui/styles';
 import generateThemeFavicon from '~/utils/generateThemeFavicon/generateThemeFavicon';
 import { ThemeContext } from '~/context/ThemeContext';
 import {
 	backgroundColor,
+	primaryBorderColor,
 	primaryContrastColor,
 	primaryTextColor,
 	secondaryContrastColor,
@@ -94,7 +95,7 @@ const useMakeTheme = (): DefaultTheme => {
 				containedPrimary: {
 					color: primaryTextColor,
 					boxShadow: `0px 2px 4px #000`,
-					border: `1px solid ${darken(primaryColor, 0.25)}`,
+					border: `1px solid ${primaryBorderColor}`,
 					padding: 4,
 					borderRadius: 3,
 				},
