@@ -1,13 +1,24 @@
 import React from 'react';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
 import Content from './Content';
+import { Button } from '@material-ui/core';
 
-describe(`ConfigToolbar`, () => {
+describe(`Content`, () => {
 	it(`renders`, () => {
 		renderWithProviders(
 			<Content>
-				<h1>test child</h1>
+				<Button />
 			</Content>,
 		);
+	});
+
+	it(`accepts children`, () => {
+		renderWithProviders(
+			<Content>
+				<Button />
+			</Content>,
+		);
+
+		expect(screen.getByRole(`button`)).toBeInTheDocument();
 	});
 });
