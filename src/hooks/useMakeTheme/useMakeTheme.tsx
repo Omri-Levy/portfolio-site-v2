@@ -39,6 +39,7 @@ const useMakeTheme = (): DefaultTheme => {
 			},
 			primary: {
 				main: primaryColor,
+				border: primaryBorderColor(primaryColor),
 				secondary: isDarkMode ? backgroundColor : primaryContrastColor,
 				dark: secondaryContrastColor,
 				contrastText: isDarkMode
@@ -95,7 +96,7 @@ const useMakeTheme = (): DefaultTheme => {
 				containedPrimary: {
 					color: primaryTextColor,
 					boxShadow: `0px 2px 4px #000`,
-					border: `1px solid ${primaryBorderColor}`,
+					border: `1px solid ${primaryBorderColor(primaryColor)}`,
 					padding: 4,
 					borderRadius: 3,
 				},

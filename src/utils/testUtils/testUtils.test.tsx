@@ -1,7 +1,7 @@
 import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
 import { FormattedMessage } from 'react-intl';
 import React from 'react';
-import { primaryBorderColor } from '~/hooks/useMakeTheme/colors';
+import { primaryBorderColor, primaryColor } from '~/hooks/useMakeTheme/colors';
 import { Button } from '@material-ui/core';
 
 describe(`testUtils`, () => {
@@ -15,7 +15,7 @@ describe(`testUtils`, () => {
 		renderWithProviders(<Button color={`primary`} variant={`contained`} />);
 
 		expect(screen.getByRole(`button`)).toHaveStyle({
-			'border-top-color': primaryBorderColor,
+			'border-top-color': primaryBorderColor(primaryColor),
 		});
 	});
 });

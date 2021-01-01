@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
 import { Link } from 'gatsby';
-import { primaryBorderColor } from '~/hooks/useMakeTheme/colors';
 
 const MobileFishingBoat: React.FunctionComponent = () => {
 	const theme = useTheme();
@@ -235,7 +234,7 @@ const MobileFishingBoat: React.FunctionComponent = () => {
 						width='99'
 						height='27'
 						rx='2.5'
-						stroke={primaryBorderColor}
+						stroke={theme.palette.primary[`border`]}
 					/>
 				</g>
 			</Link>

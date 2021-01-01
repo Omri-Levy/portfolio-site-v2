@@ -2,7 +2,9 @@ import { darken } from '@material-ui/core';
 
 const backgroundColor = `#222831`;
 const primaryColor = `#3e96ff`;
-const primaryBorderColor = darken(primaryColor, 0.25);
+const primaryBorderColor = (primaryColor: string): string => {
+	return darken(primaryColor, 0.25);
+};
 const primaryTextColor = `#fff`;
 const secondaryTextColor = `#000`;
 const primaryContrastColor = `#eee`;
