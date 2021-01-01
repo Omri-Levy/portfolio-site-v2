@@ -9,8 +9,6 @@ import extend from 'jss-plugin-extend';
 import rtl from 'jss-rtl';
 import React from 'react';
 import useMakeTheme from '~/hooks/useMakeTheme/useMakeTheme';
-import { Locales } from '~/components/Layout/Locales';
-import { Head } from '~/gatsby-theme-material-ui-top-layout/components/Head';
 
 const ThemeTopLayout: React.FunctionComponent = ({ children }) => {
 	const selectedTheme = useMakeTheme();
@@ -21,12 +19,7 @@ const ThemeTopLayout: React.FunctionComponent = ({ children }) => {
 	return (
 		<ThemeProvider theme={selectedTheme}>
 			<CssBaseline>
-				<StylesProvider jss={jss}>
-					<Locales>
-						<Head />
-						{children}
-					</Locales>
-				</StylesProvider>
+				<StylesProvider jss={jss}>{children}</StylesProvider>
 			</CssBaseline>
 		</ThemeProvider>
 	);

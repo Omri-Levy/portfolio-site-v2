@@ -9,7 +9,7 @@ const Head: React.FunctionComponent = () => {
 	let pageTitle;
 
 	if (isLandingPage) {
-		pageTitle = `${pageTitlePrefix} Landingpage`;
+		pageTitle = `${pageTitlePrefix} Landing page`;
 	} else {
 		pageTitle = `${pageTitlePrefix} ${url}`;
 	}
