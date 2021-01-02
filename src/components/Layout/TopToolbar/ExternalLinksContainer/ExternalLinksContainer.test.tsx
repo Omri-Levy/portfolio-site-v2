@@ -6,7 +6,9 @@ describe(`ExternalLinksContainer`, () => {
 	beforeEach(() => renderWithProviders(<ExternalLinksContainer />));
 
 	it(`renders`, () => {
-		renderWithProviders(<ExternalLinksContainer />);
+		expect(
+			screen.getByRole(`group`, { name: /external-links/i }),
+		).toBeInTheDocument();
 	});
 
 	it(`contains external links`, () => {

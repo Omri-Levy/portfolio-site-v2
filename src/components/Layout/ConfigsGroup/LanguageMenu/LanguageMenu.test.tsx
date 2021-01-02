@@ -9,7 +9,7 @@ describe(`LanguageMenu`, () => {
 	});
 
 	it(`renders`, () => {
-		renderWithProviders(<LanguageMenu />);
+		expect(screen.getByRole(`menu`)).toBeInTheDocument();
 	});
 
 	it(`contains hebrew`, () => {

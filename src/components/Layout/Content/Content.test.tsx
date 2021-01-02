@@ -4,21 +4,15 @@ import Content from './Content';
 import { Button } from '@material-ui/core';
 
 describe(`Content`, () => {
-	it(`renders`, () => {
-		renderWithProviders(
-			<Content>
-				<Button />
-			</Content>,
-		);
-	});
-
 	it(`accepts children`, () => {
 		renderWithProviders(
 			<Content>
-				<Button />
+				<Button>test child</Button>
 			</Content>,
 		);
 
-		expect(screen.getByRole(`button`)).toBeInTheDocument();
+		expect(
+			screen.getByRole(`button`, { name: /test\schild/i }),
+		).toBeInTheDocument();
 	});
 });

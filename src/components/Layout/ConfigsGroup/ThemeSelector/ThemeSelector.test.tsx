@@ -6,7 +6,9 @@ describe(`ThemeSelector`, () => {
 	beforeEach(() => renderWithProviders(<ThemeSelector />));
 
 	it(`renders`, () => {
-		renderWithProviders(<ThemeSelector />);
+		expect(
+			screen.getByRole(`group`, { name: /theme-selector/i }),
+		).toBeInTheDocument();
 	});
 
 	it(`contains options`, () => {

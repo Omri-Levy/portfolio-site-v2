@@ -1,9 +1,11 @@
 import React from 'react';
 import TabletIllustration from './TabletIllustration';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
 
 describe(`TabletIllustration`, () => {
 	it(`renders`, () => {
 		renderWithProviders(<TabletIllustration />);
+
+		expect(screen.getByRole(`figure`)).toBeInTheDocument();
 	});
 });

@@ -1,4 +1,4 @@
-import { Box } from '@material-ui/core';
+import { Box, useMediaQuery } from '@material-ui/core';
 import {
 	AlternateEmailOutlined,
 	CallOutlined,
@@ -12,6 +12,7 @@ import { IconLink } from '~/components/IconLink';
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();
+	const largeIcons = useMediaQuery(`(min-width: 1000px)`);
 
 	return (
 		<PageContainer
@@ -25,7 +26,7 @@ const ContactMe: React.FunctionComponent = () => {
 					Icon={CallOutlined}
 					alt={`phone-number`}
 					text={`052-6256647`}
-					textLineHeight={3}
+					textLineHeight={largeIcons ? 3 : 1.7}
 					mr={20}
 					iconPr={5}
 				/>
@@ -34,7 +35,7 @@ const ContactMe: React.FunctionComponent = () => {
 					Icon={AlternateEmailOutlined}
 					alt={`email-address`}
 					text={`omri.levy0197@gmail.com`}
-					textLineHeight={3}
+					textLineHeight={largeIcons ? 3 : 1.7}
 					iconPr={5}
 				/>
 			</Box>

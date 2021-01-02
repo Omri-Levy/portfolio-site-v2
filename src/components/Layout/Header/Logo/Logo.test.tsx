@@ -5,12 +5,10 @@ import Logo from './Logo';
 describe(`Logo`, () => {
 	beforeEach(() => renderWithProviders(<Logo />));
 
-	it(`renders`, () => {
-		renderWithProviders(<Logo />);
-	});
-
 	it(`contains 'Omri Levy Portfolio Site'`, () => {
-		screen.getByRole(`link`, { name: /omri levy portfolio site/i });
+		expect(
+			screen.getByRole(`link`, { name: /omri levy portfolio site/i }),
+		).toBeInTheDocument();
 	});
 
 	it(`contains link to home page`, () => {

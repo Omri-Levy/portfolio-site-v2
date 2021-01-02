@@ -4,6 +4,12 @@ import { renderWithProviders } from '~/utils/testUtils';
 
 describe(`GithubBrand`, () => {
 	it(`renders`, () => {
-		renderWithProviders(<GithubBrand className={`test class`} />);
+		const { container } = renderWithProviders(
+			<GithubBrand className={`test class`} />,
+		);
+
+		const icon = container.querySelector(`svg`);
+
+		expect(icon).toBeInTheDocument();
 	});
 });

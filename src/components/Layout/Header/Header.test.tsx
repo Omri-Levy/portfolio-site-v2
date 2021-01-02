@@ -4,6 +4,9 @@ import Header from './Header';
 
 describe(`Header`, () => {
 	it(`renders`, () => {
-		renderWithProviders(<Header />);
+		const { container } = renderWithProviders(<Header />);
+		const header = container.querySelector(`header`);
+
+		expect(header).toBeInTheDocument();
 	});
 });

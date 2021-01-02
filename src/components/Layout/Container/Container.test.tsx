@@ -1,13 +1,18 @@
 import React from 'react';
 import Container from './Container';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
+import { Button } from '@material-ui/core';
 
 describe(`Container`, () => {
 	it(`renders`, () => {
 		renderWithProviders(
 			<Container>
-				<h1>test child</h1>
+				<Button>test child</Button>
 			</Container>,
 		);
+
+		expect(
+			screen.getByRole(`button`, { name: /test\schild/i }),
+		).toBeInTheDocument();
 	});
 });

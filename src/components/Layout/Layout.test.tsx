@@ -1,13 +1,18 @@
 import React from 'react';
 import Layout from './Layout';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
+import { Button } from '@material-ui/core';
 
 describe(`Layout`, () => {
-	it(`renders`, () => {
+	it(`accepts children`, () => {
 		renderWithProviders(
 			<Layout>
-				<h1>test child</h1>
+				<Button>test child</Button>
 			</Layout>,
 		);
+
+		expect(
+			screen.getByRole(`button`, { name: /test child/i }),
+		).toBeInTheDocument();
 	});
 });

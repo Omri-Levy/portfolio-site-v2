@@ -5,10 +5,6 @@ import DarkModeToggle from './DarkModeToggle';
 describe(`DarkModeToggle`, () => {
 	beforeEach(() => renderWithProviders(<DarkModeToggle />));
 
-	it(`renders`, () => {
-		renderWithProviders(<DarkModeToggle />);
-	});
-
 	it(`contains an icon`, () => {
 		const darkModeIcon = screen.getByRole(`icon`, { name: `moon-icon` });
 

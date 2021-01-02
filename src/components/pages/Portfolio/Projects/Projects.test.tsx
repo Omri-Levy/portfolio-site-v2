@@ -1,6 +1,6 @@
 import React from 'react';
 import Projects from './Projects';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
 
 describe(`Projects`, () => {
 	it(`renders`, () => {
@@ -10,11 +10,11 @@ describe(`Projects`, () => {
 					edges: [
 						{
 							node: {
-								node_locale: ``,
-								title: ``,
+								node_locale: `en-US`,
+								title: `test title`,
 								subtitle: ``,
 								body: {
-									raw: ``,
+									raw: `{}`,
 								},
 								projectGif: {
 									file: {
@@ -30,5 +30,9 @@ describe(`Projects`, () => {
 				options={{}}
 			/>,
 		);
+
+		expect(
+			screen.getByRole(`heading`, { name: /test\stitle/i }),
+		).toBeInTheDocument();
 	});
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
 
 describe(`ProjectCard`, () => {
 	it(`renders`, () => {
@@ -11,8 +11,12 @@ describe(`ProjectCard`, () => {
 				liveSiteUrl={``}
 				options={{}}
 				projectGif={``}
-				title={``}
+				title={`test title`}
 			/>,
 		);
+
+		expect(
+			screen.getByRole(`heading`, { name: /test title/i }),
+		).toBeInTheDocument();
 	});
 });

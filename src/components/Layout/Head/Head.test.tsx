@@ -1,9 +1,13 @@
 import React from 'react';
-import Head from './Head';
 import { renderWithProviders } from '~/utils/testUtils';
+import { waitFor } from '@testing-library/dom';
+import Home from '~/pages/home';
 
 describe(`Head`, () => {
-	it(`renders`, () => {
-		renderWithProviders(<Head />);
+	it(`sets the document title`, async () => {
+		renderWithProviders(<Home />);
+		const title = `Omri Levy - Portfolio Site - Landing page`;
+
+		await waitFor(() => expect(document.title).toEqual(title));
 	});
 });

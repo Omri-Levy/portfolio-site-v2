@@ -1,6 +1,6 @@
 import React from 'react';
 import MobileCarousel from './MobileCarousel';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
 
 describe(`MobileCarousel`, () => {
 	it(`renders`, () => {
@@ -10,11 +10,11 @@ describe(`MobileCarousel`, () => {
 					edges: [
 						{
 							node: {
-								node_locale: ``,
-								title: ``,
+								node_locale: `en-US`,
+								title: `test title`,
 								subtitle: ``,
 								body: {
-									raw: ``,
+									raw: `{}`,
 								},
 								projectGif: {
 									file: {
@@ -30,5 +30,9 @@ describe(`MobileCarousel`, () => {
 				options={{}}
 			/>,
 		);
+
+		expect(
+			screen.getByRole(`heading`, { name: /test title/i }),
+		).toBeInTheDocument();
 	});
 });

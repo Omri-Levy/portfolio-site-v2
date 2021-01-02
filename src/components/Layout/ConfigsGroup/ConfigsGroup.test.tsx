@@ -5,10 +5,6 @@ import ConfigsGroup from './ConfigsGroup';
 describe(`ConfigsGroup`, () => {
 	beforeEach(() => renderWithProviders(<ConfigsGroup />));
 
-	it(`renders`, () => {
-		renderWithProviders(<ConfigsGroup />);
-	});
-
 	it(`contains theme selector`, () => {
 		expect(screen.getByRole(`group`)).toBeInTheDocument();
 	});

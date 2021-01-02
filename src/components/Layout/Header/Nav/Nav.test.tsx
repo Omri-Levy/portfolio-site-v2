@@ -6,7 +6,10 @@ describe(`Nav`, () => {
 	beforeEach(() => renderWithProviders(<Nav />));
 
 	it(`renders`, () => {
-		renderWithProviders(<Nav />);
+		const { container } = renderWithProviders(<Nav />);
+		const nav = container.querySelector(`nav`);
+
+		expect(nav).toBeInTheDocument();
 	});
 
 	it(`contains links`, () => {

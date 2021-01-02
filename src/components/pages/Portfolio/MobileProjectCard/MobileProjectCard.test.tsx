@@ -1,6 +1,6 @@
 import React from 'react';
 import MobileProjectCard from './MobileProjectCard';
-import { renderWithProviders } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '~/utils/testUtils';
 import { MobileCarousel } from '~/components/pages/Portfolio/MobileCarousel';
 
 describe(`MobileProjectCard`, () => {
@@ -37,9 +37,11 @@ describe(`MobileProjectCard`, () => {
 					liveSiteUrl={``}
 					options={{}}
 					projectGif={``}
-					title={``}
+					title={`test title`}
 				/>
 			</MobileCarousel>,
 		);
+
+		expect(screen.getByRole(`listbox`)).toBeInTheDocument();
 	});
 });

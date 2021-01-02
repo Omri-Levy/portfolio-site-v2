@@ -930,6 +930,7 @@ const TabletIllustration: React.FunctionComponent = () => {
 							fill={`#EEEEEE`}
 						/>
 						<Link to={`/home`}>
+							DIVE IN
 							<g filter={`url(#filter46_d)`}>
 								<rect
 									x={`311`}
