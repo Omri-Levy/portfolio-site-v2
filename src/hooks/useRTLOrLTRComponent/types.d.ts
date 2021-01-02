@@ -6,4 +6,8 @@ type HookReturns = (
 	LTRComponent: LTRComponentType,
 ) => RTLComponentType | LTRComponentType;
 
-export { HookReturns };
+interface Props {
+	rtl: boolean;
+}
+
+export { HookReturns, Props };
