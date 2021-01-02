@@ -3,13 +3,13 @@ import { PrimaryColor } from '~/context/ThemeContext/types';
 import { Icon } from '~/utils/generateThemeFavicon/types';
 import { NewFavicon } from './types';
 
-const generateThemeFavicon = (primaryColor: PrimaryColor): void => {
+const generateThemeFavicon = (primaryColor: PrimaryColor): boolean => {
 	const oldFavicon = document.querySelector(`link[rel~='icon']`);
 	const appleLinks = document.querySelectorAll(`link[rel~='apple-touch-icon']`);
 	const { icons } = useAllFavicons();
 
 	if (!icons) {
-		return;
+		return false;
 	}
 
 	const { edges } = icons;
@@ -36,7 +36,11 @@ const generateThemeFavicon = (primaryColor: PrimaryColor): void => {
 	if (oldFavicon && newFavicon && appleLinks) {
 		oldFavicon[`href`] = newFavicon;
 		appleLinks.forEach((appLink) => (appLink[`href`] = newFavicon));
+
+		return true;
 	}
+
+	return false;
 };
 
 export default generateThemeFavicon;
