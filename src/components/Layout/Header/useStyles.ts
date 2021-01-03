@@ -1,29 +1,28 @@
-import {makeStyles} from '@material-ui/core/styles';
-import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
+import { makeStyles } from '@material-ui/core/styles';
+import { getCustomBreakpoints } from '~/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
-    appBar: {
-        display: 'flex',
-        justifyContent: 'center',
-        top: 'unset',
-        bottom: 0,
-        margin: 0,
-        height: 59,
-        padding: '0 19px',
-        [getCustomBreakpoints('md', theme, 'up')]: {
-            top: 0,
-            padding: '0 37px'
-        }
-    },
-    innerBox: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        ['@media (max-width: 360px)']: {
-            justifyContent: 'center'
-        },
-        margin: 0,
-        padding: 0
-    }
+	appBar: {
+		flexDirection: `row`,
+		justifyContent: `space-between`,
+		alignItems: `center`,
+		padding: `0 20px`,
+		top: `unset`,
+		bottom: 0,
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
+			justifyContent: `center`,
+		},
+		[getCustomBreakpoints(`md`, theme, `up`)]: {
+			top: 0,
+			bottom: `unset`,
+		},
+		// glass
+		// backgroundColor: `rgba(255, 255, 255, 0.2)`,
+		// backdropFilter: `blur(40px)`,
+		// border: `solid 2px transparent`,
+		// backgroundClip: `padding-box`,
+		// boxShadow: `10px 10px 10px rgba(46, 54, 68, 0.03)`,
+	},
 }));
 
 export default useStyles;

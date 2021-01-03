@@ -1,0 +1,1 @@
+module.exports = `resume.pdf`;

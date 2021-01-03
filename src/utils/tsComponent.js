@@ -1,24 +1,27 @@
-const fs = require('fs');
-const path = require('path');
+/* eslint-disable */
+const fs = require(`fs`);
+const path = require(`path`);
+/* eslint-enable */
+
 const fileName = path.basename(path.dirname(__filename));
 
 // create entry point
 fs.writeFile(
-	'./index.ts',
+	`./index.ts`,
 	`export {default as ${fileName}} from './${fileName}';`,
 	(err) => {
 		if (err) {
 			console.log(err);
-			console.log('error at index.ts');
+			console.log(`error at index.ts`);
 		}
 
-		console.log('created index.ts');
+		console.log(`created index.ts`);
 	},
 );
 
 // create material ui/jss styling file
 fs.writeFile(
-	'./useStyles.ts',
+	`./useStyles.ts`,
 	`import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -29,36 +32,40 @@ export default useStyles;`,
 	(err) => {
 		if (err) {
 			console.log(err);
-			console.log('error at useStyles.ts');
+			console.log(`error at useStyles.ts`);
 		}
 
-		console.log('created useStyles.ts');
+		console.log(`created useStyles.ts`);
 	},
 );
 
 // create tests file
-fs.writeFile(`./${fileName}.test.tsx`, '',
+fs.writeFile(
+	`./${fileName}.test.tsx`,
+	`describe(\`${fileName}\`, () => {
+	it(\`${fileName} temp\`, () => {
+		expect(true).toBeTruthy();
+	});
+});`,
 	(err) => {
 		if (err) {
 			console.log(err);
-			console.log(`error at ${fileName}.test.ts`);
+			console.log(`error at ${fileName}.test.tsx`);
 		}
 
-		console.log(`created ${fileName}.test.ts`);
+		console.log(`created ${fileName}.test.tsx`);
 	},
 );
 
 // create types file
-fs.writeFile('./types.ts', '',
-	(err) => {
-		if (err) {
-			console.log(err);
-			console.log('error at types.ts');
-		}
+fs.writeFile(`./types.d.ts`, ``, (err) => {
+	if (err) {
+		console.log(err);
+		console.log(`error at types.d.ts`);
+	}
 
-		console.log('created types.ts');
-	},
-);
+	console.log(`created types.d.ts`);
+});
 
 // create component file
 fs.writeFile(
@@ -87,4 +94,3 @@ export default ${fileName};
 		console.log(`created ${fileName}.tsx`);
 	},
 );
-

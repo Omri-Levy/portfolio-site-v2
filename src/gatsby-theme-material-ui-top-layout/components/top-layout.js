@@ -1,15 +1,9 @@
 import React from 'react';
-import {ThemeProvider} from '../../context/ThemeProvider';
-import ThemeTopLayout from './ThemeTopLayout';
+import TopLayout from './TopLayout/TopLayout';
 
-const TopLayout = ({children}) => {
-	return (
-		<ThemeProvider>
-			<ThemeTopLayout>
-				{children}
-			</ThemeTopLayout>
-		</ThemeProvider>
-	);
-};
+// created the TopLayout component to allow folder structure, file extension and
+// naming conventions parity. having top-layout.js due to the gatsby-material-ui
+// plugin breaking without it
 
-export default TopLayout;
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default ({ children }) => <TopLayout children={children} />;

@@ -1,19 +1,17 @@
-import Img from 'gatsby-image';
-import useProfilePic from './useProfilePic';
 import React from 'react';
 import useStyles from './useStyles';
+import profilePic from './profilePic.png';
 
-const ProfilePic = () => {
-    const classes = useStyles();
-    const {image} = useProfilePic();
+const ProfilePic: React.FunctionComponent = () => {
+	const classes = useStyles();
 
-    return (
-        <Img
-            fluid={image.childImageSharp.fluid}
-            alt='Omri Levy'
-            className={classes.profilePic}
-        />
-    );
+	return (
+		<img
+			src={profilePic}
+			alt={`Omri Levy - profile picture`}
+			className={classes.profilePic}
+		/>
+	);
 };
 
 export default ProfilePic;

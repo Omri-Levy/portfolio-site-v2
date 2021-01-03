@@ -1,31 +1,29 @@
-import {Box} from '@material-ui/core';
-import {ConfigsGroup} from '../ConfigsGroup';
+import { Box } from '@material-ui/core';
 import React from 'react';
-import useDevice from '../../../hooks/useDevice/useDevice';
-import {SecondaryButton} from '../../SecondaryButton';
-import {ContactLinksContainer} from './ContactLinksContainer';
-// @ts-ignore
-import resume from './resume.pdf';
+import { ExternalLinksContainer } from './ExternalLinksContainer';
 import useStyles from './useStyles';
+import { ButtonLink } from '~/components/ButtonLink';
+import resume from './resume.pdf';
 
-const TopToolbar = () => {
+const TopToolbar: React.FunctionComponent = () => {
 	const classes = useStyles();
-	const {isDesktop, isIpadPro} = useDevice();
+	const handleClick = () => {
+		if (!resume) {
+			return;
+		}
+
+		window.open(resume);
+	};
 
 	return (
-		<>
-			{(isDesktop || isIpadPro) && (
-				<ConfigsGroup/>
-			)}
-			<Box className={classes.topToolbarContainer}>
-				<ContactLinksContainer/>
-				<SecondaryButton
-					text={'My Resume'}
-					className={classes.button}
-					onClick={() => window.open(resume)}
-				/>
-			</Box>
-		</>
+		<Box className={classes.topToolbarContainer}>
+			<ExternalLinksContainer />
+			<ButtonLink
+				variant={`secondary`}
+				text={`My Resume`}
+				onClick={handleClick}
+			/>
+		</Box>
 	);
 };
 

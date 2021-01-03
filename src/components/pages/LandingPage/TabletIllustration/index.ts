@@ -1,1 +1,1 @@
-export {default as TabletIllustration} from './TabletIllustration';
+export { default as TabletIllustration } from './TabletIllustration';

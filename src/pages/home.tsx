@@ -1,15 +1,15 @@
-import {AboutMe} from '../components/pages/AboutMe';
-import {ContactMe} from '../components/pages/ContactMe';
-import {Layout} from '../components/Layout';
-import {Portfolio} from '../components/pages/Portfolio';
+import { AboutMe } from '../components/pages/AboutMe';
+import { ContactMe } from '../components/pages/ContactMe';
+import { Layout } from '../components/Layout';
+import { Portfolio } from '../components/pages/Portfolio';
 import React from 'react';
 
 const Home: React.FunctionComponent = () => (
-    <Layout>
-        <Portfolio/>
-        <AboutMe/>
-        <ContactMe/>
-    </Layout>
+	<Layout>
+		<Portfolio />
+		<AboutMe />
+		<ContactMe />
+	</Layout>
 );
 
 export default Home;
