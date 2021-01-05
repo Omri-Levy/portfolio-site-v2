@@ -1,52 +1,55 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Grid, TextField } from '@material-ui/core';
-import { init, send } from 'emailjs-com';
+import { Alert } from '@material-ui/lab';
 import { useForm } from 'react-hook-form';
 import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 import { validationSchema } from '../validationSchema';
-import { Data, FormInputs } from './types';
+import { FormInputs } from './types';
 import useStyles from './useStyles';
-import React from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { ButtonLink } from '~/components/ButtonLink';
+import { useFetchState } from '~/hooks/useFetchState';
+import FormInputProps from '~/components/pages/ContactMe/ContactMeForm/formInputProps/formInputProps';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { ThemeContext } from '~/context/ThemeContext';
+import { sendEmail } from '~/components/pages/ContactMe/ContactMeForm/sendEmail';
+import { resetFetchState } from '~/hooks/useFetchState/resetFetchState';
+import { handleRecaptcha } from '~/components/pages/ContactMe/ContactMeForm/handleRecaptcha';
 
 const ContactMeForm: React.FunctionComponent = () => {
-	init(`user_VCUWzf1n5yq07YDWAJoZH`);
+	const {
+		setFetchState,
+		fetchState,
+		isLoading,
+		severity,
+		shouldDisplayAlert,
+		alertMessage,
+	} = useFetchState({});
+
 	const classes = useStyles();
 	const { register, errors, handleSubmit } = useForm<FormInputs>({
 		resolver: yupResolver(validationSchema),
 	});
-
-	const messageProps = {
-		ref: register,
-		maxLength: 640,
-	};
-	const fullNameProps = {
-		ref: register,
-		maxLength: 70,
-	};
-	const emailProps = {
-		ref: register,
-		maxLength: 125,
-	};
-
-	const onSubmit = async (data: Data) => {
-		const templateParams = {
-			fullName: data.fullName,
-			email: data.email,
-			message: data.message,
-		};
-		const email = await send(
-			`service_vv503ou`,
-			`template_40335ln`,
-			templateParams,
-		);
-
-		console.log(email);
-	};
+	const formInputProps = new FormInputProps(register);
+	const { isDarkMode, isRTL } = useContext(ThemeContext);
+	const [isRobot, setIsRobot] = useState(true);
+	const recaptchaValue = useRef({});
+	const recaptcha = useRef();
 
 	return (
 		<Box className={classes.contactMeFormContainer}>
-			<form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+			<form
+				name={`contact-recaptcha`}
+				className={classes.form}
+				onSubmit={handleSubmit(sendEmail(setFetchState, isRobot))}
+				netlify-honeypot={`bot-field`}
+				data-netlify={`true`}
+				data-netlify-recaptcha={`true`}
+				method={`post`}
+			>
+				<noscript>
+					<p>This form won’t work with Javascript disabled</p>
+				</noscript>
 				<Grid container className={classes.formGridContainer}>
 					<Grid item className={classes.fullNameGridItem}>
 						<TextField
@@ -56,7 +59,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 							label={<TranslateText text={`Full Name`} />}
 							id={`full-name`}
 							className={classes.fullName}
-							inputProps={fullNameProps}
+							inputProps={formInputProps.setMaxLength(70)}
 							error={!!errors.fullName}
 							helperText={errors.fullName?.message}
 							required
@@ -69,7 +72,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 							label={<TranslateText text={`Email`} />}
 							id={`email`}
 							className={classes.email}
-							inputProps={emailProps}
+							inputProps={formInputProps.setMaxLength(125)}
 							error={!!errors.email}
 							helperText={errors.email?.message}
 							required
@@ -84,23 +87,45 @@ const ContactMeForm: React.FunctionComponent = () => {
 							label={<TranslateText text={`Message`} />}
 							id={`message`}
 							className={classes.message}
-							inputProps={messageProps}
+							inputProps={formInputProps.setMaxLength(640)}
 							error={!!errors.message}
 							helperText={errors.message?.message}
 							multiline
 							required
 						/>
 					</Grid>
-					<Grid
-						className={classes.sendButtonContainer}
-						container
-						item
-						direction={`column`}
-						alignItems={`flex-end`}
-					>
-						<ButtonLink variant={`secondary`} type={`submit`} text={`Send`} />
+					<Grid container item justify={`flex-end`}>
+						<ButtonLink
+							type={`submit`}
+							variant={`secondary`}
+							text={`Send`}
+							additionalClass={classes.sendButton}
+							disabled={isLoading}
+						/>
 					</Grid>
+					{shouldDisplayAlert && (
+						<Alert
+							// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+							// @ts-ignore
+							severity={severity}
+							onClose={resetFetchState(setFetchState, fetchState)}
+							style={{
+								width: `100%`,
+								marginBottom: 10,
+							}}
+							size={`small`}
+						>
+							{alertMessage}
+						</Alert>
+					)}
 				</Grid>
+				<ReCAPTCHA
+					ref={recaptcha.current}
+					sitekey={process.env.RECAPTCHA_KEY || ``}
+					theme={isDarkMode ? `dark` : `light`}
+					hl={isRTL ? `iw` : `en`}
+					onChange={handleRecaptcha(setIsRobot, recaptchaValue)}
+				/>
 			</form>
 		</Box>
 	);

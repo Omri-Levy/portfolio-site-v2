@@ -16,12 +16,6 @@ const useStyles = makeStyles((theme) => ({
 			top: 0,
 			bottom: `unset`,
 		},
-		// glass
-		// backgroundColor: `rgba(255, 255, 255, 0.2)`,
-		// backdropFilter: `blur(40px)`,
-		// border: `solid 2px transparent`,
-		// backgroundClip: `padding-box`,
-		// boxShadow: `10px 10px 10px rgba(46, 54, 68, 0.03)`,
 	},
 }));
 

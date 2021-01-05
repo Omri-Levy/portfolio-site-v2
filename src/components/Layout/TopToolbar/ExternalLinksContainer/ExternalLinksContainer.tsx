@@ -1,12 +1,14 @@
 import { ButtonGroup } from '@material-ui/core';
-import React from 'react';
+import React, { useContext } from 'react';
 import { GithubBrand } from '../GithubBrand';
 import { LinkedinBrand } from '../LinkedinBrand';
 import { IconLink } from '~/components/IconLink';
 import useStyles from './useStyles';
+import { ThemeContext } from '~/context/ThemeContext';
 
 const ExternalLinksContainer: React.FunctionComponent = () => {
 	const classes = useStyles();
+	const { isRTL } = useContext(ThemeContext);
 
 	return (
 		<ButtonGroup
@@ -17,7 +19,8 @@ const ExternalLinksContainer: React.FunctionComponent = () => {
 				Icon={LinkedinBrand}
 				to={`https://www.linkedin.com/in/omri-levy-798b901b1/`}
 				alt={`linkedin`}
-				mr={20}
+				ml={isRTL ? 20 : 0}
+				mr={isRTL ? 0 : 20}
 			/>
 			<IconLink
 				Icon={GithubBrand}

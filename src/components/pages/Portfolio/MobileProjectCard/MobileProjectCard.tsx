@@ -26,6 +26,7 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 		<KeyboardArrowRightOutlined className={classes.arrowIcon} />,
 	);
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
+	const toKebabCase = (str: string) => str.replace(/\s/g, `-`).toLowerCase();
 
 	return (
 		<Slide index={props.index}>
@@ -42,9 +43,17 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 						{backButton}
 					</ButtonBack>
 					<Image
-						src={props.projectGif}
-						alt={`${props.title}-project-gif`}
+						className={classes.image}
+						src={`props.projectGif`}
+						alt={`${toKebabCase(props.title)}-project-gif`}
 						hasMasterSpinner={false}
+						// without renderError an empty div without alt text is loaded
+						renderError={() => (
+							<img
+								alt={`${toKebabCase(props.title)}-project-gif`}
+								className={classes.image}
+							/>
+						)}
 					/>
 					<ButtonNext className={classes.carouselNextButton}>
 						{nextButton}
