@@ -4,15 +4,17 @@ import {
 	CallOutlined,
 	PermContactCalendarOutlined,
 } from '@material-ui/icons';
-import React from 'react';
+import React, { useContext } from 'react';
 import { ContactMeForm } from './ContactMeForm';
 import useStyles from './useStyles';
 import { PageContainer } from '~/components/Layout/PageContainer';
 import { IconLink } from '~/components/IconLink';
+import { ThemeContext } from '~/context/ThemeContext';
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();
 	const largeIcons = useMediaQuery(`(min-width: 1000px)`);
+	const { isRTL } = useContext(ThemeContext);
 
 	return (
 		<PageContainer
@@ -27,7 +29,8 @@ const ContactMe: React.FunctionComponent = () => {
 					alt={`phone-number`}
 					text={`052-6256647`}
 					textLineHeight={largeIcons ? 3 : 1.7}
-					mr={20}
+					mr={isRTL ? 0 : 20}
+					ml={isRTL ? 20 : 0}
 					iconPr={5}
 				/>
 				<IconLink

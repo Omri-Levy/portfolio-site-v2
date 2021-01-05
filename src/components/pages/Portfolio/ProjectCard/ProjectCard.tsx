@@ -8,6 +8,7 @@ import { ButtonLink } from '~/components/ButtonLink';
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const classes = useStyles();
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
+	const toKebabCase = (str: string) => str.replace(/\s/g, `-`).toLowerCase();
 
 	return (
 		<Grid container className={classes.projectCardContainer}>
@@ -32,8 +33,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 			</Grid>
 			<Grid item className={classes.imageContainer}>
 				<img
-					src={props.projectGif}
-					alt={`${props.title}-project-gif`}
+					src={`props.projectGif`}
+					alt={`${toKebabCase(props.title)}-project-gif`}
 					className={classes.image}
 				/>
 			</Grid>

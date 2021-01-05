@@ -4,6 +4,11 @@ const useStyles = makeStyles((theme) => ({
 	menuList: {
 		backgroundColor: theme.palette.primary.main,
 	},
+	icon: {
+		color: theme.palette.primary.main,
+		width: 24,
+		height: 24,
+	},
 	menuItem: {
 		backgroundColor: theme.palette.secondary.contrastText,
 		color: theme.palette.text.primary,

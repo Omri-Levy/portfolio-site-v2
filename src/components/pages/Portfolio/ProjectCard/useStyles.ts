@@ -9,7 +9,11 @@ const useStyles = makeStyles((theme) => ({
 		height: 48,
 	},
 	projectCardContainer: {
+		border: `1px solid ${theme.palette.primary.main}`,
+		padding: 10,
+		height: 500,
 		marginBottom: 53,
+		borderRadius: 5,
 
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			marginBottom: 30,
@@ -61,26 +65,24 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	imageContainer: {
+		marginLeft: `auto`,
 		marginTop: 4,
+		width: 500,
+		height: 300,
 	},
 	image: {
-		paddingLeft: 20,
-		paddingRight: 20,
+		backgroundColor: theme.palette.primary.main,
+		width: `100%`,
+		height: `100%`,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
-			width: 500,
-			height: 240,
-			marginLeft: 130,
+			borderRadius: 5,
 		},
 	},
 	buttonsContainer: {
 		display: `flex`,
 		justifyContent: `space-between`,
-		margin: `20px 64px`,
-		width: `100%`,
-		[getCustomBreakpoints(`md`, theme, `up`)]: {
-			margin: `20px 0`,
-			width: 245,
-		},
+		marginTop: `auto`,
+		width: 250,
 	},
 }));
 

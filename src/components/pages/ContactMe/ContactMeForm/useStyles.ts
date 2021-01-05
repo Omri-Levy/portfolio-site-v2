@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 		'& .MuiFilledInput-underline': {
-			backgroundColor: theme.palette.secondary.contrastText,
 			'&:hover:before': {
 				borderBottom: `2px solid ${theme.palette.primary.main}`,
 			},
@@ -72,7 +71,17 @@ const useStyles = makeStyles((theme) => ({
 			marginBottom: 5,
 		},
 	},
-	sendButtonContainer: {},
+	sendButton: {
+		width: `68.4px`,
+		height: `36.5px`,
+		marginBottom: sharedProps.marginBottom,
+		[getCustomBreakpoints(`xs`, theme, `down`)]: {
+			marginBottom: 5,
+		},
+	},
+	'.MuiInputBase-formControl': {
+		border: `1px ${theme.palette.primary.main}`,
+	},
 }));
 
 export default useStyles;

@@ -3,6 +3,9 @@ import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoi
 
 const useStyles = makeStyles((theme) => ({
 	portfolioContainer: {
+		'& .MuiListItemIcon-root': {
+			color: theme.palette.primary.main,
+		},
 		height: `unset`,
 		[`@media (max-width: 1280px) and (min-width: 1000px)`]: {
 			marginTop: 59,
