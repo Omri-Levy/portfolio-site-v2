@@ -105,6 +105,7 @@ const useStyles = makeStyles((theme) => ({
 		position: `relative`,
 		marginInline: `auto`,
 		backgroundColor: theme.palette.primary.main,
+		color: theme.palette.text.secondary,
 		width: `min(100%, 600px)`,
 		height: 250,
 	},

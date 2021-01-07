@@ -3,6 +3,7 @@ import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoi
 
 const useStyles = makeStyles((theme) => ({
 	title: {
+		textAlign: `left`,
 		textDecoration: `none`,
 		'&:hover': {
 			textDecoration: `none`,

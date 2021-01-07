@@ -73,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	image: {
 		borderRadius: 5,
+		color: theme.palette.text.secondary,
 		width: `100%`,
 		height: `100%`,
 	},

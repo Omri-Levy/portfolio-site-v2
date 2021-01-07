@@ -10,12 +10,16 @@ const primaryTextColor = `#fff`;
 const secondaryTextColor = `#000`;
 const primaryContrastColor = `#eee`;
 const secondaryContrastColor = `#393e46`;
-const colorsObj = (isDarkMode: boolean): Record<Key, string> => ({
-	blue: isDarkMode ? blue[200] : blue[500],
-	green: isDarkMode ? green[200] : green[500],
-	purple: isDarkMode ? purple[200] : purple[500],
-	red: isDarkMode ? red[200] : red[500],
-});
+const colorsObj = (isDarkMode: boolean): Record<Key, string> => {
+	const shade = isDarkMode ? 200 : 900;
+
+	return {
+		blue: blue[shade],
+		green: green[shade],
+		purple: purple[shade],
+		red: red[shade],
+	};
+};
 
 export {
 	backgroundColor,

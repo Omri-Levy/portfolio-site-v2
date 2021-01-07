@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: `row`,
 		justifyContent: `space-between`,
 		alignItems: `center`,
-		padding: `0 20px`,
+		padding: `8px 20px`,
 		top: `unset`,
 		bottom: 0,
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
@@ -16,12 +16,6 @@ const useStyles = makeStyles((theme) => ({
 			top: 0,
 			bottom: `unset`,
 		},
-		// glass
-		// backgroundColor: `rgba(255, 255, 255, 0.2)`,
-		// backdropFilter: `blur(40px)`,
-		// border: `solid 2px transparent`,
-		// backgroundClip: `padding-box`,
-		// boxShadow: `10px 10px 10px rgba(46, 54, 68, 0.03)`,
 	},
 }));
 

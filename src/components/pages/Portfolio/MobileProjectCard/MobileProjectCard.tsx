@@ -5,9 +5,10 @@ import {
 	KeyboardArrowRightOutlined,
 } from '@material-ui/icons';
 import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
 import { MobileProjectProps } from '~/utils/types';
+import { ThemeContext } from '../../../../context/ThemeContext';
 import { toKebabCase } from '../../../../utils/toKebabCase';
 import useStyles from './useStyles';
 import { useTheme } from '@material-ui/core/styles';
@@ -27,6 +28,8 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 		<KeyboardArrowRightOutlined className={classes.arrowIcon} />,
 	);
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
+	const { isRTL } = useContext(ThemeContext);
+	const altSuffix = isRTL ? `-גיף-פרויקט` : `-project-gif`;
 
 	return (
 		<Slide index={props.index}>
@@ -44,9 +47,9 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 					</ButtonBack>
 					<Image
 						src={`props.projectGif`}
-						alt={`${toKebabCase(props.title)}-project-gif`}
+						alt={`${toKebabCase(props.title)}${altSuffix}`}
 						renderError={() => (
-							<img alt={`${toKebabCase(props.title)}-project-gif`} />
+							<img alt={`${toKebabCase(props.title)}${altSuffix}`} />
 						)}
 						hasMasterSpinner={false}
 					/>

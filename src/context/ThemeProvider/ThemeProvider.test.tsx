@@ -18,6 +18,6 @@ describe(`ThemeProvider`, () => {
 	});
 
 	it(`passes theme context`, () => {
-		expect(screen.getByText(blue[500])).toBeInTheDocument();
+		expect(screen.getByText(blue[900])).toBeInTheDocument();
 	});
 });

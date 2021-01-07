@@ -1,9 +1,8 @@
 import useAllFavicons from '../../hooks/useAllFavicons/useAllFavicons';
-import { PrimaryColor } from '~/context/ThemeContext/types';
 import { Icon } from '~/utils/generateThemeFavicon/types';
 import { NewFavicon } from './types';
 
-const generateThemeFavicon = (primaryColor: PrimaryColor): boolean => {
+const generateThemeFavicon = (primaryColor: string): boolean => {
 	const oldFavicon = document.querySelector(`link[rel~='icon']`);
 	const appleLinks = document.querySelectorAll(`link[rel~='apple-touch-icon']`);
 	const { icons } = useAllFavicons();
