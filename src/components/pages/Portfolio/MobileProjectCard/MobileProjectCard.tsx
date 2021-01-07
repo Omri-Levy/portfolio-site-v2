@@ -1,18 +1,19 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Box, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import {
 	KeyboardArrowLeftOutlined,
 	KeyboardArrowRightOutlined,
 } from '@material-ui/icons';
 import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
 import React, { useContext } from 'react';
-import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
-import { MobileProjectProps } from '~/utils/types';
-import { ThemeContext } from '~/context/ThemeContext';
-import { toKebabCase } from '~/utils/toKebabCase';
-import useStyles from './useStyles';
-import { useTheme } from '@material-ui/core/styles';
+import { useIntl } from 'react-intl';
 import { ButtonLink } from '~/components/ButtonLink';
+import { ThemeContext } from '~/context/ThemeContext';
+import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
+import { toKebabCase } from '~/utils/toKebabCase';
+import { MobileProjectProps } from '~/utils/types';
+import useStyles from './useStyles';
 
 const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 	props,
@@ -30,6 +31,7 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
 	const { isRTL } = useContext(ThemeContext);
 	const altSuffix = isRTL ? `-גיף-פרויקט` : `-project-gif`;
+	const intl = useIntl();
 
 	return (
 		<Slide index={props.index}>
@@ -47,18 +49,14 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 					</ButtonBack>
 					<Image
 						src={`props.projectGif`}
-						alt={`${toKebabCase(props.title)}${altSuffix}`}
+						alt={`${toKebabCase(props.title)}${intl.formatMessage({
+							id: `projectGif`,
+						})}`}
+						// without renderError an empty div without alt text is loaded
 						renderError={() => (
 							<img alt={`${toKebabCase(props.title)}${altSuffix}`} />
 						)}
 						hasMasterSpinner={false}
-						// without renderError an empty div without alt text is loaded
-						renderError={() => (
-							<img
-								alt={`${toKebabCase(props.title)}-project-gif`}
-								className={classes.image}
-							/>
-						)}
 					/>
 					<ButtonNext className={classes.carouselNextButton}>
 						{nextButton}

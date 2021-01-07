@@ -5,10 +5,10 @@ import useStyles from './useStyles';
 
 const TabletIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();
-	useStyles();
+	const classes = useStyles();
 
 	return (
-		<figure>
+		<figure className={classes.tabletIllustrationContainer}>
 			<svg
 				width={`1000`}
 				height={`1080`}

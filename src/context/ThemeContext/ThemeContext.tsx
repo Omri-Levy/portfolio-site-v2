@@ -9,6 +9,8 @@ const theme: Theme = {
 	setPrimaryColor: () => blue[200],
 	isRTL: false,
 	setIsRTL: () => false,
+	isLandingPage: false,
+	setIsLandingPage: () => false,
 };
 
 const ThemeContext = createContext(theme);

@@ -7,9 +7,11 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	mobileIllustrationContainer: {
-		width: `100%`,
-		height: `100%`,
+		margin: 0,
+		width: `100vw`,
+		height: `100vh`,
 		display: `flex`,
+		alignItems: `center`,
 		flexDirection: `column`,
 	},
 }));

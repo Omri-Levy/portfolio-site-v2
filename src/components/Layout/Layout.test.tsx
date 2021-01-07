@@ -1,7 +1,7 @@
-import React from 'react';
-import Layout from './Layout';
-import { renderWithProviders, screen } from '~/utils/testUtils';
 import { Button } from '@material-ui/core';
+import React from 'react';
+import { renderWithProviders, screen } from '~/utils/testUtils';
+import Layout from './Layout';
 
 describe(`Layout`, () => {
 	it(`accepts children`, () => {

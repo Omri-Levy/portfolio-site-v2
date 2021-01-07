@@ -2,9 +2,17 @@
 
 exports[`useFetchState matches snapshot 1`] = `
 <div>
-  false
-  false
-  "error"
-  null
+  <div
+    class="MuiContainer-root makeStyles-mainContainer-1"
+  >
+    <main
+      class="makeStyles-content-2"
+    >
+      false
+      false
+      "error"
+      null
+    </main>
+  </div>
 </div>
 `;

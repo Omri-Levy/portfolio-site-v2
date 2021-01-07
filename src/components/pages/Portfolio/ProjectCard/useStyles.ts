@@ -68,10 +68,10 @@ const useStyles = makeStyles((theme) => ({
 		marginLeft: `auto`,
 		marginTop: 4,
 		width: 600,
-		height: 200,
+		height: 250,
 	},
 	image: {
-    backgroundColor: theme.palette.primary.main,
+		backgroundColor: theme.palette.primary.main,
 		borderRadius: 5,
 		color: theme.palette.text.secondary,
 		width: `100%`,

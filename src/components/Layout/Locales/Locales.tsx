@@ -1,6 +1,6 @@
+import React, { useContext } from 'react';
 import { IntlProvider } from 'react-intl';
 import { ThemeContext } from '~/context/ThemeContext';
-import React, { useContext } from 'react';
 import { useTranslations } from '~/hooks/useTranslations';
 import { ChildrenProps } from '~/utils/types';
 
@@ -43,6 +43,9 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 
 		// contact me form send button
 		send: useTranslations(`שלח`, `Send`),
+
+		//images alt text
+		projectGif: useTranslations(`-גיף-פרויקט`, `-project-gif`),
 	};
 
 	return (

@@ -1,15 +1,23 @@
+import React, { useContext, useEffect } from 'react';
 import { AboutMe } from '../components/pages/AboutMe';
 import { ContactMe } from '../components/pages/ContactMe';
-import { Layout } from '../components/Layout';
 import { Portfolio } from '../components/pages/Portfolio';
-import React from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
-const Home: React.FunctionComponent = () => (
-	<Layout>
-		<Portfolio />
-		<AboutMe />
-		<ContactMe />
-	</Layout>
-);
+const Home: React.FunctionComponent = () => {
+	const { setIsLandingPage } = useContext(ThemeContext);
+
+	useEffect(() => {
+		setIsLandingPage(false);
+	}, []);
+
+	return (
+		<>
+			<Portfolio />
+			<AboutMe />
+			<ContactMe />
+		</>
+	);
+};
 
 export default Home;

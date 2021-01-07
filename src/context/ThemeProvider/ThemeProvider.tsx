@@ -24,6 +24,7 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 	const [isRTL, setIsRTL] = useState(
 		() => JSON.parse(localStorage.getItem(`isRTL`) as string) || false,
 	);
+	const [isLandingPage, setIsLandingPage] = useState(true);
 
 	return (
 		<ThemeContext.Provider
@@ -34,6 +35,8 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 				setPrimaryColor,
 				isRTL,
 				setIsRTL,
+				isLandingPage,
+				setIsLandingPage,
 			}}
 		>
 			{children}
