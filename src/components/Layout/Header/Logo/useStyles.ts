@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
 		[`@media (max-width: 360px)`]: {
 			display: `none`,
 		},
-		color: theme.palette.text.primary,
+		color: theme.palette.text.secondary,
 		fontSize: 13,
 		fontWeight: 700,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 		display: `block`,
 		fontSize: 11,
 		fontWeight: 500,
-		color: theme.palette.text.primary,
+		color: theme.palette.text.secondary,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			fontSize: 14,
 		},

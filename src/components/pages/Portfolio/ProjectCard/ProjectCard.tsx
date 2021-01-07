@@ -1,9 +1,10 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Grid, Typography } from '@material-ui/core';
 import React from 'react';
-import { ProjectProps } from '~/utils/types';
-import useStyles from './useStyles';
 import { ButtonLink } from '~/components/ButtonLink';
+import { ProjectProps } from '~/utils/types';
+import { toKebabCase } from '../../../../utils/toKebabCase';
+import useStyles from './useStyles';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const classes = useStyles();
@@ -32,8 +33,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 			</Grid>
 			<Grid item className={classes.imageContainer}>
 				<img
-					src={props.projectGif}
-					alt={`${props.title}-project-gif`}
+					src={`props.projectGif`}
+					alt={`${toKebabCase(props.title)}-project-gif`}
 					className={classes.image}
 				/>
 			</Grid>

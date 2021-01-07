@@ -1,16 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import ThemeTopLayout from './/ThemeTopLayout';
-import { Button } from '@material-ui/core';
 import { primaryBorderColor, primaryColor } from '~/hooks/useMakeTheme/colors';
+import MockComponent from './MockComponent';
 
 describe(`ThemeTopLayout`, () => {
 	beforeEach(() => {
-		render(
-			<ThemeTopLayout>
-				<Button color={`primary`} variant={`contained`} />
-			</ThemeTopLayout>,
-		);
+		render(<MockComponent />);
 	});
 
 	it(`accepts children`, () => {

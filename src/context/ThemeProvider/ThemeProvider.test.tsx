@@ -1,8 +1,8 @@
-import ThemeProvider from './ThemeProvider';
+import { blue } from '@material-ui/core/colors';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { primaryColor } from '~/hooks/useMakeTheme/colors';
 import MockComponent from './MockComponent';
+import ThemeProvider from './ThemeProvider';
 
 describe(`ThemeProvider`, () => {
 	beforeEach(() =>
@@ -18,6 +18,6 @@ describe(`ThemeProvider`, () => {
 	});
 
 	it(`passes theme context`, () => {
-		expect(screen.getByText(primaryColor)).toBeInTheDocument();
+		expect(screen.getByText(blue[500])).toBeInTheDocument();
 	});
 });

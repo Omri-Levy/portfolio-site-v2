@@ -12,10 +12,10 @@ const ThemeSelector: React.FunctionComponent = () => {
 			aria-label={`theme-selector`}
 			id={`theme-selector`}
 		>
-			<ThemeOption color={`#fb3eff`} alt={`pink`} />
-			<ThemeOption color={`#3e96ff`} alt={`blue`} />
-			<ThemeOption color={`#ff3e3e`} alt={`red`} />
-			<ThemeOption color={`#41ff3e`} alt={`green`} />
+			<ThemeOption color={`purple`} alt={`purple`} />
+			<ThemeOption color={`blue`} alt={`blue`} />
+			<ThemeOption color={`red`} alt={`red`} />
+			<ThemeOption color={`green`} alt={`green`} />
 		</ButtonGroup>
 	);
 };
