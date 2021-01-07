@@ -5,11 +5,11 @@ import {
 	PermContactCalendarOutlined,
 } from '@material-ui/icons';
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../../context/ThemeContext';
 import { ContactMeForm } from './ContactMeForm';
 import useStyles from './useStyles';
 import { PageContainer } from '~/components/Layout/PageContainer';
 import { IconLink } from '~/components/IconLink';
+import { ThemeContext } from '~/context/ThemeContext';
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();

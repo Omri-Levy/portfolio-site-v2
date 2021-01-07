@@ -8,8 +8,8 @@ import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
 import React, { useContext } from 'react';
 import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
 import { MobileProjectProps } from '~/utils/types';
-import { ThemeContext } from '../../../../context/ThemeContext';
-import { toKebabCase } from '../../../../utils/toKebabCase';
+import { ThemeContext } from '~/context/ThemeContext';
+import { toKebabCase } from '~/utils/toKebabCase';
 import useStyles from './useStyles';
 import { useTheme } from '@material-ui/core/styles';
 import { ButtonLink } from '~/components/ButtonLink';
@@ -52,6 +52,13 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 							<img alt={`${toKebabCase(props.title)}${altSuffix}`} />
 						)}
 						hasMasterSpinner={false}
+						// without renderError an empty div without alt text is loaded
+						renderError={() => (
+							<img
+								alt={`${toKebabCase(props.title)}-project-gif`}
+								className={classes.image}
+							/>
+						)}
 					/>
 					<ButtonNext className={classes.carouselNextButton}>
 						{nextButton}

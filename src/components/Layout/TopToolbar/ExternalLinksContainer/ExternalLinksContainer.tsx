@@ -1,10 +1,10 @@
 import { ButtonGroup } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { IconLink } from '~/components/IconLink';
-import { ThemeContext } from '../../../../context/ThemeContext';
 import { GithubBrand } from '../GithubBrand';
 import { LinkedinBrand } from '../LinkedinBrand';
 import useStyles from './useStyles';
+import { ThemeContext } from '~/context/ThemeContext';
 
 const ExternalLinksContainer: React.FunctionComponent = () => {
 	const classes = useStyles();

@@ -19,12 +19,12 @@ interface ClassNameProps {
 	className: string;
 }
 
-interface ButtonProps {
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
 	variant: `primary` | `secondary`;
 	text: string;
 	to?: string;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
-	type?: string;
+	type?: `button` | `reset` | `submit` | undefined;
 	additionalClass?: string;
 }
 
@@ -96,6 +96,8 @@ interface MobileProjectProps extends ProjectProps {
 
 type Key = string | number | symbol;
 
+type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
+
 export {
 	ChildrenProps,
 	ButtonProps,
@@ -109,4 +111,5 @@ export {
 	UI,
 	Options,
 	Key,
+	SetState,
 };

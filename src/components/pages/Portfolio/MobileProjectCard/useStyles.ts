@@ -105,9 +105,15 @@ const useStyles = makeStyles((theme) => ({
 		position: `relative`,
 		marginInline: `auto`,
 		backgroundColor: theme.palette.primary.main,
+		width: `min(600px, 100%)`,
+		height: 200,
+		borderRadius: 5,
+	},
+	image: {
+		width: `100%`,
+		height: `100%`,
+		borderRadius: 5,
 		color: theme.palette.text.secondary,
-		width: `min(100%, 600px)`,
-		height: 250,
 	},
 	buttonsContainer: {
 		display: `flex`,

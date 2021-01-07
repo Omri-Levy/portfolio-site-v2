@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	icon: {
+		color: theme.palette.primary.main,
+		width: 24,
+		height: 24,
 		marginTop: 2,
 		[getCustomBreakpoints(`lg`, theme, `up`)]: {
 			marginTop: -6,

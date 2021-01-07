@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	icon: {
+		color: theme.palette.primary.main,
+		width: 24,
+		height: 24,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			width: 48,
 			height: 48,

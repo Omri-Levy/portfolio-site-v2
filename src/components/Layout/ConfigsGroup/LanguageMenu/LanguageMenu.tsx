@@ -26,6 +26,7 @@ const LanguageMenu: React.FunctionComponent = () => {
 				aria-label={`language-menu`}
 				aria-controls={`language-menu-list`}
 				onClick={handleClick}
+				className={classes.icon}
 			>
 				<LanguageOutlined />
 			</IconButton>
