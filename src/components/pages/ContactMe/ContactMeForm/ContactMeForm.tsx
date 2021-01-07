@@ -55,7 +55,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 						<TextField
 							autoFocus
 							name={`fullName`}
-							variant={`filled`}
+							variant={`outlined`}
 							label={<TranslateText text={`Full Name`} />}
 							id={`full-name`}
 							className={classes.fullName}
@@ -68,7 +68,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 					<Grid item className={classes.emailGridItem}>
 						<TextField
 							name={`email`}
-							variant={`filled`}
+							variant={`outlined`}
 							label={<TranslateText text={`Email`} />}
 							id={`email`}
 							className={classes.email}
@@ -83,7 +83,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 					<Grid item className={classes.messageGridItem}>
 						<TextField
 							name={`message`}
-							variant={`filled`}
+							variant={`outlined`}
 							label={<TranslateText text={`Message`} />}
 							id={`message`}
 							className={classes.message}

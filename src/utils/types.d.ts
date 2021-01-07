@@ -23,6 +23,7 @@ interface ButtonProps {
 	variant: `primary` | `secondary`;
 	text: string;
 	to?: string;
+	disabled?: boolean;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	type?: string;
 	additionalClass?: string;

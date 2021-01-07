@@ -22,9 +22,10 @@ const useStyles = makeStyles((theme) => ({
 				fontSize: 11,
 			},
 		},
-		'& .MuiFilledInput-underline': {
-			'&:hover:before': {
-				borderBottom: `2px solid ${theme.palette.primary.main}`,
+		'& .MuiInputBase-formControl': {
+			border: `1px solid ${theme.palette.text.primary}`,
+			'&:hover': {
+				border: `1px solid ${theme.palette.primary.main}`,
 			},
 		},
 	},
@@ -68,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
 	message: {
 		...sharedProps,
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			marginBottom: 5,
+			marginBottom: 6,
 		},
 	},
 	sendButton: {
