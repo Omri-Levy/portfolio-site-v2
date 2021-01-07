@@ -3,8 +3,8 @@ import { Grid, Typography } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { ButtonLink } from '~/components/ButtonLink';
 import { ProjectProps } from '~/utils/types';
-import { ThemeContext } from '../../../../context/ThemeContext';
-import { toKebabCase } from '../../../../utils/toKebabCase';
+import { ThemeContext } from '~/context/ThemeContext';
+import { toKebabCase } from '~/utils/toKebabCase';
 import useStyles from './useStyles';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {

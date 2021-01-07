@@ -101,6 +101,13 @@ const useMakeTheme = (): DefaultTheme => {
 					borderRadius: 3,
 				},
 			},
+			MuiSvgIcon: {
+				root: {
+					color: primaryColor,
+					width: 24,
+					height: 24,
+				},
+			},
 		},
 		typography: {
 			fontFamily: [`Montserrat`, `sans-serif`].join(`,`),
