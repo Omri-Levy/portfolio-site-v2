@@ -1,34 +1,31 @@
 import { ListItem } from '@material-ui/core';
+import clsx from 'clsx';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
+import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 import { Props } from './types';
 import useStyles from './useStyles';
-import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 
 const NavLink: React.FunctionComponent<Props> = (props) => {
 	const { to, Icon, text } = props;
-	const classes = useStyles();
+	const { listItem, activeLink, link, icon } = useStyles();
 	const handleClick = () => props.setIsActiveLink(text);
+	const anchorClass = clsx({
+		[link]: props.isActiveLink !== text,
+		[`${link} ${activeLink}`]: props.isActiveLink === text,
+	});
 
 	return (
-		<AnchorLink
-			to={to}
-			onAnchorLinkClick={handleClick}
-			className={
-				props.isActiveLink === text ? classes.activeLink : classes.link
-			}
-		>
-			<ListItem className={classes.listItem} disableGutters={true}>
-				{Icon && (
-					<Icon
-						className={
-							props.isActiveLink === text ? classes.activeIcon : classes.icon
-						}
-					/>
-				)}
+		<ListItem className={listItem} disableGutters={true}>
+			<AnchorLink
+				to={to}
+				onAnchorLinkClick={handleClick}
+				className={anchorClass}
+			>
+				{Icon && <Icon className={icon} />}
 				<TranslateText text={text} />
-			</ListItem>
-		</AnchorLink>
+			</AnchorLink>
+		</ListItem>
 	);
 };
 

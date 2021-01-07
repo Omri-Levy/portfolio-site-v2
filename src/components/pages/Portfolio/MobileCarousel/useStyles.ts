@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme) => ({
 	carouselProvider: {
 		width: `100%`,
 		direction: `ltr`,
+		flip: false,
 	},
 }));
 

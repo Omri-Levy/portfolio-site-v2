@@ -101,10 +101,11 @@ const useStyles = makeStyles((theme) => ({
 		right: 0,
 	},
 	imageContainer: {
+		borderRadius: 5,
 		position: `relative`,
 		marginInline: `auto`,
 		backgroundColor: theme.palette.primary.main,
-		width: `min(500px, 100%)`,
+		width: `min(600px, 100%)`,
 		height: 200,
 		borderRadius: 5,
 	},
@@ -112,6 +113,7 @@ const useStyles = makeStyles((theme) => ({
 		width: `100%`,
 		height: `100%`,
 		borderRadius: 5,
+		color: theme.palette.text.secondary,
 	},
 	buttonsContainer: {
 		display: `flex`,
