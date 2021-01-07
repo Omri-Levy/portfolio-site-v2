@@ -1,13 +1,17 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Grid, Typography } from '@material-ui/core';
-import React from 'react';
-import { ProjectProps } from '~/utils/types';
-import useStyles from './useStyles';
+import React, { useContext } from 'react';
 import { ButtonLink } from '~/components/ButtonLink';
+import { ProjectProps } from '~/utils/types';
+import { ThemeContext } from '../../../../context/ThemeContext';
+import { toKebabCase } from '../../../../utils/toKebabCase';
+import useStyles from './useStyles';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const classes = useStyles();
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
+	const { isRTL } = useContext(ThemeContext);
+	const altSuffix = isRTL ? `-גיף-פרויקט` : `-project-gif`;
 
 	return (
 		<Grid container className={classes.projectCardContainer}>
@@ -32,8 +36,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 			</Grid>
 			<Grid item className={classes.imageContainer}>
 				<img
-					src={props.projectGif}
-					alt={`${props.title}-project-gif`}
+					src={`props.projectGif`}
+					alt={`${toKebabCase(props.title)}${altSuffix}`}
 					className={classes.image}
 				/>
 			</Grid>

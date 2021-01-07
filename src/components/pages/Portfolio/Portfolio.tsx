@@ -1,11 +1,5 @@
 import { BLOCKS } from '@contentful/rich-text-types';
-import {
-	Box,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-} from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { FiberManualRecord, WorkOutline } from '@material-ui/icons';
 import React from 'react';
 import MobileCarousel from './MobileCarousel/MobileCarousel';
@@ -51,13 +45,13 @@ const Portfolio: React.FunctionComponent = () => {
 			text={`Portfolio`}
 			className={classes.portfolioContainer}
 		>
-			<Box>
+			<>
 				{isTabletDown && !isIpadPro ? (
 					<MobileCarousel allProjects={allProjects} options={options} />
 				) : (
 					<Projects allProjects={allProjects} options={options} />
 				)}
-			</Box>
+			</>
 		</PageContainer>
 	);
 };

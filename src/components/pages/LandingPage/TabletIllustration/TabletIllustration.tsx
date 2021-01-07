@@ -1,9 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
+import useStyles from './useStyles';
 
 const TabletIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();
+	useStyles();
 
 	return (
 		<figure>
