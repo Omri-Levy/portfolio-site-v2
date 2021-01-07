@@ -23,9 +23,17 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 		'& .MuiInputBase-formControl': {
-			border: `1px solid ${theme.palette.text.primary}`,
-			'&:hover': {
-				border: `1px solid ${theme.palette.primary.main}`,
+			'&:hover .MuiOutlinedInput-notchedOutline': {
+				borderColor: theme.palette.primary.main,
+			},
+			'& .MuiOutlinedInput-notchedOutline': {
+				borderColor: theme.palette.text.primary,
+			},
+			'&:focus-within': {
+				border: `none`,
+				'& .MuiOutlinedInput-notchedOutline': {
+					borderColor: theme.palette.primary.main,
+				},
 			},
 		},
 	},
@@ -79,9 +87,6 @@ const useStyles = makeStyles((theme) => ({
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			marginBottom: 5,
 		},
-	},
-	'.MuiInputBase-formControl': {
-		border: `1px ${theme.palette.primary.main}`,
 	},
 }));
 
