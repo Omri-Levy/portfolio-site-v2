@@ -13,7 +13,7 @@ const Nav: React.FunctionComponent = () => {
 	const [isActiveLink, setIsActiveLink] = useState(`Portfolio`);
 
 	return (
-		<Toolbar disableGutters={true} component={`nav`}>
+		<Toolbar disableGutters={true} component={`nav`} className={classes.nav}>
 			<List className={classes.menuList}>
 				<NavLink
 					to={`/home#portfolio`}

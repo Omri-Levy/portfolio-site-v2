@@ -5,10 +5,6 @@ const useStyles = makeStyles((theme) => ({
 		display: `flex`,
 		justifyContent: `center`,
 		minWidth: theme.direction === `rtl` ? 60 : 80,
-		marginRight: 23,
-		'&:last-child': {
-			marginRight: 0,
-		},
 	},
 	icon: {
 		color: theme.palette.text.secondary,
