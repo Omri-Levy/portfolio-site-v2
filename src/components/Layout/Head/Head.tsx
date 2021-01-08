@@ -2,15 +2,17 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 const Head: React.FunctionComponent = () => {
-	const url = document.location.pathname;
-	const pageTitlePrefix = `Omri Levy - Portfolio Site -`;
+	let url = document.location.pathname;
 	const isLandingPage = url === `/`;
+	const pageTitlePrefix = `Omri Levy - Portfolio Site -`;
 
 	let pageTitle;
 
 	if (isLandingPage) {
 		pageTitle = `${pageTitlePrefix} Landing page`;
 	} else {
+		url = url.charAt(1).toUpperCase() + url.slice(2);
+		url = url.replace(`/`, ``);
 		pageTitle = `${pageTitlePrefix} ${url}`;
 	}
 
