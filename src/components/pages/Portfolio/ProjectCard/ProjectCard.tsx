@@ -3,7 +3,7 @@ import { Grid, Typography } from '@material-ui/core';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { ButtonLink } from '~/components/ButtonLink';
-import { toKebabCase } from '~/utils/toKebabCase';
+import KebabCase from 'lodash/kebabCase';
 import { ProjectProps } from '~/utils/types';
 import useStyles from './useStyles';
 
@@ -36,7 +36,7 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 			<Grid item className={classes.imageContainer}>
 				<img
 					src={`props.projectGif`}
-					alt={`${toKebabCase(props.title)}${intl.formatMessage({
+					alt={`${KebabCase(props.title)}${intl.formatMessage({
 						id: `projectGif`,
 					})}`}
 					className={classes.image}
