@@ -5,13 +5,13 @@ import {
 	KeyboardArrowLeftOutlined,
 	KeyboardArrowRightOutlined,
 } from '@material-ui/icons';
+import KebabCase from 'lodash/kebabCase';
 import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
 import React, { useContext } from 'react';
 import { useIntl } from 'react-intl';
 import { ButtonLink } from '~/components/ButtonLink';
 import { ThemeContext } from '~/context/ThemeContext';
 import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
-import { toKebabCase } from '~/utils/toKebabCase';
 import { MobileProjectProps } from '~/utils/types';
 import useStyles from './useStyles';
 
@@ -49,12 +49,12 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 					</ButtonBack>
 					<Image
 						src={`props.projectGif`}
-						alt={`${toKebabCase(props.title)}${intl.formatMessage({
+						alt={`${KebabCase(props.title)}${intl.formatMessage({
 							id: `projectGif`,
 						})}`}
 						// without renderError an empty div without alt text is loaded
 						renderError={() => (
-							<img alt={`${toKebabCase(props.title)}${altSuffix}`} />
+							<img alt={`${KebabCase(props.title)}${altSuffix}`} />
 						)}
 						hasMasterSpinner={false}
 					/>

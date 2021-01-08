@@ -11,6 +11,8 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 		portfolio: useTranslations(`תיק עבודות`, `Portfolio`),
 		aboutMe: useTranslations(`עלי`, `About Me`),
 		contactMe: useTranslations(`צרו קשר`, `Contact Me`),
+		landingPage: useTranslations(`דף נחיתה`, `Landing Page`),
+		home: useTranslations(`דף בית`, `Home Page`),
 
 		// nav logo
 		omriLevy: useTranslations(`עומרי לוי`, `Omri Levy`),
@@ -43,6 +45,24 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 
 		// contact me form send button
 		send: useTranslations(`שלח`, `Send`),
+
+		// contact me form alert messages
+		success: useTranslations(
+			`ההודעה נשלחה בהצלחה!`,
+			`Message sent successfully!`,
+		),
+		error: useTranslations(
+			`משהו השתבש! אנא נסה/י שוב מאוחר יותר..`,
+			`Something went wrong! Please try again later..`,
+		),
+		cooldown: useTranslations(
+			`הודעה כבר נשלחה! אנא נסה/י שוב בעוד 5 דקות.`,
+			`Message already sent! Please try again in 5 minutes.`,
+		),
+		robot: useTranslations(
+			`אנא אמת/י שאת/ה לא רובוט ונסה/י שוב.`,
+			`Please verify you are not a robot and try again.`,
+		),
 
 		//images alt text
 		projectGif: useTranslations(`-גיף-פרויקט`, `-project-gif`),
