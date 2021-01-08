@@ -1,6 +1,7 @@
 describe(`app`, () => {
 	it(`works`, () => {
 		cy.visit(`/`);
-		cy.findByText(/dive\sin/i).click();
+		cy.findByRole(`link`, { timeout: 10000 }).click();
+		cy.findByRole(`heading`, { name: /portfolio/i });
 	});
 });
