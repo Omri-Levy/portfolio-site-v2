@@ -3,10 +3,10 @@
 exports[`useFetchState matches snapshot 1`] = `
 <div>
   <div
-    class="MuiContainer-root makeStyles-mainContainer-1"
+    class="MuiContainer-root makeStyles-mainContainer-5"
   >
     <main
-      class="makeStyles-content-2"
+      class="makeStyles-content-6"
     >
       false
       false

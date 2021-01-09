@@ -96,7 +96,7 @@ const useMakeTheme = (): DefaultTheme => {
 			MuiButton: {
 				containedPrimary: {
 					color: isDarkMode ? secondaryTextColor : primaryTextColor,
-					boxShadow: `0px 2px 4px #000`,
+					boxShadow: `0px 2px 4px rgb(0, 0, 0)`,
 					border: `1px solid ${primaryBorderColor(primaryColor)}`,
 					padding: 4,
 					borderRadius: 3,

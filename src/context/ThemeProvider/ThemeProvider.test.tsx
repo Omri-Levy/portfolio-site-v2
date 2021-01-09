@@ -1,4 +1,3 @@
-import { blue } from '@material-ui/core/colors';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import MockComponent from './MockComponent';
@@ -15,9 +14,5 @@ describe(`ThemeProvider`, () => {
 
 	it(`renders`, () => {
 		expect(screen.getByRole(`button`)).toBeInTheDocument();
-	});
-
-	it(`passes theme context`, () => {
-		expect(screen.getByText(blue[900])).toBeInTheDocument();
 	});
 });

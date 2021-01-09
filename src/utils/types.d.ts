@@ -1,6 +1,6 @@
 import { Document } from '@contentful/rich-text-types';
-import React from 'react';
 import { RenderOptions } from '@testing-library/react';
+import React from 'react';
 
 type UI = JSX.Element;
 type Options =
@@ -19,13 +19,11 @@ interface ClassNameProps {
 	className: string;
 }
 
-interface ButtonProps {
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
 	variant: `primary` | `secondary`;
+	type?: `button` | `reset` | `submit` | undefined;
 	text: string;
 	to?: string;
-	disabled?: boolean;
-	onClick?: React.MouseEventHandler<HTMLButtonElement>;
-	type?: string;
 	additionalClass?: string;
 }
 

@@ -1,15 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
-import useRTLOrLTRComponent from './useRTLOrLTRComponent';
 import { ThemeContext } from '~/context/ThemeContext';
 import { Props } from './types';
+import useRTLOrLTRComponent from './useRTLOrLTRComponent';
 
 const MockComponent: React.FunctionComponent<Props> = ({ rtl }) => {
 	const { setIsRTL } = useContext(ThemeContext);
 	const [isMounted, setIsMounted] = useState(true);
 
 	useEffect(() => {
-		if (rtl && isMounted) {
-			setIsRTL(true);
+		if (isMounted) {
+			setIsRTL(rtl);
+			if (typeof window !== `undefined`) {
+				localStorage.setItem(`isRTL`, JSON.stringify(rtl));
+			}
 		}
 
 		return () => setIsMounted(false);
