@@ -213,7 +213,7 @@ const MobileFishingBoat: React.FunctionComponent = () => {
 					/>
 				</filter>
 			</defs>
-			<Link to={`/home`}>
+			<Link to={`/home#portfolio`}>
 				DIVE IN
 				<g filter='url(#filter0_d)'>
 					<rect

@@ -22,7 +22,7 @@ const LandingPage: React.FunctionComponent = () => {
 	} else if (isTabletUp) {
 		content = <TabletIllustration />;
 	} else {
-		content = <TabletIllustration />;
+		content = <MobileIllustration />;
 	}
 
 	return content;
