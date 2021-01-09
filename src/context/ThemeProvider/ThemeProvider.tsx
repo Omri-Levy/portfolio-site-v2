@@ -22,7 +22,9 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 				() => JSON.parse(localStorage.getItem(`isDarkMode`) as string) || false,
 			);
 			setPrimaryColor(() => {
-				const colors = colorsObj(isDarkMode);
+				const mode =
+					JSON.parse(localStorage.getItem(`isDarkMode`) as string) || false;
+				const colors = colorsObj(mode);
 				const color = localStorage.getItem(`primaryColor`);
 
 				if (!color) {
