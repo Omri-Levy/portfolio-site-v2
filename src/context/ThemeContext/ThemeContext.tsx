@@ -1,14 +1,16 @@
-import { primaryColor } from '~/hooks/useMakeTheme/colors';
-import { Theme } from './types';
+import { blue } from '@material-ui/core/colors';
 import { createContext } from 'react';
+import { Theme } from './types';
 
 const theme: Theme = {
 	isDarkMode: true,
 	setIsDarkMode: () => true,
-	primaryColor,
-	setPrimaryColor: () => primaryColor,
+	primaryColor: blue[200],
+	setPrimaryColor: () => blue[200],
 	isRTL: false,
 	setIsRTL: () => false,
+	isLandingPage: false,
+	setIsLandingPage: () => false,
 };
 
 const ThemeContext = createContext(theme);

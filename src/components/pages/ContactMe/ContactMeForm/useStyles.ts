@@ -22,9 +22,18 @@ const useStyles = makeStyles((theme) => ({
 				fontSize: 11,
 			},
 		},
-		'& .MuiFilledInput-underline': {
-			'&:hover:before': {
-				borderBottom: `2px solid ${theme.palette.primary.main}`,
+		'& .MuiInputBase-formControl': {
+			'&:hover .MuiOutlinedInput-notchedOutline': {
+				borderColor: theme.palette.primary.main,
+			},
+			'& .MuiOutlinedInput-notchedOutline': {
+				borderColor: theme.palette.text.primary,
+			},
+			'&:focus-within': {
+				border: `none`,
+				'& .MuiOutlinedInput-notchedOutline': {
+					borderColor: theme.palette.primary.main,
+				},
 			},
 		},
 	},
@@ -68,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 	message: {
 		...sharedProps,
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			marginBottom: 5,
+			marginBottom: 6,
 		},
 	},
 	sendButton: {
@@ -78,9 +87,6 @@ const useStyles = makeStyles((theme) => ({
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {
 			marginBottom: 5,
 		},
-	},
-	'.MuiInputBase-formControl': {
-		border: `1px ${theme.palette.primary.main}`,
 	},
 }));
 

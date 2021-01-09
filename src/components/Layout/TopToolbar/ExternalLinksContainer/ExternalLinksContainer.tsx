@@ -1,8 +1,8 @@
 import { ButtonGroup } from '@material-ui/core';
 import React, { useContext } from 'react';
+import { IconLink } from '~/components/IconLink';
 import { GithubBrand } from '../GithubBrand';
 import { LinkedinBrand } from '../LinkedinBrand';
-import { IconLink } from '~/components/IconLink';
 import useStyles from './useStyles';
 import { ThemeContext } from '~/context/ThemeContext';
 
@@ -19,8 +19,8 @@ const ExternalLinksContainer: React.FunctionComponent = () => {
 				Icon={LinkedinBrand}
 				to={`https://www.linkedin.com/in/omri-levy-798b901b1/`}
 				alt={`linkedin`}
-				ml={isRTL ? 20 : 0}
 				mr={isRTL ? 0 : 20}
+				ml={isRTL ? 20 : 0}
 			/>
 			<IconLink
 				Icon={GithubBrand}

@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import useDevice from '~/hooks/useDevice/useDevice';
-import { Container } from '~/components/Layout/Container';
+import { ThemeContext } from '../../../context/ThemeContext';
 import { DesktopIllustration } from './DesktopIllustration';
 import { MobileIllustration } from './MobileIllustration';
 import { TabletIllustration } from './TabletIllustration';
 
 const LandingPage: React.FunctionComponent = () => {
-	const { isMobile, isDesktop, isTabletUp, isIpadPro } = useDevice();
+	const { isTabletUp, isTabletDown, isDesktop, isIpadPro } = useDevice();
+	const { setIsLandingPage } = useContext(ThemeContext);
+
+	useEffect(() => {
+		setIsLandingPage(true);
+	}, []);
 
 	let content;
 
-	if (isMobile || isIpadPro) {
+	if (isTabletDown || isIpadPro) {
 		content = <MobileIllustration />;
 	} else if (isDesktop) {
 		content = <DesktopIllustration />;
@@ -20,7 +25,7 @@ const LandingPage: React.FunctionComponent = () => {
 		content = <TabletIllustration />;
 	}
 
-	return <Container>{content}</Container>;
+	return content;
 };
 
 export default LandingPage;

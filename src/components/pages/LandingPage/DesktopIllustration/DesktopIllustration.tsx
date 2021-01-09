@@ -1,12 +1,14 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
+import useStyles from './useStyles';
 
 const DesktopIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();
+	const classes = useStyles();
 
 	return (
-		<figure>
+		<figure className={classes.desktopIllustrationContainer}>
 			<svg
 				width={`1920`}
 				height={`1024`}

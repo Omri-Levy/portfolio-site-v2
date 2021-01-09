@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: `row`,
 		justifyContent: `space-between`,
 		alignItems: `center`,
-		padding: `0 20px`,
+		padding: `8px 20px`,
 		top: `unset`,
 		bottom: 0,
 		[getCustomBreakpoints(`xs`, theme, `down`)]: {

@@ -1,16 +1,24 @@
+import camelCase from 'lodash/camelCase';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useIntl } from 'react-intl';
 
 const Head: React.FunctionComponent = () => {
-	const url = document.location.pathname;
-	const pageTitlePrefix = `Omri Levy - Portfolio Site -`;
+	let url = document.location.pathname;
 	const isLandingPage = url === `/`;
+	const intl = useIntl();
+	const omriLevy = intl.formatMessage({ id: `omriLevy` });
+	const portfolioSite = intl.formatMessage({ id: `portfolioSite` });
+	const landingPage = intl.formatMessage({ id: `landingPage` });
+	const pageTitlePrefix = `${omriLevy} - ${portfolioSite} -`;
 
 	let pageTitle;
 
 	if (isLandingPage) {
-		pageTitle = `${pageTitlePrefix} Landing page`;
+		pageTitle = `${pageTitlePrefix} ${landingPage}`;
 	} else {
+		url = url.replace(`/`, ``);
+		url = intl.formatMessage({ id: camelCase(url) });
 		pageTitle = `${pageTitlePrefix} ${url}`;
 	}
 

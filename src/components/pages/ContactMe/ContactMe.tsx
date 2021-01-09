@@ -31,7 +31,8 @@ const ContactMe: React.FunctionComponent = () => {
 					textLineHeight={largeIcons ? 3 : 1.7}
 					mr={isRTL ? 0 : 20}
 					ml={isRTL ? 20 : 0}
-					iconPr={5}
+					iconPl={isRTL ? 5 : 0}
+					iconPr={isRTL ? 0 : 5}
 				/>
 				<IconLink
 					to={`mailto:omri.levy0197@gmail.com`}
@@ -39,7 +40,8 @@ const ContactMe: React.FunctionComponent = () => {
 					alt={`email-address`}
 					text={`omri.levy0197@gmail.com`}
 					textLineHeight={largeIcons ? 3 : 1.7}
-					iconPr={5}
+					iconPl={isRTL ? 5 : 0}
+					iconPr={isRTL ? 0 : 5}
 				/>
 			</Box>
 			<ContactMeForm />

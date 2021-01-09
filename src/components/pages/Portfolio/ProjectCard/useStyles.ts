@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 	projectCardContainer: {
 		border: `1px solid ${theme.palette.primary.main}`,
 		padding: 10,
-		height: 500,
+		height: 380,
 		marginBottom: 53,
 		borderRadius: 5,
 
@@ -67,16 +67,15 @@ const useStyles = makeStyles((theme) => ({
 	imageContainer: {
 		marginLeft: `auto`,
 		marginTop: 4,
-		width: 500,
-		height: 300,
+		width: 590,
+		height: 305,
 	},
 	image: {
 		backgroundColor: theme.palette.primary.main,
+		borderRadius: 5,
+		color: theme.palette.text.secondary,
 		width: `100%`,
 		height: `100%`,
-		[getCustomBreakpoints(`md`, theme, `up`)]: {
-			borderRadius: 5,
-		},
 	},
 	buttonsContainer: {
 		display: `flex`,

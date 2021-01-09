@@ -1,8 +1,9 @@
 import { createMuiTheme } from '@material-ui/core';
 import { enUS, heIL } from '@material-ui/core/locale';
 import { DefaultTheme } from '@material-ui/styles';
-import generateThemeFavicon from '~/utils/generateThemeFavicon/generateThemeFavicon';
+import { useContext } from 'react';
 import { ThemeContext } from '~/context/ThemeContext';
+import { generateThemeFavicon } from '../../utils/generateThemeFavicon';
 import {
 	backgroundColor,
 	primaryBorderColor,
@@ -11,11 +12,10 @@ import {
 	secondaryContrastColor,
 	secondaryTextColor,
 } from './colors';
-import { useContext } from 'react';
 
 const useMakeTheme = (): DefaultTheme => {
 	const { isDarkMode, primaryColor, isRTL } = useContext(ThemeContext);
-	generateThemeFavicon(primaryColor);
+	generateThemeFavicon();
 	const theme: DefaultTheme = {
 		direction: isRTL ? `rtl` : `ltr`,
 		breakpoints: {
@@ -32,6 +32,7 @@ const useMakeTheme = (): DefaultTheme => {
 		palette: {
 			background: {
 				default: isDarkMode ? backgroundColor : primaryContrastColor,
+				landingPage: backgroundColor,
 			},
 			text: {
 				primary: isDarkMode ? primaryTextColor : secondaryTextColor,
@@ -94,7 +95,7 @@ const useMakeTheme = (): DefaultTheme => {
 			},
 			MuiButton: {
 				containedPrimary: {
-					color: primaryTextColor,
+					color: isDarkMode ? secondaryTextColor : primaryTextColor,
 					boxShadow: `0px 2px 4px #000`,
 					border: `1px solid ${primaryBorderColor(primaryColor)}`,
 					padding: 4,

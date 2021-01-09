@@ -8,7 +8,7 @@ const ProfilePic: React.FunctionComponent = () => {
 	return (
 		<img
 			src={profilePic}
-			alt={`Omri Levy - profile picture`}
+			alt={`omri-levy-profile-picture`}
 			className={classes.profilePic}
 		/>
 	);

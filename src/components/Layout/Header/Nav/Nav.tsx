@@ -1,12 +1,12 @@
 import { List, Toolbar } from '@material-ui/core';
-import React, { useState } from 'react';
-import { NavLink } from './NavLink';
-import useStyles from './useStyles';
 import {
 	InfoOutlined,
 	PermContactCalendarOutlined,
 	WorkOutline,
 } from '@material-ui/icons';
+import React, { useState } from 'react';
+import { NavLink } from './NavLink';
+import useStyles from './useStyles';
 
 const Nav: React.FunctionComponent = () => {
 	const classes = useStyles();

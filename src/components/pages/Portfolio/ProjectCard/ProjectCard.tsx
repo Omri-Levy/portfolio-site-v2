@@ -1,14 +1,16 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Grid, Typography } from '@material-ui/core';
 import React from 'react';
+import { useIntl } from 'react-intl';
+import { ButtonLink } from '~/components/ButtonLink';
+import KebabCase from 'lodash/kebabCase';
 import { ProjectProps } from '~/utils/types';
 import useStyles from './useStyles';
-import { ButtonLink } from '~/components/ButtonLink';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const classes = useStyles();
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
-	const toKebabCase = (str: string) => str.replace(/\s/g, `-`).toLowerCase();
+	const intl = useIntl();
 
 	return (
 		<Grid container className={classes.projectCardContainer}>
@@ -34,7 +36,9 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 			<Grid item className={classes.imageContainer}>
 				<img
 					src={`props.projectGif`}
-					alt={`${toKebabCase(props.title)}-project-gif`}
+					alt={`${KebabCase(props.title)}${intl.formatMessage({
+						id: `projectGif`,
+					})}`}
 					className={classes.image}
 				/>
 			</Grid>

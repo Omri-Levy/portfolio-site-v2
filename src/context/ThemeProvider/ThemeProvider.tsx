@@ -1,14 +1,30 @@
-import { ChildrenProps } from '~/utils/types';
-import { ThemeContext } from '../ThemeContext';
-import { primaryColor as initialColor } from '~/hooks/useMakeTheme/colors';
 import React, { useState } from 'react';
+import { ChildrenProps } from '~/utils/types';
+import { colorsObj } from '../../hooks/useMakeTheme/colors';
+import { ThemeContext } from '../ThemeContext';
 
 const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 	children,
 }) => {
-	const [isDarkMode, setIsDarkMode] = useState(true);
-	const [primaryColor, setPrimaryColor] = useState(initialColor);
-	const [isRTL, setIsRTL] = useState(false);
+	const [isDarkMode, setIsDarkMode] = useState(
+		() => JSON.parse(localStorage.getItem(`isDarkMode`) as string) || false,
+	);
+	const [primaryColor, setPrimaryColor] = useState(() => {
+		const colors = colorsObj(isDarkMode);
+		const color = localStorage.getItem(`primaryColor`);
+
+		if (!color) {
+			localStorage.setItem(`primaryColor`, `blue`);
+
+			return colors[`blue`];
+		}
+
+		return colors[color];
+	});
+	const [isRTL, setIsRTL] = useState(
+		() => JSON.parse(localStorage.getItem(`isRTL`) as string) || false,
+	);
+	const [isLandingPage, setIsLandingPage] = useState(true);
 
 	return (
 		<ThemeContext.Provider
@@ -19,6 +35,8 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 				setPrimaryColor,
 				isRTL,
 				setIsRTL,
+				isLandingPage,
+				setIsLandingPage,
 			}}
 		>
 			{children}

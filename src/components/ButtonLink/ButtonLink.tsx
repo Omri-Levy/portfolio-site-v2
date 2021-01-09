@@ -1,21 +1,13 @@
 import { Button, CircularProgress } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import clsx from 'clsx';
 import React from 'react';
 import { ButtonProps } from '~/utils/types';
 import { TranslateText } from '../Layout/Locales/TranslateText';
 import useStyles from './useStyles';
-import clsx from 'clsx';
-import { useTheme } from '@material-ui/core/styles';
 
 const ButtonLink: React.FunctionComponent<ButtonProps> = (props) => {
-	const {
-		variant,
-		to,
-		text,
-		additionalClass,
-		onClick,
-		disabled = false,
-		type,
-	} = props;
+	const { variant, to, text, additionalClass, onClick, disabled, type } = props;
 	const classes = useStyles();
 	const classNames = clsx([classes.button, additionalClass]);
 	const theme = useTheme();
@@ -28,7 +20,7 @@ const ButtonLink: React.FunctionComponent<ButtonProps> = (props) => {
 			className={classNames}
 			variant={variant === `primary` ? `contained` : `outlined`}
 			onClick={onClick}
-			disabled={disabled}
+			disabled={disabled ?? disabled}
 			style={styles}
 		>
 			{to ? (
