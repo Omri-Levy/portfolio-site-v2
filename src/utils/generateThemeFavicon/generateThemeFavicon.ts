@@ -1,29 +1,34 @@
-import useAllFavicons from '../../hooks/useAllFavicons/useAllFavicons';
+import camelcase from 'lodash/camelCase';
 import { Icon } from '~/utils/generateThemeFavicon/types';
+import useAllFavicons from '../../hooks/useAllFavicons/useAllFavicons';
 import { NewFavicon } from './types';
 
-const generateThemeFavicon = (primaryColor: string): boolean => {
+const generateThemeFavicon = (): boolean => {
 	const oldFavicon = document.querySelector(`link[rel~='icon']`);
-	const appleLinks = document.querySelectorAll(`link[rel~='apple-touch-icon']`);
+	const appleLinks = document.querySelectorAll(`link[rel~='apple-touch-icon']
+		`);
 	const { icons } = useAllFavicons();
 
-	if (!icons) {
+	if (!icons || !icons.edges) {
 		return false;
 	}
 
 	const { edges } = icons;
-
-	// get the last characters of the primary color hex due to the cached
-	// file name
-	const slicedHex = primaryColor.slice(primaryColor.length - 4, -1);
+	const isDarkMode =
+		JSON.parse(localStorage.getItem(`isDarkMode`) as string) || true;
+	const primaryColor = localStorage.getItem(`primaryColor`) || `blue`;
+	const mode = isDarkMode ? `dark` : `light`;
+	const colorMode = camelcase(`${mode}-${primaryColor}`);
 
 	// filter the array of favicons and leave in only the favicon with the file
 	// name matching the passed in primary color hex code
-	const faviconFilter = (icon: Icon) => icon.node.fluid.src.includes(slicedHex);
+	const faviconFilter = (icon: Icon) => {
+		return icon.node.fluid?.src.includes(colorMode);
+	};
 
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
-	const filteredFavicon = edges.filter((icon: Icon) => faviconFilter(icon));
+	const filteredFavicon = edges?.filter((icon: Icon) => faviconFilter(icon));
 
 	// set the new favicon
 	let newFavicon: NewFavicon;
@@ -41,5 +46,4 @@ const generateThemeFavicon = (primaryColor: string): boolean => {
 
 	return false;
 };
-
 export default generateThemeFavicon;
