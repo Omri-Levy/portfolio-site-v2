@@ -29,15 +29,7 @@ const Head: React.FunctionComponent = () => {
 		pageTitle = `${pageTitlePrefix} ${url}`;
 	}
 
-	return (
-		<Helmet title={pageTitle}>
-			<script
-				src={`https://www.google.com/recaptcha/api.js?r=${Math.random()}`}
-				async
-				defer
-			/>
-		</Helmet>
-	);
+	return <Helmet title={pageTitle} />;
 };
 
 export default Head;

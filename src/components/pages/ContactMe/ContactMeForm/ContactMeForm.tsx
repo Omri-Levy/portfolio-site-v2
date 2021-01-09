@@ -121,7 +121,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 				</Grid>
 				<ReCAPTCHA
 					ref={recaptcha.current}
-					sitekey={process.env.RECAPTCHA_KEY || ``}
+					sitekey={process.env.SITE_RECAPTCHA_KEY as string}
 					theme={isDarkMode ? `dark` : `light`}
 					hl={isRTL ? `iw` : `en`}
 					onChange={handleRecaptcha(setIsRobot, recaptchaValue)}
