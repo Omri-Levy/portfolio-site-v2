@@ -13,14 +13,6 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-anchor-links`,
 		{
-			resolve: `gatsby-plugin-recaptcha`,
-			options: {
-				async: true,
-				defer: true,
-				args: `?onload=onloadCallback&render=explicit`,
-			},
-		},
-		{
 			resolve: `gatsby-plugin-root-import`,
 			options: {
 				'~': path.join(__dirname, `src`),

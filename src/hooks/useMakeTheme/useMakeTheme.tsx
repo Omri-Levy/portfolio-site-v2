@@ -30,6 +30,7 @@ const useMakeTheme = (): DefaultTheme => {
 			},
 		},
 		palette: {
+			type: isDarkMode ? `dark` : `light`,
 			background: {
 				default: isDarkMode ? backgroundColor : primaryContrastColor,
 				landingPage: backgroundColor,
