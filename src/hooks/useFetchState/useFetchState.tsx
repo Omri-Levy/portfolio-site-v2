@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { generateSeverity } from '~/hooks/useFetchState/generateSeverity';
-import { useAlertMessage } from '../useAlertMessage';
+import { useAlertMessage } from '~/hooks/useAlertMessage';
 import { generateShouldDisplayAlert } from './generateShouldDisplayAlert';
 import { FetchState, Hook } from './types';
 

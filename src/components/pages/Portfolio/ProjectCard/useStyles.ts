@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 	projectCardContainer: {
 		border: `1px solid ${theme.palette.primary.main}`,
 		padding: 10,
-		height: 380,
+		height: 450,
 		marginBottom: 53,
 		borderRadius: 5,
 
