@@ -4,7 +4,7 @@ import ThemeOption from './ThemeOption';
 
 describe(`ThemeOption`, () => {
 	it(`renders`, () => {
-		renderWithProviders(<ThemeOption color={`#3e96ff`} alt={`test alt`} />);
+		renderWithProviders(<ThemeOption color={`blue`} alt={`test alt`} />);
 
 		expect(
 			screen.getByRole(`button`, { name: /test\salt/i }),

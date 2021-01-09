@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Props } from './types';
 import { ThemeContext } from '~/context/ThemeContext';
+import { Props } from './types';
 import useTranslations from './useTranslations';
 
 const MockComponent: React.FunctionComponent<Props> = ({ rtl }) => {
@@ -8,18 +8,17 @@ const MockComponent: React.FunctionComponent<Props> = ({ rtl }) => {
 	const { setIsRTL } = useContext(ThemeContext);
 
 	useEffect(() => {
-		if (rtl && isMounted) {
-			setIsRTL(true);
+		if (isMounted) {
+			setIsRTL(rtl);
+			if (typeof window !== `undefined`) {
+				localStorage.setItem(`isRTL`, JSON.stringify(rtl));
+			}
 		}
 
 		return () => setIsMounted(false);
 	}, []);
 
-	return (
-		<div>
-			<h1>{useTranslations(`עברית`, `english`)}</h1>
-		</div>
-	);
+	return <div>{useTranslations(`עברית`, `english`)}</div>;
 };
 
 export default MockComponent;

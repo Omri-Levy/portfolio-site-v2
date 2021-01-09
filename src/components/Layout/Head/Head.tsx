@@ -4,7 +4,14 @@ import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 
 const Head: React.FunctionComponent = () => {
-	let url = document.location.pathname;
+	let url;
+
+	if (typeof document === `undefined`) {
+		url = `/`;
+	} else {
+		url = document.location.pathname;
+	}
+
 	const isLandingPage = url === `/`;
 	const intl = useIntl();
 	const omriLevy = intl.formatMessage({ id: `omriLevy` });
@@ -13,11 +20,11 @@ const Head: React.FunctionComponent = () => {
 	const pageTitlePrefix = `${omriLevy} - ${portfolioSite} -`;
 
 	let pageTitle;
-
+	``;
 	if (isLandingPage) {
 		pageTitle = `${pageTitlePrefix} ${landingPage}`;
 	} else {
-		url = url.replace(`/`, ``);
+		url = url?.replace(`/`, ``);
 		url = intl.formatMessage({ id: camelCase(url) });
 		pageTitle = `${pageTitlePrefix} ${url}`;
 	}

@@ -4,9 +4,13 @@ import useAllFavicons from '../../hooks/useAllFavicons/useAllFavicons';
 import { NewFavicon } from './types';
 
 const generateThemeFavicon = (): boolean => {
+	if (typeof window === `undefined` || typeof document === `undefined`) {
+		return false;
+	}
+
 	const oldFavicon = document.querySelector(`link[rel~='icon']`);
 	const appleLinks = document.querySelectorAll(`link[rel~='apple-touch-icon']
-		`);
+	`);
 	const { icons } = useAllFavicons();
 
 	if (!icons || !icons.edges) {
