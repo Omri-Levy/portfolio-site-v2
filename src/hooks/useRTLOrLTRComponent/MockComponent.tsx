@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { Props } from './types';
 import useRTLOrLTRComponent from './useRTLOrLTRComponent';
 

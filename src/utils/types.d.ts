@@ -1,6 +1,6 @@
 import { Document } from '@contentful/rich-text-types';
 import { RenderOptions } from '@testing-library/react';
-import React from 'react';
+import React, { SetStateAction } from 'react';
 
 type UI = JSX.Element;
 type Options =
@@ -95,6 +95,8 @@ interface MobileProjectProps extends ProjectProps {
 
 type Key = string | number | symbol;
 
+type SetState<T> = React.Dispatch<SetStateAction<T>>;
+
 export {
 	ChildrenProps,
 	ButtonProps,
@@ -108,4 +110,5 @@ export {
 	UI,
 	Options,
 	Key,
+	SetState,
 };

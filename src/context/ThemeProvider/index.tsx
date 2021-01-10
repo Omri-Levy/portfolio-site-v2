@@ -1,7 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { ChildrenProps } from '~/utils/types';
-import { colorsObj } from '../../hooks/useMakeTheme/colors';
-import { ThemeContext } from '../ThemeContext';
+import { colorsObj } from '~/hooks/useMakeTheme/colors';
+import { Theme } from './types';
+
+const theme: Theme = {
+	isDarkMode: true,
+	setIsDarkMode: () => true,
+	primaryColor: `rgb(144, 202, 249)`,
+	setPrimaryColor: () => `rgb(144, 202, 249)`,
+	isRTL: false,
+	setIsRTL: () => false,
+	isLandingPage: false,
+	setIsLandingPage: () => false,
+};
+
+const ThemeContext = createContext(theme);
 
 const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 	children,
@@ -59,4 +72,4 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
 	);
 };
 
-export default ThemeProvider;
+export { ThemeProvider, ThemeContext };

@@ -14,7 +14,7 @@ import { useIntl } from 'react-intl';
 import { ButtonLink } from '~/components/ButtonLink';
 import { TranslateText } from '~/components/Layout/Locales/TranslateText';
 import FormInputProps from '~/components/pages/ContactMe/ContactMeForm/formInputProps/formInputProps';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { Key } from '~/utils/types';
 import { validationSchema } from '../validationSchema';
 import { FormInputs } from './types';

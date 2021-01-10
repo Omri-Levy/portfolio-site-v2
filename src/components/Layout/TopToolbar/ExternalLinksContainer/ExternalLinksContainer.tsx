@@ -4,7 +4,7 @@ import { IconLink } from '~/components/IconLink';
 import { GithubBrand } from '../GithubBrand';
 import { LinkedinBrand } from '../LinkedinBrand';
 import useStyles from './useStyles';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 
 const ExternalLinksContainer: React.FunctionComponent = () => {
 	const classes = useStyles();

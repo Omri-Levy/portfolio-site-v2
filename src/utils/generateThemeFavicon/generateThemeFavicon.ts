@@ -1,6 +1,6 @@
 import camelcase from 'lodash/camelCase';
 import { Icon } from '~/utils/generateThemeFavicon/types';
-import useAllFavicons from '../../hooks/useAllFavicons/useAllFavicons';
+import useAllFavicons from '~/hooks/useAllFavicons/useAllFavicons';
 import { NewFavicon } from './types';
 
 const generateThemeFavicon = (): boolean => {

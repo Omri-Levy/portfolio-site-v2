@@ -1,7 +1,7 @@
 import { IconButton, Menu, MenuItem, Typography } from '@material-ui/core';
 import { LanguageOutlined } from '@material-ui/icons';
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { AnchorOrButtonEvent, EventCurrentTarget } from './types';
 import useStyles from './useStyles';
 

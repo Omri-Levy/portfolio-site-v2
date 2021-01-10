@@ -7,13 +7,8 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: `column`,
 		alignItems: `center`,
 		width: `100%`,
-		padding: `0px 10px`,
-		[getCustomBreakpoints(`sm`, theme, `up`)]: {
-			padding: `0px 20px`,
-		},
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			width: 1000,
-			padding: 0,
 		},
 	},
 }));

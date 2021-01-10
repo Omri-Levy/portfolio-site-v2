@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ConfigsGroup } from '~/components/Layout/ConfigsGroup';
 import useDevice from '~/hooks/useDevice/useDevice';
 import { ChildrenProps } from '~/utils/types';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { Container } from './Container';
 import { Content } from './Content';
 import { Head } from './Head';

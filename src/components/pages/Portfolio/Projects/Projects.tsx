@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { ProjectsContainerProps } from '~/utils/types';
 import { v4 } from 'uuid';
 import ProjectCard from '../ProjectCard/ProjectCard';

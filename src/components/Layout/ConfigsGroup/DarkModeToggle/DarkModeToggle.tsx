@@ -1,8 +1,8 @@
 import { Box, Switch } from '@material-ui/core';
 import { Brightness2Outlined, WbSunnyOutlined } from '@material-ui/icons';
 import React, { useContext } from 'react';
-import { ThemeContext } from '~/context/ThemeContext';
-import { colorsObj } from '../../../../hooks/useMakeTheme/colors';
+import { ThemeContext } from '~/context/ThemeProvider';
+import { colorsObj } from '~/hooks/useMakeTheme/colors';
 import useStyles from './useStyles';
 
 const DarkModeToggle: React.FunctionComponent = () => {

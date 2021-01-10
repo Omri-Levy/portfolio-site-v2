@@ -1,8 +1,8 @@
 import { IconButton } from '@material-ui/core';
 import { FiberManualRecord } from '@material-ui/icons';
 import React, { useContext } from 'react';
-import { ThemeContext } from '~/context/ThemeContext';
-import { colorsObj } from '../../../../../hooks/useMakeTheme/colors';
+import { ThemeContext } from '~/context/ThemeProvider';
+import { colorsObj } from '~/hooks/useMakeTheme/colors';
 import { Props } from './types';
 import useStyles from './useStyles';
 
