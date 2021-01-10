@@ -10,11 +10,12 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	menuList: {
-		height: `30%`,
+		height: 300,
 		padding: 0,
 		display: `flex`,
 		flexDirection: `column`,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
+			height: `100%`,
 			width: `100%`,
 			flexDirection: `row`,
 		},

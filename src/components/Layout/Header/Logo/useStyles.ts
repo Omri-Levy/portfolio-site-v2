@@ -8,9 +8,6 @@ const useStyles = makeStyles((theme) => ({
 		'&:hover': {
 			textDecoration: `none`,
 		},
-		[`@media (max-width: 360px)`]: {
-			display: `none`,
-		},
 		color: theme.palette.secondary.dark,
 		fontSize: 13,
 		fontWeight: 700,
