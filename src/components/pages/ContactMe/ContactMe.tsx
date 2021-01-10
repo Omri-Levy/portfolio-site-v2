@@ -9,7 +9,7 @@ import { ContactMeForm } from './ContactMeForm';
 import useStyles from './useStyles';
 import { PageContainer } from '~/components/Layout/PageContainer';
 import { IconLink } from '~/components/IconLink';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 
 const ContactMe: React.FunctionComponent = () => {
 	const classes = useStyles();

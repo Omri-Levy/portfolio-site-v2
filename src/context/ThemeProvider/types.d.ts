@@ -1,11 +1,10 @@
-import React from 'react';
 import { SetState } from '~/utils/types';
 
 interface Theme {
 	isDarkMode: boolean;
-	setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+	setIsDarkMode: SetState<boolean>;
 	primaryColor: string;
-	setPrimaryColor: React.Dispatch<React.SetStateAction<PrimaryColor>>;
+	setPrimaryColor: SetState<PrimaryColor>;
 	isRTL: boolean;
 	setIsRTL: SetState<boolean>;
 	isLandingPage: boolean;

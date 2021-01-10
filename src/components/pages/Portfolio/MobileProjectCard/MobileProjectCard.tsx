@@ -10,7 +10,7 @@ import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
 import React, { useContext } from 'react';
 import { useIntl } from 'react-intl';
 import { ButtonLink } from '~/components/ButtonLink';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
 import { MobileProjectProps } from '~/utils/types';
 import useStyles from './useStyles';

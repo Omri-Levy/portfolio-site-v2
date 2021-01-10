@@ -1,4 +1,4 @@
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { Translation } from './types';
 import { useContext } from 'react';
 

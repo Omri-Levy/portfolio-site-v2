@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { ThemeProvider } from '.';
+import { AppProvider } from '.';
 import MockComponent from './MockComponent';
 
-describe(`ThemeProvider`, () => {
+describe(`AppProvider`, () => {
 	beforeEach(() =>
 		render(
-			<ThemeProvider>
+			<AppProvider>
 				<MockComponent />
-			</ThemeProvider>,
+			</AppProvider>,
 		),
 	);
 

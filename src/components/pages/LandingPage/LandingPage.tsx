@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
+import { ThemeContext } from '~/context/ThemeProvider';
 import useDevice from '~/hooks/useDevice/useDevice';
-import { ThemeContext } from '../../../context/ThemeContext';
 import { DesktopIllustration } from './DesktopIllustration';
 import { MobileIllustration } from './MobileIllustration';
 import { TabletIllustration } from './TabletIllustration';

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { IntlProvider } from 'react-intl';
-import { ThemeContext } from '~/context/ThemeContext';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { useTranslations } from '~/hooks/useTranslations';
 import { ChildrenProps } from '~/utils/types';
 
