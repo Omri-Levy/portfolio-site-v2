@@ -4,10 +4,14 @@ const useStyles = makeStyles((theme) => ({
 	darkModeToggleContainer: {
 		display: `flex`,
 		alignItems: `center`,
-		marginLeft: 15,
+	},
+	label: {
+		display: `flex`,
+		alignItems: `center`,
 	},
 	icon: {
 		color: theme.palette.primary.main,
+		cursor: `pointer`,
 	},
 }));
 

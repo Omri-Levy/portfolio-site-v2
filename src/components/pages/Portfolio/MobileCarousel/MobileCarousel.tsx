@@ -20,7 +20,7 @@ const MobileCarousel: React.FunctionComponent<ProjectsContainerProps> = ({
 
 	return (
 		<CarouselProvider
-			naturalSlideHeight={165}
+			naturalSlideHeight={175}
 			naturalSlideWidth={100}
 			totalSlides={3}
 			isPlaying={true}

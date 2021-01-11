@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
 			marginTop: 59,
 		},
 		[getCustomBreakpoints(`md`, theme, `down`)]: {
-			height: `100vh`,
 			display: `block`,
 			flexDirection: `unset`,
 			alignItems: `unset`,

@@ -6,9 +6,9 @@ describe(`ThemeSelector`, () => {
 	beforeEach(() => renderWithProviders(<ThemeSelector />));
 
 	it(`renders`, () => {
-		expect(
-			screen.getByRole(`group`, { name: /theme-selector/i }),
-		).toBeInTheDocument();
+		screen.getAllByRole(`button`)[0].click();
+
+		expect(screen.getByRole(`presentation`)).toBeInTheDocument();
 	});
 
 	it(`contains options`, () => {
