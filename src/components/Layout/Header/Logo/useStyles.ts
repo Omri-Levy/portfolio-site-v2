@@ -3,27 +3,26 @@ import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoi
 
 const useStyles = makeStyles((theme) => ({
 	title: {
-		textAlign: `left`,
+		textAlign: `center`,
 		textDecoration: `none`,
 		'&:hover': {
 			textDecoration: `none`,
 		},
 		color: theme.palette.secondary.dark,
-		fontSize: 13,
+		fontSize: 16,
 		fontWeight: 700,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
+			textAlign: `initial`,
 			color: theme.palette.text.secondary,
-			fontSize: 16,
 		},
 	},
 	subtitle: {
 		display: `block`,
-		fontSize: 11,
+		fontSize: 14,
 		fontWeight: 500,
 		color: theme.palette.primary.dark,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			color: theme.palette.text.secondary,
-			fontSize: 14,
 		},
 	},
 }));

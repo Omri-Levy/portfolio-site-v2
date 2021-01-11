@@ -3,14 +3,14 @@ import { getCustomBreakpoints } from '~/utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	burgerMenuContainer: {
-		zIndex: 3000,
+		zIndex: 1101,
 		position: `fixed`,
 		borderRadius: `100vh`,
 		padding: `.75rem .65rem`,
 		width: 48,
 		height: 48,
 		bottom: 10,
-		right: 10,
+		right: 20,
 		border: `1px solid ${theme.palette.primary.main}`,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			display: `none`,
@@ -39,14 +39,16 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 		'& input': {
-			zIndex: 3000,
+			zIndex: 1102,
 			cursor: `pointer`,
 			position: `absolute`,
 			opacity: 0,
 			width: 48,
 			height: 48,
-			bottom: 10,
-			right: 10,
+			top: 0,
+			left: 0,
+			bottom: 0,
+			right: 0,
 		},
 	},
 	burgerMenuContainerOpen: {

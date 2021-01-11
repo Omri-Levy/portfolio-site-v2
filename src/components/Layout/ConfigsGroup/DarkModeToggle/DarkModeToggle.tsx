@@ -30,16 +30,18 @@ const DarkModeToggle: React.FunctionComponent = () => {
 
 	return (
 		<Box className={classes.darkModeToggleContainer}>
-			{isDarkMode ? (
-				<Brightness2Outlined className={classes.icon} />
-			) : (
-				<WbSunnyOutlined className={classes.icon} />
-			)}
-			<Switch
-				onChange={handleChange}
-				checked={isDarkMode}
-				inputProps={{ 'aria-label': `dark-mode-toggle` }}
-			/>
+			<label className={classes.label}>
+				{isDarkMode ? (
+					<Brightness2Outlined className={classes.icon} />
+				) : (
+					<WbSunnyOutlined className={classes.icon} />
+				)}
+				<Switch
+					onChange={handleChange}
+					checked={isDarkMode}
+					inputProps={{ 'aria-label': `dark-mode-toggle` }}
+				/>
+			</label>
 		</Box>
 	);
 };

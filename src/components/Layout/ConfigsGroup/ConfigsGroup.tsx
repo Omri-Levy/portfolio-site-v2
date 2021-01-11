@@ -1,19 +1,32 @@
-import { Box } from '@material-ui/core';
-import { ThemeSelector } from './ThemeSelector';
+import { Box, IconButton } from '@material-ui/core';
+import { SettingsOutlined } from '@material-ui/icons';
+import clsx from 'clsx';
+import React, { useState } from 'react';
 import { DarkModeToggle } from './DarkModeToggle';
 import { LanguageMenu } from './LanguageMenu';
-import React from 'react';
+import { ThemeSelector } from './ThemeSelector';
 import useStyles from './useStyles';
 
 const ConfigsGroup: React.FunctionComponent = () => {
-	const classes = useStyles();
+	const { configCog, configContainer, closedConfigContainer } = useStyles();
+	const [isOpen, setIsOpen] = useState(false);
+	const handleClick = () => setIsOpen((prevState) => !prevState);
+	const className = clsx({
+		[configContainer]: isOpen,
+		[closedConfigContainer]: !isOpen,
+	});
 
 	return (
-		<Box className={classes.configContainer}>
-			<ThemeSelector />
-			<DarkModeToggle />
-			<LanguageMenu />
-		</Box>
+		<>
+			<IconButton className={configCog} onClick={handleClick}>
+				<SettingsOutlined />
+			</IconButton>
+			<Box className={className} role={`group`}>
+				<ThemeSelector />
+				<DarkModeToggle />
+				<LanguageMenu />
+			</Box>
+		</>
 	);
 };
 
