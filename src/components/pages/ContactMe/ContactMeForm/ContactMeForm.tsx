@@ -11,9 +11,10 @@ import React, {
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import { useIntl } from 'react-intl';
-import { ButtonLink } from '~/components/ButtonLink';
+import Button from '~/components/Button';
 import { TranslateText } from '~/components/Layout/Locales/TranslateText';
-import FormInputProps from '~/components/pages/ContactMe/ContactMeForm/formInputProps/formInputProps';
+import FormInputProps
+	from '~/components/pages/ContactMe/ContactMeForm/formInputProps/formInputProps';
 import { ThemeContext } from '~/context/ThemeProvider';
 import { Key } from '~/utils/types';
 import { validationSchema } from '../validationSchema';
@@ -172,7 +173,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 						/>
 					</Grid>
 					<Grid container item justify={`flex-end`}>
-						<ButtonLink
+						<Button
 							type={`submit`}
 							variant={`secondary`}
 							text={`Send`}

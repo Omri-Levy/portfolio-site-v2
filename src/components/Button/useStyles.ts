@@ -7,13 +7,6 @@ const useStyles = makeStyles((theme) => ({
 		textTransform: `capitalize`,
 		textAlign: `center`,
 	},
-	link: {
-		textDecoration: `none`,
-		color: `inherit`,
-		'&:visited': {
-			color: `inherit`,
-		},
-	},
 	spinner: {},
 }));
 

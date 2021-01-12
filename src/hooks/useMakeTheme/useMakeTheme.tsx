@@ -46,6 +46,7 @@ const useMakeTheme = (): DefaultTheme => {
 				border: primaryBorderColor(primaryColor),
 				secondary: isDarkMode ? backgroundColor : primaryContrastColor,
 				dark: secondaryContrastColor,
+				light: primaryContrastColor,
 				contrastText: isDarkMode
 					? primaryContrastColor
 					: secondaryContrastColor,
@@ -64,11 +65,11 @@ const useMakeTheme = (): DefaultTheme => {
 				'@global': {
 					'#gatsby-focus-wrapper': {
 						width: `100%`,
-						height: `100%`
+						height: `100%`,
 					},
 					'#___gatsby': {
 						width: `100%`,
-						height: `100%`
+						height: `100%`,
 					},
 					body: {
 						direction: isRTL ? `rtl` : `ltr`,
@@ -80,30 +81,6 @@ const useMakeTheme = (): DefaultTheme => {
 					},
 				},
 			},
-			MuiSwitch: {
-				root: {
-					marginBottom: 6,
-				},
-				thumb: {
-					color: primaryColor,
-					marginTop: 3,
-					width: 20,
-					height: 20,
-				},
-				track: {
-					backgroundColor: secondaryContrastColor,
-					height: 20,
-					width: 40,
-					borderRadius: `100vh`,
-				},
-				colorSecondary: {
-					'&$checked + $track': {
-						backgroundColor: isDarkMode
-							? primaryContrastColor
-							: secondaryContrastColor,
-					},
-				},
-			},
 			MuiButton: {
 				containedPrimary: {
 					color: isDarkMode ? secondaryTextColor : primaryTextColor,
@@ -111,6 +88,9 @@ const useMakeTheme = (): DefaultTheme => {
 					border: `1px solid ${primaryBorderColor(primaryColor)}`,
 					padding: 4,
 					borderRadius: 3,
+					'&:hover': {
+						color: primaryTextColor,
+					},
 				},
 			},
 		},

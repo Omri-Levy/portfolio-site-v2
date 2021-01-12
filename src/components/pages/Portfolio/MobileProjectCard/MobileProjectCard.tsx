@@ -9,7 +9,7 @@ import KebabCase from 'lodash/kebabCase';
 import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
 import React, { useContext } from 'react';
 import { useIntl } from 'react-intl';
-import { ButtonLink } from '~/components/ButtonLink';
+import Link from '~/components/Link';
 import { ThemeContext } from '~/context/ThemeProvider';
 import { useRTLOrLTRComponent } from '~/hooks/useRTLOrLTRComponent';
 import { MobileProjectProps } from '~/utils/types';
@@ -41,7 +41,7 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 						{props.title}
 					</Typography>
 					{projectsNotEmpty &&
-						documentToReactComponents(props.body, props.options)}
+					documentToReactComponents(props.body, props.options)}
 				</Box>
 				<Box className={classes.imageContainer}>
 					<ButtonBack className={classes.carouselBackButton}>
@@ -63,12 +63,12 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 					</ButtonNext>
 				</Box>
 				<Box className={classes.buttonsContainer}>
-					<ButtonLink
+					<Link
 						variant={`primary`}
 						text={`Live Site`}
 						to={props.liveSiteUrl}
 					/>
-					<ButtonLink
+					<Link
 						variant={`secondary`}
 						text={`Git Repository`}
 						to={props.gitRepositoryUrl}

@@ -1,5 +1,5 @@
 import { useTheme } from '@material-ui/core/styles';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// eslint-disable-next-line
 // @ts-ignore
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React, { useEffect } from 'react';
@@ -222,7 +222,8 @@ const MobileFishingBoat: React.FunctionComponent = () => {
 			</defs>
 			<AniLink
 				to={`/home#portfolio`}
-				swipe
+				cover
+				bg={theme.palette.background.default}
 				direction={`up`}
 			>
 				DIVE IN

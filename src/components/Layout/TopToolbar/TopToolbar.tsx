@@ -2,7 +2,7 @@ import { Box } from '@material-ui/core';
 import React from 'react';
 import { ExternalLinksContainer } from './ExternalLinksContainer';
 import useStyles from './useStyles';
-import { ButtonLink } from '~/components/ButtonLink';
+import Button from '~/components/Button';
 import resume from './resume.pdf';
 
 const TopToolbar: React.FunctionComponent = () => {
@@ -18,7 +18,7 @@ const TopToolbar: React.FunctionComponent = () => {
 	return (
 		<Box className={classes.topToolbarContainer}>
 			<ExternalLinksContainer />
-			<ButtonLink
+			<Button
 				variant={`secondary`}
 				text={`My Resume`}
 				onClick={handleClick}

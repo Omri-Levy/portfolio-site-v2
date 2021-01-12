@@ -1,9 +1,9 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Grid, Typography } from '@material-ui/core';
+import KebabCase from 'lodash/kebabCase';
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { ButtonLink } from '~/components/ButtonLink';
-import KebabCase from 'lodash/kebabCase';
+import Link from '~/components/Link';
 import { ProjectProps } from '~/utils/types';
 import useStyles from './useStyles';
 
@@ -19,14 +19,14 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 					{props.title}
 				</Typography>
 				{projectsNotEmpty &&
-					documentToReactComponents(props.body, props.options)}
+				documentToReactComponents(props.body, props.options)}
 				<Grid item className={classes.buttonsContainer}>
-					<ButtonLink
+					<Link
 						variant={`primary`}
 						text={`Live Site`}
 						to={props.liveSiteUrl}
 					/>
-					<ButtonLink
+					<Link
 						variant={`secondary`}
 						text={`Git Repository`}
 						to={props.gitRepositoryUrl}

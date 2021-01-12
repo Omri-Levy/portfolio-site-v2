@@ -944,7 +944,8 @@ const DesktopIllustration: React.FunctionComponent = () => {
 					/>
 					<AniLink
 						to={`/home#portfolio`}
-						swipe
+						cover
+						bg={theme.palette.background.default}
 						direction={`up`}
 					>
 						DIVE IN

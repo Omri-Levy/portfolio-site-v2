@@ -1,4 +1,4 @@
-// eslint-ignore-next-line
+// eslint-disable-next-line
 // @ts-ignore
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React, { useEffect } from 'react';
@@ -941,7 +941,8 @@ const TabletIllustration: React.FunctionComponent = () => {
 						/>
 						<AniLink
 							to={`/home#portfolio`}
-							swipe
+							cover
+							bg={theme.palette.background.default}
 							direction={`up`}
 						>
 							DIVE IN

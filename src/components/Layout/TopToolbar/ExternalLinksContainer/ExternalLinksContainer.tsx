@@ -7,12 +7,12 @@ import useStyles from './useStyles';
 import { ThemeContext } from '~/context/ThemeProvider';
 
 const ExternalLinksContainer: React.FunctionComponent = () => {
-	const classes = useStyles();
+	const {link, externalLinksGroup} = useStyles();
 	const { isRTL } = useContext(ThemeContext);
 
 	return (
 		<ButtonGroup
-			className={classes.externalLinksGroup}
+			className={externalLinksGroup}
 			aria-label={`external-links`}
 		>
 			<IconLink
@@ -21,11 +21,13 @@ const ExternalLinksContainer: React.FunctionComponent = () => {
 				alt={`linkedin`}
 				mr={isRTL ? 0 : 20}
 				ml={isRTL ? 20 : 0}
+				linkClass={link}
 			/>
 			<IconLink
 				Icon={GithubBrand}
 				to={`https://github.com/Omri-Levy`}
 				alt={`github`}
+				linkClass={link}
 			/>
 		</ButtonGroup>
 	);

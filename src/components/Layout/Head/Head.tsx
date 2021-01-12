@@ -18,6 +18,9 @@ const Head: React.FunctionComponent = () => {
 	const portfolioSite = intl.formatMessage({ id: `portfolioSite` });
 	const landingPage = intl.formatMessage({ id: `landingPage` });
 	const pageTitlePrefix = `${omriLevy} - ${portfolioSite} -`;
+	const cdnBase = `https://cdnjs.cloudflare.com/`;
+	const scrollTrigger = `ajax/libs/gsap/3.5.1/ScrollTrigger.min.js`;
+	const scrollTriggerUrl = cdnBase + scrollTrigger;
 
 	let pageTitle;
 	``;
@@ -29,7 +32,11 @@ const Head: React.FunctionComponent = () => {
 		pageTitle = `${pageTitlePrefix} ${url}`;
 	}
 
-	return <Helmet title={pageTitle} />;
+	return (
+		<Helmet title={pageTitle}>
+			<script src={scrollTriggerUrl} />
+		</Helmet>
+	);
 };
 
 export default Head;
