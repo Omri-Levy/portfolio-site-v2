@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
 			color: `inherit`,
 		},
 		'&:hover': {
-			backgroundColor: `rgba(255, 255, 255, 0.08)`,
+			backgroundColor: theme.palette.type === `dark`
+				? `rgba(255, 255, 255, 0.08)` : `rgba(0, 0, 0, 0.08)`,
 		},
 	},
 	icon: {

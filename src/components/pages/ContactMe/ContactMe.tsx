@@ -5,14 +5,14 @@ import {
 	PermContactCalendarOutlined,
 } from '@material-ui/icons';
 import React, { useContext } from 'react';
+import { IconLink } from '~/components/IconLink';
+import { PageContainer } from '~/components/Layout/PageContainer';
+import { ThemeContext } from '~/context/ThemeProvider';
 import { ContactMeForm } from './ContactMeForm';
 import useStyles from './useStyles';
-import { PageContainer } from '~/components/Layout/PageContainer';
-import { IconLink } from '~/components/IconLink';
-import { ThemeContext } from '~/context/ThemeProvider';
 
 const ContactMe: React.FunctionComponent = () => {
-	const classes = useStyles();
+	const { contactLinksContainer, links } = useStyles();
 	const largeIcons = useMediaQuery(`(min-width: 1000px)`);
 	const { isRTL } = useContext(ThemeContext);
 
@@ -22,7 +22,7 @@ const ContactMe: React.FunctionComponent = () => {
 			Icon={PermContactCalendarOutlined}
 			text={`Contact Me`}
 		>
-			<Box className={classes.contactLinksContainer}>
+			<Box className={contactLinksContainer}>
 				<IconLink
 					to={`tel:+972052-6256647`}
 					Icon={CallOutlined}
@@ -31,8 +31,10 @@ const ContactMe: React.FunctionComponent = () => {
 					textLineHeight={largeIcons ? 3 : 1.7}
 					mr={isRTL ? 0 : 20}
 					ml={isRTL ? 20 : 0}
+					pr={5}
 					iconPl={isRTL ? 5 : 0}
 					iconPr={isRTL ? 0 : 5}
+					linkClass={links}
 				/>
 				<IconLink
 					to={`mailto:omri.levy0197@gmail.com`}
@@ -40,8 +42,10 @@ const ContactMe: React.FunctionComponent = () => {
 					alt={`email-address`}
 					text={`omri.levy0197@gmail.com`}
 					textLineHeight={largeIcons ? 3 : 1.7}
+					pr={5}
 					iconPl={isRTL ? 5 : 0}
 					iconPr={isRTL ? 0 : 5}
+					linkClass={links}
 				/>
 			</Box>
 			<ContactMeForm />
