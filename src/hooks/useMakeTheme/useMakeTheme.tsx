@@ -62,6 +62,14 @@ const useMakeTheme = (): DefaultTheme => {
 		overrides: {
 			MuiCssBaseline: {
 				'@global': {
+					'#gatsby-focus-wrapper': {
+						width: `100%`,
+						height: `100%`
+					},
+					'#___gatsby': {
+						width: `100%`,
+						height: `100%`
+					},
 					body: {
 						direction: isRTL ? `rtl` : `ltr`,
 						overflow: isBurgerMenuOpen && `hidden`,

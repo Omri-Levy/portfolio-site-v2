@@ -1,8 +1,9 @@
 import React from 'react';
+import { Head } from '~/components/Layout/Head';
+import { Locales } from '~/components/Layout/Locales';
+import { AppProvider } from '~/context/AppProvider';
 import { ThemeProvider } from '~/context/ThemeProvider';
 import { ChildrenProps } from '~/utils/types';
-import { Layout } from '~/components/Layout';
-import { AppProvider } from '~/context/AppProvider';
 import ThemeTopLayout from '../ThemeTopLayout/ThemeTopLayout';
 
 // TopLayout and ThemeTopLayout are separate components due to the order of
@@ -14,7 +15,10 @@ const TopLayout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 		<ThemeProvider>
 			<AppProvider>
 				<ThemeTopLayout>
-					<Layout>{children}</Layout>
+					<Locales>
+						<Head />
+						{children}
+					</Locales>
 				</ThemeTopLayout>
 			</AppProvider>
 		</ThemeProvider>

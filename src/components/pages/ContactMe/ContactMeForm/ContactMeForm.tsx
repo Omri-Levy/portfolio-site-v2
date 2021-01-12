@@ -131,7 +131,6 @@ const ContactMeForm: React.FunctionComponent = () => {
 				<Grid container className={classes.formGridContainer}>
 					<Grid item className={classes.fullNameGridItem}>
 						<TextField
-							autoFocus
 							name={`fullName`}
 							variant={`outlined`}
 							label={<TranslateText text={`Full Name`} />}
@@ -197,7 +196,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 				</Grid>
 				<ReCAPTCHA
 					ref={recaptcha as RefObject<ReCAPTCHA>}
-					sitekey={process.env.SITE_RECAPTCHA_KEY as string}
+					sitekey={process.env.SITE_RECAPTCHA_KEY || ``}
 					theme={isDarkMode ? `dark` : `light`}
 					hl={isRTL ? `iw` : `en`}
 					onChange={handleChange}

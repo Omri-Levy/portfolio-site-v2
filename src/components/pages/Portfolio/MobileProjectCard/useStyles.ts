@@ -116,16 +116,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 	buttonsContainer: {
 		display: `flex`,
+		width: `min(600px, 100%)`,
 		justifyContent: `space-between`,
-		margin: `20px 64px`,
+		margin: `20px auto`,
 		[getCustomBreakpoints(`md`, theme, `down`)]: {
-			margin: `10px 64px`,
-		},
-		[getCustomBreakpoints(`xs`, theme, `down`)]: {
-			margin: `10px 24px`,
+			margin: `10px auto`,
 		},
 		[`@media (max-width:1000px) and (min-width:770px)`]: {
-			margin: `10px 177px`,
+			margin: `10px auto`,
 		},
 	},
 }));

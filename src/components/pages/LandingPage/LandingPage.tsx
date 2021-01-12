@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { Container } from '~/components/Layout/Container';
 import { ThemeContext } from '~/context/ThemeProvider';
 import useDevice from '~/hooks/useDevice/useDevice';
 import { DesktopIllustration } from './DesktopIllustration';
@@ -25,7 +26,11 @@ const LandingPage: React.FunctionComponent = () => {
 		content = <MobileIllustration />;
 	}
 
-	return content;
+	return (
+		<Container>
+			{content}
+		</Container>
+	);
 };
 
 export default LandingPage;

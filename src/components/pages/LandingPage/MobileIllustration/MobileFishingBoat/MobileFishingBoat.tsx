@@ -1,9 +1,16 @@
-import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
-import { Link } from 'gatsby';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import React, { useEffect } from 'react';
+import animations from '../../animations';
 
 const MobileFishingBoat: React.FunctionComponent = () => {
 	const theme = useTheme();
+
+	useEffect(() => {
+		animations();
+	});
 
 	return (
 		<svg
@@ -213,31 +220,38 @@ const MobileFishingBoat: React.FunctionComponent = () => {
 					/>
 				</filter>
 			</defs>
-			<Link to={`/home#portfolio`}>
+			<AniLink
+				to={`/home#portfolio`}
+				swipe
+				direction={`up`}
+			>
 				DIVE IN
-				<g filter='url(#filter0_d)'>
+				<g
+					filter="url(#filter0_d)"
+					className={`svg-btn`}
+				>
 					<rect
-						x='54'
-						y='242'
-						width='100'
-						height='28'
-						rx='3'
+						x="54"
+						y="242"
+						width="100"
+						height="28"
+						rx="3"
 						fill={theme.palette.primary.main}
 					/>
 					<path
-						d='M70.89 249.4h5.31c1.332 0 2.514.264 3.546.792s1.83 1.272 2.394 2.232c.576.948.864 2.04.864 3.276 0 1.236-.288 2.334-.864 3.294-.564.948-1.362 1.686-2.394 2.214S77.532 262 76.2 262h-5.31v-12.6zm5.202 11.034c1.02 0 1.914-.198 2.682-.594.78-.396 1.38-.948 1.8-1.656.42-.72.63-1.548.63-2.484 0-.936-.21-1.758-.63-2.466a4.265 4.265 0 00-1.8-1.674c-.768-.396-1.662-.594-2.682-.594H72.69v9.468h3.402zm9.67-11.034h1.8V262h-1.8v-12.6zm16.392 0L96.628 262h-1.782l-5.544-12.6h1.944l4.536 10.35 4.572-10.35h1.8zm10.751 11.034V262h-9.144v-12.6h8.892v1.566h-7.092v3.87h6.318v1.53h-6.318v4.068h7.344zm7.749-11.034h1.8V262h-1.8v-12.6zm16.408 0V262h-1.476l-7.56-9.396V262h-1.8v-12.6h1.476l7.56 9.396V249.4h1.8z'
-						fill='rgb(238, 238, 238)'
+						d="M70.89 249.4h5.31c1.332 0 2.514.264 3.546.792s1.83 1.272 2.394 2.232c.576.948.864 2.04.864 3.276 0 1.236-.288 2.334-.864 3.294-.564.948-1.362 1.686-2.394 2.214S77.532 262 76.2 262h-5.31v-12.6zm5.202 11.034c1.02 0 1.914-.198 2.682-.594.78-.396 1.38-.948 1.8-1.656.42-.72.63-1.548.63-2.484 0-.936-.21-1.758-.63-2.466a4.265 4.265 0 00-1.8-1.674c-.768-.396-1.662-.594-2.682-.594H72.69v9.468h3.402zm9.67-11.034h1.8V262h-1.8v-12.6zm16.392 0L96.628 262h-1.782l-5.544-12.6h1.944l4.536 10.35 4.572-10.35h1.8zm10.751 11.034V262h-9.144v-12.6h8.892v1.566h-7.092v3.87h6.318v1.53h-6.318v4.068h7.344zm7.749-11.034h1.8V262h-1.8v-12.6zm16.408 0V262h-1.476l-7.56-9.396V262h-1.8v-12.6h1.476l7.56 9.396V249.4h1.8z"
+						fill="rgb(238, 238, 238)"
 					/>
 					<rect
-						x='54.5'
-						y='242.5'
-						width='99'
-						height='27'
-						rx='2.5'
+						x="54.5"
+						y="242.5"
+						width="99"
+						height="27"
+						rx="2.5"
 						stroke={theme.palette.primary[`border`]}
 					/>
 				</g>
-			</Link>
+			</AniLink>
 		</svg>
 	);
 };

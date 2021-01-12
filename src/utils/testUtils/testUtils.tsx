@@ -1,13 +1,13 @@
 import { render, RenderResult } from '@testing-library/react';
 import React from 'react';
+import TopLayout
+	from '~/gatsby-theme-material-ui-top-layout/components/TopLayout/TopLayout';
 import { ChildrenProps, Options, UI } from '../types';
-import { Locales } from '~/components/Layout/Locales';
-import TopLayout from '~/gatsby-theme-material-ui-top-layout/components/TopLayout/TopLayout';
 
 const Providers: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 	return (
 		<TopLayout>
-			<Locales>{children}</Locales>
+			{children}
 		</TopLayout>
 	);
 };
