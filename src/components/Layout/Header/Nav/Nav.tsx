@@ -4,7 +4,7 @@ import {
 	PermContactCalendarOutlined,
 	WorkOutline,
 } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import animations from './animations';
 import { NavLink } from './NavLink';
 import useStyles from './useStyles';
