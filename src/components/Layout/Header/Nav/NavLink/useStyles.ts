@@ -28,9 +28,13 @@ const useStyles = makeStyles((theme) => ({
 		'&:hover': {
 			textDecoration: `none`,
 		},
-	},
-	activeLink: {
+		'& span': {
+			backgroundColor: theme.palette.primary.main,
 
+			[getCustomBreakpoints(`md`, theme, `up`)]: {
+				backgroundColor: theme.palette.text.secondary,
+			},
+		},
 	},
 }));
 

@@ -1,17 +1,13 @@
 import React from 'react';
-import NavLink from './NavLink';
 import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
+import NavLink from './NavLink';
 
 describe(`NavLink`, () => {
-	const setIsActiveLink = jest.fn();
-
 	beforeEach(() => {
 		renderWithProviders(
 			<NavLink
 				text={`Portfolio`}
 				to={`/home#portfolio`}
-				isActiveLink={`portfolio`}
-				setIsActiveLink={setIsActiveLink}
 			/>,
 		);
 	});
