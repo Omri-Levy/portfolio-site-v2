@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 		'& .MuiListItemIcon-root': {
+			color: theme.palette.primary.main,
 			minWidth: 35,
 		},
 		'& .MuiListItemText': {

@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
 			flexDirection: `row`,
 		},
 		justifyContent: `space-between`,
+		'& a span': {
+			display: `block`,
+		},
 	},
 }));
 

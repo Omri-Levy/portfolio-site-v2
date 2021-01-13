@@ -5,12 +5,12 @@ import { Props } from './types';
 import useStyles from './useStyles';
 
 const PageTitle: React.FunctionComponent<Props> = ({ Icon, text }) => {
-	const classes = useStyles();
+	const { pageTitleContainer, icon, typography } = useStyles();
 
 	return (
-		<header className={classes.pageTitleContainer}>
-			<Icon className={classes.icon} />
-			<Typography className={classes.typography} variant={`h2`}>
+		<header className={pageTitleContainer}>
+			<Icon className={icon} />
+			<Typography className={typography} variant={`h1`}>
 				<TranslateText text={text} />
 			</Typography>
 		</header>

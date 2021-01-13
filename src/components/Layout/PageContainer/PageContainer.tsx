@@ -1,8 +1,8 @@
-import React from 'react';
-import useStyles from './useStyles';
-import { Props } from './types';
-import { PageTitle } from '~/components/Layout/PageContainer/PageTitle';
 import clsx from 'clsx';
+import React from 'react';
+import { PageTitle } from '~/components/Layout/PageContainer/PageTitle';
+import { Props } from './types';
+import useStyles from './useStyles';
 
 const PageContainer: React.FunctionComponent<Props> = (props) => {
 	const { pageContainer } = useStyles();
@@ -10,7 +10,7 @@ const PageContainer: React.FunctionComponent<Props> = (props) => {
 	const classes = className ? clsx(className, pageContainer) : pageContainer;
 
 	return (
-		<section className={classes} id={id}>
+		<section className={`${classes} pageSection`} id={id}>
 			<PageTitle Icon={Icon} text={text} />
 			{props.children}
 		</section>

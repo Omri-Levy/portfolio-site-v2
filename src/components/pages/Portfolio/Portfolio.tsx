@@ -2,18 +2,18 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { FiberManualRecord, WorkOutline } from '@material-ui/icons';
 import React from 'react';
+import useStyles from './useStyles';
+import { PageContainer } from '~/components/Layout/PageContainer';
+import useDevice from '~/hooks/useDevice/useDevice';
 import MobileCarousel from './MobileCarousel/MobileCarousel';
 import { Projects } from './Projects';
 import { Node } from './types';
-import useStyles from './useStyles';
 import useAllProjects from './useAllProjects';
-import useDevice from '~/hooks/useDevice/useDevice';
-import { PageContainer } from '~/components/Layout/PageContainer';
 
 const Portfolio: React.FunctionComponent = () => {
-	const classes = useStyles();
 	const { isTabletDown, isIpadPro } = useDevice();
 	const { allProjects } = useAllProjects();
+	const classes = useStyles();
 
 	const options = {
 		renderNode: {

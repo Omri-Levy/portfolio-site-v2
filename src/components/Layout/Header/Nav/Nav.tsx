@@ -4,13 +4,17 @@ import {
 	PermContactCalendarOutlined,
 	WorkOutline,
 } from '@material-ui/icons';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import animations from './animations';
 import { NavLink } from './NavLink';
 import useStyles from './useStyles';
 
 const Nav: React.FunctionComponent = () => {
 	const classes = useStyles();
-	const [isActiveLink, setIsActiveLink] = useState(`Portfolio`);
+
+	useEffect(() => {
+		animations();
+	}, []);
 
 	return (
 		<Toolbar disableGutters={true} component={`nav`} className={classes.nav}>
@@ -19,22 +23,16 @@ const Nav: React.FunctionComponent = () => {
 					to={`/home#portfolio`}
 					Icon={WorkOutline}
 					text={`Portfolio`}
-					isActiveLink={isActiveLink}
-					setIsActiveLink={setIsActiveLink}
 				/>
 				<NavLink
 					to={`/home#about-me`}
 					Icon={InfoOutlined}
 					text={`About Me`}
-					isActiveLink={isActiveLink}
-					setIsActiveLink={setIsActiveLink}
 				/>
 				<NavLink
 					to={`/home#contact-me`}
 					Icon={PermContactCalendarOutlined}
 					text={`Contact Me`}
-					isActiveLink={isActiveLink}
-					setIsActiveLink={setIsActiveLink}
 				/>
 			</List>
 		</Toolbar>
