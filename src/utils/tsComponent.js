@@ -5,20 +5,6 @@ const path = require(`path`);
 
 const fileName = path.basename(path.dirname(__filename));
 
-// create entry point
-fs.writeFile(
-	`./index.ts`,
-	`export {default as ${fileName}} from './${fileName}';`,
-	(err) => {
-		if (err) {
-			console.log(err);
-			console.log(`error at index.ts`);
-		}
-
-		console.log(`created index.ts`);
-	},
-);
-
 // create material ui/jss styling file
 fs.writeFile(
 	`./useStyles.ts`,
@@ -69,8 +55,8 @@ fs.writeFile(`./types.d.ts`, ``, (err) => {
 
 // create component file
 fs.writeFile(
-	`./${fileName}.tsx`,
-	`import React from 'react';
+  `./index.tsx`,
+  `import React from 'react';
 import useStyles from './useStyles';
 
 const ${fileName}: React.FunctionComponent = () => {

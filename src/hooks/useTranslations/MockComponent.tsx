@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '~/context/ThemeProvider';
+import useTranslations from '.';
+import { ThemeContext } from '../../context/ThemeProvider';
 import { Props } from './types';
-import useTranslations from './useTranslations';
 
 const MockComponent: React.FunctionComponent<Props> = ({ rtl }) => {
 	const [isMounted, setIsMounted] = useState(true);

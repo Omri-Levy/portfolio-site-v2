@@ -14,12 +14,6 @@ module.exports = {
 		`gatsby-plugin-anchor-links`,
 		`gatsby-plugin-transition-link`,
 		{
-			resolve: `gatsby-plugin-root-import`,
-			options: {
-				'~': path.join(__dirname, `src`),
-			},
-		},
-		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `Omri Levy - Portfolio site`,

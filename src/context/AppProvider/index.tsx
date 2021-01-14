@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { ChildrenProps } from '~/utils/types';
+import { ChildrenProps } from '../../utils/types';
 import { Values } from './types';
 
 const values: Values = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import useAllFavicons from '~/hooks/useAllFavicons/useAllFavicons';
+import useAllFavicons from '.';
 
 const MockComponent: React.FunctionComponent = () => {
 	return <div>{JSON.stringify(useAllFavicons())}</div>;

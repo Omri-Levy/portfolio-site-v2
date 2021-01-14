@@ -1,6 +1,7 @@
 import React from 'react';
+
 import Button from '../';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
+import { renderWithProviders, screen } from '../../../utils/testUtils';
 
 describe(`Primary Button`, () => {
 	beforeEach(() => {

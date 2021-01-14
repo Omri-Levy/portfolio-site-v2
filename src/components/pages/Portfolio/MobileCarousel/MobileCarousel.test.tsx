@@ -1,6 +1,6 @@
 import React from 'react';
-import MobileCarousel from './MobileCarousel';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import MobileCarousel from '.';
 
 describe(`MobileCarousel`, () => {
 	it(`renders`, () => {

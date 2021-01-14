@@ -1,11 +1,12 @@
-import { Key } from '~/utils/types';
+import { Key } from '../types';
+
 
 interface Icon {
-	node: {
-		fluid: {
-			src: string;
-		};
-	};
+  node: {
+    fluid: {
+      src: string;
+    };
+  };
 }
 
 type NewFavicon = Record<Key, never> | undefined;

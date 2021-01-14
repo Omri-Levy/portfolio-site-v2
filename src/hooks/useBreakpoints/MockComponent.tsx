@@ -1,5 +1,5 @@
 import React from 'react';
-import useBreakpoints from './useBreakpoints';
+import useBreakpoints from './index';
 
 const MockComponent: React.FunctionComponent = () => {
 	const mediaQuery = useBreakpoints(`md`, `up`);

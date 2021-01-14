@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
-import ThemeTopLayout from './ThemeTopLayout';
+import ThemeTopLayout from '.';
 
 const MockComponent: React.FunctionComponent = () => (
 	<ThemeTopLayout>

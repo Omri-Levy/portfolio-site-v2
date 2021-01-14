@@ -1,5 +1,5 @@
 import React from 'react';
-import useDevice from '~/hooks/useDevice/useDevice';
+import useDevice from '.';
 
 const MockComponent: React.FunctionComponent = () => {
 	const { isDesktop } = useDevice();

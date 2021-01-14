@@ -1,11 +1,11 @@
 import React from 'react';
-import LandingPage from './LandingPage';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '../../../utils/testUtils';
+import LandingPage from '.';
 
 describe(`LandingPage`, () => {
-	it(`renders`, () => {
-		renderWithProviders(<LandingPage />);
+  it(`renders`, () => {
+    renderWithProviders(<LandingPage />);
 
-		expect(screen.getByRole(`figure`)).toBeInTheDocument();
-	});
+    expect(screen.getByRole(`figure`)).toBeInTheDocument();
+  });
 });

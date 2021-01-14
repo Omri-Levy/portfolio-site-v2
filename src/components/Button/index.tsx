@@ -2,19 +2,19 @@ import { Button as MuiButton, CircularProgress } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import React from 'react';
-import { ButtonProps } from '~/utils/types';
-import { TranslateText } from '../Layout/Locales/TranslateText';
+import { ButtonProps } from '../../utils/types';
+import TranslateText from '../Layout/Locales/TranslateText';
 import useStyles from './useStyles';
 
 const Button: React.FunctionComponent<ButtonProps> = (props) => {
-	const { variant, text, additionalClass, onClick, disabled, type } = props;
-	const { button, spinner } = useStyles();
-	const classNames = clsx([button, additionalClass]);
-	const theme = useTheme();
-	const styles = disabled ? { borderColor: theme.palette[variant].main } :
-		{};
+  const { variant, text, additionalClass, onClick, disabled, type } = props;
+  const { button, spinner } = useStyles();
+  const classNames = clsx([button, additionalClass]);
+  const theme = useTheme();
+  const styles = disabled ? { borderColor: theme.palette[variant].main } :
+    {};
 
-	return (
+  return (
 		<MuiButton
 			type={type ?? type}
 			color={variant}

@@ -1,6 +1,6 @@
 import React from 'react';
+import { renderWithProviders, screen } from '../../utils/testUtils';
 import MockComponent from './MockComponent';
-import { renderWithProviders, screen } from '~/utils/testUtils';
 
 describe(`useDevice`, () => {
 	it(`isDesktop returns false`, () => {

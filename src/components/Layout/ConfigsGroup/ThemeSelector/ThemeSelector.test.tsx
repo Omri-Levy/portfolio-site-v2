@@ -1,6 +1,6 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import ThemeSelector from './ThemeSelector';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import ThemeSelector from '.';
 
 describe(`ThemeSelector`, () => {
 	beforeEach(() => renderWithProviders(<ThemeSelector />));

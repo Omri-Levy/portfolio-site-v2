@@ -1,6 +1,6 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import TranslateText from './TranslateText';
+import TranslateText from '.';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
 
 describe(`TranslateText`, () => {
 	it(`renders`, () => {

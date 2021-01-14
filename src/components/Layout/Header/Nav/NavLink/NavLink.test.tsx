@@ -1,16 +1,16 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import NavLink from './NavLink';
+import { renderWithProviders, screen } from '../../../../../utils/testUtils';
+import NavLink from './index';
 
 describe(`NavLink`, () => {
-	beforeEach(() => {
-		renderWithProviders(
-			<NavLink
-				text={`Portfolio`}
-				to={`/home#portfolio`}
-			/>,
-		);
-	});
+  beforeEach(() => {
+    renderWithProviders(
+      <NavLink
+        text={`Portfolio`}
+        to={`/home#portfolio`}
+      />,
+    );
+  });
 
 	it(`contains link`, () => {
 		const link = screen.getByRole(`link`);

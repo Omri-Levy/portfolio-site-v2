@@ -1,5 +1,5 @@
-import { renderWithProviders, screen } from '~/utils/testUtils';
 import React from 'react';
+import { renderWithProviders, screen } from '../../utils/testUtils';
 import Home from '../home';
 
 describe(`home page`, () => {
