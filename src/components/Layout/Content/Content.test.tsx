@@ -1,7 +1,7 @@
-import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils';
-import Content from './Content';
 import { Button } from '@material-ui/core';
+import React from 'react';
+import { renderWithProviders, screen } from '../../../utils/testUtils';
+import Content from '.';
 
 describe(`Content`, () => {
 	it(`accepts children`, () => {

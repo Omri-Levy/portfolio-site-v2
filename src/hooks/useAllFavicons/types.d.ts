@@ -1,13 +1,14 @@
-import { Key } from '~/utils/types';
+import { Key } from '../../utils/types';
+
 
 interface Icons {
-	icons: {
-		edges: [
-			{
-				node: {
-					fluid: {
-						src: Record<Key, never>;
-					};
+  icons: {
+    edges: [
+      {
+        node: {
+          fluid: {
+            src: Record<Key, never>;
+          };
 				};
 			},
 		];

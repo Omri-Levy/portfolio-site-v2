@@ -1,14 +1,14 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import ThemeSelector from './ThemeSelector';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import ThemeSelector from '.';
 
 describe(`ThemeSelector`, () => {
 	beforeEach(() => renderWithProviders(<ThemeSelector />));
 
 	it(`renders`, () => {
-		expect(
-			screen.getByRole(`group`, { name: /theme-selector/i }),
-		).toBeInTheDocument();
+		screen.getAllByRole(`button`)[0].click();
+
+		expect(screen.getByRole(`presentation`)).toBeInTheDocument();
 	});
 
 	it(`contains options`, () => {

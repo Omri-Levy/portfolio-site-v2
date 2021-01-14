@@ -1,6 +1,6 @@
 import { darken } from '@material-ui/core';
 import { blue, green, purple, red } from '@material-ui/core/colors';
-import { Key } from '~/utils/types';
+import { Key } from '../../utils/types';
 
 const backgroundColor = `rgb(31, 27, 36)`;
 const primaryBorderColor = (primaryColor: string): string =>

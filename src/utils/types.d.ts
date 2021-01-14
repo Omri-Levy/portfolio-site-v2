@@ -1,14 +1,13 @@
 import { Document } from '@contentful/rich-text-types';
+import { Button } from '@material-ui/core';
 import { RenderOptions } from '@testing-library/react';
-import React from 'react';
+import React, { SetStateAction } from 'react';
 
 type UI = JSX.Element;
 type Options =
-	| Pick<
-			//eslint-disable-next-line
-			RenderOptions<typeof import('@testing-library/dom/types/queries')>,
-			`container` | `baseElement` | `hydrate` | `wrapper`
-	  >
+	| Pick<//eslint-disable-next-line
+	RenderOptions<typeof import('@testing-library/dom/types/queries')>,
+	`container` | `baseElement` | `hydrate` | `wrapper`>
 	| undefined;
 
 interface ChildrenProps {
@@ -19,9 +18,17 @@ interface ClassNameProps {
 	className: string;
 }
 
-interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+interface ButtonProps extends Button {
+	type?:  `button` | `submit` | `reset` | undefined;
 	variant: `primary` | `secondary`;
-	type?: `button` | `reset` | `submit` | undefined;
+	text: string;
+	additionalClass?: string;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
+	disabled?: boolean;
+}
+
+interface LinkProps extends React.HTMLProps<HTMLAnchorElement> {
+	variant: `primary` | `secondary`;
 	text: string;
 	to?: string;
 	additionalClass?: string;
@@ -95,6 +102,8 @@ interface MobileProjectProps extends ProjectProps {
 
 type Key = string | number | symbol;
 
+type SetState<T> = React.Dispatch<SetStateAction<T>>;
+
 export {
 	ChildrenProps,
 	ButtonProps,
@@ -108,4 +117,6 @@ export {
 	UI,
 	Options,
 	Key,
+	SetState,
+	LinkProps,
 };

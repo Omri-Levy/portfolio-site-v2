@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoints';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	topToolbarContainer: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 		position: `fixed`,
 		padding: `0 20px`,
 		height: 59,
-		zIndex: 2,
+		zIndex: 1103,
 		[getCustomBreakpoints(`md`, theme, `up`)]: {
 			top: 138,
 		},

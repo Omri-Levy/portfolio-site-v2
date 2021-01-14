@@ -1,5 +1,5 @@
 import { Theme } from '@material-ui/core';
-import { Breakpoint, Direction } from '~/utils/types';
+import { Breakpoint, Direction } from '../../utils/getCustomBreakpoints/types';
 
 type HookReturns = (
 	breakpoint: Breakpoint,

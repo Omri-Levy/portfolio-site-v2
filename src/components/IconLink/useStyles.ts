@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoints';
+import getCustomBreakpoints from '../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	link: {
@@ -9,6 +9,10 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.text.primary,
 		'&:visited': {
 			color: `inherit`,
+		},
+		'&:hover': {
+			backgroundColor: theme.palette.type === `dark`
+				? `rgba(255, 255, 255, 0.08)` : `rgba(0, 0, 0, 0.08)`,
 		},
 	},
 	icon: {

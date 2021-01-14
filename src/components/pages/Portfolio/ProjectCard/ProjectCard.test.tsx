@@ -1,16 +1,16 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import ProjectCard from './';
 
 describe(`ProjectCard`, () => {
-	it(`renders`, () => {
-		renderWithProviders(
-			<ProjectCard
-				body={JSON.parse(`{}`)}
-				gitRepositoryUrl={``}
-				liveSiteUrl={``}
-				options={{}}
-				projectGif={``}
+  it(`renders`, () => {
+    renderWithProviders(
+      <ProjectCard
+        body={JSON.parse(`{}`)}
+        gitRepositoryUrl={``}
+        liveSiteUrl={``}
+        options={{}}
+        projectGif={``}
 				title={`test title`}
 			/>,
 		);

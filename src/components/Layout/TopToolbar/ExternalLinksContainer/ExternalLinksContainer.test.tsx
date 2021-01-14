@@ -1,17 +1,17 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import ExternalLinksContainer from './ExternalLinksContainer';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import ExternalLinksContainer from './';
 
 describe(`ExternalLinksContainer`, () => {
-	beforeEach(() => renderWithProviders(<ExternalLinksContainer />));
+  beforeEach(() => renderWithProviders(<ExternalLinksContainer />));
 
-	it(`renders`, () => {
-		expect(
-			screen.getByRole(`group`, { name: /external-links/i }),
-		).toBeInTheDocument();
-	});
+  it(`renders`, () => {
+    expect(
+      screen.getByRole(`group`, { name: /external-links/i }),
+    ).toBeInTheDocument();
+  });
 
-	it(`contains external links`, () => {
+  it(`contains external links`, () => {
 		const contactLinks = screen.getAllByRole(`link`);
 
 		contactLinks.forEach((contactLink) => {

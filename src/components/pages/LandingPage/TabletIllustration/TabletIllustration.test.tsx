@@ -1,6 +1,6 @@
 import React from 'react';
-import TabletIllustration from './TabletIllustration';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import TabletIllustration from '.';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
 
 describe(`TabletIllustration`, () => {
 	it(`renders`, () => {

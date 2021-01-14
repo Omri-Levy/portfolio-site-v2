@@ -12,20 +12,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-anchor-links`,
-		{
-			resolve: `gatsby-plugin-recaptcha`,
-			options: {
-				async: true,
-				defer: true,
-				args: `?onload=onloadCallback&render=explicit`,
-			},
-		},
-		{
-			resolve: `gatsby-plugin-root-import`,
-			options: {
-				'~': path.join(__dirname, `src`),
-			},
-		},
+		`gatsby-plugin-transition-link`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {

@@ -1,17 +1,17 @@
 import React from 'react';
-import MobileProjectCard from './MobileProjectCard';
-import { renderWithProviders, screen } from '~/utils/testUtils';
-import { MobileCarousel } from '~/components/pages/Portfolio/MobileCarousel';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import MobileCarousel from '../MobileCarousel';
+import MobileProjectCard from './index';
 
 describe(`MobileProjectCard`, () => {
-	it(`renders`, () => {
-		renderWithProviders(
-			<MobileCarousel
-				allProjects={{
-					edges: [
-						{
-							node: {
-								node_locale: ``,
+  it(`renders`, () => {
+    renderWithProviders(
+      <MobileCarousel
+        allProjects={{
+          edges: [
+            {
+              node: {
+                node_locale: ``,
 								title: ``,
 								subtitle: ``,
 								body: {

@@ -1,6 +1,6 @@
 import { fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoints';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	icon: {
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 	projectCardContainer: {
 		border: `1px solid ${theme.palette.primary.main}`,
 		padding: 10,
-		height: 380,
+		height: 450,
 		marginBottom: 53,
 		borderRadius: 5,
 
@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 		'& .MuiListItemIcon-root': {
+			color: theme.palette.primary.main,
 			minWidth: 35,
 		},
 		'& .MuiListItemText': {

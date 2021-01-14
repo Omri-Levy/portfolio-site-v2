@@ -1,7 +1,7 @@
 import { TextField } from '@material-ui/core';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormInputProps from './formInputProps';
+import FormInputProps from './index';
 
 const MockComponent: React.FunctionComponent = () => {
 	const { register } = useForm();

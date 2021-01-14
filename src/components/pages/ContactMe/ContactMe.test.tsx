@@ -1,13 +1,13 @@
 import React from 'react';
-import ContactMe from './ContactMe';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '../../../utils/testUtils';
+import ContactMe from '.';
 
 describe(`ContactMe`, () => {
-	it(`renders`, () => {
-		renderWithProviders(<ContactMe />);
+  it(`renders`, () => {
+    renderWithProviders(<ContactMe />);
 
-		expect(
-			screen.getByRole(`heading`, { name: /contact\sme/i }),
-		).toBeInTheDocument();
-	});
+    expect(
+      screen.getByRole(`heading`, { name: /contact\sme/i }),
+    ).toBeInTheDocument();
+  });
 });

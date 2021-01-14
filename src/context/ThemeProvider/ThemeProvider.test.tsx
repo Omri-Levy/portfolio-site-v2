@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { ThemeProvider } from '.';
 import MockComponent from './MockComponent';
-import ThemeProvider from './ThemeProvider';
 
 describe(`ThemeProvider`, () => {
 	beforeEach(() =>
@@ -12,7 +12,7 @@ describe(`ThemeProvider`, () => {
 		),
 	);
 
-	it(`renders`, () => {
+	it(`renders child`, () => {
 		expect(screen.getByRole(`button`)).toBeInTheDocument();
 	});
 });

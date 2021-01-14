@@ -25,6 +25,8 @@ interface Props {
 	iconMb?: number;
 	iconMl?: number;
 	textLineHeight?: number;
+	linkClass?: string;
+	iconClass?: string;
 }
 
 export { Props };
