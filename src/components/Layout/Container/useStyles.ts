@@ -1,10 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
-import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoints';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
-		width: `100%`,
 		height: `100%`,
+		width: `100%`,
 		display: `flex`,
 		flexDirection: `column`,
 		alignItems: `center`,

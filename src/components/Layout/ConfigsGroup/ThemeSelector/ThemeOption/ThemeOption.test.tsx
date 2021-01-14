@@ -1,6 +1,6 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import ThemeOption from './ThemeOption';
+import { renderWithProviders, screen } from '../../../../../utils/testUtils';
+import ThemeOption from '.';
 
 describe(`ThemeOption`, () => {
 	it(`renders`, () => {

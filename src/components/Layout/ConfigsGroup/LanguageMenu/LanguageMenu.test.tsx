@@ -1,6 +1,6 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils/testUtils';
-import LanguageMenu from './LanguageMenu';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import LanguageMenu from '.';
 
 describe(`LanguageMenu`, () => {
 	beforeEach(() => {

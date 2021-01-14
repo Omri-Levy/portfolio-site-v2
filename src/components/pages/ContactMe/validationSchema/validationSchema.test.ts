@@ -1,4 +1,4 @@
-import validationSchema from './validationSchema';
+import validationSchema from '.';
 
 describe(`validationSchema`, () => {
 	it(`validates valid form`, async () => {

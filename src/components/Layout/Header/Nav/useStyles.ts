@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { getCustomBreakpoints } from '~/utils/getCustomBreakpoints';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	nav: {
@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
 			flexDirection: `row`,
 		},
 		justifyContent: `space-between`,
+		'& a span': {
+			display: `block`,
+		},
 	},
 }));
 

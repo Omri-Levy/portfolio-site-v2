@@ -1,9 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
-import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoints';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	configCog: {
-		transform: `scale(1)`,
 		position: `fixed`,
 		width: 34,
 		height: 34,
@@ -17,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	configContainer: {
+		transform: `scaleX(0)`,
+		transformOrigin: `left`,
 		border: `1px solid ${theme.palette.primary.main}`,
 		display: `flex`,
 		alignItems: `center`,
@@ -28,9 +29,6 @@ const useStyles = makeStyles((theme) => ({
 			bottom: `unset`,
 			top: 87,
 		},
-	},
-	closedConfigContainer: {
-		transform: `scale(0)`,
 	},
 }));
 

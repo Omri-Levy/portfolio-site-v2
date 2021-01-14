@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { getCustomBreakpoints } from '~/utils/getCustomBreakpoints';
+import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	listItem: {
@@ -28,32 +28,11 @@ const useStyles = makeStyles((theme) => ({
 		'&:hover': {
 			textDecoration: `none`,
 		},
-		'&::after': {
-			// eslint-disable-next-line
-			content: '""',
-			width: 0,
-			transition: `width 0.3s ease-in-out`,
-			height: 3,
-			background: theme.palette.primary.main,
+		'& span': {
+			backgroundColor: theme.palette.primary.main,
+
 			[getCustomBreakpoints(`md`, theme, `up`)]: {
-				background: theme.palette.text.secondary,
-			},
-		},
-		'&:hover::after': {
-			width: `100%`,
-			transition: `width 0.3s ease-in-out`,
-		},
-	},
-	activeLink: {
-		'&::after': {
-			// eslint-disable-next-line
-			content: '""',
-			width: `100%`,
-			transition: `width 0.3s ease-in-out`,
-			height: 3,
-			background: theme.palette.primary.main,
-			[getCustomBreakpoints(`md`, theme, `up`)]: {
-				background: theme.palette.text.secondary,
+				backgroundColor: theme.palette.text.secondary,
 			},
 		},
 	},

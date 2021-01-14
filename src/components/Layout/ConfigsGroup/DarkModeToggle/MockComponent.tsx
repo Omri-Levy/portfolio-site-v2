@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '~/context/ThemeProvider';
+import { ThemeContext } from '../../../../context/ThemeProvider';
 
 const MockComponent: React.FunctionComponent = () => {
 	const { isDarkMode } = useContext(ThemeContext);

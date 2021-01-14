@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { ChildrenProps } from '~/utils/types';
-import { colorsObj } from '~/hooks/useMakeTheme/colors';
+import { colorsObj } from '../../hooks/useMakeTheme/colors';
+import { ChildrenProps } from '../../utils/types';
 import { Theme } from './types';
 
 const theme: Theme = {
@@ -16,9 +16,8 @@ const theme: Theme = {
 
 const ThemeContext = createContext(theme);
 
-const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({
-	children,
-}) => {
+const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
+) => {
 	const [isDarkMode, setIsDarkMode] = useState(true);
 	const [primaryColor, setPrimaryColor] = useState(`rgb(144, 202, 249)`);
 	const [isRTL, setIsRTL] = useState(false);

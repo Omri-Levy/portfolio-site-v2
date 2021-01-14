@@ -1,6 +1,6 @@
 import React from 'react';
-import LinkedinBrand from './LinkedinBrand';
-import { renderWithProviders } from '~/utils/testUtils';
+import LinkedinBrand from '.';
+import { renderWithProviders } from '../../../../utils/testUtils';
 
 describe(`LinkedinBrand`, () => {
 	it(`renders`, () => {

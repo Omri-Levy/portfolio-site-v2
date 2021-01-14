@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import getCustomBreakpoints from '~/utils/getCustomBreakpoints/getCustomBreakpoints';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const sharedProps = {
 	width: `100%`,

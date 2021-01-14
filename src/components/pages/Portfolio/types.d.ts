@@ -1,4 +1,4 @@
-import { DataResponse } from '~/utils/types';
+import { DataResponse } from '../../../utils/types';
 
 type Node = { content: { value: never }[] };
 type HookReturns = () => DataResponse;

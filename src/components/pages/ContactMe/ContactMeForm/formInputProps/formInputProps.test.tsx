@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils';
+import { renderWithProviders, screen } from '../../../../../utils/testUtils';
 import MockComponent from './MockComponent';
 
 describe(`formInputProps`, () => {

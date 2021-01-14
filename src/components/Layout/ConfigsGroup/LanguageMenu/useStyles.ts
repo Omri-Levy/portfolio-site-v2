@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 	menuItem: {
 		backgroundColor: theme.palette.secondary.contrastText,
-		color: theme.palette.text.primary,
 		borderTop: `1px solid ${theme.palette.text.primary}`,
 		borderBottom: `1px solid ${theme.palette.text.primary}`,
 		'&:nth-child(1)': {
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 			borderBottom: `none`,
 		},
 		'&:hover .MuiTypography-body1': {
-			color: theme.palette.secondary.light,
+			color: theme.palette.text.secondary,
 		},
 	},
 }));

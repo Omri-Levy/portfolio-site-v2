@@ -1,11 +1,11 @@
 import React from 'react';
-import { renderWithProviders, screen } from '~/utils/testUtils';
-import PageIllustration from './PageIllustration';
+import { renderWithProviders, screen } from '../../../../utils/testUtils';
+import PageIllustration from './index';
 
 describe(`PageIllustration`, () => {
-	it(`renders`, () => {
-		renderWithProviders(<PageIllustration />);
+  it(`renders`, () => {
+    renderWithProviders(<PageIllustration />);
 
-		expect(screen.getByRole(`figure`)).toBeInTheDocument();
-	});
+    expect(screen.getByRole(`figure`)).toBeInTheDocument();
+  });
 });

@@ -1,8 +1,7 @@
 import React from 'react';
-import Locales from './Locales';
-import { renderWithProviders } from '~/utils/testUtils';
-import { TranslateText } from '~/components/Layout/Locales/TranslateText';
-import { screen } from '~/utils/testUtils/testUtils';
+import Locales from '.';
+import { renderWithProviders, screen } from '../../../utils/testUtils';
+import TranslateText from './TranslateText';
 
 describe(`Locales`, () => {
 	it(`renders`, () => {

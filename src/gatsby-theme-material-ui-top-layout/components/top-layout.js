@@ -1,5 +1,5 @@
 import React from 'react';
-import TopLayout from './TopLayout/TopLayout';
+import TopLayout from './TopLayout';
 
 // created the TopLayout component to allow folder structure, file extension and
 // naming conventions parity. having top-layout.js due to the gatsby-material-ui

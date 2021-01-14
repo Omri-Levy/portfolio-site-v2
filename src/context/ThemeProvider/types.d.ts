@@ -1,4 +1,5 @@
-import { SetState } from '~/utils/types';
+import { SetState } from '../../utils/types';
+
 
 interface Theme {
 	isDarkMode: boolean;
