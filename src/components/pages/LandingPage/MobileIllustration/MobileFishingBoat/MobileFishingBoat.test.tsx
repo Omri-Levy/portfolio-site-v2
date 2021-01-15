@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderWithProviders } from '../../../../../utils/testUtils';
-import MobileFishingBoat from './index';
+import MobileFishingBoat from '.';
 
 describe(`MobileFishingBoat`, () => {
 	jest.mock(`gsap-mock`);

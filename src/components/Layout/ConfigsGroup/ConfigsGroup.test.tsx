@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderWithProviders, screen } from '../../../utils/testUtils';
-import ConfigsGroup from './index';
+import ConfigsGroup from '.';
 
 describe(`ConfigsGroup`, () => {
 	beforeEach(() => renderWithProviders(<ConfigsGroup />));

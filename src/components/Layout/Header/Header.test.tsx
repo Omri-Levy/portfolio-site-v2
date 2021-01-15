@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderWithProviders } from '../../../utils/testUtils';
-import Header from './index';
+import Header from '.';
 
 describe(`Header`, () => {
   it(`renders`, () => {

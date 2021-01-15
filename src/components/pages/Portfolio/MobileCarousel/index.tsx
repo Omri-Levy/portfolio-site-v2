@@ -24,13 +24,14 @@ const MobileCarousel: React.FunctionComponent<ProjectsContainerProps> = (
 		<CarouselProvider
 			naturalSlideHeight={175}
 			naturalSlideWidth={100}
-			totalSlides={3}
-			isPlaying={true}
+			totalSlides={filteredData.length}
+			isPlaying={filteredData.length > 1}
 			className={classes.carouselProvider}
 		>
 			<Slider>
 				{filteredData?.map((project, index) => (
 					<MobileProjectCard
+						projectsAmount={filteredData.length}
 						key={v4()}
 						liveSiteUrl={project.node.liveSiteUrl}
 						gitRepositoryUrl={project.node.gitRepositoryUrl}

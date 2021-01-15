@@ -6,14 +6,14 @@ import { ProjectsContainerProps } from '../../../../utils/types';
 import ProjectCard from '../ProjectCard';
 
 const Projects: React.FunctionComponent<ProjectsContainerProps> = (
-  {
-    allProjects,
-    options,
-  },
+	{
+		allProjects,
+		options,
+	},
 ) => {
-  const { isRTL } = useContext(ThemeContext);
-  const locale = isRTL ? `he` : `en-US`;
-  const filteredData = allProjects?.edges.filter(
+	const { isRTL } = useContext(ThemeContext);
+	const locale = isRTL ? `he` : `en-US`;
+	const filteredData = allProjects?.edges.filter(
 		(project) => project.node.node_locale === locale,
 	);
 	const [page, setPage] = useState(1);
@@ -33,10 +33,12 @@ const Projects: React.FunctionComponent<ProjectsContainerProps> = (
 					projectGif={project.node.projectGif.file.url}
 				/>
 			))}
+			{filteredData?.length > 1 &&
 			<Pagination
 				count={filteredData?.length}
 				onChange={handleChange}
 			/>
+			}
 		</>
 	);
 };

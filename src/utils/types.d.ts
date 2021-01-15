@@ -98,6 +98,7 @@ interface ProjectProps {
 
 interface MobileProjectProps extends ProjectProps {
 	index: number;
+	projectsAmount: number;
 }
 
 type Key = string | number | symbol;

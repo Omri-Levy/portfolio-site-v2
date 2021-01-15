@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderWithProviders, screen } from '../../../../utils/testUtils';
-import DesktopIllustration from './index';
+import DesktopIllustration from '.';
 
 describe(`DesktopIllustration`, () => {
   it(`renders`, () => {

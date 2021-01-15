@@ -2,21 +2,19 @@ import { createMuiTheme } from '@material-ui/core';
 import { enUS, heIL } from '@material-ui/core/locale';
 import { DefaultTheme } from '@material-ui/styles';
 import { useContext } from 'react';
-import { AppContext } from '../../context/AppProvider';
 import { ThemeContext } from '../../context/ThemeProvider';
 import generateThemeFavicon from '../../utils/generateThemeFavicon';
 import {
-  backgroundColor,
-  primaryBorderColor,
-  primaryContrastColor,
-  primaryTextColor,
-  secondaryContrastColor,
-  secondaryTextColor,
+	backgroundColor,
+	primaryBorderColor,
+	primaryContrastColor,
+	primaryTextColor,
+	secondaryContrastColor,
+	secondaryTextColor,
 } from './colors';
 
 const useMakeTheme = (): DefaultTheme => {
 	const { isDarkMode, primaryColor, isRTL } = useContext(ThemeContext);
-	const { isBurgerMenuOpen } = useContext(AppContext);
 	generateThemeFavicon();
 	const theme: DefaultTheme = {
 		direction: isRTL ? `rtl` : `ltr`,
@@ -73,7 +71,6 @@ const useMakeTheme = (): DefaultTheme => {
 					},
 					body: {
 						direction: isRTL ? `rtl` : `ltr`,
-						overflow: isBurgerMenuOpen && `hidden`,
 					},
 					img: {
 						width: `100%`,

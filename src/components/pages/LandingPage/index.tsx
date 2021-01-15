@@ -7,14 +7,14 @@ import MobileIllustration from './MobileIllustration';
 import TabletIllustration from './TabletIllustration';
 
 const LandingPage: React.FunctionComponent = () => {
-  const { isTabletUp, isTabletDown, isDesktop, isIpadPro } = useDevice();
-  const { setIsLandingPage } = useContext(ThemeContext);
+	const { isTabletUp, isTabletDown, isDesktop, isIpadPro } = useDevice();
+	const { setIsLandingPage } = useContext(ThemeContext);
 
-  useEffect(() => {
-    setIsLandingPage(true);
-  }, []);
+	useEffect(() => {
+		setIsLandingPage(true);
+	}, []);
 
-  let content;
+	let content;
 
 	if (isTabletDown || isIpadPro) {
 		content = <MobileIllustration />;

@@ -3,6 +3,7 @@ import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
+		visibility: `hidden`,
 		height: `100%`,
 		width: `100%`,
 		display: `flex`,

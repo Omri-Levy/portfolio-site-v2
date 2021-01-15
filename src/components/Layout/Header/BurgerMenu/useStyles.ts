@@ -3,7 +3,12 @@ import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
 	burgerMenuContainer: {
-		zIndex: 1101,
+		backgroundColor: `transparent`,
+		display: `flex`,
+		flexDirection: `column`,
+		alignItems: `center`,
+		cursor: `pointer`,
+		zIndex: 1105,
 		position: `fixed`,
 		borderRadius: `100vh`,
 		padding: `.75rem .65rem`,
@@ -16,49 +21,28 @@ const useStyles = makeStyles((theme) => ({
 			display: `none`,
 		},
 		'& span': {
+			position: `absolute`,
+			width: `2em`,
+			left: 0,
+			'&:nth-child(1)': {
+				top: 0,
+			},
+			'&:nth-child(2)': {
+				top: 8,
+			},
+			'&:nth-child(3)': {
+				top: 16,
+			},
 			display: `block`,
-			position: `relative`,
-			width: `100%`,
 			height: 4,
 			backgroundColor: theme.palette.primary.main,
 			borderRadius: 5,
-			'&:before, &:after': {
-				borderRadius: 5,
-				left: 0,
-				position: `absolute`,
-				content: `""`,
-				width: `100%`,
-				height: 4,
-				backgroundColor: theme.palette.primary.main,
-			},
-			'&:before': {
-				top: 9,
-			},
-			'&:after': {
-				top: 18,
-			},
-		},
-		'& input': {
-			zIndex: 1102,
-			cursor: `pointer`,
-			position: `absolute`,
-			opacity: 0,
-			width: 48,
-			height: 48,
-			top: 0,
-			left: 0,
-			bottom: 0,
-			right: 0,
 		},
 	},
-	burgerMenuContainerOpen: {
-		border: `1px solid ${theme.palette.secondary.dark}`,
-		'& span': {
-			backgroundColor: theme.palette.secondary.dark,
-			'&:before, &:after': {
-				backgroundColor: theme.palette.secondary.dark,
-			},
-		},
+	burgerLinesContainer: {
+		width: `100%`,
+		height: `100%`,
+		position: `relative`,
 	},
 }));
 

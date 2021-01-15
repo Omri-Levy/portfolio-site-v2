@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { renderWithProviders, screen } from './index';
+import { renderWithProviders, screen } from '.';
 
 describe(`testUtils`, () => {
 	it(`gives access to locales`, () => {

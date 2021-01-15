@@ -1,5 +1,7 @@
-import React, { InputHTMLElement } from 'react';
+import React from 'react';
 
-type Props = React.HTMLProps<InputHTMLElement>;
+interface Props extends React.HTMLProps<HTMLButton> {
+  animation: gsap.core.Timeline,
+}
 
 export { Props };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderWithProviders, screen } from '../../../../utils/testUtils';
 import MobileCarousel from '../MobileCarousel';
-import MobileProjectCard from './index';
+import MobileProjectCard from '.';
 
 describe(`MobileProjectCard`, () => {
   it(`renders`, () => {
@@ -31,6 +31,7 @@ describe(`MobileProjectCard`, () => {
 				options={{}}
 			>
 				<MobileProjectCard
+					projectsAmount={1}
 					body={JSON.parse(`{}`)}
 					gitRepositoryUrl={``}
 					index={0}

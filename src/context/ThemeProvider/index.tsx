@@ -30,12 +30,19 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 		}
 
 		if (windowLoaded) {
-			setIsDarkMode(
-				() => JSON.parse(localStorage.getItem(`isDarkMode`) as string) || false,
-			);
+			setIsDarkMode(() => {
+				const mode = JSON.parse(localStorage.getItem(`isDarkMode`) as string);
+
+				if (!mode) {
+					localStorage.setItem(`isDarkMode`, JSON.stringify(true));
+
+					return true;
+				}
+
+				return mode;
+			});
 			setPrimaryColor(() => {
-				const mode =
-					JSON.parse(localStorage.getItem(`isDarkMode`) as string) || false;
+				const mode = JSON.parse(localStorage.getItem(`isDarkMode`) as string);
 				const colors = colorsObj(mode);
 				const color = localStorage.getItem(`primaryColor`);
 
@@ -48,7 +55,17 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 				return colors[color];
 			});
 			setIsRTL(
-				() => JSON.parse(localStorage.getItem(`isRTL`) as string) || false,
+				() => {
+					const rtl = JSON.parse(localStorage.getItem(`isRTL`) as string);
+
+					if (!rtl) {
+						localStorage.setItem(`isRTL`, JSON.stringify(false));
+
+						return false;
+					}
+
+					return rtl;
+				},
 			);
 		}
 	}, [windowLoaded]);

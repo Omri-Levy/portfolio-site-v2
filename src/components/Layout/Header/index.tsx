@@ -1,30 +1,42 @@
-import { AppBar } from '@material-ui/core';
-import clsx from 'clsx';
-import React, { useContext } from 'react';
-import { AppContext } from '../../../context/AppProvider';
-import useDevice from '../../../hooks/useDevice';
+import { AppBar, useMediaQuery } from '@material-ui/core';
+import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react';
 import BurgerMenu from './BurgerMenu';
 import Logo from './Logo';
 import Nav from './Nav';
 import useStyles from './useStyles';
 
 const Header: React.FunctionComponent = () => {
-  const { isBurgerMenuOpen, setIsBurgerMenuOpen } = useContext(AppContext);
-  const { closedAppbar, appbar } = useStyles();
-  const handleClick = () => setIsBurgerMenuOpen((prevState) => !prevState);
-  const { isTabletUp, isTabletDown } = useDevice();
-  const className = clsx({
-    [appbar]: isBurgerMenuOpen || isTabletUp,
-    [closedAppbar]: !isBurgerMenuOpen && isTabletDown,
-	});
+	const { appBar } = useStyles();
+	const appBarRef = useRef<HTMLElement | null>(null);
+	const tl = gsap.timeline({ paused: true, reversed: true });
+	const isTablet = useMediaQuery(`(min-width: 1000px)`);
+	const animation = tl
+		.to(`body`, {
+			overflow: `hidden`,
+		})
+		.to(appBarRef.current, {
+			scale: 1.4,
+		})
+		.to(appBarRef.current, {
+			scale: 1,
+		});
+	useEffect(() => {
+		if (appBarRef.current && isTablet && tl.reversed()) {
+			appBarRef.current.style.removeProperty(`transform`);
+		}
+	}, [isTablet]);
 
 	return (
 		<>
-			<BurgerMenu onClick={handleClick} />
-			<AppBar className={className}>
+			<AppBar
+				ref={appBarRef}
+				className={appBar}
+			>
 				<Logo />
 				<Nav />
 			</AppBar>
+			<BurgerMenu animation={animation} />
 		</>
 	);
 };
