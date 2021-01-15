@@ -1,3 +1,3 @@
-interface Props {}
+type Timeline = gsap.core.Timeline;
 
-export { Props };
+export { Timeline };

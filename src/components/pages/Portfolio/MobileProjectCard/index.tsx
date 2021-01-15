@@ -2,27 +2,27 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Box, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import {
-  KeyboardArrowLeftOutlined,
-  KeyboardArrowRightOutlined,
+	KeyboardArrowLeftOutlined,
+	KeyboardArrowRightOutlined,
 } from '@material-ui/icons';
 import KebabCase from 'lodash/kebabCase';
 import { ButtonBack, ButtonNext, Image, Slide } from 'pure-react-carousel';
 import React, { useContext } from 'react';
 import { useIntl } from 'react-intl';
-import useRTLOrLTRComponent from '../../../../hooks/useRTLOrLTRComponent';
 import { ThemeContext } from '../../../../context/ThemeProvider';
+import useRTLOrLTRComponent from '../../../../hooks/useRTLOrLTRComponent';
 import { MobileProjectProps } from '../../../../utils/types';
 import Link from '../../../Link';
 import useStyles from './useStyles';
 
 const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
-  props,
+	props,
 ) => {
-  const classes = useStyles();
-  const theme = useTheme();
-  const backButton = useRTLOrLTRComponent(
-    <KeyboardArrowRightOutlined className={classes.arrowIcon} />,
-    <KeyboardArrowLeftOutlined className={classes.arrowIcon} />,
+	const classes = useStyles();
+	const theme = useTheme();
+	const backButton = useRTLOrLTRComponent(
+		<KeyboardArrowRightOutlined className={classes.arrowIcon} />,
+		<KeyboardArrowLeftOutlined className={classes.arrowIcon} />,
 	);
 	const nextButton = useRTLOrLTRComponent(
 		<KeyboardArrowLeftOutlined className={classes.arrowIcon} />,
@@ -38,17 +38,24 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 			<Box dir={theme.direction}>
 				<Box className={classes.innerBox}>
 					<Typography variant={`h2`} className={classes.title}>
+						{props.projectsAmount > 1 &&
+						<ButtonBack className={classes.carouselButton}>
+							{backButton}
+						</ButtonBack>
+						}
 						{props.title}
+						{props.projectsAmount > 1 &&
+						<ButtonNext className={classes.carouselButton}>
+							{nextButton}
+						</ButtonNext>
+						}
 					</Typography>
 					{projectsNotEmpty &&
 					documentToReactComponents(props.body, props.options)}
 				</Box>
 				<Box className={classes.imageContainer}>
-					<ButtonBack className={classes.carouselBackButton}>
-						{backButton}
-					</ButtonBack>
 					<Image
-						src={`props.projectGif`}
+						src={props.projectGif}
 						alt={`${KebabCase(props.title)}${intl.formatMessage({
 							id: `projectGif`,
 						})}`}
@@ -58,9 +65,6 @@ const MobileProjectCard: React.FunctionComponent<MobileProjectProps> = (
 						)}
 						hasMasterSpinner={false}
 					/>
-					<ButtonNext className={classes.carouselNextButton}>
-						{nextButton}
-					</ButtonNext>
 				</Box>
 				<Box className={classes.buttonsContainer}>
 					<Link

@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from '../../../components/Layout/Head';
 import Locales from '../../../components/Layout/Locales';
-import { AppProvider } from '../../../context/AppProvider';
 import { ThemeProvider } from '../../../context/ThemeProvider';
 import { ChildrenProps } from '../../../utils/types';
 import ThemeTopLayout from '../ThemeTopLayout';
@@ -11,16 +10,14 @@ import ThemeTopLayout from '../ThemeTopLayout';
 // component did not work
 
 const TopLayout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
-  return (
-    <ThemeProvider>
-      <AppProvider>
-        <ThemeTopLayout>
-					<Locales>
-						<Head />
-						{children}
-					</Locales>
-				</ThemeTopLayout>
-			</AppProvider>
+	return (
+		<ThemeProvider>
+			<ThemeTopLayout>
+				<Locales>
+					<Head />
+					{children}
+				</Locales>
+			</ThemeTopLayout>
 		</ThemeProvider>
 	);
 };

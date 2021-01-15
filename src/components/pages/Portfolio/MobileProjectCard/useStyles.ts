@@ -75,6 +75,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	title: {
+		display: `flex`,
+		alignItems: `center`,
+		justifyContent: `center`,
 		fontSize: 16,
 		fontWeight: 500,
 		marginBottom: 26,
@@ -86,19 +89,9 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: 231,
 		maxWidth: 231,
 	},
-	carouselBackButton: {
+	carouselButton: {
 		backgroundColor: `transparent`,
 		border: `none`,
-		position: `absolute`,
-		top: `calc(50% - 24px)`,
-		left: 0,
-	},
-	carouselNextButton: {
-		backgroundColor: `transparent`,
-		border: `none`,
-		position: `absolute`,
-		top: `calc(50% - 24px)`,
-		right: 0,
 	},
 	imageContainer: {
 		borderRadius: 5,

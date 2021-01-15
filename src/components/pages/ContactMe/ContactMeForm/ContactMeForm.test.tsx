@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderWithProviders, screen } from '../../../../utils/testUtils';
-import ContactMeForm from './index';
+import ContactMeForm from '.';
 
 describe(`ContactMeForm`, () => {
   it(`renders`, () => {

@@ -1,18 +1,22 @@
-// eslint-disable-next-line
 import { useTheme } from '@material-ui/core/styles';
+// eslint-disable-next-line
 // @ts-ignore
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import React, { useEffect } from 'react';
-import animations from '../animations';
+import React, { useEffect, useRef, useState } from 'react';
+import { initHover, onLoad, onMouseEnter, onMouseLeave } from '../animations';
+import { Timeline } from '../types';
 import useStyles from './useStyles';
 
 const TabletIllustration: React.FunctionComponent = () => {
 	const theme = useTheme();
 	const classes = useStyles();
+	const svgButtonRef = useRef<SVGGElement | null>(null);
+	const [tl, setTl] = useState<Timeline | null>(null);
 
 	useEffect(() => {
-		animations();
-	});
+		onLoad(svgButtonRef);
+		setTl(initHover(svgButtonRef));
+	}, []);
 
 
 	return (
@@ -948,7 +952,9 @@ const TabletIllustration: React.FunctionComponent = () => {
 							DIVE IN
 							<g
 								filter={`url(#filter46_d)`}
-								className={`svg-btn`}
+								ref={(element) => svgButtonRef.current = element}
+								onMouseEnter={() => onMouseEnter(tl)}
+								onMouseLeave={() => onMouseLeave(tl)}
 							>
 								<rect
 									x={`311`}

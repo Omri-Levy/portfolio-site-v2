@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core';
-import getCustomBreakpoints from './index';
+import getCustomBreakpoints from '.';
 
 describe(`getCustomBreakpoints`, () => {
 	const theme = createMuiTheme({

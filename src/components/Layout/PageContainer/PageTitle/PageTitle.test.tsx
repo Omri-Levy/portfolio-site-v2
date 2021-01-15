@@ -1,7 +1,7 @@
 import { Email } from '@material-ui/icons';
 import React from 'react';
 import { renderWithProviders, screen } from '../../../../utils/testUtils';
-import PageTitle from './index';
+import PageTitle from '.';
 
 describe(`PageTitle`, () => {
   it(`renders`, () => {

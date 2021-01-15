@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderWithProviders, screen } from '../../../../../utils/testUtils';
-import NavLink from './index';
+import NavLink from '.';
 
 describe(`NavLink`, () => {
   beforeEach(() => {

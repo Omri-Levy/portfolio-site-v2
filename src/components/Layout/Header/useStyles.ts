@@ -2,13 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const useStyles = makeStyles((theme) => ({
-	appbar: {
+	appBar: {
 		alignItems: `center`,
 		padding: `8px 20px`,
 		top: `unset`,
 		bottom: 0,
+		transform: `scale(1)`,
 		[getCustomBreakpoints(`md`, theme, `down`)]: {
-			transform: `scale(1)`,
+			zIndex: 1104,
+			transform: `scale(0)`,
 			width: `100vw`,
 			height: `100vh`,
 			// glass
@@ -27,9 +29,6 @@ const useStyles = makeStyles((theme) => ({
 			bottom: `unset`,
 			flexDirection: `row`,
 		},
-	},
-	closedAppbar: {
-		transform: `scale(0)`,
 	},
 }));
 

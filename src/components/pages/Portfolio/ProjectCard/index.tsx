@@ -8,13 +8,13 @@ import Link from '../../../Link';
 import useStyles from './useStyles';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
-  const classes = useStyles();
-  const projectsNotEmpty = Object.keys(props.body).length > 0;
-  const intl = useIntl();
+	const classes = useStyles();
+	const projectsNotEmpty = Object.keys(props.body).length > 0;
+	const intl = useIntl();
 
-  return (
-    <Grid container className={classes.projectCardContainer}>
-      <Grid item className={classes.innerBox}>
+	return (
+		<Grid container className={classes.projectCardContainer}>
+			<Grid item className={classes.innerBox}>
 				<Typography variant={`h2`} className={classes.title}>
 					{props.title}
 				</Typography>
@@ -35,7 +35,7 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 			</Grid>
 			<Grid item className={classes.imageContainer}>
 				<img
-					src={`props.projectGif`}
+					src={props.projectGif}
 					alt={`${KebabCase(props.title)}${intl.formatMessage({
 						id: `projectGif`,
 					})}`}
