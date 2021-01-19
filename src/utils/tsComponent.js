@@ -55,7 +55,7 @@ fs.writeFile(`./types.d.ts`, ``, (err) => {
 
 // create component file
 fs.writeFile(
-  `.`,
+  `./index.tsx`,
   `import React from 'react';
 import useStyles from './useStyles';
 
