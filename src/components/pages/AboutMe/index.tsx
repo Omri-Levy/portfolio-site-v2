@@ -1,33 +1,62 @@
-import { Grid, Typography } from '@material-ui/core';
-import { InfoOutlined } from '@material-ui/icons';
+import { Button, Grid, Typography } from '@material-ui/core';
+import { Description, InfoOutlined, WorkOutline } from '@material-ui/icons';
 import React from 'react';
 import TranslateText from '../../Layout/Locales/TranslateText';
 import PageContainer from '../../Layout/PageContainer';
-import PageIllustration from './PageIllustration';
 import ProfilePic from './ProfilePic';
-import useStyles from './useStyles';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import resume from './resume.pdf';
 
 const AboutMe: React.FunctionComponent = () => {
-  const classes = useStyles();
 
-  return (
-    <PageContainer id={`about-me`} Icon={InfoOutlined} text={`About Me`}>
-      <Grid container className={classes.outerBox}>
-        <Grid item>
-          <ProfilePic />
+	const handleClick = () => {
+		if (!resume) {
+			return;
+		}
+
+		window.open(resume);
+	};
+
+	return (
+		<PageContainer id={`about-me`} Icon={InfoOutlined} text={`About Me`}>
+			<Grid container>
+				<Grid item>
+					<ProfilePic />
 				</Grid>
-				<Grid item className={classes.innerBox}>
-					<Typography variant={`h1`} className={classes.title}>
+				<Grid item>
+					<Typography variant={`h1`}>
 						<TranslateText text={`whoAmITitle`} />
 					</Typography>
-					<Typography variant={`body1`} className={classes.subtitle}>
+					<Typography variant={`body1`}>
 						<TranslateText text={`whoAmISubtitle`} />
 					</Typography>
-					<Typography variant={`body1`} className={classes.body}>
+					<Typography variant={`body1`}>
 						<TranslateText text={`whoAmIBody`} />
 					</Typography>
 				</Grid>
-				<PageIllustration />
+				<Grid
+					item
+					xs={12}
+
+				>
+					<Button
+						startIcon={<WorkOutline />}
+						variant={`contained`}
+						color={`primary`}
+					>
+						<AnchorLink to={`/#portfolio`}>
+							Portfolio
+						</AnchorLink>
+					</Button>
+					<Button
+						startIcon={<Description />}
+						variant={`outlined`}
+						color={`primary`}
+						onClick={handleClick}
+					>
+						My Resume
+					</Button>
+				</Grid>
 			</Grid>
 		</PageContainer>
 	);

@@ -1,25 +1,22 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeProvider';
+import React from 'react';
 import useDevice from '../../hooks/useDevice';
 import { ChildrenProps } from '../../utils/types';
 import ConfigsGroup from './ConfigsGroup';
-import Container from './Container';
-import Content from './Content';
 import Header from './Header';
-import TopToolbar from './TopToolbar';
+import { Container } from '@material-ui/core';
 
 const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
-  const { isDesktop, isIpadPro } = useDevice();
-  const { isLandingPage } = useContext(ThemeContext);
+	const { isDesktop, isIpadPro } = useDevice();
 
-  return (
-    <Container>
-      {!isLandingPage && <Header />}
-      {!isLandingPage && (isDesktop || isIpadPro) && <ConfigsGroup />}
-      {!isLandingPage && <TopToolbar />}
-			<Content>{children}</Content>
-			{!isLandingPage && (!isDesktop || !isIpadPro) && <ConfigsGroup />}
-		</Container>
+	return (
+		<>
+			<Header />
+			<Container component={`main`}>
+				{(isDesktop || isIpadPro) && <ConfigsGroup />}
+				{children}
+			</Container>
+			{(!isDesktop || !isIpadPro) && <ConfigsGroup />}
+		</>
 	);
 };
 

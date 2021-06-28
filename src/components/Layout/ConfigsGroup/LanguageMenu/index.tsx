@@ -3,7 +3,7 @@ import { LanguageOutlined } from '@material-ui/icons';
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../../../../context/ThemeProvider';
 import { AnchorOrButtonEvent, EventCurrentTarget } from './types';
-import useStyles from './useStyles';
+
 
 const LanguageMenu: React.FunctionComponent = () => {
 	const [anchorEl, setAnchorEl] = useState<EventCurrentTarget | null>(null);
@@ -12,7 +12,7 @@ const LanguageMenu: React.FunctionComponent = () => {
 		setAnchorEl(event.currentTarget);
 	};
 	const handleClose = () => setAnchorEl(null);
-	const classes = useStyles();
+
 	const handleIsRTL = (isRTL: boolean) => () => {
 		setIsRTL(isRTL);
 		setAnchorEl(null);
@@ -26,7 +26,7 @@ const LanguageMenu: React.FunctionComponent = () => {
 				aria-label={`language-menu`}
 				aria-controls={`language-menu-list`}
 				onClick={handleClick}
-				className={classes.icon}
+
 			>
 				<LanguageOutlined />
 			</IconButton>
@@ -34,21 +34,20 @@ const LanguageMenu: React.FunctionComponent = () => {
 				id={`language-menu-list`}
 				aria-labelledby={`language-menu`}
 				anchorEl={anchorEl}
-				MenuListProps={{ className: classes.menuList }}
 				disableScrollLock={true}
 				open={!!anchorEl}
 				onClose={handleClose}
 				keepMounted
 			>
 				<MenuItem
-					className={classes.menuItem}
+
 					aria-labelledby={`language-menu english`}
 					onClick={handleIsRTL(false)}
 				>
 					<Typography id={`english`}>English</Typography>
 				</MenuItem>
 				<MenuItem
-					className={classes.menuItem}
+
 					aria-labelledby={`language-menu hebrew`}
 					onClick={handleIsRTL(true)}
 				>

@@ -2,39 +2,43 @@ import { Box, Switch } from '@material-ui/core';
 import { Brightness2Outlined, WbSunnyOutlined } from '@material-ui/icons';
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../../../context/ThemeProvider';
-import { colorsObj } from '../../../../hooks/useMakeTheme/colors';
-import useStyles from './useStyles';
+import { shadedPrimaryColor } from '../../../../hooks/useMakeTheme/colors';
+import { ThemeColors } from '../../../../context/ThemeProvider/types';
+
 
 const DarkModeToggle: React.FunctionComponent = () => {
 	const { isDarkMode, setIsDarkMode, setPrimaryColor } = useContext(
 		ThemeContext,
 	);
-	const classes = useStyles();
+
 	const handleChange = () => {
 		setIsDarkMode((prevState: boolean) => {
 			localStorage.setItem(`isDarkMode`, JSON.stringify(!prevState));
 
-			const colors = colorsObj(!prevState);
+			const colors = shadedPrimaryColor(!prevState);
 
 			if (!localStorage.getItem(`primaryColor`)) {
 				localStorage.setItem(`primaryColor`, `blue`);
 			}
 
-			const color = localStorage.getItem(`primaryColor`) as string;
+			const color = localStorage.getItem(`primaryColor`) as ThemeColors;
 
-			setPrimaryColor(colors[color]);
+			setPrimaryColor({
+				colorWithShade: colors[color],
+				color,
+			});
 
 			return !prevState;
 		});
 	};
 
 	return (
-		<Box className={classes.darkModeToggleContainer}>
-			<label className={classes.label}>
+		<Box>
+			<label>
 				{isDarkMode ? (
-					<Brightness2Outlined className={classes.icon} />
+					<Brightness2Outlined />
 				) : (
-					<WbSunnyOutlined className={classes.icon} />
+					<WbSunnyOutlined />
 				)}
 				<Switch
 					onChange={handleChange}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-	Icon: React.FunctionComponent<{ className: string }>;
+	Icon?: React.FunctionComponent;
 	text: string;
 }
 

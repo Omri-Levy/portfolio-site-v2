@@ -1,6 +1,20 @@
 import React from 'react';
-import LandingPage from '../components/pages/LandingPage';
+import Layout from '../components/Layout';
+import AboutMe from '../components/pages/AboutMe';
+import ContactMe from '../components/pages/ContactMe';
+import Portfolio from '../components/pages/Portfolio';
+import Hero from '../components/pages/Hero';
 
-const Index: React.FunctionComponent = () => <LandingPage />;
+const Home: React.FunctionComponent = () => {
 
-export default Index;
+	return (
+		<Layout>
+			<Hero />
+			<AboutMe />
+			<Portfolio />
+			<ContactMe />
+		</Layout>
+	);
+};
+
+export default Home;

@@ -14,15 +14,10 @@ interface ChildrenProps {
 	children: React.ReactNode;
 }
 
-interface ClassNameProps {
-	className: string;
-}
-
 interface ButtonProps extends Button {
-	type?:  `button` | `submit` | `reset` | undefined;
+	type?: `button` | `submit` | `reset` | undefined;
 	variant: `primary` | `secondary`;
 	text: string;
-	additionalClass?: string;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	disabled?: boolean;
 }
@@ -31,7 +26,6 @@ interface LinkProps extends React.HTMLProps<HTMLAnchorElement> {
 	variant: `primary` | `secondary`;
 	text: string;
 	to?: string;
-	additionalClass?: string;
 }
 
 type Data = {
@@ -111,7 +105,6 @@ export {
 	ProjectsContainerProps,
 	ProjectOptions,
 	ProjectProps,
-	ClassNameProps,
 	Data,
 	DataResponse,
 	MobileProjectProps,

@@ -11,8 +11,12 @@ module.exports = {
 		`gatsby-plugin-typescript`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
-		`gatsby-plugin-anchor-links`,
-		`gatsby-plugin-transition-link`,
+		{
+			resolve: `gatsby-plugin-anchor-links`,
+			options: {
+				offset: -200,
+			},
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {

@@ -1,6 +1,5 @@
 import { Pagination } from '@material-ui/lab';
 import React, { ChangeEvent, useContext, useState } from 'react';
-import { v4 } from 'uuid';
 import { ThemeContext } from '../../../../context/ThemeProvider';
 import { ProjectsContainerProps } from '../../../../utils/types';
 import ProjectCard from '../ProjectCard';
@@ -24,7 +23,7 @@ const Projects: React.FunctionComponent<ProjectsContainerProps> = (
 		<>
 			{slicedData?.map((project) => (
 				<ProjectCard
-					key={v4()}
+					key={project.node.title}
 					liveSiteUrl={project.node.liveSiteUrl}
 					gitRepositoryUrl={project.node.gitRepositoryUrl}
 					title={project.node.title}

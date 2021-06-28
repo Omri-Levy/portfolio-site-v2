@@ -3,21 +3,33 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 import TranslateText from '../../../Locales/TranslateText';
 import { Props } from './types';
-import useStyles from './useStyles';
+
 
 const NavLink: React.FunctionComponent<Props> = (props) => {
 	const { to, Icon, text } = props;
-	const { listItem, link, icon } = useStyles();
+
 
 	return (
-		<ListItem className={listItem} disableGutters={true}>
+		<ListItem style={{
+			display: `grid`,
+			placeContent: `center`,
+		}}>
 			<AnchorLink
 				to={to}
-				className={link}
+				gatsbyLinkProps={{
+					style: {
+						textDecoration: `none`,
+						display: `grid`,
+						placeItems: `center`,
+						color: `inherit`,
+						'&:visited': {
+							color: `inherit`,
+						},
+					},
+				}}
 			>
-				{Icon && <Icon className={icon} />}
+				{Icon && <Icon />}
 				<TranslateText text={text} />
-				<span />
 			</AnchorLink>
 		</ListItem>
 	);

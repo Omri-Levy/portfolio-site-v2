@@ -15,6 +15,6 @@ describe(`Logo`, () => {
 		const homePageLink = screen.getByRole(`link`);
 
 		expect(homePageLink).toBeInTheDocument();
-		expect(homePageLink).toHaveAttribute(`href`, `/home#portfolio`);
+		expect(homePageLink).toHaveAttribute(`href`, `/#portfolio`);
 	});
 });

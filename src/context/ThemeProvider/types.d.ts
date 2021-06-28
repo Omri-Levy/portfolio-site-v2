@@ -1,15 +1,20 @@
 import { SetState } from '../../utils/types';
 
+type ThemeColors = `blue` | `red` | `green` | `purple`;
 
 interface Theme {
 	isDarkMode: boolean;
 	setIsDarkMode: SetState<boolean>;
-	primaryColor: string;
-	setPrimaryColor: SetState<PrimaryColor>;
+	primaryColor: {
+		colorWithShade: string,
+		color: ThemeColors,
+	};
+	setPrimaryColor: SetState<{
+		colorWithShade: string,
+		color: ThemeColors,
+	}>;
 	isRTL: boolean;
 	setIsRTL: SetState<boolean>;
-	isLandingPage: boolean;
-	setIsLandingPage: SetState<boolean>;
 }
 
-export { Theme };
+export { Theme, ThemeColors };

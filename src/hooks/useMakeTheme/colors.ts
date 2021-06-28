@@ -10,15 +10,16 @@ const primaryTextColor = `rgb(255, 255, 255)`;
 const secondaryTextColor = `rgb(0, 0, 0)`;
 const primaryContrastColor = `rgb(238, 238, 238)`;
 const secondaryContrastColor = `rgb(57, 62, 70)`;
-const colorsObj = (isDarkMode: boolean): Record<Key, string> => {
+const colorObj = (shade: number) => ({
+	blue: blue[shade],
+	green: green[shade],
+	purple: purple[shade],
+	red: red[shade],
+});
+const shadedPrimaryColor = (isDarkMode: boolean): Record<Key, string> => {
 	const shade = isDarkMode ? 200 : 900;
 
-	return {
-		blue: blue[shade],
-		green: green[shade],
-		purple: purple[shade],
-		red: red[shade],
-	};
+	return colorObj(shade);
 };
 
 export {
@@ -29,5 +30,6 @@ export {
 	secondaryTextColor,
 	primaryContrastColor,
 	secondaryContrastColor,
-	colorsObj,
+	shadedPrimaryColor,
+	colorObj,
 };

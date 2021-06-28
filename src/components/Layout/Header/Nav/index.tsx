@@ -1,41 +1,44 @@
-import { List, Toolbar } from '@material-ui/core';
+import { Box, List } from '@material-ui/core';
 import {
-  InfoOutlined,
-  PermContactCalendarOutlined,
-  WorkOutline,
+	InfoOutlined,
+	PermContactCalendarOutlined,
+	WorkOutline,
 } from '@material-ui/icons';
-import React, { useEffect } from 'react';
-import animations from './animations';
+import React from 'react';
 import NavLink from './NavLink';
-import useStyles from './useStyles';
+
 
 const Nav: React.FunctionComponent = () => {
-	const classes = useStyles();
 
-	useEffect(() => {
-		animations();
-	}, []);
 
 	return (
-		<Toolbar disableGutters={true} component={`nav`} className={classes.nav}>
-			<List className={classes.menuList}>
+		<Box component={`nav`} style={{
+			flexGrow: 1,
+			display: `flex`,
+			justifyContent: `center`,
+		}}>
+			<List style={{
+				display: `flex`,
+				marginRight: 95,
+				width: `30%`,
+			}}>
 				<NavLink
-					to={`/home#portfolio`}
+					to={`/#portfolio`}
 					Icon={WorkOutline}
 					text={`Portfolio`}
 				/>
 				<NavLink
-					to={`/home#about-me`}
+					to={`/#about-me`}
 					Icon={InfoOutlined}
 					text={`About Me`}
 				/>
 				<NavLink
-					to={`/home#contact-me`}
+					to={`/#contact-me`}
 					Icon={PermContactCalendarOutlined}
 					text={`Contact Me`}
 				/>
 			</List>
-		</Toolbar>
+		</Box>
 	);
 };
 
