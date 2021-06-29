@@ -2,7 +2,7 @@ import { SetState } from '../../utils/types';
 
 type ThemeColors = `blue` | `red` | `green` | `purple`;
 
-interface Theme {
+interface ThemeContextType {
 	isDarkMode: boolean;
 	setIsDarkMode: SetState<boolean>;
 	primaryColor: {
@@ -17,4 +17,4 @@ interface Theme {
 	setIsRTL: SetState<boolean>;
 }
 
-export { Theme, ThemeColors };
+export { ThemeContextType, ThemeColors };

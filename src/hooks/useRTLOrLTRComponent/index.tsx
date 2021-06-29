@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeProvider';
 import { HookReturns } from './types';
+import useThemeContext from '../../context/ThemeProvider/useThemeContext';
 
 const UseRTLOrLTRComponent: HookReturns = (RTLComponent, LTRComponent) => {
-  const { isRTL } = useContext(ThemeContext);
+	const { isRTL } = useThemeContext();
 
-  return isRTL ? RTLComponent : LTRComponent;
+	return isRTL ? RTLComponent : LTRComponent;
 };
 
 export default UseRTLOrLTRComponent;

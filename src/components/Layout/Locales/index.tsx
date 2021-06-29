@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { ThemeContext } from '../../../context/ThemeProvider';
 import useTranslations from '../../../hooks/useTranslations';
 import { ChildrenProps } from '../../../utils/types';
+import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 
 const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
-  const { isRTL } = useContext(ThemeContext);
-  const messages = {
-    // page titles and links
-    portfolio: useTranslations(`תיק עבודות`, `Portfolio`),
-    aboutMe: useTranslations(`עלי`, `About Me`),
-    contactMe: useTranslations(`צרו קשר`, `Contact Me`),
-    landingPage: useTranslations(`דף נחיתה`, `Landing Page`),
-    home: useTranslations(`דף בית`, `Home Page`),
+	const { isRTL } = useThemeContext();
+	const messages = {
+		// page titles and links
+		portfolio: useTranslations(`תיק עבודות`, `Portfolio`),
+		aboutMe: useTranslations(`עלי`, `About Me`),
+		contactMe: useTranslations(`צרו קשר`, `Contact Me`),
+		landingPage: useTranslations(`דף נחיתה`, `Landing Page`),
+		home: useTranslations(`דף בית`, `Home Page`),
 
 		// nav logo
 		omriLevy: useTranslations(`עומרי לוי`, `Omri Levy`),
@@ -28,11 +28,11 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 			`Hi! My name is Omri Levy, I\`m 24 year old from Tel-Aviv.`,
 		),
 		whoAmIBody: useTranslations(
-      `התחלתי לתכנת במאי 2019, מאז אני מתכנת מהרגע שאני קם ועד` +
-      ` שאני הולך לישון.`,
-      `I began programming in May of 2019, ever since I\`ve been` +
-      ` programming from the moment I wake up and until I go to bed.`,
-    ),
+			`התחלתי לתכנת במאי 2019, מאז אני מתכנת מהרגע שאני קם ועד` +
+			` שאני הולך לישון.`,
+			`I began programming in May of 2019, ever since I\`ve been` +
+			` programming from the moment I wake up and until I go to bed.`,
+		),
 
 		// portfolio buttons
 		liveSite: useTranslations(`אתר חי`, `Live Site`),

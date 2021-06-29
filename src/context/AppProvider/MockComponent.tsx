@@ -1,14 +1,14 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
-import useThemeContext from './useThemeContext';
+import useAppContext from './useAppContext';
 
 const MockComponent: React.FunctionComponent = () => {
-	const { primaryColor } = useThemeContext();
+	const { isBurgerMenuOpen } = useAppContext();
 
 	return (
 		<div>
 			<Button />
-			{primaryColor}
+			{isBurgerMenuOpen}
 		</div>
 	);
 };

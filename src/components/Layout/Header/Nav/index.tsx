@@ -1,4 +1,3 @@
-import { Box, List } from '@material-ui/core';
 import {
 	InfoOutlined,
 	PermContactCalendarOutlined,
@@ -6,22 +5,15 @@ import {
 } from '@material-ui/icons';
 import React from 'react';
 import NavLink from './NavLink';
+import { StyledNav } from '../styled/StyledNav';
+import { StyledList } from '../styled/StyledList';
 
 
 const Nav: React.FunctionComponent = () => {
 
-
 	return (
-		<Box component={`nav`} style={{
-			flexGrow: 1,
-			display: `flex`,
-			justifyContent: `center`,
-		}}>
-			<List style={{
-				display: `flex`,
-				marginRight: 95,
-				width: `30%`,
-			}}>
+		<StyledNav as={`nav`}>
+			<StyledList>
 				<NavLink
 					to={`/#portfolio`}
 					Icon={WorkOutline}
@@ -37,8 +29,8 @@ const Nav: React.FunctionComponent = () => {
 					Icon={PermContactCalendarOutlined}
 					text={`Contact Me`}
 				/>
-			</List>
-		</Box>
+			</StyledList>
+		</StyledNav>
 	);
 };
 

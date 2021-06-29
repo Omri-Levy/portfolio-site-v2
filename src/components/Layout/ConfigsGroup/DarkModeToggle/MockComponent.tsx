@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../../context/ThemeProvider';
+import React from 'react';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 
 const MockComponent: React.FunctionComponent = () => {
-	const { isDarkMode } = useContext(ThemeContext);
+	const { isDarkMode } = useThemeContext();
 
 	return <div>{JSON.stringify(isDarkMode)}</div>;
 };

@@ -1,39 +1,33 @@
-import { AppBar, Toolbar } from '@material-ui/core';
+import { Fade, Theme, useMediaQuery } from '@material-ui/core';
 import React, { useRef } from 'react';
 import BurgerMenu from './BurgerMenu';
 import Logo from './Logo';
 import Nav from './Nav';
-import styled from 'styled-components';
+import { StyledAppBar } from './styled/StyledAppBar';
+import { StyledSpan } from './styled/StyledSpan';
+import useAppContext from '../../../context/AppProvider/useAppContext';
+import { StyledToolbar } from './styled/StyledToolbar';
 
-const StyledAppBar = styled(AppBar)`
-  box-shadow: none !important;
-  background-color: ${({ theme }) => theme.palette.background.default};
-`;
-const StyledSpan = styled(`span`)`
-  background-color: ${({ theme }) => theme.palette.text.primary};
-  opacity: 0.1;
-  width: 35%;
-  margin-top: 10px;
-  height: 0.5px;
-  border-radius: 100vh;
-  margin-inline: auto;
-`;
 const Header: React.FunctionComponent = () => {
 	const appBarRef = useRef<HTMLElement | null>(null);
+	const { isBurgerMenuOpen } = useAppContext();
+	const notMobile = useMediaQuery((theme: Theme) => theme.breakpoints.up(`sm`));
 
 	return (
 		<>
-			<StyledAppBar
-				className={`test`}
-				ref={appBarRef}
-				color={`default`}
-			>
-				<Toolbar>
-					<Logo />
-					<Nav />
-				</Toolbar>
-				<StyledSpan />
-			</StyledAppBar>
+			<Fade in={(isBurgerMenuOpen && !notMobile) || notMobile}>
+				<StyledAppBar
+					ref={appBarRef}
+					color={`default`}
+				>
+					<StyledToolbar>
+						<Logo />
+						{!notMobile && <StyledSpan />}
+						<Nav />
+					</StyledToolbar>
+					{notMobile && <StyledSpan />}
+				</StyledAppBar>
+			</Fade>
 			<BurgerMenu />
 		</>
 	);

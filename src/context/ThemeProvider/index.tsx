@@ -1,24 +1,8 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { shadedPrimaryColor } from '../../hooks/useMakeTheme/colors';
 import { ChildrenProps } from '../../utils/types';
-import { Theme, ThemeColors } from './types';
-
-const theme: Theme = {
-	isDarkMode: true,
-	setIsDarkMode: () => true,
-	primaryColor: {
-		colorWithShade: `rgb(144, 202, 249)`,
-		color: `blue` as ThemeColors,
-	},
-	setPrimaryColor: () => ({
-		colorWithShade: `rgb(144, 202, 249)`,
-		color: `blue` as ThemeColors,
-	}),
-	isRTL: false,
-	setIsRTL: () => false,
-};
-
-const ThemeContext = createContext(theme);
+import ThemeContext from './ThemeContext';
+import { ThemeColors } from './types';
 
 const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 ) => {

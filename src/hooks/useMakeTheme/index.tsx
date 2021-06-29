@@ -1,13 +1,19 @@
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
+import {
+	createMuiTheme,
+	responsiveFontSizes,
+	useMediaQuery,
+} from '@material-ui/core';
 import { enUS, heIL } from '@material-ui/core/locale';
 import { DefaultTheme } from '@material-ui/styles';
-import { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeProvider';
 import generateThemeFavicon from '../../utils/generateThemeFavicon';
 import { grey } from '@material-ui/core/colors';
+import useThemeContext from '../../context/ThemeProvider/useThemeContext';
+import useAppContext from '../../context/AppProvider/useAppContext';
 
 const useMakeTheme = (): DefaultTheme => {
-	const { isDarkMode, primaryColor, isRTL } = useContext(ThemeContext);
+	const { isDarkMode, primaryColor, isRTL } = useThemeContext();
+	const { isBurgerMenuOpen } = useAppContext();
+	const smDown = useMediaQuery(`(max-width: 960px)`);
 	generateThemeFavicon();
 	const theme: DefaultTheme = {
 		direction: isRTL ? `rtl` : `ltr`,
@@ -30,6 +36,7 @@ const useMakeTheme = (): DefaultTheme => {
 					},
 					body: {
 						direction: isRTL ? `rtl` : `ltr`,
+						overflow: smDown && isBurgerMenuOpen ? `hidden` : `visible`,
 					},
 				},
 			},

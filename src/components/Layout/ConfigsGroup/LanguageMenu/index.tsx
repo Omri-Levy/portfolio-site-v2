@@ -1,13 +1,13 @@
 import { IconButton, Menu, MenuItem, Typography } from '@material-ui/core';
 import { LanguageOutlined } from '@material-ui/icons';
-import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../../../../context/ThemeProvider';
+import React, { useState } from 'react';
 import { AnchorOrButtonEvent, EventCurrentTarget } from './types';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 
 
 const LanguageMenu: React.FunctionComponent = () => {
 	const [anchorEl, setAnchorEl] = useState<EventCurrentTarget | null>(null);
-	const { setIsRTL } = useContext(ThemeContext);
+	const { setIsRTL } = useThemeContext();
 	const handleClick = (event: AnchorOrButtonEvent) => {
 		setAnchorEl(event.currentTarget);
 	};

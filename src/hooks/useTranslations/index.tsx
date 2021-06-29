@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeProvider';
 import { Translation } from './types';
+import useThemeContext from '../../context/ThemeProvider/useThemeContext';
 
 const useTranslations: Translation = (he, en) => {
-	const { isRTL } = useContext(ThemeContext);
+	const { isRTL } = useThemeContext();
 
 	return isRTL ? he : en;
 };

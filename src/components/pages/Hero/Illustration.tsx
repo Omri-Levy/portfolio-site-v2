@@ -2,9 +2,8 @@ import React, {
 	DetailedHTMLProps,
 	FunctionComponent,
 	HTMLAttributes,
-	useContext,
 } from 'react';
-import { ThemeContext } from '../../../context/ThemeProvider';
+import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 
 interface IllustrationProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	color: string;
@@ -14,7 +13,7 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 																															color,
 																															...props
 																														}) => {
-	const { isDarkMode } = useContext(ThemeContext);
+	const { isDarkMode } = useThemeContext();
 	const darkModeContrast = isDarkMode ? `#494865` : `#2f2e41`;
 
 	return (

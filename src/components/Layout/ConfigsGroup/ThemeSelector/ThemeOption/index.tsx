@@ -1,9 +1,10 @@
 import { IconButton } from '@material-ui/core';
 import { FiberManualRecord } from '@material-ui/icons';
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../../../context/ThemeProvider';
+import React from 'react';
 import { shadedPrimaryColor } from '../../../../../hooks/useMakeTheme/colors';
 import { Props } from './types';
+import useThemeContext
+	from '../../../../../context/ThemeProvider/useThemeContext';
 
 
 const ThemeOption: React.FunctionComponent<Props> = ({ color, alt }) => {
@@ -11,7 +12,7 @@ const ThemeOption: React.FunctionComponent<Props> = ({ color, alt }) => {
 	const {
 		setPrimaryColor,
 		isDarkMode,
-	} = useContext(ThemeContext);
+	} = useThemeContext();
 	const colors = shadedPrimaryColor(isDarkMode);
 
 	const handleClick = () => {

@@ -1,15 +1,15 @@
 import { Button, Grid, Typography } from '@material-ui/core';
 import { InfoOutlined, PlayCircleFilled } from '@material-ui/icons';
-import React, { useContext } from 'react';
+import React from 'react';
 import PageContainer from '../../Layout/PageContainer';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import Wave from './Wave';
 import { colorObj } from '../../../hooks/useMakeTheme/colors';
 import Illustration from './Illustration';
-import { ThemeContext } from '../../../context/ThemeProvider';
+import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 
 const Hero: React.FunctionComponent = () => {
-	const { primaryColor, isDarkMode } = useContext(ThemeContext);
+	const { primaryColor, isDarkMode } = useThemeContext();
 	const colors1 = colorObj(isDarkMode ? 300 : 600);
 	const colors2 = colorObj(isDarkMode ? 400 : 700);
 	const colors3 = colorObj(isDarkMode ? 300 : 800);

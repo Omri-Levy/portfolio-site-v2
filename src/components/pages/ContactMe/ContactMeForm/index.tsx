@@ -1,26 +1,20 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Button, Grid, TextField } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
-import React, {
-	FormEvent,
-	RefObject,
-	useContext,
-	useRef,
-	useState,
-} from 'react';
+import React, { FormEvent, RefObject, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Controller, useForm } from 'react-hook-form';
 import { useIntl } from 'react-intl';
-import { ThemeContext } from '../../../../context/ThemeProvider';
 import { Key } from '../../../../utils/types';
 import TranslateText from '../../../Layout/Locales/TranslateText';
 import validationSchema from '../validationSchema';
 import { FormInputs } from './types';
 import { Send } from '@material-ui/icons';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 
 
 const ContactMeForm: React.FunctionComponent = () => {
-	const { isRTL, isDarkMode } = useContext(ThemeContext);
+	const { isRTL, isDarkMode } = useThemeContext();
 	const [isRobot, setIsRobot] = useState(true);
 	const [isLoading, setIsLoading] = useState(false);
 	const {

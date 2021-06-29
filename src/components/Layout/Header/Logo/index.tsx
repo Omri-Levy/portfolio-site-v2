@@ -12,6 +12,9 @@ const Logo: React.FunctionComponent = () => {
 			to={`/#hero`}
 			gatsbyLinkProps={{
 				style: {
+					display: `grid`,
+					placeContent: `center`,
+					marginBlock: 10,
 					textDecoration: `none`,
 					color: `inherit`,
 					'&:visited': {

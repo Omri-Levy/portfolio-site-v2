@@ -1,8 +1,8 @@
 import { Pagination } from '@material-ui/lab';
-import React, { ChangeEvent, useContext, useState } from 'react';
-import { ThemeContext } from '../../../../context/ThemeProvider';
+import React, { ChangeEvent, useState } from 'react';
 import { ProjectsContainerProps } from '../../../../utils/types';
 import ProjectCard from '../ProjectCard';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 
 const Projects: React.FunctionComponent<ProjectsContainerProps> = (
 	{
@@ -10,7 +10,7 @@ const Projects: React.FunctionComponent<ProjectsContainerProps> = (
 		options,
 	},
 ) => {
-	const { isRTL } = useContext(ThemeContext);
+	const { isRTL } = useThemeContext();
 	const locale = isRTL ? `he` : `en-US`;
 	const filteredData = allProjects?.edges.filter(
 		(project) => project.node.node_locale === locale,

@@ -15,16 +15,18 @@ const ThemeTopLayout: React.FunctionComponent = ({ children }) => {
 	const selectedTheme = useMakeTheme();
 	const jss = create({
 		plugins: [...jssPreset().plugins, rtl(), extend()],
+		insertionPoint: `mui-inject-first`,
 	});
 
 	return (
-		<MuiThemeProvider theme={selectedTheme}>
-			<ThemeProvider theme={selectedTheme}>
-				<CssBaseline>
-					<StylesProvider jss={jss} injectFirst>{children}</StylesProvider>
-				</CssBaseline>
-			</ThemeProvider>
-		</MuiThemeProvider>
+		<StylesProvider jss={jss}>
+			<MuiThemeProvider theme={selectedTheme}>
+				<ThemeProvider theme={selectedTheme}>
+					<CssBaseline />
+					{children}
+				</ThemeProvider>
+			</MuiThemeProvider>
+		</StylesProvider>
 	);
 };
 
