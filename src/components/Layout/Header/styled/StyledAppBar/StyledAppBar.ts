@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 import { AppBar } from '@material-ui/core';
-import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
+import isSmDown from '../../../../../utils/isSmDown';
 
 const StyledAppBar = styled(AppBar)(({
 																			 theme,
 																		 }) => {
-	const smDown = getCustomBreakpoints(`sm`, `down`) as string;
+	const smDown = isSmDown();
 
 	return css`
     position: sticky;

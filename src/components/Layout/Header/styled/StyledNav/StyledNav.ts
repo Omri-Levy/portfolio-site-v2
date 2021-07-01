@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import { Box } from '@material-ui/core';
-import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
+import isSmDown from '../../../../../utils/isSmDown';
 
 const StyledNav = styled(Box)(({ theme }) => {
-	const smDown = getCustomBreakpoints(`sm`, `down`) as string;
+	const smDown = isSmDown();
 
 	return css`
     display: flex;

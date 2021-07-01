@@ -3,14 +3,14 @@ import { Props } from './types';
 import { Close, Menu } from '@material-ui/icons';
 import useAppContext from '../../../../context/AppProvider/useAppContext';
 import { StyledIconButton } from './styled/StyledIconButton';
-import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
+import isSmDown from '../../../../utils/isSmDown';
 
 const BurgerMenu: React.FunctionComponent<Props> = () => {
 	const { setIsBurgerMenuOpen, isBurgerMenuOpen } = useAppContext();
 	const toggleIsBurgerMenuOpen = () => {
 		setIsBurgerMenuOpen((prevState) => !prevState);
 	};
-	const smDown = getCustomBreakpoints(`sm`, `down`, true);
+	const smDown = isSmDown(true);
 
 	return (
 		<>

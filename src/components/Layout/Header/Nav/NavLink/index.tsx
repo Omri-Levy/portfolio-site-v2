@@ -18,9 +18,8 @@ const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
     text-decoration: none;
     display: grid;
     place-items: center;
-    color: inherit;
 
-    &:visited {
+    &, &:visited {
       color: inherit;
     }
 	`;

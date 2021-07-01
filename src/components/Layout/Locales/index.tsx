@@ -25,7 +25,7 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 		whoAmITitle: useTranslations(`מי אני?`, `Who am I?`),
 		whoAmISubtitle: useTranslations(
 			`היי! קוראים לי עומרי לוי, אני בן 24 מתל אביב.`,
-			`Hi! My name is Omri Levy, I\`m 24 year old from Tel-Aviv.`,
+			`Hi! My name is Omri Levy, I\'m 24 year old from Tel-Aviv.`,
 		),
 		whoAmIBody: useTranslations(
 			`התחלתי לתכנת במאי 2019, מאז אני מתכנת מהרגע שאני קם ועד` +

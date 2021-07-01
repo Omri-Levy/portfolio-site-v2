@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { IconButton } from '@material-ui/core';
 
 const StyledIconButton = styled(IconButton)(({ theme }) => {
-	const burgerDimensions = `3rem`;
+	const burgerDimensions = `2.5rem`;
 
 	return css`
     position: fixed;
@@ -13,7 +13,7 @@ const StyledIconButton = styled(IconButton)(({ theme }) => {
     z-index: 1101;
     border: 2px solid ${theme.palette.primary.main};
     font-size: ${burgerDimensions};
-    padding: ${theme.spacing(0.25)}rem;
+    padding: ${theme.spacing(0.2)}rem;
     background-color: ${theme.palette.background.default};
 
     transition: transform 240ms;

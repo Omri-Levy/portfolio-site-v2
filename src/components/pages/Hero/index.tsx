@@ -44,10 +44,9 @@ const StyledWaveFour = styled(Wave)(({ theme }) => {
 });
 const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 	return css`
-    color: inherit;
     text-decoration: none;
 
-    &:visited {
+    &, &:visited {
       color: inherit;
     }
 	`;

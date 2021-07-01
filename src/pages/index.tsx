@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import Hero from '../components/pages/Hero';
+import AboutMe from '../components/pages/AboutMe';
 
 const Home: React.FunctionComponent = () => {
 
 	return (
 		<Layout>
-			<Hero />
-			{/*<AboutMe />*/}
+			{/*<Hero />*/}
+			<AboutMe />
 			{/*<Portfolio />*/}
 			{/*<ContactMe />*/}
 		</Layout>

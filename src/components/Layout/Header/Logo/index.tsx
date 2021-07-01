@@ -4,19 +4,19 @@ import TranslateText from '../../Locales/TranslateText';
 import { StyledTypography } from './styled/StyledTypography';
 import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
+import isSmDown from '../../../../utils/isSmDown';
 
 
 const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
-	const smDown = getCustomBreakpoints(`sm`, `down`) as string;
-	const mdDown = getCustomBreakpoints(`md`, `down`) as string;
+	const smDown = isSmDown();
+	const mdDown = getCustomBreakpoints(`md`, `down`);
 
 	return css`
     display: grid;
     place-content: center;
-    color: inherit;
     text-decoration: none;
 
-    &:visited {
+    &, &:visited {
       color: inherit;
     }
 

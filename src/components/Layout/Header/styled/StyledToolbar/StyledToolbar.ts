@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import { Toolbar } from '@material-ui/core';
-import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
+import isSmDown from '../../../../../utils/isSmDown';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => {
-	const smDown = getCustomBreakpoints(`sm`, `down`) as string;
+	const smDown = isSmDown();
 
 	return css`
     display: flex;

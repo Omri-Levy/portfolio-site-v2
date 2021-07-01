@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
 import { List } from '@material-ui/core';
 import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
+import isSmDown from '../../../../../utils/isSmDown';
 
 const StyledList = styled(List)(({ theme }) => {
-	const smDown = getCustomBreakpoints(`sm`, `down`) as string;
-	const lgUp = getCustomBreakpoints(`lg`, `up`) as string;
+	const smDown = isSmDown();
+	const lgUp = getCustomBreakpoints(`lg`, `up`);
 
 
 	return css`

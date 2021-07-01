@@ -7,12 +7,12 @@ import { StyledAppBar } from './styled/StyledAppBar';
 import { StyledSpan } from './styled/StyledSpan';
 import useAppContext from '../../../context/AppProvider/useAppContext';
 import { StyledToolbar } from './styled/StyledToolbar';
-import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
+import isSmDown from '../../../utils/isSmDown';
 
 const Header: React.FunctionComponent = () => {
 	const appBarRef = useRef<HTMLElement | null>(null);
 	const { isBurgerMenuOpen } = useAppContext();
-	const smDown = getCustomBreakpoints(`sm`, `down`, true) as boolean;
+	const smDown = isSmDown(true);
 
 	return (
 		<>

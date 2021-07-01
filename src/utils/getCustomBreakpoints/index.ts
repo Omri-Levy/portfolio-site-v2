@@ -8,7 +8,7 @@ const getCustomBreakpoints = (
 	breakpoint: Breakpoint,
 	direction: Direction,
 	returnBoolean?: boolean,
-): boolean | string => {
+) => {
 	// material ui uses pixels for their breakpoints and I use em units.
 	const breakpoints = {
 		down: {

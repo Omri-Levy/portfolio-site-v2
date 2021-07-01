@@ -3,10 +3,10 @@ import { ChildrenProps } from '../../utils/types';
 import ConfigsGroup from './ConfigsGroup';
 import Header from './Header';
 import { Container } from '@material-ui/core';
-import getCustomBreakpoints from '../../utils/getCustomBreakpoints';
+import isSmDown from '../../utils/isSmDown';
 
 const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
-	const smDown = getCustomBreakpoints(`sm`, `down`);
+	const smDown = isSmDown();
 
 	return (
 		<>
