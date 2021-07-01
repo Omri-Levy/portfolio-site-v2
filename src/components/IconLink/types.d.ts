@@ -1,4 +1,5 @@
-import React, { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+import React from 'react';
+import { LinkProps } from '@material-ui/core';
 
 interface Props {
 	Icon: React.FunctionComponent;
@@ -6,7 +7,8 @@ interface Props {
 	to: string;
 	alt: string;
 	textLineHeight?: number;
-	anchorProps?: DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+	anchorProps?: LinkProps;
+	translate?: boolean;
 }
 
 export { Props };

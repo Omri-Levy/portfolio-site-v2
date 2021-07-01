@@ -20,6 +20,10 @@ const StyledTypography = styled(Typography)(({ theme }) => {
       font-size: inherit;
       margin-right: ${theme.spacing(0.03)}em;
     }
+
+    @media only screen and (max-width: 28em) {
+      font-size: 3em;
+    }
 	`;
 });
 

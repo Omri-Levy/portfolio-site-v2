@@ -19,6 +19,7 @@ const ExternalLinksContainer: React.FunctionComponent = () => {
 				anchorProps={{
 					title: `Navigate to LinkedIn`,
 				}}
+				text={`LinkedIn`}
 			/>
 			<IconLink
 				Icon={GithubBrand}
@@ -27,6 +28,7 @@ const ExternalLinksContainer: React.FunctionComponent = () => {
 				anchorProps={{
 					title: `Navigate to GitHub`,
 				}}
+				text={`GitHub`}
 			/>
 		</ButtonGroup>
 	);

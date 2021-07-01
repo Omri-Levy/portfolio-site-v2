@@ -8,6 +8,7 @@ const StyledImg = styled(`img`)(({ theme }) => {
     width: 15em;
     height: 15em;
     background-color: ${theme.palette.primary.main};
+    border: 3px solid ${theme.palette.text.primary};
 	`;
 });
 
@@ -18,7 +19,6 @@ const ProfilePic: React.FunctionComponent = () => {
 		<StyledImg
 			src={profilePic}
 			alt={`omri-levy-profile-picture`}
-
 		/>
 	);
 };

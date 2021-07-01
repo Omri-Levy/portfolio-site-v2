@@ -6,7 +6,7 @@ const StyledSpan = styled(`span`)(({ theme }) => {
     opacity: 0.1;
     width: 35%;
     margin-top: ${theme.spacing(0.15)}em;
-    height: 0.05em;
+    height: 0.1em;
     border-radius: 100vh;
     margin-inline: auto;
 	`;

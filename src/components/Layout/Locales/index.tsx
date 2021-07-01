@@ -7,9 +7,21 @@ import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 	const { isRTL } = useThemeContext();
 	const messages = {
+		// locale buttons
+		english: useTranslations(`אנגלית`, `English`),
+		hebrew: useTranslations(`עברית`, `Hebrew`),
+
+		// hero page
+		startHere: useTranslations(`התחילו כאן`, `Start Here`),
+		fullStackDevelopment: useTranslations(`פיתוח פולסטאק`, `FullStack Development`),
+		skills: useTranslations(`צד לקוח, צד שרת, אתרים סטטים, ואפליקציות`, `Front-End, Back-End, static websites, and apps`),
+		linkedIn: useTranslations(`לינקדאין`, `LinkedIn`),
+		gitHub: useTranslations(`גיטאב`, `GitHub`),
+		send: useTranslations(`שלח`, `Send`),
+
 		// page titles and links
 		portfolio: useTranslations(`תיק עבודות`, `Portfolio`),
-		aboutMe: useTranslations(`עלי`, `About Me`),
+		aboutMe: useTranslations(`אודותי`, `About Me`),
 		contactMe: useTranslations(`צרו קשר`, `Contact Me`),
 		landingPage: useTranslations(`דף נחיתה`, `Landing Page`),
 		home: useTranslations(`דף בית`, `Home Page`),

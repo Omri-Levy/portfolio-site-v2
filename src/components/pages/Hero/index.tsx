@@ -1,4 +1,4 @@
-import { Button, Typography } from '@material-ui/core';
+import { Box, Button, Typography } from '@material-ui/core';
 import { InfoOutlined, PlayCircleFilled } from '@material-ui/icons';
 import React from 'react';
 import PageContainer from '../../Layout/PageContainer';
@@ -8,6 +8,8 @@ import { colorObj } from '../../../hooks/useMakeTheme/colors';
 import Illustration from './Illustration';
 import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 import styled, { css } from 'styled-components';
+import TranslateText from '../../Layout/Locales/TranslateText';
+import isSmDown from '../../../utils/isSmDown';
 
 const StyledButton = styled(Button)(({ theme }) => {
 	return css`
@@ -51,7 +53,7 @@ const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
     }
 	`;
 });
-const StyledGridContainer = styled(`div`)(({ theme }) => {
+const StyledGridContainer = styled(Box)(({ theme }) => {
 
 	return css`
     position: relative;
@@ -63,28 +65,34 @@ const StyledGridContainer = styled(`div`)(({ theme }) => {
     }
 	`;
 });
-const StyledGridItem = styled(`div`)(({ theme }) => {
+const StyledGridItem = styled(Box)(({ theme }) => {
 	return css`
 
 	`;
 });
-const StyledIllustrationGridItem = styled(`div`)(({ theme }) => {
+const StyledIllustrationGridItem = styled(Box)(({ theme }) => {
+	const smDown = isSmDown();
+
 	return css`
     z-index: 5;
 
     svg {
       width: 100%;
       height: 599.75899px;
+
+      ${smDown} {
+        height: unset;
+      }
     }
 	`;
 });
-const StyledWavesContainer = styled(`div`)(({ theme }) => {
+const StyledWavesContainer = styled(Box)(({ theme }) => {
 	return css`
     position: absolute;
     inset: 0;
 	`;
 });
-const StyledWavesBox = styled(`div`)(({ theme }) => {
+const StyledWavesBox = styled(Box)(({ theme }) => {
 	return css`
     position: relative;
     inset: 0;
@@ -104,13 +112,13 @@ const Hero: React.FunctionComponent = () => {
 			<StyledGridContainer>
 				<StyledGridItem>
 					<Typography variant={`h2`}>
-						Omri Levy
+						<TranslateText text={`Omri Levy`} />
 					</Typography>
 					<Typography variant={`h3`}>
-						FullStack Development
+						<TranslateText text={`FullStack Development`} />
 					</Typography>
 					<Typography variant={`h4`}>
-						Front-End, Back-End, static websites, and apps
+						<TranslateText text={`skills`} />
 					</Typography>
 					<StyledButton
 						startIcon={<PlayCircleFilled />}
@@ -119,7 +127,7 @@ const Hero: React.FunctionComponent = () => {
 						size={`large`}
 					>
 						<StyledAnchorLink to={`/#about-me`}>
-							Start Here
+							<TranslateText text={`Start Here`} />
 						</StyledAnchorLink>
 					</StyledButton>
 				</StyledGridItem>

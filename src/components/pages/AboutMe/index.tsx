@@ -1,4 +1,4 @@
-import { Button, Typography } from '@material-ui/core';
+import { Box, Button, Typography } from '@material-ui/core';
 import { Description, InfoOutlined, WorkOutline } from '@material-ui/icons';
 import React from 'react';
 import TranslateText from '../../Layout/Locales/TranslateText';
@@ -10,7 +10,7 @@ import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 import isSmDown from '../../../utils/isSmDown';
 
-const StyledGridContainer = styled(`div`)(({ theme }) => {
+const StyledGridContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 
 	return css`
@@ -23,7 +23,7 @@ const StyledGridContainer = styled(`div`)(({ theme }) => {
     }
 	`;
 });
-const StyledTextContainer = styled(`div`)(({ theme }) => {
+const StyledTextContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 
 	return css`
@@ -38,7 +38,7 @@ const StyledTextContainer = styled(`div`)(({ theme }) => {
     }
 	`;
 });
-const StyledProfilePicContainer = styled(`div`)(({ theme }) => {
+const StyledProfilePicContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 
 	return css`
@@ -54,7 +54,7 @@ const StyledProfilePicContainer = styled(`div`)(({ theme }) => {
     }
 	`;
 });
-const StyledButtonsContainer = styled(`div`)(({ theme }) => {
+const StyledButtonsContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 	const smDown = isSmDown();
 
@@ -125,7 +125,7 @@ const AboutMe: React.FunctionComponent = () => {
 						color={`primary`}
 					>
 						<StyledAnchorLink to={`/#portfolio`}>
-							Portfolio
+							<TranslateText text={`Portfolio`} />
 						</StyledAnchorLink>
 					</Button>
 					<Button
@@ -134,7 +134,7 @@ const AboutMe: React.FunctionComponent = () => {
 						color={`primary`}
 						onClick={handleClick}
 					>
-						My Resume
+						<TranslateText text={`My Resume`} />
 					</Button>
 				</StyledButtonsContainer>
 			</StyledGridContainer>

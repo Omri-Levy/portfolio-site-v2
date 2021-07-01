@@ -32,7 +32,6 @@ const useMakeTheme = (): DefaultTheme => {
 						height: `100%`,
 					},
 					body: {
-						direction: isRTL ? `rtl` : `ltr`,
 						overflow: smDown && isBurgerMenuOpen ? `hidden` : `visible`,
 					},
 				},

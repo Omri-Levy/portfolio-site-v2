@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Box, Button, Grid, TextField } from '@material-ui/core';
+import { Box, Button, TextField } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import React, { FormEvent, RefObject, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -11,7 +11,50 @@ import validationSchema from '../validationSchema';
 import { FormInputs } from './types';
 import { Send } from '@material-ui/icons';
 import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
+import styled, { css } from 'styled-components';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
+const StyledGridContainer = styled(Box)(({ theme }) => {
+	const mdDown = getCustomBreakpoints(`md`, `down`);
+
+	return css`
+    grid-template-columns: minmax(53%, 500px);
+    justify-content: center;
+    display: grid;
+    gap: ${theme.spacing(0.1)}em;
+
+    ${mdDown} {
+      grid-template-columns: 1fr;
+    }
+	`;
+});
+const StyledGridItem = styled(Box)(({ theme }) => {
+	const mdDown = getCustomBreakpoints(`md`, `down`);
+
+	return css`
+
+	`;
+});
+const StyledFirstRow = styled(Box)(({ theme }) => {
+	const mdDown = getCustomBreakpoints(`md`, `down`);
+
+	return css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: ${theme.spacing(0.1)}em;
+
+    ${mdDown} {
+      grid-template-columns: 1fr;
+    }
+	`;
+});
+const StyledSubmitContainer = styled(Box)(({ theme }) => {
+	const mdDown = getCustomBreakpoints(`md`, `down`);
+
+	return css`
+    justify-self: flex-end;
+	`;
+});
 
 const ContactMeForm: React.FunctionComponent = () => {
 	const { isRTL, isDarkMode } = useThemeContext();
@@ -111,94 +154,80 @@ const ContactMeForm: React.FunctionComponent = () => {
 	};
 
 	return (
-		<Box>
-			<form
-				name={`contact`}
-				netlify-honeypot={`bot-field`}
-				data-netlify={`true`}
-				data-netlify-recaptcha={`true`}
-				id={`contact-me-form`}
-				method={`POST`}
-				onSubmit={handleSubmit(onSubmit)}
-			>
-				<input type={`hidden`} name={`form-name`} value={`contact`} />
-				<input type={`hidden`} name={`bot-field`} />
-				<noscript>
-					<p>This form won’t work with Javascript disabled</p>
-				</noscript>
-				<Grid container>
-					<Grid item>
-						<Controller
-							name={`fullName`}
-							control={control}
-							render={({ field }) => (
-								<TextField
-									variant={`outlined`}
-									label={<TranslateText text={`Full Name`} />}
-									id={`full-name`}
-									inputProps={{
-										maxLength: 70,
-									}}
-									error={!!errors.fullName}
-									helperText={errors.fullName?.message}
-									required
-									{...field}
-								/>
-							)} />
-					</Grid>
-					<Grid item>
-						<Controller
-							name={`email`}
-							control={control}
-							render={({ field }) => (
-								<TextField
-									variant={`outlined`}
-									label={<TranslateText text={`Email`} />}
-									id={`email`}
-									inputProps={{
-										maxLength: 125,
-									}}
-									error={!!errors.email}
-									helperText={errors.email?.message}
-									required
-									{...field}
-								/>
-							)} />
-					</Grid>
-				</Grid>
-				<Grid container item>
-					<Grid item>
-						<Controller
-							name={`message`}
-							control={control}
-							render={({ field }) => (
-								<TextField
-									variant={`outlined`}
-									label={<TranslateText text={`Message`} />}
-									id={`message`}
-									inputProps={{
-										maxLength: 640,
-									}}
-									error={!!errors.message}
-									helperText={errors.message?.message}
-									multiline
-									required
-									{...field}
-								/>
-							)} />
-					</Grid>
-					<Grid container item justify={`flex-end`}>
-						<Button
-							type={`submit`}
-							variant={`contained`}
-							color={`primary`}
-							disabled={isLoading}
-							startIcon={<Send />}
-						>
-							Send
-						</Button>
-					</Grid>
-					{displayAlert && (
+		<form
+			name={`contact`}
+			netlify-honeypot={`bot-field`}
+			data-netlify={`true`}
+			data-netlify-recaptcha={`true`}
+			id={`contact-me-form`}
+			method={`POST`}
+			onSubmit={handleSubmit(onSubmit)}
+		>
+			<input type={`hidden`} name={`form-name`} value={`contact`} />
+			<input type={`hidden`} name={`bot-field`} />
+			<noscript>
+				<p>This form won’t work with Javascript disabled</p>
+			</noscript>
+			<StyledGridContainer>
+				<StyledFirstRow>
+					<Controller
+						name={`fullName`}
+						control={control}
+						render={({ field }) => (
+							<TextField
+								variant={`outlined`}
+								label={<TranslateText text={`Full Name`} />}
+								id={`full-name`}
+								inputProps={{
+									maxLength: 70,
+								}}
+								error={!!errors.fullName}
+								helperText={errors.fullName?.message}
+								required
+								{...field}
+							/>
+						)} />
+					<Controller
+						name={`email`}
+						control={control}
+						render={({ field }) => (
+							<TextField
+								variant={`outlined`}
+								label={<TranslateText text={`Email`} />}
+								id={`email`}
+								inputProps={{
+									maxLength: 125,
+								}}
+								error={!!errors.email}
+								helperText={errors.email?.message}
+								required
+								{...field}
+							/>
+						)} />
+				</StyledFirstRow>
+				<StyledGridItem>
+					<Controller
+						name={`message`}
+						control={control}
+						render={({ field }) => (
+							<TextField
+								variant={`outlined`}
+								label={<TranslateText text={`Message`} />}
+								id={`message`}
+								inputProps={{
+									maxLength: 640,
+								}}
+								fullWidth
+								error={!!errors.message}
+								helperText={errors.message?.message}
+								multiline
+								required
+								{...field}
+							/>
+						)} />
+				</StyledGridItem>
+				{displayAlert && (
+					<StyledGridItem>
 						<Alert
 							variant={`outlined`}
 							severity={alertSeverity}
@@ -206,17 +235,30 @@ const ContactMeForm: React.FunctionComponent = () => {
 						>
 							{alertMessage}
 						</Alert>
-					)}
-				</Grid>
-				<ReCAPTCHA
-					ref={recaptcha as RefObject<ReCAPTCHA>}
-					sitekey={process.env.SITE_RECAPTCHA_KEY || ``}
-					theme={isDarkMode ? `dark` : `light`}
-					hl={isRTL ? `iw` : `en`}
-					onChange={handleChange}
-				/>
-			</form>
-		</Box>
+					</StyledGridItem>
+				)}
+				<StyledGridItem>
+					<ReCAPTCHA
+						ref={recaptcha as RefObject<ReCAPTCHA>}
+						sitekey={process.env.SITE_RECAPTCHA_KEY || ``}
+						theme={isDarkMode ? `dark` : `light`}
+						hl={isRTL ? `iw` : `en`}
+						onChange={handleChange}
+					/>
+				</StyledGridItem>
+				<StyledSubmitContainer>
+					<Button
+						type={`submit`}
+						variant={`contained`}
+						color={`primary`}
+						disabled={isLoading}
+						startIcon={<Send />}
+					>
+						<TranslateText text={`Send`} />
+					</Button>
+				</StyledSubmitContainer>
+			</StyledGridContainer>
+		</form>
 	);
 };
 

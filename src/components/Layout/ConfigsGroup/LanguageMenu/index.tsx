@@ -1,8 +1,9 @@
-import { IconButton, Menu, MenuItem, Typography } from '@material-ui/core';
+import { IconButton, Menu, MenuItem } from '@material-ui/core';
 import { LanguageOutlined } from '@material-ui/icons';
 import React, { useState } from 'react';
 import { AnchorOrButtonEvent, EventCurrentTarget } from './types';
 import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
+import TranslateText from '../../Locales/TranslateText';
 
 
 const LanguageMenu: React.FunctionComponent = () => {
@@ -44,14 +45,14 @@ const LanguageMenu: React.FunctionComponent = () => {
 					aria-labelledby={`language-menu english`}
 					onClick={handleIsRTL(false)}
 				>
-					<Typography id={`english`}>English</Typography>
+					<TranslateText text={`English`} />
 				</MenuItem>
 				<MenuItem
 
 					aria-labelledby={`language-menu hebrew`}
 					onClick={handleIsRTL(true)}
 				>
-					<Typography id={`hebrew`}>Hebrew</Typography>
+					<TranslateText text={`Hebrew`} />
 				</MenuItem>
 			</Menu>
 		</>

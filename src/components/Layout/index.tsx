@@ -3,20 +3,25 @@ import { ChildrenProps } from '../../utils/types';
 import ConfigsGroup from './ConfigsGroup';
 import Header from './Header';
 import { Container } from '@material-ui/core';
-import isSmDown from '../../utils/isSmDown';
+import './cursor.css';
+import styled, { css } from 'styled-components';
+
+const StyledContainer = styled(`div`)(({ theme }) => {
+	return css`
+    direction: ${theme.direction};
+	`;
+});
 
 const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
-	const smDown = isSmDown();
 
 	return (
-		<>
+		<StyledContainer>
 			<Header />
 			<Container component={`main`}>
-				{!smDown && <ConfigsGroup />}
+				<ConfigsGroup />
 				{children}
 			</Container>
-			{smDown && <ConfigsGroup />}
-		</>
+		</StyledContainer>
 	);
 };
 
