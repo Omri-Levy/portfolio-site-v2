@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { InfoOutlined, PlayCircleFilled } from '@material-ui/icons';
 import React from 'react';
 import PageContainer from '../../Layout/PageContainer';
@@ -7,7 +7,90 @@ import Wave from './Wave';
 import { colorObj } from '../../../hooks/useMakeTheme/colors';
 import Illustration from './Illustration';
 import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
+import styled, { css } from 'styled-components';
 
+const StyledButton = styled(Button)(({ theme }) => {
+	return css`
+    margin-top: ${theme.spacing(0.3)}em;
+	`;
+});
+const StyledWaveOne = styled(Wave)(({ theme }) => {
+	return css`
+    position: absolute;
+    bottom: 50em;
+    z-index: 1;
+	`;
+});
+const StyledWaveTwo = styled(Wave)(({ theme }) => {
+	return css`
+    z-index: 2;
+    position: absolute;
+    bottom: 50em;
+	`;
+});
+const StyledWaveThree = styled(Wave)(({ theme }) => {
+	return css`
+    z-index: 3;
+    position: absolute;
+    bottom: 20em;
+	`;
+});
+const StyledWaveFour = styled(Wave)(({ theme }) => {
+	return css`
+    z-index: 4;
+    bottom: -50em;
+    position: absolute;
+	`;
+});
+const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
+	return css`
+    color: inherit;
+    text-decoration: none;
+
+    &:visited {
+      color: inherit;
+    }
+	`;
+});
+const StyledGridContainer = styled(`div`)(({ theme }) => {
+
+	return css`
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 649px;
+
+    @media only screen and (max-width: 62em) {
+      grid-template-columns: 1fr;
+    }
+	`;
+});
+const StyledGridItem = styled(`div`)(({ theme }) => {
+	return css`
+
+	`;
+});
+const StyledIllustrationGridItem = styled(`div`)(({ theme }) => {
+	return css`
+    z-index: 5;
+
+    svg {
+      width: 100%;
+      height: 599.75899px;
+    }
+	`;
+});
+const StyledWavesContainer = styled(`div`)(({ theme }) => {
+	return css`
+    position: absolute;
+    inset: 0;
+	`;
+});
+const StyledWavesBox = styled(`div`)(({ theme }) => {
+	return css`
+    position: relative;
+    inset: 0;
+	`;
+});
 const Hero: React.FunctionComponent = () => {
 	const { primaryColor, isDarkMode } = useThemeContext();
 	const colors1 = colorObj(isDarkMode ? 300 : 600);
@@ -19,10 +102,8 @@ const Hero: React.FunctionComponent = () => {
 
 	return (
 		<PageContainer id={`hero`} Icon={InfoOutlined} text={``}>
-			<Grid container direction={`row`} style={{
-				position: `relative`,
-			}}>
-				<Grid item xs={`auto`}>
+			<StyledGridContainer>
+				<StyledGridItem>
 					<Typography variant={`h2`}>
 						Omri Levy
 					</Typography>
@@ -32,75 +113,29 @@ const Hero: React.FunctionComponent = () => {
 					<Typography variant={`h4`}>
 						Front-End, Back-End, static websites, and apps
 					</Typography>
-					<Button
+					<StyledButton
 						startIcon={<PlayCircleFilled />}
 						variant={`contained`}
 						color={`primary`}
 						size={`large`}
-						style={{
-							marginTop: 20,
-						}}
 					>
-						<AnchorLink to={`/#about-me`} gatsbyLinkProps={{
-							style: {
-								color: `inherit`,
-								textDecoration: `none`,
-								'&:visited': {
-									color: `inherit`,
-								},
-							},
-						}}>
+						<StyledAnchorLink to={`/#about-me`}>
 							Start Here
-						</AnchorLink>
-					</Button>
-				</Grid>
-				<Grid item xs={1} style={{
-					position: `absolute`,
-					right: `30%`,
-					zIndex: 1,
-				}}>
+						</StyledAnchorLink>
+					</StyledButton>
+				</StyledGridItem>
+				<StyledIllustrationGridItem>
 					<Illustration color={primaryColor.colorWithShade} />
-				</Grid>
-			</Grid>
-			<div style={{
-				position: `absolute`,
-				bottom: 400,
-				left: 0,
-				right: 0,
-			}}>
-				<div style={{
-					position: `relative`,
-				}}>
-					<Wave
-						color={color1}
-						style={{
-							position: `absolute`,
-							bottom: `-370px`,
-						}}
-					/>
-					<Wave
-						color={color2}
-						style={{
-							bottom: `-410px`,
-							position: `absolute`,
-						}}
-					/>
-					<Wave
-						color={color3}
-						style={{
-							bottom: `-500px`,
-							position: `absolute`,
-						}}
-					/>
-					<Wave
-						color={primaryColor.colorWithShade}
-						style={{
-							bottom: `-600px`,
-							position: `absolute`,
-						}}
-					/>
-				</div>
-			</div>
+				</StyledIllustrationGridItem>
+				{/*<StyledWavesContainer>*/}
+				{/*	<StyledWavesBox>*/}
+				{/*		<StyledWaveOne color={color1} />*/}
+				{/*		<StyledWaveTwo color={color2} />*/}
+				{/*		<StyledWaveThree color={color3} />*/}
+				{/*		<StyledWaveFour color={primaryColor.colorWithShade} />*/}
+				{/*	</StyledWavesBox>*/}
+				{/*</StyledWavesContainer>*/}
+			</StyledGridContainer>
 		</PageContainer>
 	);
 };

@@ -1,25 +1,28 @@
 import React from 'react';
 import { Props } from './types';
-import { Menu } from '@material-ui/icons';
+import { Close, Menu } from '@material-ui/icons';
 import useAppContext from '../../../../context/AppProvider/useAppContext';
 import { StyledIconButton } from './styled/StyledIconButton';
-import { Theme, useMediaQuery } from '@material-ui/core';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const BurgerMenu: React.FunctionComponent<Props> = () => {
-	const { setIsBurgerMenuOpen } = useAppContext();
+	const { setIsBurgerMenuOpen, isBurgerMenuOpen } = useAppContext();
 	const toggleIsBurgerMenuOpen = () => {
 		setIsBurgerMenuOpen((prevState) => !prevState);
 	};
-	const notMobile = useMediaQuery((theme: Theme) => theme.breakpoints.up(`sm`));
+	const smDown = getCustomBreakpoints(`sm`, `down`, true);
 
 	return (
 		<>
-			{!notMobile && (
+			{smDown && (
 				<StyledIconButton
 					color={`primary`}
 					onClick={toggleIsBurgerMenuOpen}
 				>
-					<Menu fontSize={`inherit`} />
+					{isBurgerMenuOpen
+						? <Close fontSize={`inherit`} />
+						: <Menu fontSize={`inherit`} />
+					}
 				</StyledIconButton>
 			)}
 		</>

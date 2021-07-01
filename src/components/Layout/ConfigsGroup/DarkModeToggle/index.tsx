@@ -1,10 +1,19 @@
-import { Box, Switch } from '@material-ui/core';
+import { Switch } from '@material-ui/core';
 import { Brightness2Outlined, WbSunnyOutlined } from '@material-ui/icons';
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../../../context/ThemeProvider';
 import { shadedPrimaryColor } from '../../../../hooks/useMakeTheme/colors';
 import { ThemeColors } from '../../../../context/ThemeProvider/types';
+import styled, { css } from 'styled-components';
 
+const StyledLabel = styled(`label`)(({ theme }) => {
+
+	return css`
+    display: flex;
+    align-items: center;
+    margin-left: ${theme.spacing(0.05)}em;
+	`;
+});
 
 const DarkModeToggle: React.FunctionComponent = () => {
 	const { isDarkMode, setIsDarkMode, setPrimaryColor } = useContext(
@@ -33,20 +42,18 @@ const DarkModeToggle: React.FunctionComponent = () => {
 	};
 
 	return (
-		<Box>
-			<label>
-				{isDarkMode ? (
-					<Brightness2Outlined />
-				) : (
-					<WbSunnyOutlined />
-				)}
-				<Switch
-					onChange={handleChange}
-					checked={isDarkMode}
-					inputProps={{ 'aria-label': `dark-mode-toggle` }}
-				/>
-			</label>
-		</Box>
+		<StyledLabel>
+			{isDarkMode ? (
+				<Brightness2Outlined />
+			) : (
+				<WbSunnyOutlined />
+			)}
+			<Switch
+				onChange={handleChange}
+				checked={isDarkMode}
+				inputProps={{ 'aria-label': `dark-mode-toggle` }}
+			/>
+		</StyledLabel>
 	);
 };
 

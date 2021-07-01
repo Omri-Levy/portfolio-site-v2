@@ -10,7 +10,7 @@ const PageTitle: React.FunctionComponent<Props> = ({ Icon, text }) => {
 	return (
 		<header>
 			{Icon && <Icon />}
-			<Typography>
+			<Typography variant={`h1`}>
 				<TranslateText text={text} />
 			</Typography>
 		</header>

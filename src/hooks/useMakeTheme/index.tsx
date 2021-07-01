@@ -13,7 +13,7 @@ import useAppContext from '../../context/AppProvider/useAppContext';
 const useMakeTheme = (): DefaultTheme => {
 	const { isDarkMode, primaryColor, isRTL } = useThemeContext();
 	const { isBurgerMenuOpen } = useAppContext();
-	const smDown = useMediaQuery(`(max-width: 960px)`);
+	const smDown = useMediaQuery(`(max-width: 60em)`);
 	generateThemeFavicon();
 	const theme: DefaultTheme = {
 		direction: isRTL ? `rtl` : `ltr`,
@@ -46,6 +46,13 @@ const useMakeTheme = (): DefaultTheme => {
 				},
 				multiline: {
 					backgroundColor: grey[isDarkMode ? 800 : 100],
+				},
+			},
+			MuiIconButton: {
+				colorPrimary: {
+					'&:hover': {
+						backgroundColor: `unset`,
+					},
 				},
 			},
 		},

@@ -1,23 +1,22 @@
 import React from 'react';
 import PageTitle from './PageTitle';
 import { Props } from './types';
+import { StyledSection } from './styled/StyledSection';
 
 
 const PageContainer: React.FunctionComponent<Props> = ({
 																												 Icon,
 																												 text,
 																												 ...props
-																											 }) => (
-	<section
-		style={{
-			height: `100vh`,
-			marginTop: 140,
-		}}
-		{...props}
-	>
-		{text && <PageTitle Icon={Icon} text={text} />}
-		{props.children}
-	</section>
-);
+																											 }) => {
+
+
+	return (
+		<StyledSection{...props}>
+			{text && <PageTitle Icon={Icon} text={text} />}
+			{props.children}
+		</StyledSection>
+	);
+};
 
 export default PageContainer;

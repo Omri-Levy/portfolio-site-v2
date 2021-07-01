@@ -1,18 +1,19 @@
 import styled, { css } from 'styled-components';
 import { Box } from '@material-ui/core';
+import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
 
 const StyledNav = styled(Box)(({ theme }) => {
-	const notMobile = theme.breakpoints.up(`sm`);
+	const smDown = getCustomBreakpoints(`sm`, `down`) as string;
 
 	return css`
-    display: grid;
-    height: 100%;
+    display: flex;
+    height: unset;
+    flex-grow: 1;
+    justify-content: center;
 
-    ${notMobile} {
-      display: flex;
-      height: unset;
-      flex-grow: 1;
-      justify-content: center;
+    ${smDown} {
+      display: grid;
+      height: 100%;
     }
 	`;
 });

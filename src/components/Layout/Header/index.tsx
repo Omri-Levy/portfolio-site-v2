@@ -1,4 +1,4 @@
-import { Fade, Theme, useMediaQuery } from '@material-ui/core';
+import { Fade } from '@material-ui/core';
 import React, { useRef } from 'react';
 import BurgerMenu from './BurgerMenu';
 import Logo from './Logo';
@@ -7,25 +7,26 @@ import { StyledAppBar } from './styled/StyledAppBar';
 import { StyledSpan } from './styled/StyledSpan';
 import useAppContext from '../../../context/AppProvider/useAppContext';
 import { StyledToolbar } from './styled/StyledToolbar';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const Header: React.FunctionComponent = () => {
 	const appBarRef = useRef<HTMLElement | null>(null);
 	const { isBurgerMenuOpen } = useAppContext();
-	const notMobile = useMediaQuery((theme: Theme) => theme.breakpoints.up(`sm`));
+	const smDown = getCustomBreakpoints(`sm`, `down`, true) as boolean;
 
 	return (
 		<>
-			<Fade in={(isBurgerMenuOpen && !notMobile) || notMobile}>
+			<Fade in={(isBurgerMenuOpen && smDown) || !smDown}>
 				<StyledAppBar
 					ref={appBarRef}
 					color={`default`}
 				>
 					<StyledToolbar>
 						<Logo />
-						{!notMobile && <StyledSpan />}
+						{smDown && <StyledSpan />}
 						<Nav />
 					</StyledToolbar>
-					{notMobile && <StyledSpan />}
+					{!smDown && <StyledSpan />}
 				</StyledAppBar>
 			</Fade>
 			<BurgerMenu />

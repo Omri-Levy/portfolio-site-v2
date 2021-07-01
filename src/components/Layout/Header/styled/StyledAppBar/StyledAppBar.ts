@@ -1,20 +1,21 @@
 import styled, { css } from 'styled-components';
 import { AppBar } from '@material-ui/core';
+import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
 
 const StyledAppBar = styled(AppBar)(({
 																			 theme,
 																		 }) => {
-	const notMobile = theme.breakpoints.up(`sm`);
+	const smDown = getCustomBreakpoints(`sm`, `down`) as string;
 
 	return css`
-    box-shadow: none;
+    position: sticky;
+    bottom: unset;
     background-color: ${theme.palette.background.default};
-    position: fixed;
-    bottom: 0;
+    box-shadow: none;
 
-    ${notMobile} {
-      position: sticky;
-      bottom: unset;
+    ${smDown} {
+      position: fixed;
+      bottom: 0;
     }
 	`;
 });
