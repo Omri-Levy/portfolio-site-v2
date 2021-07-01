@@ -5,6 +5,7 @@ import { ThemeContext } from '../../../../context/ThemeProvider';
 import { shadedPrimaryColor } from '../../../../hooks/useMakeTheme/colors';
 import { ThemeColors } from '../../../../context/ThemeProvider/types';
 import styled, { css } from 'styled-components';
+import Color from 'color';
 
 const StyledLabel = styled(`label`)(({ theme }) => {
 
@@ -12,6 +13,30 @@ const StyledLabel = styled(`label`)(({ theme }) => {
     display: flex;
     align-items: center;
     margin-left: ${theme.spacing(0.05)}em;
+	`;
+});
+const StyledSwitch = styled(Switch)(({ theme }) => {
+	const rgbPrimaryColor = new Color(theme.palette.primary.main);
+	const lightMode = rgbPrimaryColor.alpha(0.5).string();
+	const darkMode = rgbPrimaryColor.alpha(0.3).string();
+
+	return css`
+    .MuiSwitch-track, .MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+      background-color: ${theme.palette.primary.main};
+      opacity: 1;
+    }
+
+    .MuiSwitch-thumb {
+      background-color: ${theme.palette.text.primary};
+    }
+
+    .MuiSwitch-colorPrimary.Mui-checked:hover {
+      background-color: ${darkMode};
+    }
+
+    .MuiIconButton-root:hover {
+      background-color: ${lightMode};
+    }
 	`;
 });
 
@@ -48,7 +73,8 @@ const DarkModeToggle: React.FunctionComponent = () => {
 			) : (
 				<WbSunnyOutlined />
 			)}
-			<Switch
+			<StyledSwitch
+				color={`primary`}
 				onChange={handleChange}
 				checked={isDarkMode}
 				inputProps={{ 'aria-label': `dark-mode-toggle` }}

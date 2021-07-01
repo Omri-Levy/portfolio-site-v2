@@ -43,6 +43,7 @@ const StyledConfigContainer = styled(Card)(({ theme }) => {
 const StyledDiv = styled(`div`)(({ theme }) => {
 
 	return css`
+    z-index: 5;
     position: fixed;
     bottom: ${configDimensions};
     left: ${configDimensions};

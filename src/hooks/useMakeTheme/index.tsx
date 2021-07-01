@@ -9,11 +9,13 @@ import generateThemeFavicon from '../../utils/generateThemeFavicon';
 import { grey } from '@material-ui/core/colors';
 import useThemeContext from '../../context/ThemeProvider/useThemeContext';
 import useAppContext from '../../context/AppProvider/useAppContext';
+import Color from 'color';
 
 const useMakeTheme = (): DefaultTheme => {
 	const { isDarkMode, primaryColor, isRTL } = useThemeContext();
 	const { isBurgerMenuOpen } = useAppContext();
 	const smDown = useMediaQuery(`(max-width: 60em)`);
+	const color = new Color(primaryColor.colorWithShade).alpha(0.5).string();
 	generateThemeFavicon();
 	const theme: DefaultTheme = {
 		direction: isRTL ? `rtl` : `ltr`,
@@ -49,9 +51,9 @@ const useMakeTheme = (): DefaultTheme => {
 				},
 			},
 			MuiIconButton: {
-				colorPrimary: {
+				root: {
 					'&:hover': {
-						backgroundColor: `unset`,
+						backgroundColor: color,
 					},
 				},
 			},
