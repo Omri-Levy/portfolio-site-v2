@@ -2,9 +2,9 @@ import React from 'react';
 import { ChildrenProps } from '../../utils/types';
 import ConfigsGroup from './ConfigsGroup';
 import Header from './Header';
-import { Container } from '@material-ui/core';
 import './cursor.css';
 import styled, { css } from 'styled-components';
+import { Container } from '@material-ui/core';
 
 const StyledWrapper = styled(`div`)(({ theme }) => {
 	return css`

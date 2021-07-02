@@ -3,7 +3,6 @@ import PageTitle from './PageTitle';
 import { Props } from './types';
 import { StyledSection } from './styled/StyledSection';
 
-
 const PageContainer: React.FunctionComponent<Props> = ({
 																												 Icon,
 																												 text,
@@ -12,7 +11,8 @@ const PageContainer: React.FunctionComponent<Props> = ({
 
 
 	return (
-		<StyledSection{...props}>
+		<StyledSection {...props}>
+
 			{text && <PageTitle Icon={Icon} text={text} />}
 			{props.children}
 		</StyledSection>

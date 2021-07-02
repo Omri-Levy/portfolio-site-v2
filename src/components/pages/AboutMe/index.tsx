@@ -4,11 +4,11 @@ import React from 'react';
 import TranslateText from '../../Layout/Locales/TranslateText';
 import PageContainer from '../../Layout/PageContainer';
 import ProfilePic from './ProfilePic';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import resume from './resume.pdf';
 import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 import isSmDown from '../../../utils/isSmDown';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
 
 const StyledGridContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
@@ -82,7 +82,7 @@ const StyledButtonsContainer = styled(Box)(({ theme }) => {
     }
 	`;
 });
-const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
+const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
 	return css`
     text-decoration: none;
 

@@ -34,6 +34,9 @@ const useMakeTheme = (): DefaultTheme => {
 					body: {
 						overflow: smDown && isBurgerMenuOpen ? `hidden` : `visible`,
 					},
+					'html, body': {
+						scrollBehavior: `smooth`,
+					},
 				},
 			},
 			MuiOutlinedInput: {

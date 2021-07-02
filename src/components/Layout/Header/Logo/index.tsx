@@ -1,13 +1,13 @@
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 import TranslateText from '../../Locales/TranslateText';
 import { StyledTypography } from './styled/StyledTypography';
 import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 import isSmDown from '../../../../utils/isSmDown';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
 
 
-const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
+const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
 	const smDown = isSmDown();
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 

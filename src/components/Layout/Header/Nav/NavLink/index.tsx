@@ -1,9 +1,9 @@
 import { ListItem } from '@material-ui/core';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 import TranslateText from '../../../Locales/TranslateText';
 import { Props } from './types';
 import styled, { css } from 'styled-components';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
 
 
 const StyledListItem = styled(ListItem)(({ theme }) => {
@@ -13,14 +13,21 @@ const StyledListItem = styled(ListItem)(({ theme }) => {
     width: unset;
 	`;
 });
-const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
+const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
 	return css`
     text-decoration: none;
     display: grid;
     place-items: center;
 
+
     &, &:visited {
-      color: inherit;
+      &:not(.active) {
+        color: inherit;
+      }
+    }
+
+    &.active, &.active:visited {
+      color: ${theme.palette.primary.main}
     }
 	`;
 });

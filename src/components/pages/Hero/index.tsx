@@ -2,7 +2,6 @@ import { Box, Button, Typography } from '@material-ui/core';
 import { InfoOutlined, PlayCircleFilled } from '@material-ui/icons';
 import React from 'react';
 import PageContainer from '../../Layout/PageContainer';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import Wave from './Wave';
 import { colorObj } from '../../../hooks/useMakeTheme/colors';
 import Illustration from './Illustration';
@@ -10,6 +9,7 @@ import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 import styled, { css } from 'styled-components';
 import TranslateText from '../../Layout/Locales/TranslateText';
 import isSmDown from '../../../utils/isSmDown';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
 
 const StyledButton = styled(Button)(({ theme }) => {
 	return css`
@@ -44,7 +44,7 @@ const StyledWaveFour = styled(Wave)(({ theme }) => {
     position: absolute;
 	`;
 });
-const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
+const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
 	return css`
     text-decoration: none;
 

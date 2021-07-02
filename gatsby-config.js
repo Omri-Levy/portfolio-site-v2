@@ -12,12 +12,6 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
-			resolve: `gatsby-plugin-anchor-links`,
-			options: {
-				offset: -200,
-			},
-		},
-		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `Omri Levy - Portfolio site`,
