@@ -86,8 +86,11 @@ const ContactMeForm: React.FunctionComponent = () => {
 	};
 	const handleChange = () => setIsRobot(false);
 	const onCooldown = () => {
-		const isOnCooldown =
-			JSON.parse(localStorage.getItem(`ec`) as string) || false;
+		let isOnCooldown = localStorage.getItem(`ec`);
+
+		if (typeof isOnCooldown == `string`) {
+			isOnCooldown = JSON.parse(isOnCooldown);
+		}
 
 		if (isOnCooldown) {
 			setDisplayAlert(true);

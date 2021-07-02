@@ -17,8 +17,12 @@ const generateThemeFavicon = (): boolean => {
 	}
 
 	const { edges } = icons;
-	const isDarkMode =
-		JSON.parse(localStorage.getItem(`isDarkMode`) as string) || true;
+	let isDarkMode = localStorage.getItem(`isDarkMode`) || false;
+
+	if (typeof isDarkMode === `string`) {
+		isDarkMode = JSON.parse(isDarkMode);
+	}
+
 	const primaryColor = localStorage.getItem(`primaryColor`) || `blue`;
 	const mode = isDarkMode ? `dark` : `light`;
 	const colorMode = camelCase(`${mode}-${primaryColor}`);

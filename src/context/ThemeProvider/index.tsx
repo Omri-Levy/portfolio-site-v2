@@ -20,7 +20,12 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 		}
 
 		if (windowLoaded) {
-			const mode = JSON.parse(localStorage.getItem(`isDarkMode`) || ``);
+			let mode = localStorage.getItem(`isDarkMode`) || false;
+
+			if (typeof mode === `string`) {
+				mode = JSON.parse(mode) as boolean;
+			}
+
 			const colors = shadedPrimaryColor(mode);
 			const color = localStorage.getItem(`primaryColor`) as ThemeColors;
 
@@ -42,7 +47,11 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 			});
 			setIsRTL(
 				() => {
-					const rtl = JSON.parse(localStorage.getItem(`isRTL`) as string);
+					let rtl = localStorage.getItem(`isRTL`) || false;
+
+					if (typeof rtl === `string`) {
+						rtl = JSON.parse(rtl) as boolean;
+					}
 
 					if (!rtl) {
 						localStorage.setItem(`isRTL`, JSON.stringify(false));

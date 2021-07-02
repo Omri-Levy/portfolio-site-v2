@@ -6,7 +6,7 @@ import { Container } from '@material-ui/core';
 import './cursor.css';
 import styled, { css } from 'styled-components';
 
-const StyledContainer = styled(`div`)(({ theme }) => {
+const StyledWrapper = styled(`div`)(({ theme }) => {
 	return css`
     direction: ${theme.direction};
 	`;
@@ -15,13 +15,13 @@ const StyledContainer = styled(`div`)(({ theme }) => {
 const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 
 	return (
-		<StyledContainer>
+		<StyledWrapper>
 			<Header />
 			<Container component={`main`}>
 				<ConfigsGroup />
 				{children}
 			</Container>
-		</StyledContainer>
+		</StyledWrapper>
 	);
 };
 

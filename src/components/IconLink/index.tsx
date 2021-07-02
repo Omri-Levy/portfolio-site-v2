@@ -31,6 +31,7 @@ const IconLink: React.FunctionComponent<Props> = ({
 		<StyledIconLink
 			href={to}
 			target={`_blank`}
+			rel='noopener'
 			aria-label={alt}
 			{...anchorProps}
 		>

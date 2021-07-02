@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import ContactMe from '../components/pages/ContactMe';
 import Hero from '../components/pages/Hero';
 import AboutMe from '../components/pages/AboutMe';
+import Portfolio from '../components/pages/Portfolio';
 
 const Home: React.FunctionComponent = () => {
 
@@ -10,8 +11,8 @@ const Home: React.FunctionComponent = () => {
 		<Layout>
 			<Hero />
 			<AboutMe />
-			{/*<Portfolio />*/}
 			<ContactMe />
+			<Portfolio />
 		</Layout>
 	);
 };
