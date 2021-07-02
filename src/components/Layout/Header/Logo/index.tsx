@@ -4,10 +4,10 @@ import { StyledTypography } from './styled/StyledTypography';
 import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 import isSmDown from '../../../../utils/isSmDown';
-import { GatsbyLink } from 'gatsby-theme-material-ui';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 
-const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
+const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 	const smDown = isSmDown();
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 

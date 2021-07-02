@@ -9,7 +9,7 @@ import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 import styled, { css } from 'styled-components';
 import TranslateText from '../../Layout/Locales/TranslateText';
 import isSmDown from '../../../utils/isSmDown';
-import { GatsbyLink } from 'gatsby-theme-material-ui';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const StyledButton = styled(Button)(({ theme }) => {
 	return css`
@@ -44,7 +44,7 @@ const StyledWaveFour = styled(Wave)(({ theme }) => {
     position: absolute;
 	`;
 });
-const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
+const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 	return css`
     text-decoration: none;
 

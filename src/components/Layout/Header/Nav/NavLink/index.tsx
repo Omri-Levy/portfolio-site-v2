@@ -3,7 +3,7 @@ import React from 'react';
 import TranslateText from '../../../Locales/TranslateText';
 import { Props } from './types';
 import styled, { css } from 'styled-components';
-import { GatsbyLink } from 'gatsby-theme-material-ui';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 
 const StyledListItem = styled(ListItem)(({ theme }) => {
@@ -13,7 +13,7 @@ const StyledListItem = styled(ListItem)(({ theme }) => {
     width: unset;
 	`;
 });
-const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
+const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 	return css`
     text-decoration: none;
     display: grid;

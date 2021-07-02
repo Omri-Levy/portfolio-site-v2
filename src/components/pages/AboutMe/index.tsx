@@ -8,7 +8,7 @@ import resume from './resume.pdf';
 import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 import isSmDown from '../../../utils/isSmDown';
-import { GatsbyLink } from 'gatsby-theme-material-ui';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const StyledGridContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
@@ -82,7 +82,7 @@ const StyledButtonsContainer = styled(Box)(({ theme }) => {
     }
 	`;
 });
-const StyledAnchorLink = styled(GatsbyLink)(({ theme }) => {
+const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 	return css`
     text-decoration: none;
 
