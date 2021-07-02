@@ -14,6 +14,7 @@ const StyledWrapper = styled(motion.div)(({ theme }) => {
 });
 const StyledContainer = styled(Container)(({ theme }) => {
 	return css`
+    height: 100%;
 	`;
 });
 

@@ -11,6 +11,7 @@ import TranslateText from '../../Layout/Locales/TranslateText';
 import isSmDown from '../../../utils/isSmDown';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { motion } from 'framer-motion';
+import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 
 const StyledButton = styled(Button)(({ theme }) => {
 	return css`
@@ -55,6 +56,7 @@ const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 	`;
 });
 const StyledGridContainer = styled(Box)(({ theme }) => {
+	const mdDown = getCustomBreakpoints(`md`, `down`);
 
 	return css`
     display: grid;
@@ -62,6 +64,10 @@ const StyledGridContainer = styled(Box)(({ theme }) => {
 
     @media only screen and (max-width: 62em) {
       grid-template-columns: 1fr;
+    }
+
+    ${mdDown} {
+      margin-top: ${theme.spacing(1)}em;
     }
 	`;
 });

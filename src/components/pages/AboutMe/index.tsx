@@ -33,6 +33,7 @@ const StyledTextContainer = styled(Box)(({ theme }) => {
 
     ${mdDown} {
       order: initial;
+      justify-self: center;
     }
 
     h1 {

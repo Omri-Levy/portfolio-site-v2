@@ -12,9 +12,15 @@ const useMakeTheme = (): DefaultTheme => {
 	const { isBurgerMenuOpen } = useAppContext();
 	const smDown = isSmDown();
 	generateThemeFavicon();
+	const background = isDarkMode ? {
+		background: {
+			default: grey[900],
+		},
+	} : {};
 	const theme: DefaultTheme = {
 		direction: isRTL ? `rtl` : `ltr`,
 		palette: {
+			...background,
 			type: isDarkMode ? `dark` : `light`,
 			primary: {
 				main: primaryColor.colorWithShade,
@@ -39,7 +45,7 @@ const useMakeTheme = (): DefaultTheme => {
 					},
 
 					'*::-webkit-scrollbar-track': {
-						background: grey[isDarkMode ? 900 : 300],
+						background: grey[isDarkMode ? 800 : 300],
 					},
 
 					'*::-webkit-scrollbar-thumb': {

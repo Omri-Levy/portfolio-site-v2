@@ -1,11 +1,11 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {
+	Button,
 	Card,
 	CardActionArea,
 	CardActions,
 	CardContent,
 	CardMedia,
-	Link,
 	Typography,
 } from '@material-ui/core';
 import { kebabCase } from 'lodash';
@@ -26,10 +26,22 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => {
     aspect-ratio: 16 / 9;
 	`;
 });
+const StyledCardActionArea = styled(CardActionArea)(({ theme }) => {
+
+	return css`
+
+	`;
+});
 const StyledCardContent = styled(CardContent)(({ theme }) => {
 
 	return css`
-    flex-grow: 1;
+
+	`;
+});
+const StyledCardActions = styled(CardActions)(({ theme }) => {
+
+	return css`
+
 	`;
 });
 
@@ -39,8 +51,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const intl = useIntl();
 
 	return (
-		<StyledCard>
-			<CardActionArea>
+		<StyledCard elevation={6}>
+			<StyledCardActionArea>
 				<StyledCardMedia
 					// @ts-ignore
 					component={`img`}
@@ -53,25 +65,29 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 					})}`}
 				/>
 				<StyledCardContent>
-					<Typography variant={`h2`}>
+					<Typography gutterBottom variant={`h5`} component={`h2`}>
 						{props.title}
 					</Typography>
 					{projectsNotEmpty &&
 					documentToReactComponents(props.body, props.options)}
 				</StyledCardContent>
-				<CardActions>
-					<Link
+				<StyledCardActions>
+					<Button
 						href={props.liveSiteUrl}
+						size={`small`}
+						color={`primary`}
 					>
 						Live Site
-					</Link>
-					<Link
+					</Button>
+					<Button
 						href={props.gitRepositoryUrl}
+						size={`small`}
+						color={`primary`}
 					>
 						Git Repository
-					</Link>
-				</CardActions>
-			</CardActionArea>
+					</Button>
+				</StyledCardActions>
+			</StyledCardActionArea>
 		</StyledCard>
 	);
 };
