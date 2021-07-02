@@ -7,36 +7,22 @@ import React, { useEffect } from 'react';
 import NavLink from './NavLink';
 import { StyledNav } from '../styled/StyledNav';
 import { StyledList } from '../styled/StyledList';
+import setActiveNavLink from '../../../../utils/setActiveNavLink';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 
 
 const Nav: React.FunctionComponent = () => {
+	const { isDarkMode, primaryColor } = useThemeContext();
 
 	useEffect(() => {
-		const sections = document.querySelectorAll(`section`);
+		setActiveNavLink();
+	}, [isDarkMode, primaryColor]);
 
-		const listener = () => {
-			let scrollY = window.pageYOffset;
-
-			sections.forEach((section) => {
-				const sectionHeight = section.offsetHeight;
-				const sectionTop = section.offsetTop - 200;
-				const sectionId = section.getAttribute(`id`);
-				const navLink = document.querySelector(
-					`nav li a[href*=${sectionId}]`,
-				);
-
-				if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-					navLink?.classList.add(`active`);
-				} else {
-					navLink?.classList.remove(`active`);
-				}
-			});
-		};
-
-		document.addEventListener(`scroll`, listener);
+	useEffect(() => {
+		document.addEventListener(`scroll`, setActiveNavLink);
 
 		return () => {
-			document.removeEventListener(`scroll`, listener);
+			document.removeEventListener(`scroll`, setActiveNavLink);
 		};
 	}, []);
 
