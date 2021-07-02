@@ -5,13 +5,16 @@ import { ThemeContext } from '../../../../context/ThemeProvider';
 import { shadedPrimaryColor } from '../../../../hooks/useMakeTheme/colors';
 import { ThemeColors } from '../../../../context/ThemeProvider/types';
 import styled, { css } from 'styled-components';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 
 const StyledLabel = styled(`label`)(({ theme }) => {
+	const { isRTL } = useThemeContext();
 
 	return css`
     display: flex;
     align-items: center;
-    margin-left: ${theme.spacing(0.05)}em;
+    margin-left: ${isRTL ? `unset` : `${theme.spacing(0.05)}`};
+    margin-right: ${isRTL ? `${theme.spacing(0.05)}em` : `unset`};
 	`;
 });
 const StyledSwitch = styled(Switch)(({ theme }) => {
