@@ -34,6 +34,22 @@ const useMakeTheme = (): DefaultTheme => {
 					body: {
 						overflow: smDown && isBurgerMenuOpen ? `hidden` : `visible`,
 					},
+					'*::-webkit-scrollbar': {
+						width: 10,
+					},
+
+					'*::-webkit-scrollbar-track': {
+						background: grey[isDarkMode ? 900 : 300],
+					},
+
+					'*::-webkit-scrollbar-thumb': {
+						background: primaryColor.colorWithShade,
+						borderRadius: 10,
+					},
+
+					'*::-webkit-scrollbar-thumb:hover': {
+						background: '#555',
+					},
 				},
 			},
 			MuiOutlinedInput: {

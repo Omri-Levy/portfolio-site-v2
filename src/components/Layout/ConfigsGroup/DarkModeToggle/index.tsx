@@ -31,6 +31,7 @@ const DarkModeToggle: React.FunctionComponent = () => {
 	const handleChange = () => {
 		setIsDarkMode((prevState: boolean) => {
 			localStorage.setItem(`isDarkMode`, JSON.stringify(!prevState));
+			document.body.setAttribute(`data-is-dark-mode`, JSON.stringify(!isDarkMode));
 
 			const colors = shadedPrimaryColor(!prevState);
 

@@ -30,6 +30,7 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 			const color = localStorage.getItem(`primaryColor`) as ThemeColors;
 
 			setIsDarkMode(mode || isDarkMode);
+			document.body.setAttribute(`data-is-dark-mode`, JSON.stringify(mode || isDarkMode));
 			setPrimaryColor(() => {
 				if (!color) {
 					localStorage.setItem(`primaryColor`, `blue`);

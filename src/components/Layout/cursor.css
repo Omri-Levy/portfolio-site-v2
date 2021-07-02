@@ -1,4 +1,8 @@
 body {
-    cursor: url("../../../static/cursor.svg"), auto;
+    cursor: url("../../../static/cursor-light.svg"), auto;
+}
+
+body[data-is-dark-mode="false"] {
+    cursor: url("../../../static/cursor-dark.svg"), auto;
 }
 
