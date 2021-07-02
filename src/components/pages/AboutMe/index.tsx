@@ -28,6 +28,7 @@ const StyledTextContainer = styled(Box)(({ theme }) => {
 
 	return css`
     order: 1;
+    max-width: 60ch;
 
     ${mdDown} {
       order: initial;
