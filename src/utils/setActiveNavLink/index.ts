@@ -10,10 +10,16 @@ const setActiveNavLink = () => {
 			`nav li a[href*=${sectionId}]`,
 		);
 
+		if (sectionId === `hero`) {
+			return;
+		}
+
 		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
 			navLink?.classList.add(`active`);
+			section?.classList.add(`active-section`);
 		} else {
 			navLink?.classList.remove(`active`);
+			section?.classList.remove(`active-section`);
 		}
 	});
 };

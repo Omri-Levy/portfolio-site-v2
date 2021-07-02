@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { FunctionComponent } from 'react';
 import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 
@@ -12,11 +13,19 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 	const darkModeContrast = isDarkMode ? `#494865` : `#2f2e41`;
 
 	return (
-		<svg
+		<motion.svg
 			id='a606ce14-7cf3-4e8b-a3fa-cb9b0e3d5e37'
 			data-name='Layer 1'
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 649 599.75899'
+			initial={{ y: `-100vh` }}
+			animate={{ y: 0 }}
+			transition={{
+				y: {
+					type: `spring`,
+					stiffness: 90,
+				},
+			}}
 		>
 			<path
 				d='M866.76981,630.62241l-52.6832-78.2546s79.78463,27.85334,70.72994,78.2546Z'
@@ -118,7 +127,7 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 			<path
 				d='M637.08661,438.62241s21.56566,13.08548,30.64108-11.80648L698.11646,506.83l-9.02985,15.79237-1.30586.10887A33.39675,33.39675,0,0,1,659.19686,510.645l0,0a66.34381,66.34381,0,0,1-13.85963-29.4748Z'
 				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
-		</svg>
+		</motion.svg>
 	);
 };
 

@@ -10,6 +10,7 @@ import styled, { css } from 'styled-components';
 import TranslateText from '../../Layout/Locales/TranslateText';
 import isSmDown from '../../../utils/isSmDown';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { motion } from 'framer-motion';
 
 const StyledButton = styled(Button)(({ theme }) => {
 	return css`
@@ -65,7 +66,7 @@ const StyledGridContainer = styled(Box)(({ theme }) => {
     }
 	`;
 });
-const StyledGridItem = styled(Box)(({ theme }) => {
+const StyledGridItem = styled(motion(Box))(({ theme }) => {
 	return css`
 
 	`;
@@ -108,9 +109,17 @@ const Hero: React.FunctionComponent = () => {
 	const color3 = colors3[primaryColor.color];
 
 	return (
-		<PageContainer id={`hero`} Icon={InfoOutlined} text={``}>
+		<PageContainer id={`hero`} Icon={InfoOutlined} text={``} disableAnimation>
 			<StyledGridContainer>
-				<StyledGridItem>
+				<StyledGridItem
+					initial={{
+						x: `-100vw`,
+					}}
+					animate={{
+						x: 0,
+					}}
+					transition={{ duration: 0.4 }}
+				>
 					<Typography variant={`h2`}>
 						<TranslateText text={`Omri Levy`} />
 					</Typography>

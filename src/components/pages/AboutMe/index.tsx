@@ -109,7 +109,11 @@ const AboutMe: React.FunctionComponent = () => {
 	};
 
 	return (
-		<PageContainer id={`about-me`} Icon={InfoOutlined} text={`About Me`}>
+		<PageContainer
+			id={`about-me`}
+			Icon={InfoOutlined}
+			text={`About Me`}
+		>
 			<StyledGridContainer>
 				<StyledProfilePicContainer>
 					<ProfilePic />
