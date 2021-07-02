@@ -55,6 +55,7 @@ const StyledProfilePicContainer = styled(Box)(({ theme }) => {
       order: initial;
       margin-top: 0;
       margin-left: 0;
+      margin-right: 0;
     }
 	`;
 });

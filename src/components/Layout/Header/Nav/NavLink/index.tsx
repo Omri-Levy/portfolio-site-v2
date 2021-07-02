@@ -4,6 +4,7 @@ import TranslateText from '../../../Locales/TranslateText';
 import { Props } from './types';
 import styled, { css } from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import useAppContext from '../../../../../context/AppProvider/useAppContext';
 
 
 const StyledListItem = styled(ListItem)(({ theme }) => {
@@ -33,13 +34,15 @@ const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 });
 const NavLink: React.FunctionComponent<Props> = (props) => {
 	const { to, Icon, text } = props;
+	const { setIsBurgerMenuOpen } = useAppContext();
+	const closeBurgerMenu = () => setIsBurgerMenuOpen(false);
 
 
 	return (
 		// cast false to any due to the button prop expecting boolean and receiving
 		// false
 		<StyledListItem disableGutters button={false as any}>
-			<StyledAnchorLink to={to}>
+			<StyledAnchorLink to={to} onAnchorLinkClick={closeBurgerMenu}>
 				{Icon && <Icon />}
 				<TranslateText text={text} />
 			</StyledAnchorLink>

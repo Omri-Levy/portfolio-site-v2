@@ -3,6 +3,10 @@ import { GetCachedValue, HookReturns, SetCachedValue } from './types';
 
 const useLocalStorage: HookReturns = (key, defaultValue) => {
 	const setCachedValue: SetCachedValue = (toCache) => {
+		if (typeof localStorage === 'undefined') {
+			return;
+		}
+
 		let toCacheString: string | any = toCache;
 
 		if (typeof toCacheString !== `string`) {
@@ -12,6 +16,10 @@ const useLocalStorage: HookReturns = (key, defaultValue) => {
 		localStorage.setItem(key, toCacheString);
 	};
 	const getCachedValue: GetCachedValue = () => {
+		if (typeof localStorage === 'undefined') {
+			return;
+		}
+
 		let cachedValue = localStorage.getItem(key) as string;
 
 		if (!cachedValue) {

@@ -20,7 +20,7 @@ const StyledButton = styled(Button)(({ theme }) => {
 const StyledWaveOne = styled(Wave)(({ theme }) => {
 	return css`
     position: absolute;
-    bottom: 50em;
+    bottom: -600px;
     z-index: 1;
 	`;
 });
@@ -28,20 +28,20 @@ const StyledWaveTwo = styled(Wave)(({ theme }) => {
 	return css`
     z-index: 2;
     position: absolute;
-    bottom: 50em;
+    bottom: -550px;
 	`;
 });
 const StyledWaveThree = styled(Wave)(({ theme }) => {
 	return css`
     z-index: 3;
     position: absolute;
-    bottom: 20em;
+    bottom: -500px;
 	`;
 });
 const StyledWaveFour = styled(Wave)(({ theme }) => {
 	return css`
     z-index: 4;
-    bottom: -50em;
+    bottom: -400px;
     position: absolute;
 	`;
 });
@@ -57,7 +57,6 @@ const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 const StyledGridContainer = styled(Box)(({ theme }) => {
 
 	return css`
-    position: relative;
     display: grid;
     grid-template-columns: 1fr 649px;
 
@@ -85,18 +84,6 @@ const StyledIllustrationGridItem = styled(Box)(({ theme }) => {
         height: unset;
       }
     }
-	`;
-});
-const StyledWavesContainer = styled(Box)(({ theme }) => {
-	return css`
-    position: absolute;
-    inset: 0;
-	`;
-});
-const StyledWavesBox = styled(Box)(({ theme }) => {
-	return css`
-    position: relative;
-    inset: 0;
 	`;
 });
 const Hero: React.FunctionComponent = () => {
@@ -143,14 +130,10 @@ const Hero: React.FunctionComponent = () => {
 				<StyledIllustrationGridItem>
 					<Illustration color={primaryColor.colorWithShade} />
 				</StyledIllustrationGridItem>
-				{/*<StyledWavesContainer>*/}
-				{/*	<StyledWavesBox>*/}
-				{/*		<StyledWaveOne color={color1} />*/}
-				{/*		<StyledWaveTwo color={color2} />*/}
-				{/*		<StyledWaveThree color={color3} />*/}
-				{/*		<StyledWaveFour color={primaryColor.colorWithShade} />*/}
-				{/*	</StyledWavesBox>*/}
-				{/*</StyledWavesContainer>*/}
+				{/*<StyledWaveOne color={color1} />*/}
+				{/*<StyledWaveTwo color={color2} />*/}
+				{/*<StyledWaveThree color={color3} />*/}
+				{/*<StyledWaveFour color={primaryColor.colorWithShade} />*/}
 			</StyledGridContainer>
 		</PageContainer>
 	);

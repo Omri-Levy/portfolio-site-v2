@@ -12,6 +12,10 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 	const { isDarkMode } = useThemeContext();
 	const darkModeContrast = isDarkMode ? `#494865` : `#2f2e41`;
 
+	if (typeof window === `undefined`) {
+		return null;
+	}
+
 	return (
 		<motion.svg
 			id='a606ce14-7cf3-4e8b-a3fa-cb9b0e3d5e37'

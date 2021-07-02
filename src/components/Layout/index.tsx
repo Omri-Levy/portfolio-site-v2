@@ -5,8 +5,9 @@ import Header from './Header';
 import './cursor.css';
 import styled, { css } from 'styled-components';
 import { Container } from '@material-ui/core';
+import { motion } from 'framer-motion';
 
-const StyledWrapper = styled(`div`)(({ theme }) => {
+const StyledWrapper = styled(motion.div)(({ theme }) => {
 	return css`
     direction: ${theme.direction};
 	`;
