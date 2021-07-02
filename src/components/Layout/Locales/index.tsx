@@ -5,6 +5,15 @@ import { ChildrenProps } from '../../../utils/types';
 import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 
 const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
+	const getAge = (dateString: string) => {
+		const ageInMilliseconds = new Date() - new Date(dateString);
+
+		return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365); // convert
+																																			// to
+																																			// years
+	};
+	const age = getAge(`1997-01-12`);
+
 	const { isRTL } = useThemeContext();
 	const messages = {
 		// locale buttons
@@ -36,8 +45,8 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 		// about me page`s text
 		whoAmITitle: useTranslations(`מי אני?`, `Who am I?`),
 		whoAmISubtitle: useTranslations(
-			`היי! קוראים לי עומרי לוי, אני בן 24 מתל אביב.`,
-			`Hi! My name is Omri Levy, I\'m 24 year old from Tel-Aviv.`,
+			`היי! קוראים לי עומרי לוי, אני בן ${age} מתל אביב.`,
+			`Hi! My name is Omri Levy, I\'m ${age} years old from Tel-Aviv.`,
 		),
 		whoAmIBody: useTranslations(
 			`התחלתי לתכנת במאי 2019, מאז אני מתכנת מהרגע שאני קם ועד` +

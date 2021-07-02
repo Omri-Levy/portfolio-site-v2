@@ -57,6 +57,7 @@ const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
 });
 const StyledGridContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
+	const smDown = isSmDown();
 
 	return css`
     display: grid;
@@ -68,6 +69,10 @@ const StyledGridContainer = styled(Box)(({ theme }) => {
 
     ${mdDown} {
       margin-top: ${theme.spacing(1)}em;
+    }
+
+    ${smDown} {
+      margin-top: unset;
     }
 	`;
 });
