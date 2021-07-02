@@ -21,7 +21,7 @@ const StyledTypography = styled(Typography)(({ theme }) => {
 
     svg {
       font-size: inherit;
-      margin-right: ${isRTL ? `unset` : `${theme.spacing(0.03)}`};
+      margin-right: ${isRTL ? `unset` : `${theme.spacing(0.03)}em`};
       margin-left: ${isRTL ? `${theme.spacing(0.03)}em` : `unset`};
     }
 
