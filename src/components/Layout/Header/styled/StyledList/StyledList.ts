@@ -18,7 +18,7 @@ const StyledList = styled(List)(({ theme }) => {
     width: min(40em, 100%);
 
     ${lgUp} {
-      margin-right: ${isRTL ? `unset` : `${theme.spacing(1)}`};
+      margin-right: ${isRTL ? `unset` : `${theme.spacing(1)}em`};
       margin-left: ${isRTL ? `${theme.spacing(1)}em` : `unset`};
     }
 

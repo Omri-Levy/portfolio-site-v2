@@ -28,7 +28,7 @@ const Nav: React.FunctionComponent = () => {
 
 
 	return (
-		<StyledNav as={`nav`}>
+		<StyledNav component={`nav`}>
 			<StyledList>
 				<NavLink
 					to={`/#about-me`}

@@ -20,6 +20,18 @@ const StyledCard = styled(Card)(({ theme }) => {
 
 	`;
 });
+const StyledCardMedia = styled(CardMedia)(({ theme }) => {
+
+	return css`
+    aspect-ratio: 16 / 9;
+	`;
+});
+const StyledCardContent = styled(CardContent)(({ theme }) => {
+
+	return css`
+    flex-grow: 1;
+	`;
+});
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 
@@ -29,7 +41,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	return (
 		<StyledCard>
 			<CardActionArea>
-				<CardMedia
+				<StyledCardMedia
+					// @ts-ignore
 					component={`img`}
 					image={props.projectGif}
 					alt={`${kebabCase(props.title)}${intl.formatMessage({
@@ -39,13 +52,13 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 						id: `projectGif`,
 					})}`}
 				/>
-				<CardContent>
+				<StyledCardContent>
 					<Typography variant={`h2`}>
 						{props.title}
 					</Typography>
 					{projectsNotEmpty &&
 					documentToReactComponents(props.body, props.options)}
-				</CardContent>
+				</StyledCardContent>
 				<CardActions>
 					<Link
 						href={props.liveSiteUrl}

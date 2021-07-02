@@ -12,16 +12,23 @@ const StyledWrapper = styled(motion.div)(({ theme }) => {
     direction: ${theme.direction};
 	`;
 });
+const StyledContainer = styled(Container)(({ theme }) => {
+	return css`
+	`;
+});
 
 const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 
 	return (
 		<StyledWrapper>
 			<Header />
-			<Container component={`main`}>
+			<StyledContainer
+				// @ts-ignore
+				component={`main`}
+			>
 				<ConfigsGroup />
 				{children}
-			</Container>
+			</StyledContainer>
 		</StyledWrapper>
 	);
 };
