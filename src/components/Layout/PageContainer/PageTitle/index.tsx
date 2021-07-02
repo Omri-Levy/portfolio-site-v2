@@ -3,6 +3,7 @@ import React from 'react';
 import TranslateText from '../../Locales/TranslateText';
 import { Props } from './types';
 import styled, { css } from 'styled-components';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 
 const StyledHeader = styled(`header`)(({ theme }) => {
 	return css`
@@ -11,6 +12,8 @@ const StyledHeader = styled(`header`)(({ theme }) => {
 	`;
 });
 const StyledTypography = styled(Typography)(({ theme }) => {
+	const { isRTL } = useThemeContext();
+
 	return css`
     display: flex;
     align-items: center;
@@ -18,7 +21,8 @@ const StyledTypography = styled(Typography)(({ theme }) => {
 
     svg {
       font-size: inherit;
-      margin-right: ${theme.spacing(0.03)}em;
+      margin-right: ${isRTL ? `unset` : `${theme.spacing(0.03)}`};
+      margin-left: ${isRTL ? `${theme.spacing(0.03)}em` : `unset`};
     }
 
     @media only screen and (max-width: 28em) {

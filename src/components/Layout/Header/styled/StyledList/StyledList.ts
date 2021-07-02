@@ -27,6 +27,7 @@ const StyledList = styled(List)(({ theme }) => {
       align-self: center;
       height: 50%;
       margin-right: initial;
+      margin-left: initial;
     }
 	`;
 });

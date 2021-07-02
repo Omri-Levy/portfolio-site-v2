@@ -10,6 +10,7 @@ import PageContainer from '../../Layout/PageContainer';
 import ContactMeForm from './ContactMeForm';
 import ExternalLinksContainer from './ExternalLinksContainer';
 import styled, { css } from 'styled-components';
+import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 
 const StyledBox = styled(Box)(({ theme }) => {
 	return css`
@@ -18,6 +19,8 @@ const StyledBox = styled(Box)(({ theme }) => {
 	`;
 });
 const StyledLinksContainer = styled(Box)(({ theme }) => {
+	const { isRTL } = useThemeContext();
+
 	return css`
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -26,7 +29,8 @@ const StyledLinksContainer = styled(Box)(({ theme }) => {
 
     a {
       text-decoration: none;
-      margin-right: ${theme.spacing(0.1)}em;
+      margin-right: ${isRTL ? `unset` : `${theme.spacing(0.1)}em`};
+      margin-left: ${isRTL ? `${theme.spacing(0.1)}em` : `unset`};
 
       &, &:visited {
         color: inherit;

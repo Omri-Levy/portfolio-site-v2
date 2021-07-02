@@ -9,6 +9,7 @@ import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 import isSmDown from '../../../utils/isSmDown';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 
 const StyledGridContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
@@ -41,11 +42,13 @@ const StyledTextContainer = styled(Box)(({ theme }) => {
 });
 const StyledProfilePicContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
+	const { isRTL } = useThemeContext();
 
 	return css`
     order: 2;
     margin-top: ${theme.spacing(0.2)}em;
-    margin-left: ${theme.spacing(1)}em;
+    margin-left: ${isRTL ? `unset` : `${theme.spacing(1)}em`};
+    margin-right: ${isRTL ? `${theme.spacing(1)}em` : `unset`};
 
     ${mdDown} {
       justify-self: center;
@@ -58,6 +61,7 @@ const StyledProfilePicContainer = styled(Box)(({ theme }) => {
 const StyledButtonsContainer = styled(Box)(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 	const smDown = isSmDown();
+	const { isRTL } = useThemeContext();
 
 	return css`
     order: 2;
@@ -65,12 +69,14 @@ const StyledButtonsContainer = styled(Box)(({ theme }) => {
     display: flex;
 
     button:first-child {
-      margin-right: ${theme.spacing(0.5)}em;
+      margin-right: ${isRTL ? `unset` : `${theme.spacing(0.5)}em`};
+      margin-left: ${isRTL ? `${theme.spacing(0.5)}em` : `unset`};
     }
 
     ${mdDown} {
       button:first-child {
         margin-right: 0;
+        margin-left: 0;
       }
 
       order: initial;
