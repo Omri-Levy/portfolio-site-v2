@@ -3,24 +3,46 @@ import React, {
 	FunctionComponent,
 	HTMLAttributes,
 } from 'react';
+import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
+import { colorObj } from '../../../hooks/useMakeTheme/colors';
+import styled, { css } from 'styled-components';
 
 interface WaveProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-	color: string;
 };
 
-const Wave: FunctionComponent<WaveProps> = ({ color }) => {
+const StyledSvg = styled(`svg`)(({ theme }) => {
+	return css`
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+	`;
+});
+
+const Wave: FunctionComponent<WaveProps> = () => {
+	const { primaryColor, isDarkMode } = useThemeContext();
+	const colors1 = colorObj(isDarkMode ? 300 : 600);
+	const colors2 = colorObj(isDarkMode ? 400 : 700);
+	const colors3 = colorObj(isDarkMode ? 500 : 800);
+	const color1 = colors1[primaryColor.color];
+	const color2 = colors2[primaryColor.color];
+	const color3 = colors3[primaryColor.color];
 
 	return (
-		<svg
+		<StyledSvg
 			xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 1440 320'
+			viewBox='0 0 1440 336'
+			fill='none'
 		>
-			<path
-				fill={color}
-				fillOpacity='1'
-				d='M0,288L48,282.7C96,277,192,267,288,229.3C384,192,480,128,576,112C672,96,768,128,864,149.3C960,171,1056,181,1152,160C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'>
-			</path>
-		</svg>
+			<path fill={color1}
+						d='M0 270.222l48-5.594c48-6.017 144-16.572 240-56.367 96-39.372 192-106.928 288-123.817 96-16.888 192 16.889 288 39.373 96 22.905 192 33.461 288 11.294 96-22.167 192-79.167 240-106.928L1440 0v304H0v-33.778z' />
+			<path fill={color2}
+						d='M0 303.222l48-5.594c48-6.017 144-16.572 240-56.367 96-39.372 192-106.928 288-123.817 96-16.888 192 16.889 288 39.373 96 22.905 192 33.461 288 11.294 96-22.167 192-79.167 240-106.928L1440 33v304H0v-33.778z' />
+			<path fill={color3}
+						d='M0 372.222l48-5.594c48-6.017 144-16.572 240-56.367 96-39.372 192-106.928 288-123.817 96-16.888 192 16.889 288 39.373 96 22.905 192 33.461 288 11.294 96-22.167 192-79.167 240-106.928L1440 102v304H0v-33.778z' />
+			<path fill={primaryColor.colorWithShade}
+						d='M0 458.222l48-5.594c48-6.017 144-16.572 240-56.367 96-39.372 192-106.928 288-123.817 96-16.888 192 16.889 288 39.373 96 22.905 192 33.461 288 11.294 96-22.167 192-79.167 240-106.928L1440 188v304H0v-33.778z' />
+		</StyledSvg>
 	);
 };
 

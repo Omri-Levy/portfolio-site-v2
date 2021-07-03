@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion';
 import React, { FunctionComponent } from 'react';
 import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
+import { grey } from '@material-ui/core/colors';
 
 interface IllustrationProps {
-	color: string;
 }
 
-const Illustration: FunctionComponent<IllustrationProps> = ({
-																															color,
-																														}) => {
-	const { isDarkMode } = useThemeContext();
+const Illustration: FunctionComponent<IllustrationProps> = () => {
+	const { isDarkMode, primaryColor } = useThemeContext();
+	const contrastWhite = grey[isDarkMode ? 100 : 900];
 	const darkModeContrast = isDarkMode ? `#494865` : `#2f2e41`;
 
 	if (typeof window === `undefined`) {
@@ -33,26 +32,35 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 		>
 			<path
 				d='M866.76981,630.62241l-52.6832-78.2546s79.78463,27.85334,70.72994,78.2546Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				// big leaf
+				transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
 			<path
 				d='M320.66236,631.1416l-2-.03906a463.83212,463.83212,0,0,1,7.0996-66.28711c8.64844-46.88086,23.0293-77.66992,42.74317-91.51172l1.14844,1.63672C323.60181,507.27442,320.68579,629.90625,320.66236,631.1416Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				// big flower's base
+				transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
 			<path
 				d='M345.66236,630.66309l-2-.03906c.043-2.21485,1.293-54.41407,21.84277-68.8418l1.14844,1.63672C346.93286,577.26465,345.67212,630.13086,345.66236,630.66309Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
-			<circle cx='105.5315' cy='315.00156' r='10.00001' fill={color} />
-			<circle cx='100.57935' cy='401.00158' r='10' fill={color} />
+				// small flower's base
+				transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
+			<circle cx='105.5315' cy='315.00156' r='10.00001'
+							fill={primaryColor.colorWithShade} />
+			<circle cx='100.57935' cy='401.00158' r='10'
+							fill={primaryColor.colorWithShade} />
 			<path
 				d='M341.00113,481.11664c1.87935,12.004-3.0189,22.7406-3.0189,22.7406s-7.9453-8.72583-9.82465-20.72986,3.01891-22.7406,3.01891-22.7406S339.12177,469.11261,341.00113,481.11664Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				// large flower left leaf
+				transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
 			<path
 				d='M373.6883,510.27045c-11.493,3.9422-22.91878.98962-22.91878.98962s7.20793-9.34411,18.70088-13.28631,22.91879-.98963,22.91879-.98963S385.18125,506.32825,373.6883,510.27045Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				// large flower right leaf
+				transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
 			<path
 				d='M374.05754,586.43158a31.13456,31.13456,0,0,1-16.06421.69367,28.37371,28.37371,0,0,1,29.172-10.00629A31.13419,31.13419,0,0,1,374.05754,586.43158Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				// small flower's leaf
+				transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
 			<path d='M923.5,632.62241h-647a1,1,0,0,1,0-2h647a1,1,0,0,1,0,2Z'
-						transform='translate(-275.5 -150.1205)' fill='#cbcbcb' />
+				// platform
+						transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
 			<polygon
 				points='409.792 528.602 401.611 549.895 315.587 528.472 327.661 497.045 409.792 528.602'
 				fill='#ffb7b7' />
@@ -61,10 +69,14 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast} />
 			<path
 				d='M554.5748,412.11239l-37.48819,3.51-1.85977,111.54244A20.99636,20.99636,0,0,0,537.58,546.21066l23.76826-1.63735Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				transform='translate(-275.5 -150.1205)'
+				// left back
+				fill={contrastWhite} />
 			<path
 				d='M686.73732,406.62241l-25.65071-.33008L659.56706,538.828h0a41.28135,41.28135,0,0,0,42.62677-42.85419Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				transform='translate(-275.5 -150.1205)'
+				// right back
+				fill={contrastWhite} />
 			<path
 				d='M537.9007,585.91181a81.594,81.594,0,0,1-2.63861,11.35858c-1.29438,3.63971-3.29273,7.00567-4.4762,10.68292-3.7724,11.72137,1.45728,24.79034,9.80988,33.83771a55.2169,55.2169,0,0,0,26.92126,15.9859c7.53516,1.89514,15.37,2.16791,23.13532,2.43121,21.50268.72919,43.55865,1.38153,63.93371-5.52887a111.0851,111.0851,0,0,0,18.57465-8.43835,13.90663,13.90663,0,0,0,4.8197-3.795c1.554-2.2124,1.75281-5.08172,1.73926-7.78533-.04572-9.11554-1.89374-18.18464-1.455-27.28974.243-5.04333,1.18689-10.0827.72229-15.11047a27.87563,27.87563,0,0,0-21.30395-24.01209c-5.78-1.24121-11.775-.56488-17.65955.001a450.25524,450.25524,0,0,1-45.95953,2.055c-15.67853-.1001-31.26026-2.49341-46.86072-2.74334-4.61353-.07392-4.52033,1.34838-5.98908,5.81341A108.76642,108.76642,0,0,0,537.9007,585.91181Z'
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast} />
@@ -73,25 +85,31 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast} />
 			<path
 				d='M509.90573,597.88227c11.79444,3.69573,61.59055,29.3001,70.12577,38.2398-1.14405.41217-39.961-21.34143-41.1258-21.691-10.58758-3.17755-21.234-6.376-31.28845-11.02618-2.02267-.93549-13.14053-5.33258-12.637-7.88464C495.5484,592.64044,507.81192,597.2262,509.90573,597.88227Z'
-				transform='translate(-275.5 -150.1205)' opacity='0.1'
+				transform='translate(-275.5 -150.1205)'
+				opacity='0.1'
 			/>
 			<path
 				d='M581.08661,374.62206l-31.7559,24.1117s-33.50864,1.04831-32.37637,22.46848,14.54325,122.8375,14.54325,122.8375l2.90972,34.89548,55.19288,15.72646a180.58806,180.58806,0,0,0,91.48638,1.96074l0,0-6.559-35.00787s26.559-158.99213,10.559-165.99213-26-5-26-5l-20.05517-17.50036Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				transform='translate(-275.5 -150.1205)'
+				// shirt
+				fill={contrastWhite} />
 			<path
 				d='M675.08661,335.67579c0,31.3011-28.94285,26.56671-64.64567,26.56671s-64.64566,4.73439-64.64566-26.56671,14.13785-86.7846,64.64566-86.7846C662.68881,248.89119,675.08661,304.37469,675.08661,335.67579Z'
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast} />
 			<circle cx='613.28588' cy='315.52409' r='43.50039'
 							transform='translate(-318.98195 375.95297) rotate(-45)'
-							fill='#ffb7b7' />
+							fill='#ffb7b7'
+			/>
 			<path
 				d='M559.96419,314.42237v0h17.20523l7.59037-21.25337,1.51773,21.25337h8.2234l4.42778-12.3978.88556,12.3978H660.9177v0a46.04892,46.04892,0,0,0-46.04892-46.04892h-8.85567A46.04892,46.04892,0,0,0,559.96419,314.42237Z'
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast} />
 			<rect x='291.58661' y='229.50155' width='87' height='105'
-						fill={color} />
+						fill={primaryColor.colorWithShade}
+			/>
 			<polygon
 				points='296.381 527.602 304.563 548.895 390.587 527.472 378.512 496.045 296.381 527.602'
-				fill='#ffb7b7' />
+				fill='#ffb7b7'
+			/>
 			<path
 				d='M576.74681,669.61959l16.1117,41.93409.00065.0017A28.62983,28.62983,0,0,1,576.402,748.54587l-.86843.33363-26.37927-68.6583Z'
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast} />
@@ -103,11 +121,12 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 				transform='translate(-275.5 -150.1205)'
 				opacity='0.1'
 			/>
-			<circle cx='601.58674' cy='148.46737' r='31.2479' fill='#f1f1f1' />
-			<circle cx='543.75482' cy='163.39174' r='21.92017' fill='#f1f1f1' />
-			<circle cx='142.21332' cy='153.43677' r='17.57602' fill='#f1f1f1' />
-			<circle cx='171.15045' cy='170.50225' r='12.32945' fill='#f1f1f1' />
-			<circle cx='341.65358' cy='13.43526' r='13.43527' fill='#f1f1f1' />
+			// circles
+			<circle cx='601.58674' cy='148.46737' r='31.2479' fill={contrastWhite} />
+			<circle cx='543.75482' cy='163.39174' r='21.92017' fill={contrastWhite} />
+			<circle cx='142.21332' cy='153.43677' r='17.57602' fill={contrastWhite} />
+			<circle cx='171.15045' cy='170.50225' r='12.32945' fill={contrastWhite} />
+			<circle cx='341.65358' cy='13.43526' r='13.43527' fill={contrastWhite} />
 			<path
 				d='M537.08661,446.62241l1.20092-9.27026s44.79908,3.27026,37.79908,14.27026-24,12-24,12Z'
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast}
@@ -117,10 +136,12 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 				transform='translate(-275.5 -150.1205)' fill='#ffb7b7' />
 			<path
 				d='M537.49759,438.1421s15.778,26.95734,38.589,13.48031l-22.10668,84.59843h-18.6256l-19.26772-3.59843,5.39489-34.95275Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				transform='translate(-275.5 -150.1205)'
+				// left sleeve
+				fill={contrastWhite} />
 			<path
 				d='M650.15748,456.5673l-13.07087-17.94489s6.28217-18.613,30.64108-11.80648C667.72769,426.81593,683.22835,461.51218,650.15748,456.5673Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				transform='translate(-275.5 -150.1205)' fill={contrastWhite} />
 			<path
 				d='M650.15748,456.5673l-13.07087-17.94489s6.28217-18.613,30.64108-11.80648C667.72769,426.81593,683.22835,461.51218,650.15748,456.5673Z'
 				transform='translate(-275.5 -150.1205)' fill={darkModeContrast}
@@ -130,7 +151,9 @@ const Illustration: FunctionComponent<IllustrationProps> = ({
 				transform='translate(-275.5 -150.1205)' fill='#ffb7b7' />
 			<path
 				d='M637.08661,438.62241s21.56566,13.08548,30.64108-11.80648L698.11646,506.83l-9.02985,15.79237-1.30586.10887A33.39675,33.39675,0,0,1,659.19686,510.645l0,0a66.34381,66.34381,0,0,1-13.85963-29.4748Z'
-				transform='translate(-275.5 -150.1205)' fill='#e5e5e5' />
+				transform='translate(-275.5 -150.1205)'
+				// right sleeve
+				fill={contrastWhite} />
 		</motion.svg>
 	);
 };

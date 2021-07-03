@@ -13,8 +13,9 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { ProjectProps } from '../../../../utils/types';
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
-const StyledCard = styled(Card)(({ theme }) => {
+const StyledCard = styled(motion(Card))(({ theme }) => {
 
 	return css`
 

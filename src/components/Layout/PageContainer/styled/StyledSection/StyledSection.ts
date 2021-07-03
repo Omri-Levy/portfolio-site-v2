@@ -1,12 +1,17 @@
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-const StyledSection = styled(motion.section)(({ theme }) => {
+interface StyledSectionProps {
+	$disableAnimation?: boolean;
+}
 
-	return css`
-    margin-top: ${theme.spacing(0.2)}em;
-    height: 100vh;
-
+const StyledSection = styled(motion.section)<StyledSectionProps>((
+	{
+		theme,
+		$disableAnimation,
+	},
+) => {
+	const animation = () => !$disableAnimation && css`
     &:not(#hero) {
       position: relative;
       left: -100vw;
@@ -16,6 +21,13 @@ const StyledSection = styled(motion.section)(({ theme }) => {
     &.active-section:not(#hero) {
       left: 0;
     }
+	`;
+
+	return css`
+    margin-top: ${theme.spacing(0.2)}em;
+    height: 100vh;
+
+    ${animation}
 	`;
 });
 

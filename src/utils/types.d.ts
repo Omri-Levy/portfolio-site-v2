@@ -2,6 +2,7 @@ import { Document } from '@contentful/rich-text-types';
 import { Button } from '@material-ui/core';
 import { RenderOptions } from '@testing-library/react';
 import React, { SetStateAction } from 'react';
+import { MotionProps } from 'framer-motion';
 
 type UI = JSX.Element;
 type Options =
@@ -81,7 +82,7 @@ interface ProjectsContainerProps {
 	options: ProjectOptions;
 }
 
-interface ProjectProps {
+interface ProjectProps extends MotionProps {
 	title: string;
 	body: Document;
 	projectGif: string;

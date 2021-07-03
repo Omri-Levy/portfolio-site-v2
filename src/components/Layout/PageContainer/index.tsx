@@ -6,7 +6,6 @@ import { StyledSection } from './styled/StyledSection';
 const PageContainer: React.FunctionComponent<Props> = ({
 																												 Icon,
 																												 text,
-																												 disableAnimation,
 																												 ...props
 																											 }) => {
 

@@ -5,7 +5,7 @@ interface Props {
 	Icon?: React.FunctionComponent;
 	text?: string;
 	id: string;
-	disableAnimation?: boolean;
+	$disableAnimation?: boolean;
 	inView?: boolean;
 }
 

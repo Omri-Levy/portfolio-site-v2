@@ -8,8 +8,9 @@ import { Node } from './types';
 import { Box, Typography } from '@material-ui/core';
 import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
+import { motion } from 'framer-motion';
 
-const StyledGridContainer = styled(Box)(({ theme }) => {
+const StyledGridContainer = styled(motion(Box))(({ theme }) => {
 	const mdDown = getCustomBreakpoints(`md`, `down`);
 
 	return css`
@@ -64,6 +65,7 @@ const Portfolio: React.FunctionComponent = () => {
 			Icon={WorkOutline}
 			text={`Portfolio`}
 		>
+
 			<StyledGridContainer>
 				<Projects allProjects={allProjects} options={options} />
 			</StyledGridContainer>
