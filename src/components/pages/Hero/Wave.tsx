@@ -6,11 +6,12 @@ import React, {
 import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
 import { colorObj } from '../../../hooks/useMakeTheme/colors';
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 interface WaveProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 };
 
-const StyledSvg = styled(`svg`)(({ theme }) => {
+const StyledSvg = styled(motion.svg)(({ theme }) => {
 	return css`
     position: absolute;
     right: 0;
@@ -27,6 +28,10 @@ const Wave: FunctionComponent<WaveProps> = () => {
 	const color1 = colors1[primaryColor.color];
 	const color2 = colors2[primaryColor.color];
 	const color3 = colors3[primaryColor.color];
+
+	if (typeof window === `undefined`) {
+		return null;
+	}
 
 	return (
 		<StyledSvg

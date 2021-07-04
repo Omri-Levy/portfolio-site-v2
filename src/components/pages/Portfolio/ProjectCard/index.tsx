@@ -14,11 +14,13 @@ import { useIntl } from 'react-intl';
 import { ProjectProps } from '../../../../utils/types';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import TranslateText from '../../../Layout/Locales/TranslateText';
+import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
 
 const StyledCard = styled(motion(Card))(({ theme }) => {
 
 	return css`
-
+    max-width: 400px;
 	`;
 });
 const StyledCardMedia = styled(CardMedia)(({ theme }) => {
@@ -47,12 +49,18 @@ const StyledCardActions = styled(CardActions)(({ theme }) => {
 });
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
-
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
 	const intl = useIntl();
+	const noSpaceForHover = getCustomBreakpoints(`sm`, `down`, true);
 
 	return (
-		<StyledCard elevation={6}>
+		<StyledCard
+			elevation={6}
+			whileHover={noSpaceForHover ? undefined : {
+				scale: 1.1,
+				transition: { duration: 0.3 },
+			}}
+		>
 			<StyledCardActionArea>
 				<StyledCardMedia
 					// @ts-ignore
@@ -78,14 +86,14 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 						size={`small`}
 						color={`primary`}
 					>
-						Live Site
+						<TranslateText text={`Live Site`} />
 					</Button>
 					<Button
 						href={props.gitRepositoryUrl}
 						size={`small`}
 						color={`primary`}
 					>
-						Git Repository
+						<TranslateText text={`Git Repository`} />
 					</Button>
 				</StyledCardActions>
 			</StyledCardActionArea>

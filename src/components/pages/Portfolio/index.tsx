@@ -11,20 +11,22 @@ import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
 import { motion } from 'framer-motion';
 
 const StyledGridContainer = styled(motion(Box))(({ theme }) => {
-	const mdDown = getCustomBreakpoints(`md`, `down`);
+	const lgDown = getCustomBreakpoints(`lg`, `down`);
+	const xlDown = getCustomBreakpoints(`xl`, `down`);
 
 	return css`
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto auto;
     display: grid;
-    gap: ${theme.spacing(1)}em;
+    gap: ${theme.spacing(0.5)}em;
     padding-bottom: ${theme.spacing(1)}em;
 
-    @media only screen and (max-width: 70em) {
+    ${xlDown} {
       justify-content: center;
+      grid-template-columns: auto auto;
     }
 
-    ${mdDown} {
-      grid-template-columns: 1fr;
+    ${lgDown} {
+      grid-template-columns: auto;
     }
 	`;
 });

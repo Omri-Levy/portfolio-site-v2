@@ -56,8 +56,8 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 		),
 
 		// portfolio buttons
-		liveSite: useTranslations(`אתר חי`, `Live Site`),
-		gitRepository: useTranslations(`אחסון גיט`, `Git Repository`),
+		liveSite: useTranslations(`קישור לאתר`, `Live Site`),
+		gitRepository: useTranslations(`מאגר גיט`, `Git Repository`),
 
 		// contact me form input fields
 		email: useTranslations(`אימייל`, `Email`),
