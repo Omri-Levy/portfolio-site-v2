@@ -24,10 +24,8 @@ const StyledSection = styled(motion.section)<StyledSectionProps>((
 	`;
 
 	return css`
-    scroll-margin-top: 8.5em;
     margin-top: ${theme.spacing(0.2)}em;
     height: 100vh;
-    scroll-snap-align: start;
 
     ${animation}
 	`;

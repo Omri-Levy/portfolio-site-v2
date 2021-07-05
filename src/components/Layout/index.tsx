@@ -4,13 +4,14 @@ import ConfigsGroup from './ConfigsGroup';
 import Header from './Header';
 import './cursor.css';
 import styled, { css } from 'styled-components';
+import { Container } from '@material-ui/core';
 
 const StyledWrapper = styled(`div`)(({ theme }) => {
 	return css`
     direction: ${theme.direction};
 	`;
 });
-const StyledContainer = styled(`main`)(({ theme }) => {
+const StyledContainer = styled(Container)(({ theme }) => {
 	return css`
 
 	`;
@@ -21,7 +22,10 @@ const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 	return (
 		<StyledWrapper>
 			<Header />
-			<StyledContainer>
+			<StyledContainer
+				// @ts-ignore
+				component={`main`}
+			>
 				<ConfigsGroup />
 				{children}
 			</StyledContainer>

@@ -37,12 +37,6 @@ const useMakeTheme = (): DefaultTheme => {
 						width: `100%`,
 						height: `100%`,
 					},
-					html: {
-						scrollSnapType: `y mandatory`,
-						scrollSnapPointsY: `repeat(100vh)`,
-						overflowY: `scroll`,
-						height: `100vh`,
-					},
 					body: {
 						overflow: smDown && isBurgerMenuOpen ? `hidden` : `visible`,
 					},
