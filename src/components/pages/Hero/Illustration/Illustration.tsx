@@ -1,12 +1,9 @@
 import { motion } from 'framer-motion';
 import React, { FunctionComponent } from 'react';
-import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
 import { grey } from '@material-ui/core/colors';
 
-interface IllustrationProps {
-}
-
-const Illustration: FunctionComponent<IllustrationProps> = () => {
+const Illustration: FunctionComponent = () => {
 	const { isDarkMode, primaryColor } = useThemeContext();
 	const contrastWhite = grey[isDarkMode ? 100 : 900];
 	const darkModeContrast = isDarkMode ? `#494865` : `#2f2e41`;

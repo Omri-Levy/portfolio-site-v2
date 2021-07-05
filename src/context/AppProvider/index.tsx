@@ -7,12 +7,19 @@ const AppProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 ) => {
 	const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useLocalStorage(
 		`isBurgerMenuOpen`, false);
+	const openBurgerMenu = () => setIsBurgerMenuOpen(true);
+	const closeBurgerMenu = () => setIsBurgerMenuOpen(false);
+	const toggleBurgerMenu = () => {
+		setIsBurgerMenuOpen((prevState) => !prevState);
+	};
 
 	return (
 		<AppContext.Provider
 			value={{
 				isBurgerMenuOpen,
-				setIsBurgerMenuOpen,
+				openBurgerMenu,
+				closeBurgerMenu,
+				toggleBurgerMenu,
 			}}
 		>
 			{children}

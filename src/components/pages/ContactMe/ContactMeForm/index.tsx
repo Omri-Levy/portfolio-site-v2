@@ -11,50 +11,12 @@ import validationSchema from '../validationSchema';
 import { FormInputs } from './types';
 import { Send } from '@material-ui/icons';
 import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
-import styled, { css } from 'styled-components';
-import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
+import {
+	StyledFirstRow,
+	StyledGridContainer,
+	StyledSubmitContainer,
+} from './styled';
 
-const StyledGridContainer = styled(Box)(({ theme }) => {
-	const mdDown = getCustomBreakpoints(`md`, `down`);
-
-	return css`
-    grid-template-columns: minmax(53%, 500px);
-    justify-content: center;
-    display: grid;
-    gap: ${theme.spacing(0.1)}em;
-
-    ${mdDown} {
-      grid-template-columns: 1fr;
-    }
-	`;
-});
-const StyledGridItem = styled(Box)(({ theme }) => {
-	const mdDown = getCustomBreakpoints(`md`, `down`);
-
-	return css`
-
-	`;
-});
-const StyledFirstRow = styled(Box)(({ theme }) => {
-	const mdDown = getCustomBreakpoints(`md`, `down`);
-
-	return css`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: ${theme.spacing(0.1)}em;
-
-    ${mdDown} {
-      grid-template-columns: 1fr;
-    }
-	`;
-});
-const StyledSubmitContainer = styled(Box)(({ theme }) => {
-	const mdDown = getCustomBreakpoints(`md`, `down`);
-
-	return css`
-    justify-self: flex-end;
-	`;
-});
 
 const ContactMeForm: React.FunctionComponent = () => {
 	const { isRTL, isDarkMode } = useThemeContext();
@@ -208,7 +170,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 							/>
 						)} />
 				</StyledFirstRow>
-				<StyledGridItem>
+				<Box>
 					<Controller
 						name={`message`}
 						control={control}
@@ -228,9 +190,9 @@ const ContactMeForm: React.FunctionComponent = () => {
 								{...field}
 							/>
 						)} />
-				</StyledGridItem>
+				</Box>
 				{displayAlert && (
-					<StyledGridItem>
+					<Box>
 						<Alert
 							variant={`outlined`}
 							severity={alertSeverity}
@@ -238,9 +200,9 @@ const ContactMeForm: React.FunctionComponent = () => {
 						>
 							{alertMessage}
 						</Alert>
-					</StyledGridItem>
+					</Box>
 				)}
-				<StyledGridItem>
+				<Box>
 					<ReCAPTCHA
 						ref={recaptcha as RefObject<ReCAPTCHA>}
 						sitekey={process.env.SITE_RECAPTCHA_KEY || ``}
@@ -248,7 +210,7 @@ const ContactMeForm: React.FunctionComponent = () => {
 						hl={isRTL ? `iw` : `en`}
 						onChange={handleChange}
 					/>
-				</StyledGridItem>
+				</Box>
 				<StyledSubmitContainer>
 					<Button
 						type={`submit`}

@@ -6,10 +6,7 @@ import { StyledIconButton } from './styled/StyledIconButton';
 import isSmDown from '../../../../utils/isSmDown';
 
 const BurgerMenu: React.FunctionComponent<Props> = () => {
-	const { setIsBurgerMenuOpen, isBurgerMenuOpen } = useAppContext();
-	const toggleIsBurgerMenuOpen = () => {
-		setIsBurgerMenuOpen((prevState) => !prevState);
-	};
+	const { toggleBurgerMenu, isBurgerMenuOpen } = useAppContext();
 	const smDown = isSmDown(true);
 
 	return (
@@ -17,7 +14,7 @@ const BurgerMenu: React.FunctionComponent<Props> = () => {
 			{smDown && (
 				<StyledIconButton
 					color={`primary`}
-					onClick={toggleIsBurgerMenuOpen}
+					onClick={toggleBurgerMenu}
 				>
 					{isBurgerMenuOpen
 						? <Close fontSize={`inherit`} />

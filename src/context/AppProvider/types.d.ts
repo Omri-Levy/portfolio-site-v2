@@ -1,8 +1,8 @@
-import { SetState } from '../../utils/types';
-
 interface AppContextType {
 	isBurgerMenuOpen: boolean,
-	setIsBurgerMenuOpen: SetState<boolean>,
+	openBurgerMenu: () => void,
+	closeBurgerMenu: () => void,
+	toggleBurgerMenu: () => void,
 }
 
 export { AppContextType };

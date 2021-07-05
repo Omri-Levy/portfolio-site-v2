@@ -1,24 +1,8 @@
-import React, {
-	DetailedHTMLProps,
-	FunctionComponent,
-	HTMLAttributes,
-} from 'react';
-import useThemeContext from '../../../context/ThemeProvider/useThemeContext';
-import { colorObj } from '../../../hooks/useMakeTheme/colors';
-import styled, { css } from 'styled-components';
-import { motion } from 'framer-motion';
-
-interface WaveProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-};
-
-const StyledSvg = styled(motion.svg)(({ theme }) => {
-	return css`
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-	`;
-});
+import React, { FunctionComponent } from 'react';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
+import { colorObj } from '../../../../hooks/useMakeTheme/colors';
+import { StyledSvg } from './styled/StyledSvg';
+import { WaveProps } from './types';
 
 const Wave: FunctionComponent<WaveProps> = () => {
 	const { primaryColor, isDarkMode } = useThemeContext();

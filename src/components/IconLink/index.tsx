@@ -1,23 +1,8 @@
 import React from 'react';
 import { Props } from './types';
-import styled, { css } from 'styled-components';
-import { Link } from '@material-ui/core';
 import TranslateText from '../Layout/Locales/TranslateText';
-import useThemeContext from '../../context/ThemeProvider/useThemeContext';
+import { StyledIconLink } from './styled/StyledIconLink';
 
-const StyledIconLink = styled(Link)(({ theme }) => {
-	const { isRTL } = useThemeContext();
-
-	return css`
-    display: flex;
-    align-items: center;
-
-    svg {
-      margin-right: ${isRTL ? 0 : theme.spacing(0.03)}em;
-      margin-left: ${isRTL ? theme.spacing(0.03) : 0}em;
-    }
-	`;
-});
 const IconLink: React.FunctionComponent<Props> = ({
 																										Icon,
 																										to,

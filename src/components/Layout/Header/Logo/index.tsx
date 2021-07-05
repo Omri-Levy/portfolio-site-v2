@@ -1,35 +1,6 @@
 import React from 'react';
 import TranslateText from '../../Locales/TranslateText';
-import { StyledTypography } from './styled/StyledTypography';
-import styled, { css } from 'styled-components';
-import getCustomBreakpoints from '../../../../utils/getCustomBreakpoints';
-import isSmDown from '../../../../utils/isSmDown';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
-
-
-const StyledAnchorLink = styled(AnchorLink)(({ theme }) => {
-	const smDown = isSmDown();
-	const mdDown = getCustomBreakpoints(`md`, `down`);
-
-	return css`
-    display: grid;
-    place-content: center;
-    text-decoration: none;
-
-    &, &:visited {
-      color: inherit;
-    }
-
-    ${mdDown} {
-      display: none;
-    }
-
-    ${smDown} {
-      margin-top: ${theme.spacing(0.15)}em;
-      display: grid;
-    }
-	`;
-});
+import { StyledAnchorLink, StyledTypography } from './styled';
 
 const Logo: React.FunctionComponent = () => {
 

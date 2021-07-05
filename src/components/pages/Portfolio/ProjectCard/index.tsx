@@ -1,57 +1,17 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {
 	Button,
-	Card,
 	CardActionArea,
 	CardActions,
 	CardContent,
-	CardMedia,
 	Typography,
 } from '@material-ui/core';
 import { kebabCase } from 'lodash';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { ProjectProps } from '../../../../utils/types';
-import styled, { css } from 'styled-components';
-import { motion } from 'framer-motion';
 import TranslateText from '../../../Layout/Locales/TranslateText';
-
-const StyledCard = styled(motion(Card))(({ theme }) => {
-
-	return css`
-    max-width: 400px;
-	`;
-});
-const StyledCardMedia = styled(CardMedia)(({ theme }) => {
-
-	return css`
-    aspect-ratio: 16 / 9;
-	`;
-});
-const StyledCardActionArea = styled(motion(CardActionArea))(({ theme }) => {
-
-	return css`
-
-	`;
-});
-const StyledCardContent = styled(CardContent)(({ theme }) => {
-
-	return css`
-
-	`;
-});
-const StyledCardActions = styled(CardActions)(({ theme }) => {
-
-	return css`
-
-	`;
-});
-const StyledWrapper = styled(motion.div)(({ theme }) => {
-
-	return css`
-    display: inherit;
-	`;
-});
+import { StyledCard, StyledCardMedia, StyledWrapper } from './styled';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
@@ -68,7 +28,7 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 				elevation={6}
 				variants={props.variants}
 			>
-				<StyledCardActionArea>
+				<CardActionArea>
 					<StyledCardMedia
 						// @ts-ignore
 						component={`img`}
@@ -80,14 +40,14 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 							id: `projectGif`,
 						})}`}
 					/>
-					<StyledCardContent>
+					<CardContent>
 						<Typography gutterBottom variant={`h5`} component={`h2`}>
 							{props.title}
 						</Typography>
 						{projectsNotEmpty &&
 						documentToReactComponents(props.body, props.options)}
-					</StyledCardContent>
-					<StyledCardActions>
+					</CardContent>
+					<CardActions>
 						<Button
 							href={props.liveSiteUrl}
 							size={`small`}
@@ -102,8 +62,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 						>
 							<TranslateText text={`Git Repository`} />
 						</Button>
-					</StyledCardActions>
-				</StyledCardActionArea>
+					</CardActions>
+				</CardActionArea>
 			</StyledCard>
 		</StyledWrapper>
 	);

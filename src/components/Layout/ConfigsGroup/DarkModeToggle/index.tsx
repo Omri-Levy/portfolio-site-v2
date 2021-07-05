@@ -1,54 +1,12 @@
 import { Switch } from '@material-ui/core';
 import { Brightness2Outlined, WbSunnyOutlined } from '@material-ui/icons';
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../../context/ThemeProvider';
-import { shadedPrimaryColor } from '../../../../hooks/useMakeTheme/colors';
-import { ThemeColors } from '../../../../context/ThemeProvider/types';
-import styled, { css } from 'styled-components';
-import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
-
-const StyledLabel = styled(`label`)(({ theme }) => {
-	const { isRTL } = useThemeContext();
-
-	return css`
-    display: flex;
-    align-items: center;
-    margin-left: ${isRTL ? `unset` : `${theme.spacing(0.05)}`};
-    margin-right: ${isRTL ? `${theme.spacing(0.05)}em` : `unset`};
-	`;
-});
-const StyledSwitch = styled(Switch)(({ theme }) => {
-	return css`
-
-	`;
-});
+import React from 'react';
+import { StyledLabel } from './StyledLabel';
+import useDarkMode from './hooks/useDarkMode';
 
 const DarkModeToggle: React.FunctionComponent = () => {
-	const { isDarkMode, setIsDarkMode, setPrimaryColor } = useContext(
-		ThemeContext,
-	);
+	const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-	const handleChange = () => {
-		setIsDarkMode((prevState: boolean) => {
-			localStorage.setItem(`isDarkMode`, JSON.stringify(!prevState));
-			document.body.setAttribute(`data-is-dark-mode`, JSON.stringify(!isDarkMode));
-
-			const colors = shadedPrimaryColor(!prevState);
-
-			if (!localStorage.getItem(`primaryColor`)) {
-				localStorage.setItem(`primaryColor`, `blue`);
-			}
-
-			const color = localStorage.getItem(`primaryColor`) as ThemeColors;
-
-			setPrimaryColor({
-				colorWithShade: colors[color],
-				color,
-			});
-
-			return !prevState;
-		});
-	};
 
 	return (
 		<StyledLabel>
@@ -57,9 +15,9 @@ const DarkModeToggle: React.FunctionComponent = () => {
 			) : (
 				<WbSunnyOutlined />
 			)}
-			<StyledSwitch
+			<Switch
 				color={`primary`}
-				onChange={handleChange}
+				onChange={toggleDarkMode}
 				checked={isDarkMode}
 				inputProps={{ 'aria-label': `dark-mode-toggle` }}
 			/>
@@ -68,3 +26,4 @@ const DarkModeToggle: React.FunctionComponent = () => {
 };
 
 export default DarkModeToggle;
+

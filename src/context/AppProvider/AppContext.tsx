@@ -3,7 +3,9 @@ import { AppContextType } from './types';
 
 const AppContext = createContext<AppContextType>({
 	isBurgerMenuOpen: true,
-	setIsBurgerMenuOpen: () => true,
+	openBurgerMenu: () => null,
+	closeBurgerMenu: () => null,
+	toggleBurgerMenu: () => null,
 });
 
 export default AppContext;

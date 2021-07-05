@@ -1,17 +1,10 @@
 import { IconButton } from '@material-ui/core';
-import { FiberManualRecord } from '@material-ui/icons';
 import React from 'react';
 import { shadedPrimaryColor } from '../../../../../hooks/useMakeTheme/colors';
 import { Props } from './types';
 import useThemeContext
 	from '../../../../../context/ThemeProvider/useThemeContext';
-import styled, { css } from 'styled-components';
-
-const StyledFiberManualRecord = styled(FiberManualRecord)<{ $color: string }>(({ $color }) => {
-	return css`
-    color: ${$color}
-	`;
-});
+import { StyledFiberManualRecord } from './styled/StyledFiberManualRecord';
 
 const ThemeOption: React.FunctionComponent<Props> = ({ color, alt }) => {
 	const {
