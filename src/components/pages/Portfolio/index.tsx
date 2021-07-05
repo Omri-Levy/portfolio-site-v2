@@ -1,6 +1,6 @@
 import { BLOCKS } from '@contentful/rich-text-types';
 import { WorkOutline } from '@material-ui/icons';
-import React from 'react';
+import React, { useEffect } from 'react';
 import useAllProjects from '../../../hooks/useAllProjects';
 import PageContainer from '../../Layout/PageContainer';
 import Projects from './Projects';
@@ -8,7 +8,7 @@ import { Node } from './types';
 import { Box, Typography } from '@material-ui/core';
 import styled, { css } from 'styled-components';
 import getCustomBreakpoints from '../../../utils/getCustomBreakpoints';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 const StyledGridContainer = styled(motion(Box))(({ theme }) => {
 	const lgDown = getCustomBreakpoints(`lg`, `down`);
@@ -60,6 +60,48 @@ const Portfolio: React.FunctionComponent = () => {
 			},
 		},
 	};
+	const controls = useAnimation();
+
+	useEffect(() => {
+		const listener = async () => {
+			const thisSection = document.getElementById(`portfolio`);
+			const isActive = thisSection?.classList.contains(`active-section`);
+
+			if (isActive) {
+				await controls.start(`show`);
+			} else {
+				await controls.start(`hidden`);
+			}
+		};
+		(() => listener())();
+
+		document.addEventListener(`scroll`, listener, false);
+
+		return () => {
+			document.removeEventListener(`scroll`, listener, false);
+		};
+	}, []);
+	const items = {
+		hidden: {
+			scale: 0,
+		},
+		show: {
+			scale: 1,
+		},
+	};
+	const container = {
+		hidden: {
+			opacity: 0,
+		},
+		show: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.5,
+				delayChildren: 0.2,
+			},
+		},
+	};
+
 
 	return (
 		<PageContainer
@@ -67,9 +109,16 @@ const Portfolio: React.FunctionComponent = () => {
 			Icon={WorkOutline}
 			text={`Portfolio`}
 		>
-
-			<StyledGridContainer>
-				<Projects allProjects={allProjects} options={options} />
+			<StyledGridContainer
+				variants={container}
+				initial={`hidden`}
+				animate={controls}
+			>
+				<Projects
+					variants={items}
+					allProjects={allProjects}
+					options={options}
+				/>
 			</StyledGridContainer>
 		</PageContainer>
 	);

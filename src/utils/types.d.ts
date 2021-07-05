@@ -2,7 +2,7 @@ import { Document } from '@contentful/rich-text-types';
 import { Button } from '@material-ui/core';
 import { RenderOptions } from '@testing-library/react';
 import React, { SetStateAction } from 'react';
-import { MotionProps } from 'framer-motion';
+import { MotionProps, Variants } from 'framer-motion';
 
 type UI = JSX.Element;
 type Options =
@@ -80,6 +80,7 @@ type ProjectOptions = Record<never, never>;
 interface ProjectsContainerProps {
 	allProjects: Data;
 	options: ProjectOptions;
+	variants: Variants;
 }
 
 interface ProjectProps extends MotionProps {

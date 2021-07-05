@@ -5,4 +5,3 @@ body {
 body[data-is-dark-mode="false"] {
     cursor: url("../../../static/cursor-dark.svg"), auto;
 }
-

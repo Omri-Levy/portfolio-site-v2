@@ -1,12 +1,13 @@
 import React from 'react';
 import { ProjectsContainerProps } from '../../../../utils/types';
-import ProjectCard from '../ProjectCard';
 import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
+import ProjectCard from '../ProjectCard';
 
 const Projects: React.FunctionComponent<ProjectsContainerProps> = (
 	{
 		allProjects,
 		options,
+		variants,
 	},
 ) => {
 	const { isRTL } = useThemeContext();
@@ -19,6 +20,7 @@ const Projects: React.FunctionComponent<ProjectsContainerProps> = (
 		<>
 			{filteredData?.map((project) => (
 					<ProjectCard
+						variants={variants}
 						key={project.node.title}
 						liveSiteUrl={project.node.liveSiteUrl}
 						gitRepositoryUrl={project.node.gitRepositoryUrl}

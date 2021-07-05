@@ -32,8 +32,6 @@ const Locales: React.FunctionComponent<ChildrenProps> = ({ children }) => {
 		portfolio: useTranslations(`תיק עבודות`, `Portfolio`),
 		aboutMe: useTranslations(`אודותי`, `About Me`),
 		contactMe: useTranslations(`צרו קשר`, `Contact Me`),
-		landingPage: useTranslations(`דף נחיתה`, `Landing Page`),
-		home: useTranslations(`דף בית`, `Home Page`),
 
 		// nav logo
 		omriLevy: useTranslations(`עומרי לוי`, `Omri Levy`),
