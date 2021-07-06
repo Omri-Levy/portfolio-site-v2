@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
+import { SEO } from '../../SEO';
 
 const Head: React.FunctionComponent = () => {
 	const intl = useIntl();
@@ -9,7 +9,7 @@ const Head: React.FunctionComponent = () => {
 	const pageTitle = `${omriLevy} - ${portfolioSite}`;
 
 	return (
-		<Helmet title={pageTitle} />
+		<SEO title={pageTitle} />
 	);
 };
 

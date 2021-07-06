@@ -4,7 +4,11 @@ const path = require(`path`);
 module.exports = {
 	siteMetadata: {
 		title: `Omri Levy - Portfolio site`,
+		description: `Omri Levy portfolio site, fullstack development,` +
+			` back-end, front-end, static websites, and apps.`,
 		author: `Omri Levy`,
+		url: `https://omrilevy-portfolio.netlify.app`,
+		image: `/images/preview-illustration.png`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
