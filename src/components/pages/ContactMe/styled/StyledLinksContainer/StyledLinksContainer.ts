@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Box } from '@material-ui/core';
-import useThemeContext
-	from '../../../../../context/ThemeProvider/useThemeContext';
 
 const StyledLinksContainer = styled(Box)(({ theme }) => {
-	const { isRTL } = useThemeContext();
 
 	return css`
     display: grid;
@@ -14,8 +11,7 @@ const StyledLinksContainer = styled(Box)(({ theme }) => {
 
     a {
       text-decoration: none;
-      margin-right: ${isRTL ? `unset` : `${theme.spacing(0.1)}em`};
-      margin-left: ${isRTL ? `${theme.spacing(0.1)}em` : `unset`};
+      margin-inline-end: ${theme.spacing(0.1)}em;
 
       &, &:visited {
         color: inherit;

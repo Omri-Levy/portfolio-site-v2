@@ -49,6 +49,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 					</CardContent>
 					<CardActions>
 						<Button
+							target={`_blank`}
+							rel='noopener'
 							href={props.liveSiteUrl}
 							size={`small`}
 							color={`primary`}
@@ -56,6 +58,8 @@ const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
 							<TranslateText text={`Live Site`} />
 						</Button>
 						<Button
+							target={`_blank`}
+							rel='noopener'
 							href={props.gitRepositoryUrl}
 							size={`small`}
 							color={`primary`}

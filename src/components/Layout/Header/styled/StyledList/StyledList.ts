@@ -2,13 +2,10 @@ import styled, { css } from 'styled-components';
 import { List } from '@material-ui/core';
 import getCustomBreakpoints from '../../../../../utils/getCustomBreakpoints';
 import isSmDown from '../../../../../utils/isSmDown';
-import useThemeContext
-	from '../../../../../context/ThemeProvider/useThemeContext';
 
 const StyledList = styled(List)(({ theme }) => {
 	const smDown = isSmDown();
 	const lgUp = getCustomBreakpoints(`lg`, `up`);
-	const { isRTL } = useThemeContext();
 
 
 	return css`
@@ -18,8 +15,7 @@ const StyledList = styled(List)(({ theme }) => {
     width: min(40em, 100%);
 
     ${lgUp} {
-      margin-right: ${isRTL ? `unset` : `${theme.spacing(1)}em`};
-      margin-left: ${isRTL ? `${theme.spacing(1)}em` : `unset`};
+      margin-inline-end: ${theme.spacing(1)}em;
     }
 
     ${smDown} {
