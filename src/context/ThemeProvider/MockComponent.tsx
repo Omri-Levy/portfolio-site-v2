@@ -1,16 +1,16 @@
 import { Button } from '@material-ui/core';
-import React, { useContext } from 'react';
-import { ThemeContext } from '.';
+import React from 'react';
+import useThemeContext from './useThemeContext';
 
 const MockComponent: React.FunctionComponent = () => {
-  const { primaryColor } = useContext(ThemeContext);
+	const { primaryColor } = useThemeContext();
 
-  return (
-    <div>
-      <Button />
-      {primaryColor}
-    </div>
-  );
+	return (
+		<div>
+			<Button />
+			{primaryColor}
+		</div>
+	);
 };
 
 export default MockComponent;

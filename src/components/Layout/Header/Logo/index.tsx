@@ -1,18 +1,19 @@
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 import TranslateText from '../../Locales/TranslateText';
-import useStyles from './useStyles';
+import { StyledAnchorLink, StyledTypography } from './styled';
 
 const Logo: React.FunctionComponent = () => {
-	const classes = useStyles();
+
 
 	return (
-		<AnchorLink to={`/home#portfolio`} className={classes.title}>
-			<TranslateText text={`Omri Levy`} />
-			<span className={classes.subtitle}>
+		<StyledAnchorLink to={`/#hero`}>
+			<StyledTypography variant={`h2`} $fontSize={`subtitle1`}>
+				<TranslateText text={`Omri Levy`} />
+			</StyledTypography>
+			<StyledTypography variant={`h1`} $fontSize={`subtitle2`}>
 				<TranslateText text={`Portfolio Site`} />
-			</span>
-		</AnchorLink>
+			</StyledTypography>
+		</StyledAnchorLink>
 	);
 };
 

@@ -1,41 +1,52 @@
-import { List, Toolbar } from '@material-ui/core';
 import {
-  InfoOutlined,
-  PermContactCalendarOutlined,
-  WorkOutline,
+	InfoOutlined,
+	PermContactCalendarOutlined,
+	WorkOutline,
 } from '@material-ui/icons';
 import React, { useEffect } from 'react';
-import animations from './animations';
 import NavLink from './NavLink';
-import useStyles from './useStyles';
+import { StyledNav } from '../styled/StyledNav';
+import { StyledList } from '../styled/StyledList';
+import setActiveNavLink from '../../../../utils/setActiveNavLink';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
+
 
 const Nav: React.FunctionComponent = () => {
-	const classes = useStyles();
+	const { isDarkMode, primaryColor } = useThemeContext();
 
 	useEffect(() => {
-		animations();
+		setActiveNavLink();
+	}, [isDarkMode, primaryColor]);
+
+	useEffect(() => {
+		document.addEventListener(`scroll`, setActiveNavLink);
+
+		return () => {
+			document.removeEventListener(`scroll`, setActiveNavLink);
+		};
 	}, []);
 
+
 	return (
-		<Toolbar disableGutters={true} component={`nav`} className={classes.nav}>
-			<List className={classes.menuList}>
+		<StyledNav component={`nav`}>
+			<StyledList>
 				<NavLink
-					to={`/home#portfolio`}
-					Icon={WorkOutline}
-					text={`Portfolio`}
-				/>
-				<NavLink
-					to={`/home#about-me`}
+					to={`/#about-me`}
 					Icon={InfoOutlined}
 					text={`About Me`}
 				/>
 				<NavLink
-					to={`/home#contact-me`}
+					to={`/#contact-me`}
 					Icon={PermContactCalendarOutlined}
 					text={`Contact Me`}
 				/>
-			</List>
-		</Toolbar>
+				<NavLink
+					to={`/#portfolio`}
+					Icon={WorkOutline}
+					text={`Portfolio`}
+				/>
+			</StyledList>
+		</StyledNav>
 	);
 };
 

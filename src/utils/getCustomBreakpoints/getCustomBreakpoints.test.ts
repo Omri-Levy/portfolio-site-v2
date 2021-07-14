@@ -1,26 +1,15 @@
-import { createMuiTheme } from '@material-ui/core';
 import getCustomBreakpoints from '.';
 
 describe(`getCustomBreakpoints`, () => {
-	const theme = createMuiTheme({
-		breakpoints: {
-			values: {
-				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-				// @ts-ignore
-				ms: 800,
-			},
-		},
-	});
-
 	it(`returns custom min-width media query`, () => {
-		const mediaQuery = getCustomBreakpoints(`ms`, theme, `up`);
+		const mediaQuery = getCustomBreakpoints(`sm`, `up`);
 
-		expect(mediaQuery).toEqual(`@media (min-width:800px)`);
+		expect(mediaQuery).toEqual(`@media (min-width: 30em)`);
 	});
 
 	it(`returns custom max-width media query`, () => {
-		const mediaQuery = getCustomBreakpoints(`ms`, theme, `down`);
+		const mediaQuery = getCustomBreakpoints(`sm`, `down`);
 
-		expect(mediaQuery).toEqual(`@media (max-width:799.95px)`);
+		expect(mediaQuery).toEqual(`@media (max-width: 30em)`);
 	});
 });

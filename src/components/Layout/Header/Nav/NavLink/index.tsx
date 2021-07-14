@@ -1,25 +1,23 @@
-import { ListItem } from '@material-ui/core';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 import TranslateText from '../../../Locales/TranslateText';
 import { Props } from './types';
-import useStyles from './useStyles';
+import useAppContext from '../../../../../context/AppProvider/useAppContext';
+import { StyledAnchorLink, StyledListItem } from './styled';
 
 const NavLink: React.FunctionComponent<Props> = (props) => {
 	const { to, Icon, text } = props;
-	const { listItem, link, icon } = useStyles();
+	const { closeBurgerMenu } = useAppContext();
+
 
 	return (
-		<ListItem className={listItem} disableGutters={true}>
-			<AnchorLink
-				to={to}
-				className={link}
-			>
-				{Icon && <Icon className={icon} />}
+		// cast false to any due to the button prop expecting boolean and receiving
+		// false
+		<StyledListItem disableGutters button={false as any}>
+			<StyledAnchorLink to={to} onAnchorLinkClick={closeBurgerMenu}>
+				{Icon && <Icon />}
 				<TranslateText text={text} />
-				<span />
-			</AnchorLink>
-		</ListItem>
+			</StyledAnchorLink>
+		</StyledListItem>
 	);
 };
 

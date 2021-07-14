@@ -2,10 +2,11 @@ import React from 'react';
 
 interface Props {
 	children: React.ReactNode;
-	Icon: React.FunctionComponent<{ className: string }>;
-	text: string;
+	Icon?: React.FunctionComponent;
+	text?: string;
 	id: string;
-	className?: string;
+	$disableAnimation?: boolean;
+	inView?: boolean;
 }
 
 export { Props };

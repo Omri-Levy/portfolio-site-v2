@@ -1,48 +1,75 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Grid, Typography } from '@material-ui/core';
-import KebabCase from 'lodash/kebabCase';
+import {
+	Button,
+	CardActionArea,
+	CardActions,
+	CardContent,
+	Typography,
+} from '@material-ui/core';
+import { kebabCase } from 'lodash';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { ProjectProps } from '../../../../utils/types';
-import Link from '../../../Link';
-import useStyles from './useStyles';
+import TranslateText from '../../../Layout/Locales/TranslateText';
+import { StyledCard, StyledCardMedia, StyledWrapper } from './styled';
 
 const ProjectCard: React.FunctionComponent<ProjectProps> = (props) => {
-	const classes = useStyles();
 	const projectsNotEmpty = Object.keys(props.body).length > 0;
 	const intl = useIntl();
 
 	return (
-		<Grid container className={classes.projectCardContainer}>
-			<Grid item className={classes.innerBox}>
-				<Typography variant={`h2`} className={classes.title}>
-					{props.title}
-				</Typography>
-				{projectsNotEmpty &&
-				documentToReactComponents(props.body, props.options)}
-				<Grid item className={classes.buttonsContainer}>
-					<Link
-						variant={`primary`}
-						text={`Live Site`}
-						to={props.liveSiteUrl}
+		<StyledWrapper whileHover={{
+			scale: 1.1,
+			transition: {
+				duration: 0.4,
+			},
+		}}>
+			<StyledCard
+				elevation={6}
+				variants={props.variants}
+			>
+				<CardActionArea>
+					<StyledCardMedia
+						// @ts-ignore
+						component={`img`}
+						image={props.projectGif}
+						alt={`${kebabCase(props.title)}${intl.formatMessage({
+							id: `projectGif`,
+						})}`}
+						title={`${kebabCase(props.title)}${intl.formatMessage({
+							id: `projectGif`,
+						})}`}
 					/>
-					<Link
-						variant={`secondary`}
-						text={`Git Repository`}
-						to={props.gitRepositoryUrl}
-					/>
-				</Grid>
-			</Grid>
-			<Grid item className={classes.imageContainer}>
-				<img
-					src={props.projectGif}
-					alt={`${KebabCase(props.title)}${intl.formatMessage({
-						id: `projectGif`,
-					})}`}
-					className={classes.image}
-				/>
-			</Grid>
-		</Grid>
+					<CardContent>
+						<Typography gutterBottom variant={`h5`} component={`h2`}>
+							{props.title}
+						</Typography>
+						{projectsNotEmpty &&
+						documentToReactComponents(props.body, props.options)}
+					</CardContent>
+					<CardActions>
+						<Button
+							target={`_blank`}
+							rel='noopener'
+							href={props.liveSiteUrl}
+							size={`small`}
+							color={`primary`}
+						>
+							<TranslateText text={`Live Site`} />
+						</Button>
+						<Button
+							target={`_blank`}
+							rel='noopener'
+							href={props.gitRepositoryUrl}
+							size={`small`}
+							color={`primary`}
+						>
+							<TranslateText text={`Git Repository`} />
+						</Button>
+					</CardActions>
+				</CardActionArea>
+			</StyledCard>
+		</StyledWrapper>
 	);
 };
 

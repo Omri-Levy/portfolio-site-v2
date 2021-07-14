@@ -1,32 +1,37 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Box, Grid, TextField } from '@material-ui/core';
+import { Box, Button, TextField } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
-import React, {
-  FormEvent,
-  RefObject,
-  useContext,
-  useRef,
-  useState,
-} from 'react';
+import React, { FormEvent, RefObject, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useIntl } from 'react-intl';
-import { ThemeContext } from '../../../../context/ThemeProvider';
 import { Key } from '../../../../utils/types';
-import Button from '../../../Button';
 import TranslateText from '../../../Layout/Locales/TranslateText';
 import validationSchema from '../validationSchema';
-import FormInputProps from './formInputProps';
 import { FormInputs } from './types';
-import useStyles from './useStyles';
+import { Send } from '@material-ui/icons';
+import useThemeContext from '../../../../context/ThemeProvider/useThemeContext';
+import {
+	StyledFirstRow,
+	StyledGridContainer,
+	StyledSubmitContainer,
+} from './styled';
+
 
 const ContactMeForm: React.FunctionComponent = () => {
-  const classes = useStyles();
-  const { isRTL, isDarkMode } = useContext(ThemeContext);
-  const [isRobot, setIsRobot] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  const { register, errors, handleSubmit } = useForm<FormInputs>({
+	const { isRTL, isDarkMode } = useThemeContext();
+	const [isRobot, setIsRobot] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
+	const {
+		control,
+		formState: { errors },
+		handleSubmit,
+	} = useForm<FormInputs>({
 		resolver: yupResolver(validationSchema),
+		defaultValues: {
+			fullName: ``,
+			email: ``,
+		},
 	});
 	const [displayAlert, setDisplayAlert] = useState(false);
 	const [alertMessage, setAlertMessage] = useState(``);
@@ -34,7 +39,6 @@ const ContactMeForm: React.FunctionComponent = () => {
 	const [alertSeverity, setAlertSeverity] = useState<AlertSeverity>(undefined);
 	const intl = useIntl();
 	const recaptcha = useRef<{ getValue: () => string }>();
-	const formInputProps = new FormInputProps(register);
 	const encode = (data: Record<Key, string>) => {
 		return Object.keys(data)
 			.map(
@@ -44,8 +48,11 @@ const ContactMeForm: React.FunctionComponent = () => {
 	};
 	const handleChange = () => setIsRobot(false);
 	const onCooldown = () => {
-		const isOnCooldown =
-			JSON.parse(localStorage.getItem(`ec`) as string) || false;
+		let isOnCooldown = localStorage.getItem(`ec`);
+
+		if (typeof isOnCooldown == `string`) {
+			isOnCooldown = JSON.parse(isOnCooldown);
+		}
 
 		if (isOnCooldown) {
 			setDisplayAlert(true);
@@ -112,97 +119,111 @@ const ContactMeForm: React.FunctionComponent = () => {
 	};
 
 	return (
-		<Box className={classes.contactMeFormContainer}>
-			<form
-				name={`contact`}
-				className={classes.form}
-				netlify-honeypot={`bot-field`}
-				data-netlify={`true`}
-				data-netlify-recaptcha={`true`}
-				id={`contact-me-form`}
-				method={`POST`}
-				onSubmit={handleSubmit(onSubmit)}
-			>
-				<input type={`hidden`} name={`form-name`} value={`contact`} />
-				<input type={`hidden`} name={`bot-field`} />
-				<noscript>
-					<p>This form won’t work with Javascript disabled</p>
-				</noscript>
-				<Grid container className={classes.formGridContainer}>
-					<Grid item className={classes.fullNameGridItem}>
-						<TextField
-							name={`fullName`}
-							variant={`outlined`}
-							label={<TranslateText text={`Full Name`} />}
-							id={`full-name`}
-							className={classes.fullName}
-							inputProps={formInputProps.setMaxLength(70)}
-							error={!!errors.fullName}
-							helperText={errors.fullName?.message}
-							required
-						/>
-					</Grid>
-					<Grid item className={classes.emailGridItem}>
-						<TextField
-							name={`email`}
-							variant={`outlined`}
-							label={<TranslateText text={`Email`} />}
-							id={`email`}
-							className={classes.email}
-							inputProps={formInputProps.setMaxLength(125)}
-							error={!!errors.email}
-							helperText={errors.email?.message}
-							required
-						/>
-					</Grid>
-				</Grid>
-				<Grid container item>
-					<Grid item className={classes.messageGridItem}>
-						<TextField
-							name={`message`}
-							variant={`outlined`}
-							label={<TranslateText text={`Message`} />}
-							id={`message`}
-							className={classes.message}
-							inputProps={formInputProps.setMaxLength(640)}
-							error={!!errors.message}
-							helperText={errors.message?.message}
-							multiline
-							required
-						/>
-					</Grid>
-					<Grid container item justify={`flex-end`}>
-						<Button
-							type={`submit`}
-							variant={`secondary`}
-							text={`Send`}
-							additionalClass={classes.sendButton}
-							disabled={isLoading}
-						/>
-					</Grid>
-					{displayAlert && (
+		<form
+			name={`contact`}
+			netlify-honeypot={`bot-field`}
+			data-netlify={`true`}
+			data-netlify-recaptcha={`true`}
+			id={`contact-me-form`}
+			method={`POST`}
+			onSubmit={handleSubmit(onSubmit)}
+		>
+			<input type={`hidden`} name={`form-name`} value={`contact`} />
+			<input type={`hidden`} name={`bot-field`} />
+			<noscript>
+				<p>This form won’t work with Javascript disabled</p>
+			</noscript>
+			<StyledGridContainer>
+				<StyledFirstRow>
+					<Controller
+						name={`fullName`}
+						control={control}
+						render={({ field }) => (
+							<TextField
+								variant={`outlined`}
+								label={<TranslateText text={`Full Name`} />}
+								id={`full-name`}
+								inputProps={{
+									maxLength: 70,
+								}}
+								error={!!errors.fullName}
+								helperText={errors.fullName?.message}
+								required
+								{...field}
+							/>
+						)} />
+					<Controller
+						name={`email`}
+						control={control}
+						render={({ field }) => (
+							<TextField
+								variant={`outlined`}
+								label={<TranslateText text={`Email`} />}
+								id={`email`}
+								inputProps={{
+									maxLength: 125,
+								}}
+								error={!!errors.email}
+								helperText={errors.email?.message}
+								required
+								{...field}
+							/>
+						)} />
+				</StyledFirstRow>
+				<Box>
+					<Controller
+						name={`message`}
+						control={control}
+						render={({ field }) => (
+							<TextField
+								variant={`outlined`}
+								label={<TranslateText text={`Message`} />}
+								id={`message`}
+								inputProps={{
+									maxLength: 640,
+								}}
+								fullWidth
+								error={!!errors.message}
+								helperText={errors.message?.message}
+								multiline
+								required
+								{...field}
+							/>
+						)} />
+				</Box>
+				{displayAlert && (
+					<Box>
 						<Alert
 							variant={`outlined`}
 							severity={alertSeverity}
 							onClose={() => setDisplayAlert(false)}
-							style={{
-								width: `100%`,
-								marginBottom: 10,
-							}}
 						>
 							{alertMessage}
 						</Alert>
-					)}
-				</Grid>
-				<ReCAPTCHA
-					ref={recaptcha as RefObject<ReCAPTCHA>}
-					sitekey={process.env.SITE_RECAPTCHA_KEY || ``}
-					theme={isDarkMode ? `dark` : `light`}
-					hl={isRTL ? `iw` : `en`}
-					onChange={handleChange}
-				/>
-			</form>
-		</Box>
+					</Box>
+				)}
+				<Box>
+					<ReCAPTCHA
+						ref={recaptcha as RefObject<ReCAPTCHA>}
+						sitekey={process.env.SITE_RECAPTCHA_KEY || ``}
+						theme={isDarkMode ? `dark` : `light`}
+						hl={isRTL ? `iw` : `en`}
+						onChange={handleChange}
+					/>
+				</Box>
+				<StyledSubmitContainer>
+					<Button
+						type={`submit`}
+						variant={`contained`}
+						color={`primary`}
+						disabled={isLoading}
+						startIcon={<Send />}
+					>
+						<TranslateText text={`Send`} />
+					</Button>
+				</StyledSubmitContainer>
+			</StyledGridContainer>
+		</form>
 	);
 };
 

@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useTranslations from '.';
-import { ThemeContext } from '../../context/ThemeProvider';
 import { Props } from './types';
+import useThemeContext from '../../context/ThemeProvider/useThemeContext';
 
 const MockComponent: React.FunctionComponent<Props> = ({ rtl }) => {
 	const [isMounted, setIsMounted] = useState(true);
-	const { setIsRTL } = useContext(ThemeContext);
+	const { setIsRTL } = useThemeContext();
 
 	useEffect(() => {
 		if (isMounted) {

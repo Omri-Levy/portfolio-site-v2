@@ -4,15 +4,23 @@ const path = require(`path`);
 module.exports = {
 	siteMetadata: {
 		title: `Omri Levy - Portfolio site`,
+		description: `Omri Levy portfolio site, fullstack development,` +
+			` back-end, front-end, static websites, and apps.`,
 		author: `Omri Levy`,
+		url: `https://omrilevy-portfolio.netlify.app`,
+		image: `/images/preview-illustration.png`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-typescript`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
-		`gatsby-plugin-anchor-links`,
-		`gatsby-plugin-transition-link`,
+		{
+			resolve: `gatsby-plugin-anchor-links`,
+			options: {
+				offset: -120,
+			},
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -31,6 +39,9 @@ module.exports = {
 				spaceId: process.env.CONTENTFUL_SPACE_ID,
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 			},
+		},
+		{
+			resolve: `gatsby-plugin-styled-components`,
 		},
 		{
 			resolve: `gatsby-source-filesystem`,

@@ -11,14 +11,3 @@ declare module '*.pdf' {
 	export = value;
 }
 
-declare module '@material-ui/core/styles/createBreakpoints' {
-	interface BreakpointOverrides {
-		xs: true;
-		sm: true;
-		ms: true;
-		md: true;
-		lg: true;
-		mlg: true;
-		xl: true;
-	}
-}

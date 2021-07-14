@@ -1,19 +1,18 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
 import TranslateText from '../../Locales/TranslateText';
 import { Props } from './types';
-import useStyles from './useStyles';
+import { StyledHeader, StyledTypography } from './styled';
 
 const PageTitle: React.FunctionComponent<Props> = ({ Icon, text }) => {
-	const { pageTitleContainer, icon, typography } = useStyles();
+
 
 	return (
-		<header className={pageTitleContainer}>
-			<Icon className={icon} />
-			<Typography className={typography} variant={`h1`}>
+		<StyledHeader>
+			<StyledTypography variant={`h1`}>
+				{Icon && <Icon />}
 				<TranslateText text={text} />
-			</Typography>
-		</header>
+			</StyledTypography>
+		</StyledHeader>
 	);
 };
 

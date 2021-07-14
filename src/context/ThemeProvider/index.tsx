@@ -1,27 +1,17 @@
-import React, { createContext, useEffect, useState } from 'react';
-import { colorsObj } from '../../hooks/useMakeTheme/colors';
+import React, { useEffect, useState } from 'react';
+import { shadedPrimaryColor } from '../../hooks/useMakeTheme/colors';
 import { ChildrenProps } from '../../utils/types';
-import { Theme } from './types';
-
-const theme: Theme = {
-	isDarkMode: true,
-	setIsDarkMode: () => true,
-	primaryColor: `rgb(144, 202, 249)`,
-	setPrimaryColor: () => `rgb(144, 202, 249)`,
-	isRTL: false,
-	setIsRTL: () => false,
-	isLandingPage: false,
-	setIsLandingPage: () => false,
-};
-
-const ThemeContext = createContext(theme);
+import ThemeContext from './ThemeContext';
+import { ThemeColors } from './types';
 
 const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 ) => {
-	const [isDarkMode, setIsDarkMode] = useState(true);
-	const [primaryColor, setPrimaryColor] = useState(`rgb(144, 202, 249)`);
+	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [primaryColor, setPrimaryColor] = useState({
+		colorWithShade: `rgb(144, 202, 249)`,
+		color: `blue` as ThemeColors,
+	});
 	const [isRTL, setIsRTL] = useState(false);
-	const [isLandingPage, setIsLandingPage] = useState(true);
 	const [windowLoaded, setWindowLoaded] = useState(false);
 
 	useEffect(() => {
@@ -30,33 +20,39 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 		}
 
 		if (windowLoaded) {
-			setIsDarkMode(() => {
-				const mode = JSON.parse(localStorage.getItem(`isDarkMode`) as string);
+			let mode = localStorage.getItem(`isDarkMode`) || false;
 
-				if (!mode) {
-					localStorage.setItem(`isDarkMode`, JSON.stringify(true));
+			if (typeof mode === `string`) {
+				mode = JSON.parse(mode) as boolean;
+			}
 
-					return true;
-				}
+			const colors = shadedPrimaryColor(mode);
+			const color = localStorage.getItem(`primaryColor`) as ThemeColors;
 
-				return mode;
-			});
+			setIsDarkMode(mode || isDarkMode);
+			document.body.setAttribute(`data-is-dark-mode`, JSON.stringify(mode || isDarkMode));
 			setPrimaryColor(() => {
-				const mode = JSON.parse(localStorage.getItem(`isDarkMode`) as string);
-				const colors = colorsObj(mode);
-				const color = localStorage.getItem(`primaryColor`);
-
 				if (!color) {
 					localStorage.setItem(`primaryColor`, `blue`);
 
-					return colors[`blue`];
+					return {
+						colorWithShade: colors[`blue`],
+						color: `blue` as ThemeColors,
+					};
 				}
 
-				return colors[color];
+				return {
+					colorWithShade: colors[color],
+					color,
+				};
 			});
 			setIsRTL(
 				() => {
-					const rtl = JSON.parse(localStorage.getItem(`isRTL`) as string);
+					let rtl = localStorage.getItem(`isRTL`) || false;
+
+					if (typeof rtl === `string`) {
+						rtl = JSON.parse(rtl) as boolean;
+					}
 
 					if (!rtl) {
 						localStorage.setItem(`isRTL`, JSON.stringify(false));
@@ -79,8 +75,6 @@ const ThemeProvider: React.FunctionComponent<ChildrenProps> = ({ children },
 				setPrimaryColor,
 				isRTL,
 				setIsRTL,
-				isLandingPage,
-				setIsLandingPage,
 			}}
 		>
 			{children}

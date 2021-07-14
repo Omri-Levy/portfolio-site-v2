@@ -1,5 +1,7 @@
+import { ThemeColors } from '../../../../../context/ThemeProvider/types';
+
 interface Props {
-	color: string;
+	color: ThemeColors;
 	alt: string;
 }
 

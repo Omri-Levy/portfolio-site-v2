@@ -5,26 +5,6 @@ const path = require(`path`);
 
 const fileName = path.basename(path.dirname(__filename));
 
-// create material ui/jss styling file
-fs.writeFile(
-	`./useStyles.ts`,
-	`import {makeStyles} from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-
-}));
-
-export default useStyles;`,
-	(err) => {
-		if (err) {
-			console.log(err);
-			console.log(`error at useStyles.ts`);
-		}
-
-		console.log(`created useStyles.ts`);
-	},
-);
-
 // create tests file
 fs.writeFile(
 	`./${fileName}.test.tsx`,
@@ -55,15 +35,15 @@ fs.writeFile(`./types.d.ts`, ``, (err) => {
 
 // create component file
 fs.writeFile(
-  `./index.tsx`,
-  `import React from 'react';
-import useStyles from './useStyles';
+	`./index.tsx`,
+	`import React from 'react';
+
 
 const ${fileName}: React.FunctionComponent = () => {
-	const classes = useStyles();
+	
 	
 	return (
-		<div className={classes.nameContainer}>
+		<div >
 			<h1>${fileName}</h1>
 		</div>
 	);

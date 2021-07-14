@@ -1,28 +1,32 @@
 import { IconButton } from '@material-ui/core';
-import { FiberManualRecord } from '@material-ui/icons';
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../../../../context/ThemeProvider';
-import { colorsObj } from '../../../../../hooks/useMakeTheme/colors';
+import React from 'react';
+import { shadedPrimaryColor } from '../../../../../hooks/useMakeTheme/colors';
 import { Props } from './types';
-import useStyles from './useStyles';
+import useThemeContext
+	from '../../../../../context/ThemeProvider/useThemeContext';
+import { StyledFiberManualRecord } from './styled/StyledFiberManualRecord';
 
 const ThemeOption: React.FunctionComponent<Props> = ({ color, alt }) => {
-	const classes = useStyles();
-	const { setPrimaryColor, isDarkMode } = useContext(ThemeContext);
-	const colors = colorsObj(isDarkMode);
+	const {
+		setPrimaryColor,
+		isDarkMode,
+	} = useThemeContext();
+	const colors = shadedPrimaryColor(isDarkMode);
 
 	const handleClick = () => {
-		setPrimaryColor(colors[color]);
+		setPrimaryColor({
+			colorWithShade: colors[color],
+			color,
+		});
 		localStorage.setItem(`primaryColor`, color);
 	};
 
 	return (
 		<IconButton
 			aria-label={`theme-option-${alt}`}
-			className={classes.iconButton}
 			onClick={handleClick}
 		>
-			<FiberManualRecord style={{ color: colors[color] }} />
+			<StyledFiberManualRecord $color={colors[color]} />
 		</IconButton>
 	);
 };

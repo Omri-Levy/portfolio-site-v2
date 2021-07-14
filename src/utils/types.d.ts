@@ -2,6 +2,7 @@ import { Document } from '@contentful/rich-text-types';
 import { Button } from '@material-ui/core';
 import { RenderOptions } from '@testing-library/react';
 import React, { SetStateAction } from 'react';
+import { MotionProps, Variants } from 'framer-motion';
 
 type UI = JSX.Element;
 type Options =
@@ -14,15 +15,10 @@ interface ChildrenProps {
 	children: React.ReactNode;
 }
 
-interface ClassNameProps {
-	className: string;
-}
-
 interface ButtonProps extends Button {
-	type?:  `button` | `submit` | `reset` | undefined;
+	type?: `button` | `submit` | `reset` | undefined;
 	variant: `primary` | `secondary`;
 	text: string;
-	additionalClass?: string;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	disabled?: boolean;
 }
@@ -31,7 +27,6 @@ interface LinkProps extends React.HTMLProps<HTMLAnchorElement> {
 	variant: `primary` | `secondary`;
 	text: string;
 	to?: string;
-	additionalClass?: string;
 }
 
 type Data = {
@@ -85,9 +80,10 @@ type ProjectOptions = Record<never, never>;
 interface ProjectsContainerProps {
 	allProjects: Data;
 	options: ProjectOptions;
+	variants: Variants;
 }
 
-interface ProjectProps {
+interface ProjectProps extends MotionProps {
 	title: string;
 	body: Document;
 	projectGif: string;
@@ -111,7 +107,6 @@ export {
 	ProjectsContainerProps,
 	ProjectOptions,
 	ProjectProps,
-	ClassNameProps,
 	Data,
 	DataResponse,
 	MobileProjectProps,
